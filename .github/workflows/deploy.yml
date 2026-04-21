@@ -27,13 +27,22 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ~/komakWebSite
+            APP_DIR="/home/komakloy/komakWebSite"
 
-            echo "==> Pulling latest code..."
-            git pull origin main
+            # Clone the repo if it doesn't exist yet, otherwise pull
+            if [ ! -d "$APP_DIR/.git" ]; then
+              echo "==> First deploy: cloning repo..."
+              git clone https://github.com/Aomine01/komakloyihasi.git "$APP_DIR"
+            else
+              echo "==> Updating code..."
+              cd "$APP_DIR"
+              git pull origin main
+            fi
+
+            cd "$APP_DIR"
 
             echo "==> Writing .env.local..."
-            cat > .env.local << 'EOF'
+            cat > .env.local << EOF
             DB_HOST=${{ secrets.DB_HOST }}
             DB_PORT=3306
             DB_USER=${{ secrets.DB_USER }}
@@ -49,7 +58,7 @@ jobs:
             echo "==> Building Next.js app..."
             npm run build
 
-            echo "==> Restarting Node.js app (cPanel)..."
+            echo "==> Restarting Node.js app (cPanel Passenger)..."
             mkdir -p tmp
             touch tmp/restart.txt
 
