@@ -28,6 +28,15 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Determine if the current page has a dark hero section and we are not scrolled
+  const isDarkHeader = pathname === '/loyihalar' && !scrolled;
+
+  const textColorClass = isDarkHeader ? 'text-white/80 hover:text-white' : 'text-on-surface-variant hover:text-primary';
+  const activeTextColorClass = isDarkHeader ? 'text-white' : 'text-primary';
+  const logoColorClass = isDarkHeader ? 'text-white' : 'text-primary';
+  const indicatorColorClass = isDarkHeader ? 'bg-white' : 'bg-primary';
+  const hamburgerClass = isDarkHeader ? 'text-white hover:bg-white/10' : 'text-primary hover:bg-surface-container-high';
+
   return (
     <>
       <nav
@@ -45,12 +54,12 @@ export default function Navbar() {
             className="flex items-center gap-2 group"
           >
             <span
-              className="material-symbols-outlined text-primary text-2xl transition-transform duration-300 group-hover:scale-110"
+              className={`material-symbols-outlined text-2xl transition-transform duration-300 group-hover:scale-110 ${logoColorClass}`}
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               volunteer_activism
             </span>
-            <span className="text-2xl font-black font-headline tracking-tight text-primary">
+            <span className={`text-2xl font-black font-headline tracking-tight ${logoColorClass}`}>
               Ko&apos;mak
             </span>
           </Link>
@@ -64,7 +73,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`relative h-full flex items-center px-4 text-sm font-semibold font-headline tracking-tight transition-colors duration-200 ${
-                    isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary'
+                    isActive ? activeTextColorClass : textColorClass
                   }`}
                 >
                   {link.label}
@@ -72,13 +81,13 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-primary rounded-t-full"
+                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] rounded-t-full ${indicatorColorClass}`}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
                   {/* Hover bg */}
                   <span className={`absolute inset-0 rounded-lg transition-colors duration-200 ${
-                    isActive ? 'bg-primary/6' : 'hover:bg-surface-container-high'
+                    isActive ? (isDarkHeader ? 'bg-white/10' : 'bg-primary/6') : (isDarkHeader ? 'hover:bg-white/5' : 'hover:bg-surface-container-high')
                   }`} aria-hidden />
                 </Link>
               );
@@ -89,9 +98,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/aloqa"
-              className="inline-flex items-center gap-2 bg-gradient-primary text-on-primary
-                         px-5 py-2.5 rounded-xl font-semibold text-sm
-                         hover:opacity-90 active:scale-95 duration-200 transition-all shadow-md hover:shadow-lg"
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 ${
+                isDarkHeader 
+                  ? 'bg-white text-primary hover:bg-white/90' 
+                  : 'bg-gradient-primary text-on-primary hover:opacity-90'
+              }`}
             >
               <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                 chat_bubble
@@ -102,7 +113,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-primary p-2 rounded-xl hover:bg-surface-container-high transition-colors"
+            className={`md:hidden p-2 rounded-xl transition-colors ${hamburgerClass}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
             aria-expanded={mobileOpen}
@@ -184,3 +195,4 @@ export default function Navbar() {
     </>
   );
 }
+
