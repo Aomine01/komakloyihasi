@@ -1,0 +1,15 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/komakloy/komakWebSite
+    - export PATH=$PATH:/usr/local/bin:/usr/bin
+    - echo "==> Navigating to app directory..."
+    - cd $DEPLOYPATH
+    - echo "==> Installing dependencies..."
+    - npm install --production=false
+    - echo "==> Building Next.js app..."
+    - npm run build
+    - echo "==> Restarting Passenger..."
+    - mkdir -p $DEPLOYPATH/tmp
+    - touch $DEPLOYPATH/tmp/restart.txt
+    - echo "==> Deploy complete!"
