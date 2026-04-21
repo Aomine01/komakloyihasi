@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  color: theme('colors.on-background');
+  background-color: theme('colors.background');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-headline {
+  font-family: var(--font-display), 'Public Sans', sans-serif;
+}
+
+/* Material Symbols Adjustments */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom utilities from Design System */
+.text-gradient {
+    background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bg-gradient-primary {
+    background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+}
+.ambient-shadow {
+    box-shadow: 0 12px 32px -4px rgba(19, 27, 46, 0.06);
+}
+.shadow-ambient {
+    box-shadow: 0 12px 32px -4px rgba(19, 27, 46, 0.06);
+}
+.glassmorphism {
+    background-color: rgba(250, 248, 255, 0.8);
+    backdrop-filter: blur(24px);
+}
+.gradient-text {
+    background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.pie-chart {
+    background: conic-gradient(
+        #00685f 0% 45%, 
+        #008378 45% 70%, 
+        #006e2d 70% 90%, 
+        #e2e7ff 90% 100%
+    );
+    border-radius: 50%;
+}
+
+/* Accordion custom styling to ensure no hard borders are used per the design system */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+@keyframes sweep {
+    0%    {opacity: 0; transform: translateY(-10px)}
+    100%  {opacity: 1; transform: translateY(0)}
+}
+
+/* Hide scrollbar on horizontal tab rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: theme('colors.primary-container');
+  color: theme('colors.on-primary-container');
+}

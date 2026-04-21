@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ko‘makchilar - Muvaffaqiyatli Loyihalar</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef0ff",
+                        "outline-variant": "#bcc9c6",
+                        "surface-bright": "#faf8ff",
+                        "on-tertiary-fixed": "#001849",
+                        "on-secondary-container": "#007230",
+                        "surface": "#faf8ff",
+                        "primary": "#00685f",
+                        "surface-variant": "#dae2fd",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#89f5e7",
+                        "on-primary-fixed": "#00201d",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-surface-variant": "#3d4947",
+                        "on-surface": "#131b2e",
+                        "outline": "#6d7a77",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#006a61",
+                        "on-secondary-fixed": "#002109",
+                        "secondary-fixed-dim": "#62df7d",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "surface-container-highest": "#dae2fd",
+                        "background": "#faf8ff",
+                        "on-secondary-fixed-variant": "#005320",
+                        "on-tertiary-fixed-variant": "#003fa4",
+                        "inverse-surface": "#283044",
+                        "on-background": "#131b2e",
+                        "secondary-container": "#7cf994",
+                        "tertiary-fixed": "#dae1ff",
+                        "on-error": "#ffffff",
+                        "primary-container": "#008378",
+                        "tertiary": "#2656bd",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#b3c5ff",
+                        "surface-container": "#eaedff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#f4fffc",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary": "#006e2d",
+                        "inverse-primary": "#6bd8cb",
+                        "on-tertiary-container": "#fefcff",
+                        "surface-dim": "#d2d9f4",
+                        "secondary-fixed": "#7ffc97",
+                        "tertiary-container": "#456fd7",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-xl shadow-teal-900/5 font-public-sans tracking-tight">
+<div class="bg-surface-container-low/50">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<!-- Brand -->
+<div class="text-2xl font-black text-teal-800 dark:text-teal-300">
+                    Ko‘mak
+                </div>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-600 h-full flex items-center border-b-2 border-transparent" href="#">Asosiy</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-600 h-full flex items-center border-b-2 border-transparent" href="#">FAQ</a>
+<a class="text-teal-700 dark:text-teal-400 font-bold border-b-2 border-teal-600 h-full flex items-center" href="#">Ko‘makchilar</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-600 h-full flex items-center border-b-2 border-transparent" href="#">Statistika</a>
+</nav>
+<!-- Trailing Action -->
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold px-6 py-2.5 rounded-lg hover:bg-teal-50/50 dark:hover:bg-teal-900/20 transition-all scale-95 active:scale-90 duration-200">
+                    Bog‘lanish
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="pt-28 pb-16">
+<!-- Hero Section: Editorial Layering -->
+<section class="max-w-7xl mx-auto px-6 pt-12 pb-20 relative">
+<div class="absolute inset-0 bg-surface-container-low rounded-[2.5rem] -z-10 mix-blend-multiply opacity-50"></div>
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2 pr-0 lg:pr-12">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-medium text-sm mb-8 tracking-wide">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                        Muvaffaqiyatli Loyihalar
+                    </span>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight tracking-tight mb-6">
+                        Ta'lim kelajagini yaratayotgan markazlar
+                    </h1>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10 max-w-xl">
+                        Ko‘mak orqali moliyalashtirilgan va yuzlab yoshlarga zamonaviy bilim berayotgan ilg‘or o‘quv markazlari bilan tanishing.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold px-8 py-3.5 rounded-xl shadow-[0_8px_16px_-4px_rgba(0,104,95,0.3)] hover:shadow-[0_12px_24px_-4px_rgba(0,104,95,0.4)] transition-all">
+                            Markaz qo'shish
+                        </button>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="relative w-full h-[400px] rounded-[2rem] overflow-hidden shadow-[0_24px_48px_-12px_rgba(19,27,46,0.12)]">
+<img alt="Collaborative learning environment" class="w-full h-full object-cover" data-alt="diverse group of students collaborating in a bright, modern educational setting with large windows and warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaLj5SKKdtBV5vrVhd5YTiXelWjCHFFLSJpmHy0Ybx6DAthlFvbX_AxkAqLIhl2rXBFeKDd73vfbMYCd1U8OdGTF8-j4z8HuJ907rklzZWNhv9rXR3eo2Yzwrl6zvKWxP76b65Szm5HepYC5YLwsXccFzFtlbVIsV-1bleIq8OkCRFIzmsZgHh-KlWsnUoJLA657pSP8zQzSKF9E4peqncFpkDwYHkfsDxNi6BJitsjsDGE4-ooOYJ6fCDzutBHdJdcm5yQitig0s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<div class="bg-surface/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 flex gap-6 items-center">
+<div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
+</div>
+<div>
+<p class="text-on-surface font-headline font-bold text-xl mb-1">240+ Markazlar</p>
+<p class="text-on-surface-variant text-sm">Respublika bo'ylab faoliyat yuritmoqda</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid Section -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+<!-- Filters / Categories (Visual Only) -->
+<div class="flex flex-wrap gap-3 mb-12">
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary font-medium text-sm transition-colors shadow-sm">Barchasi</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface font-medium text-sm hover:bg-surface-variant transition-colors">IT va Dasturlash</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface font-medium text-sm hover:bg-surface-variant transition-colors">Xorijiy Tillar</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface font-medium text-sm hover:bg-surface-variant transition-colors">STEM</button>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+<!-- Card 1 (IT Focus) -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(19,27,46,0.06)] flex flex-col group hover:shadow-[0_20px_40px_-4px_rgba(19,27,46,0.1)] transition-shadow duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Students coding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="young students focused on laptop screens in a modern, well-lit tech classroom environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX240zEgUDR_If6Ec8v35hGsBksvwXfpMXschp69XtNy2DSZUB3djve04W8MPN6yBbiXgjdWWApgoHzs-45gJdNSdjPddxjAujLOy_BTCxzmFtA7tXknba6TRL9LIkkuMUdKcE7VFn1gz1NpvAsvsSl_fIR5uMmx3neK-geW1lpjV0F5EScbeQdv0bEKTILd6VWefRFQC_T5Dlu-CDrTBLzRe3vRIDqY_vn_q-e3zpocj9YDJKSOehGKlUS_pX5MR4pUcELzMhtQ0"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="terminal">terminal</span>
+<span class="text-xs font-semibold text-primary">IT &amp; Dasturlash</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Najot Ta'lim Hub</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-5">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                            Toshkent sh., Chilonzor tumani
+                        </div>
+<p class="text-on-surface-variant leading-relaxed text-base mb-6 flex-grow">
+                            Yangi filiali uchun grant yutib oldi. Hozirda 500 dan ortiq yoshlar zamonaviy kasblarni (Frontend, Backend, Dizayn) o'rganishmoqda.
+                        </p>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-sm font-medium text-primary">Batafsil o'qish</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 2 (English Focus) -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(19,27,46,0.06)] flex flex-col group hover:shadow-[0_20px_40px_-4px_rgba(19,27,46,0.1)] transition-shadow duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Language learning class" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="interactive english language classroom with students engaging in discussion, bright colorful posters on walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTgkfcfywb1-68Ng-nXRsXCewvMLsyINf290iy5bU-VmN6Ev92xZotW2dTZF8vjkStKDJ_lPgzBW96WDOAec8COaj5lZCHyCCdDh5u3TRw9_pQR3FQfpio30h_1CYmd5tEY7QjcjwTi634ZbaSuRLab98RsxDcFIU9AnlQCVruPcWcliksfYKuA_q1C0DvLewtL4zHFdDQNtmvrAB5eKkd7KzDtDBuyqvvkv-cz4h0ORjjy_dI9Gf-jsjn4Z57yY0gyS7BYvQ_d6c"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="language">language</span>
+<span class="text-xs font-semibold text-primary">Xorijiy Tillar</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Cambridge Academy</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-5">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                            Samarqand sh.
+                        </div>
+<p class="text-on-surface-variant leading-relaxed text-base mb-6 flex-grow">
+                            Qo'shimcha interaktiv sinfxonalar jihozlash uchun moliyalashtirildi. IELTS kurslari bo'yicha hududda yetakchiga aylandi.
+                        </p>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-sm font-medium text-primary">Batafsil o'qish</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 3 (STEM Focus) -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(19,27,46,0.06)] flex flex-col group hover:shadow-[0_20px_40px_-4px_rgba(19,27,46,0.1)] transition-shadow duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Science lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="modern robotics and science laboratory with equipment, soft blue lighting and analytical atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqtaC4lVKnsuC67aRZHCPfHPWDMWzJHsRgVDI2P85PSbwbTh8w9xpY2u5AudqEBaan1T-_7zy5tTeJKZjax8BIpdzN39fKlBwCuU710aiNjCcQSbrzAXDbtcBd5vJYdrE-MCZzqxl_GNFgItLyZlA7cmKkXNa8GQk9oVvUBRsCd9Co_cL54vpBxJAsyoJRJtCYA03BbZjxA9cUcrnIleu6wOpD_hCWqjfI4PhBiy7OcfC_95-MFxjL4mMzwvXn0h8kGYqBhCWUJDA"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="science">science</span>
+<span class="text-xs font-semibold text-primary">STEM</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">RoboTech Kids</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-5">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                            Farg'ona sh.
+                        </div>
+<p class="text-on-surface-variant leading-relaxed text-base mb-6 flex-grow">
+                            Yoshlar uchun robototexnika laboratoriyasi tashkil etish loyihasi g'olibi. Hozirda maktab o'quvchilari o'z ixtirolarini yaratishmoqda.
+                        </p>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-sm font-medium text-primary">Batafsil o'qish</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 4 (IT Focus - Rural) -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(19,27,46,0.06)] flex flex-col group hover:shadow-[0_20px_40px_-4px_rgba(19,27,46,0.1)] transition-shadow duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Rural education" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="cozy community learning center space with laptops on wooden tables, warm sunlight streaming through windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGrh8wdo0B5oNyPBWXO23KO_RmSElmta1W0iZZOPHssg0NYPfWqMaS6nNYSTvMPoPIS7sA__kLr3EqrMcLViaBtaoG0pKE4Bcul7V104zt71tXjKbNKLUTDVbL94SNKgSl8-CYXSxKDG5FbqHNcV65GPOavjfyieZzn50e60weNxSVPQOVz4sZNbLxK-WTzrk-J0uB2X1G9WJCu2AG-wmNdln33RR6vALpcIug856L0gkDsPQmnZtV1eQz_tx6WjK35ANdWVxmIrE"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="terminal">terminal</span>
+<span class="text-xs font-semibold text-primary">IT &amp; Dasturlash</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Qorako'l IT Academy</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-5">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                            Buxoro, Qorako'l tumani
+                        </div>
+<p class="text-on-surface-variant leading-relaxed text-base mb-6 flex-grow">
+                            Tuman yoshlari uchun arzonlashtirilgan IT kurslari yo'lga qo'yildi. Ilk bitiruvchilar allaqachon frilanser sifatida daromad topishni boshladi.
+                        </p>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-sm font-medium text-primary">Batafsil o'qish</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="bg-surface-container-low rounded-3xl p-12 text-center border-l-4 border-primary">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-4">Loyihangiz bormi?</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto mb-8">Sizning ham ta'lim sifatini oshirishga qaratilgan g'oyangiz bo'lsa, Ko'mak platformasi orqali moliyaviy ko'mak oling.</p>
+<button class="bg-primary text-on-primary font-semibold px-8 py-3 rounded-xl hover:bg-primary-container transition-colors shadow-sm">
+                    Ariza topshirish
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full pt-16 pb-8 text-teal-700 dark:text-teal-400 font-inter text-sm leading-relaxed max-w-7xl mx-auto px-6 border-t border-slate-100 dark:border-slate-800">
+<div class="bg-gradient-to-t from-teal-50/50 to-transparent flat">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand Logo / Copyright -->
+<div class="text-xl font-bold text-teal-900 dark:text-teal-100">
+<p class="text-sm font-normal text-slate-500 mt-2 opacity-80 hover:opacity-100 transition-opacity">
+                        © 2024 Ko‘mak. Barcha huquqlar himoyalangan.
+                    </p>
+</div>
+<!-- Footer Links -->
+<nav class="flex flex-wrap gap-6 items-center justify-center md:justify-end">
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Loyiha haqida</a>
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Xizmat ko‘rsatish shartlari</a>
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Maxfiylik siyosati</a>
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Ochiq ma'lumotlar</a>
+</nav>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ko‘mak - Statistika</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#eef0ff",
+                    "outline-variant": "#bcc9c6",
+                    "surface-bright": "#faf8ff",
+                    "on-tertiary-fixed": "#001849",
+                    "on-secondary-container": "#007230",
+                    "surface": "#faf8ff",
+                    "primary": "#00685f",
+                    "surface-variant": "#dae2fd",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#89f5e7",
+                    "on-primary-fixed": "#00201d",
+                    "on-primary-fixed-variant": "#005049",
+                    "on-surface-variant": "#3d4947",
+                    "on-surface": "#131b2e",
+                    "outline": "#6d7a77",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#006a61",
+                    "on-secondary-fixed": "#002109",
+                    "secondary-fixed-dim": "#62df7d",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "surface-container-highest": "#dae2fd",
+                    "background": "#faf8ff",
+                    "on-secondary-fixed-variant": "#005320",
+                    "on-tertiary-fixed-variant": "#003fa4",
+                    "inverse-surface": "#283044",
+                    "on-background": "#131b2e",
+                    "secondary-container": "#7cf994",
+                    "tertiary-fixed": "#dae1ff",
+                    "on-error": "#ffffff",
+                    "primary-container": "#008378",
+                    "tertiary": "#2656bd",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#b3c5ff",
+                    "surface-container": "#eaedff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#f4fffc",
+                    "surface-container-high": "#e2e7ff",
+                    "secondary": "#006e2d",
+                    "inverse-primary": "#6bd8cb",
+                    "on-tertiary-container": "#fefcff",
+                    "surface-dim": "#d2d9f4",
+                    "secondary-fixed": "#7ffc97",
+                    "tertiary-container": "#456fd7",
+                    "surface-container-low": "#f2f3ff",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Public Sans", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-ambient {
+            box-shadow: 0 12px 32px -4px rgba(19, 27, 46, 0.06);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00685f, #008378);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pie-chart {
+            background: conic-gradient(
+                #00685f 0% 45%, 
+                #008378 45% 70%, 
+                #006e2d 70% 90%, 
+                #e2e7ff 90% 100%
+            );
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="bg-white/80 backdrop-blur-xl font-public-sans tracking-tight fixed top-0 w-full z-50 shadow-xl shadow-teal-900/5">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<!-- Brand -->
+<a class="text-2xl font-black text-teal-800" href="#">
+                Ko‘mak
+            </a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-8 h-full items-center">
+<a class="text-slate-600 hover:text-teal-600 hover:bg-teal-50/50 transition-all h-full flex items-center px-2" href="#">Asosiy</a>
+<a class="text-slate-600 hover:text-teal-600 hover:bg-teal-50/50 transition-all h-full flex items-center px-2" href="#">FAQ</a>
+<a class="text-slate-600 hover:text-teal-600 hover:bg-teal-50/50 transition-all h-full flex items-center px-2" href="#">Ko‘makchilar</a>
+<a class="text-teal-700 font-bold border-b-2 border-teal-600 hover:bg-teal-50/50 transition-all h-full flex items-center px-2" href="#">Statistika</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:flex">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-semibold scale-95 active:scale-90 duration-200 shadow-ambient">
+                    Bog‘lanish
+                </button>
+</div>
+<!-- Mobile Menu Toggle (Placeholder) -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<div class="h-px w-full bg-surface-container-low/50 hidden"></div> <!-- Separation Logic from JSON, handled via background shift/shadow -->
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="py-16 px-6 max-w-7xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2 space-y-6">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight tracking-tight">
+                    Loyihaning <br/>
+<span class="gradient-text">Ochiq Raqamlari</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    Bizning asosiy maqsadimiz ta'lim va moliyaviy yordamni shaffof taqdim etish. Quyida Ko'mak loyihasi orqali erishilgan natijalar bilan tanishing.
+                </p>
+</div>
+<div class="md:w-1/2 relative">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10 transform scale-110 translate-x-10 translate-y-10"></div>
+<img alt="Data visualization" class="rounded-xl shadow-ambient w-full object-cover h-[300px]" data-alt="abstract transparent glass elements floating over soft teal and green data charts with airy bright studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmZM0oNlRrd7xnekpddyrh70MSZpK4R1sUbxSeGsZ5DpphPd21o86YVtjdzJYUIsjHLoDwqNQyP-WM33lLhWVAvNPGlUxY1D3Yb4ZGdQXaXQ4tMXp5JaVnQl2O9-cctyAK-kcVQ8_xMWENFGQ0L8hqeuwrC5FrGBAu8u5qkaaB1cWTsiW0FnsrObCbUT9iAu7VfepUMRNJ1GRzDzqkl34-1JYvAUt7ysbSTbFYs4MWUoBUfu1_7CkYmSsfM6UOz1lyQsGwtO5ytRU"/>
+</div>
+</section>
+<!-- Big Numbers (Bento Grid) -->
+<section class="bg-surface-container-low py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Total Loans -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 bg-surface-container w-32 h-32 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<div class="p-3 bg-secondary-container text-on-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-weight="fill">account_balance</span>
+</div>
+<h3 class="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Ajratilgan Qarzlar</h3>
+</div>
+<div class="relative z-10">
+<p class="font-headline text-5xl font-extrabold text-primary mb-2">1.2 Trln</p>
+<p class="text-on-surface-variant text-sm">So'm miqdorida moliyaviy ko'mak</p>
+</div>
+</div>
+<!-- Card 2: Educational Centers -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 bg-surface-container w-32 h-32 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<div class="p-3 bg-primary-container/10 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-weight="fill">school</span>
+</div>
+<h3 class="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">O'quv Markazlari</h3>
+</div>
+<div class="relative z-10">
+<p class="font-headline text-5xl font-extrabold text-on-surface mb-2">45 ta</p>
+<p class="text-on-surface-variant text-sm">Yangi tashkil etilgan markazlar</p>
+</div>
+</div>
+<!-- Card 3: Students Reached -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 bg-surface-container w-32 h-32 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<div class="p-3 bg-tertiary-container/10 text-tertiary rounded-lg">
+<span class="material-symbols-outlined" data-weight="fill">groups</span>
+</div>
+<h3 class="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Qamrab olinganlar</h3>
+</div>
+<div class="relative z-10">
+<p class="font-headline text-5xl font-extrabold text-on-surface mb-2">12,500+</p>
+<p class="text-on-surface-variant text-sm">Ta'lim oluvchi talabalar</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Visualization Section -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-10">Tahliliy Ma'lumotlar</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Bar Chart (Simulated) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient p-8">
+<h3 class="font-body text-lg font-semibold text-on-surface mb-6 flex items-center justify-between">
+                        Moliyalashtirish o'sishi
+                        <span class="text-sm font-normal text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full">2024 Yil</span>
+</h3>
+<div class="h-64 flex items-end justify-between gap-2 pt-4">
+<!-- Bars -->
+<div class="w-full bg-primary/20 rounded-t-sm h-[30%] relative group cursor-pointer hover:bg-primary/30 transition-colors">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Yan</div>
+</div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[45%] relative group cursor-pointer hover:bg-primary/50 transition-colors">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Fev</div>
+</div>
+<div class="w-full bg-primary/60 rounded-t-sm h-[60%] relative group cursor-pointer hover:bg-primary/70 transition-colors">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Mar</div>
+</div>
+<div class="w-full bg-primary rounded-t-sm h-[85%] relative group cursor-pointer hover:bg-primary-container transition-colors shadow-[0_0_15px_rgba(0,104,95,0.3)]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Apr</div>
+</div>
+<div class="w-full bg-primary/80 rounded-t-sm h-[70%] relative group cursor-pointer hover:bg-primary/90 transition-colors">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">May</div>
+</div>
+<div class="w-full bg-secondary/80 rounded-t-sm h-[95%] relative group cursor-pointer hover:bg-secondary transition-colors">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Iyun</div>
+</div>
+</div>
+<div class="flex justify-between mt-4 border-t border-surface-container pt-2 text-xs text-on-surface-variant">
+<span>Yan</span><span>Fev</span><span>Mar</span><span>Apr</span><span>May</span><span>Iyun</span>
+</div>
+</div>
+<!-- Doughnut Chart (Simulated) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient p-8 flex flex-col">
+<h3 class="font-body text-lg font-semibold text-on-surface mb-6">Yo'nalishlar bo'yicha taqsimot</h3>
+<div class="flex-grow flex items-center justify-center gap-10">
+<div class="relative w-48 h-48">
+<div class="absolute inset-0 pie-chart"></div>
+<div class="absolute inset-4 bg-surface-container-lowest rounded-full flex items-center justify-center">
+<div class="text-center">
+<span class="block font-headline font-bold text-2xl text-on-surface">100%</span>
+<span class="text-xs text-on-surface-variant">Jami fond</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-sm text-on-surface-variant">IT Ta'lim (45%)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<span class="text-sm text-on-surface-variant">Til o'rganish (25%)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="text-sm text-on-surface-variant">Kasb-hunar (20%)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-surface-container-high"></div>
+<span class="text-sm text-on-surface-variant">Boshqa (10%)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Map Section -->
+<section class="bg-surface-container-low py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-center justify-between mb-10">
+<h2 class="font-headline text-3xl font-bold text-on-surface">Hududiy Qamrov</h2>
+<div class="mt-4 md:mt-0 px-4 py-2 bg-white rounded-full shadow-sm text-sm text-on-surface-variant flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary block"></span>
+                        Faol loyihalar mavjud hududlar
+                    </div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient p-4 h-[500px] overflow-hidden relative">
+<!-- Placeholder for Map -->
+<div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+<div class="bg-surface/80 backdrop-blur-sm px-6 py-4 rounded-xl text-center shadow-lg pointer-events-auto">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">map</span>
+<h3 class="font-headline font-bold text-on-surface">Interaktiv Xarita</h3>
+<p class="text-sm text-on-surface-variant mt-1">Hududlar bo'yicha batafsil ma'lumot</p>
+</div>
+</div>
+<img alt="Map of Uzbekistan" class="w-full h-full object-cover opacity-60" data-alt="stylized vector map graphic in light grey and teal colors showing regions with subtle markers" data-location="Uzbekistan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw8QONKlqz7F_JRy6hgGgPb70IujrL2TwWmXg_NX2tsLnIis8I9MVif2X6zTB_0fwjx95J6iKNVjQkCEKIBQltQXytTzJCktqJsk0jAaKfmvRlYDBD5ojLxxicnImBFSBwjE2_JUXFXA6ksrZS5qwthPrkKiAh7qconl_0xU99SkiCq1pHhutnajazQACQAZ93eUrAyNAmyNxBRieYUoFtbLw38I5BKAvoGpAeFpKNCTQVXP40JxAC1orbZuSC-LSrcL8d2F6a9y4"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 w-full pt-16 pb-8 font-inter text-sm leading-relaxed border-t border-slate-100">
+<div class="max-w-7xl mx-auto px-6 bg-gradient-to-t from-teal-50/50 to-transparent pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand -->
+<div class="text-xl font-bold text-teal-900">
+                    Ko‘mak
+                </div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Loyiha haqida</a>
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Xizmat ko‘rsatish shartlari</a>
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Maxfiylik siyosati</a>
+<a class="text-slate-500 hover:text-teal-600 transition-colors underline decoration-teal-500/30 underline-offset-4 opacity-80 hover:opacity-100" href="#">Ochiq ma'lumotlar</a>
+</div>
+</div>
+<div class="mt-8 text-center text-slate-500 text-xs">
+                © 2024 Ko‘mak. Barcha huquqlar himoyalangan.
+            </div>
+</div>
+</footer>
+</body></html>

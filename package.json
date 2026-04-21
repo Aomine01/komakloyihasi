@@ -1,0 +1,52 @@
+{
+  "name": "komak-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx scripts/seed.ts"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@hookform/resolvers": "^3.10.0",
+    "@types/d3-geo": "^3.1.0",
+    "@types/react-simple-maps": "^3.0.6",
+    "bcryptjs": "^3.0.3",
+    "d3-geo": "^3.1.1",
+    "drizzle-orm": "^0.45.2",
+    "formidable": "^3.5.2",
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.469.0",
+    "mysql2": "^3.22.1",
+    "next": "14.2.29",
+    "next-auth": "^4.24.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "react-simple-maps": "^3.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/formidable": "^3.4.6",
+    "@types/node": "^20.17.12",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "autoprefixer": "^10.4.20",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.29",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.3"
+  }
+}
