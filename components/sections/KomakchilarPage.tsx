@@ -410,7 +410,7 @@ export default function KomakchilarPage({ viloyatlar, totalProjects, totalStuden
                 icon: 'school',
                 value: totalStudents ? `${totalStudents.toLocaleString()}+` : '—',
                 label: "Jami o'quvchilar",
-                desc: '2024–2026 yillar oralig'ida',
+                desc: "2024\u20132026 yillar oralig'ida",
               },
               {
                 icon: 'location_on',
