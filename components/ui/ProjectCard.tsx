@@ -32,8 +32,8 @@ export default function ProjectCard({ project }: { project: Project }) {
           <span className="text-xs font-semibold text-primary">{mainLang}</span>
         </div>
       </div>
-      <div className="p-8 flex flex-col flex-grow">
-        <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">
+      <div className="p-5 sm:p-8 flex flex-col flex-grow">
+        <h3 className="font-headline text-xl sm:text-2xl font-bold text-on-surface mb-2">
           {project.title}
         </h3>
         <div className="flex items-center gap-2 text-on-surface-variant text-sm mb-5">

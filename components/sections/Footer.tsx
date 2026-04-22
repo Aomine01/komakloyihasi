@@ -22,12 +22,12 @@ export default function Footer() {
           {/* Brand block */}
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center group mb-4">
-              <div className="relative w-36 h-12 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-48 h-16 md:w-64 md:h-20 transition-transform duration-300 group-hover:scale-105">
                 <Image 
-                  src="/logo.svg" 
+                  src="/logoClear.png" 
                   alt="Ko'mak Logo" 
                   fill 
-                  className="object-contain"
+                  className="object-contain scale-[1.3] md:scale-[1.5] origin-left"
                 />
               </div>
             </Link>

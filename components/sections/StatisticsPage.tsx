@@ -408,7 +408,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="font-headline text-4xl md:text-5xl font-extrabold text-on-surface leading-tight tracking-tight mb-4"
+            className="font-headline text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface leading-tight tracking-tight mb-4"
           >
             Ko&apos;mak Loyihasi <br />
             <span className="gradient-text">Statistikasi</span>
@@ -459,8 +459,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="lg:col-span-2 bg-[#f4f7f6] rounded-2xl border border-outline-variant/20 shadow-[inset_0_4px_24px_rgba(0,104,95,0.05)] overflow-hidden relative flex flex-col"
-            style={{ minHeight: 400 }}
+            className="lg:col-span-2 bg-[#f4f7f6] rounded-2xl border border-outline-variant/20 shadow-[inset_0_4px_24px_rgba(0,104,95,0.05)] overflow-hidden relative flex flex-col min-h-[300px] sm:min-h-[400px]"
           >
             {/* Map Header */}
             <div className="px-6 pt-6 pb-2 flex justify-between items-start z-10 pointer-events-none border-b border-outline-variant/10">
@@ -640,7 +639,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-7 flex flex-col justify-center"
+            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col justify-center"
           >
             <h3 className="font-body text-lg font-bold text-on-surface mb-8">Loyihalar taqsimoti</h3>
             <PieChart />
@@ -694,7 +693,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-7 flex flex-col gap-6"
+            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col gap-6"
           >
              <div>
                 <h3 className="font-body text-lg font-bold text-on-surface">Jinsi bo&apos;yicha statistika</h3>

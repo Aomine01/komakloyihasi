@@ -54,12 +54,12 @@ export default function Navbar() {
             href="/"
             className="flex items-center group"
           >
-            <div className="relative w-36 h-12 md:w-44 md:h-14 transition-transform duration-300 group-hover:scale-[1.03]">
+            <div className="relative w-48 h-16 md:w-64 md:h-20 flex items-center transition-transform duration-300 group-hover:scale-[1.03]">
               <Image 
-                src="/logo.svg" 
+                src="/logoClear.png" 
                 alt="Ko'mak Logo" 
                 fill 
-                className="object-contain"
+                className="object-contain scale-[1.5] md:scale-[1.8] origin-left"
                 priority
               />
             </div>
