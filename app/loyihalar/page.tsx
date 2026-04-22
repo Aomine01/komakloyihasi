@@ -17,7 +17,10 @@ async function getViloyatlarWithCounts() {
   try {
     const result = await db
       .select({
-        ...viloyatlarTable,
+        id: viloyatlarTable.id,
+        name: viloyatlarTable.name,
+        slug: viloyatlarTable.slug,
+        createdAt: viloyatlarTable.createdAt,
         count: sql<number>`COUNT(DISTINCT ${projectsTable.id})`.as('count'),
       })
       .from(viloyatlarTable)
