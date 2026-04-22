@@ -50,20 +50,17 @@ export default function Navbar() {
         <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
 
           {/* Brand */}
-          <Link
-            href="/"
-            className="flex items-center group"
-          >
-            <div className="relative w-48 h-16 md:w-64 md:h-20 flex items-center transition-transform duration-300 group-hover:scale-[1.03]">
+          <div className="flex items-center gap-2">
+            <Link href="/" className="inline-flex items-center group relative w-56 h-20 md:w-72 md:h-24">
               <Image 
                 src="/logoClear.png" 
                 alt="Ko'mak Logo" 
-                fill 
-                className="object-contain scale-[1.5] md:scale-[1.8] origin-left"
+                fill
                 priority
+                className="object-contain object-left transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-          </Link>
+            </Link>
+          </div>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1 h-full">

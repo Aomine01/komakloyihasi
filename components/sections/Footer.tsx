@@ -1,12 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#ccff00] text-black pt-8 pb-4 font-sans selection:bg-black selection:text-[#ccff00]">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col min-h-[500px]">
+    <footer className="bg-surface border-t border-outline-variant/20 text-on-surface pt-12 pb-4 font-sans selection:bg-primary selection:text-on-primary relative overflow-hidden">
+      
+      {/* Subtle shape watermark */}
+      <div className="absolute right-0 bottom-0 w-[50vw] h-[50vw] opacity-[0.04] pointer-events-none translate-x-1/4 translate-y-1/4">
+        <Image src="/justshape.png" alt="Ko'mak Shape" fill className="object-contain" />
+      </div>
+
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col min-h-[500px] relative z-10">
         {/* Top Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-black/20 pb-4 mb-8">
-          <div className="flex gap-4 font-bold text-sm tracking-tight">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-outline/30 pb-4 mb-8">
+          <div className="flex gap-4 font-bold text-sm tracking-tight text-on-surface-variant">
             <Link href="/faq" className="hover:underline underline-offset-4">Ko'mak loyihasi qoidalari</Link>
             <Link href="/loyihalar" className="hover:underline underline-offset-4">Ochiq Hisobotlar</Link>
           </div>
@@ -65,8 +72,8 @@ export default function Footer() {
           </div>
 
           {/* Disclaimer (Right Half) */}
-          <div className="xl:col-span-7 text-[10px] sm:text-[11px] font-semibold leading-relaxed space-y-3.5 opacity-90 max-w-4xl tracking-tight">
-            <h3 className="font-bold text-[13px] text-black">Barcha moliyaviy operatsiyalar ma'lum xatarlar bilan bog'liq</h3>
+          <div className="xl:col-span-7 text-[10px] sm:text-[11px] font-semibold leading-relaxed space-y-3.5 opacity-90 max-w-4xl tracking-tight text-on-surface-variant">
+            <h3 className="font-bold text-[13px] text-on-surface">Barcha moliyaviy operatsiyalar ma'lum xatarlar bilan bog'liq</h3>
             <p>
               Ko'mak xizmatlari "Ko'mak" NNT va O'zbekiston Yoshlar Fondi (dastur hammuassisi) tomonidan hududiy tadbirkorlikni rivojlantirish maqsadida taklif etiladi. Ajratilgan mablag'lar bo'yicha qo'shimcha foiz olinmasa-da, har bir hisob uchun shartnoma asosida jarima va komissiya to'lovlari qo'llanilishi mumkin. Iltimos, loyihada ishtirok etishdan oldin Ommaviy Oferta bilan batafsil tanishib chiqing.
             </p>
@@ -86,19 +93,18 @@ export default function Footer() {
         </div>
 
         {/* Giant Logo Text bottom */}
-        <div className="mt-auto w-full select-none pointer-events-none pb-2 pt-10 overflow-hidden">
-          <svg className="w-full h-auto text-black" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid slice">
-            <text 
-              x="50%" 
-              y="75%" 
-              dominantBaseline="middle" 
-              textAnchor="middle" 
-              className="font-sans font-black tracking-[-0.07em]"
-              style={{ fontSize: '260px' }}
-            >
-              ko'mak
-            </text>
-          </svg>
+        <div className="mt-auto overflow-hidden w-full select-none pointer-events-none flex justify-center pt-8">
+          <span 
+            className="font-black text-on-surface block tracking-tighter" 
+            style={{ 
+              fontSize: '28vw', 
+              lineHeight: '0.72',
+              letterSpacing: '-0.06em',
+              marginBottom: '-2vw'
+            }}
+          >
+            ko'mak
+          </span>
         </div>
       </div>
     </footer>
