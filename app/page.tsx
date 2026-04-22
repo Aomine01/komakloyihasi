@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="relative z-10 bg-surface rounded-b-[2.5rem] shadow-xl pb-10 min-h-screen">
         <Hero />
         <HowItWorks />
       </main>

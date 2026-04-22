@@ -17,9 +17,7 @@ async function getViloyatlarWithCounts() {
   try {
     const result = await db
       .select({
-        id: viloyatlarTable.id,
-        name: viloyatlarTable.name,
-        slug: viloyatlarTable.slug,
+        ...viloyatlarTable,
         count: sql<number>`COUNT(DISTINCT ${projectsTable.id})`.as('count'),
       })
       .from(viloyatlarTable)
@@ -61,7 +59,7 @@ export default async function LoyihalarPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-surface">
+      <main className="relative z-10 bg-surface rounded-b-[2.5rem] shadow-xl pb-10 min-h-screen">
         <KomakchilarPage
           viloyatlar={viloyatlarData}
           totalProjects={Number(stats.totalProjects)}

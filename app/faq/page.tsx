@@ -27,7 +27,7 @@ export default async function FAQPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-surface">
+      <main className="relative z-10 bg-surface rounded-b-[2.5rem] shadow-xl pb-10 min-h-screen">
         <FAQSection faqs={faqsData} />
       </main>
       <Footer />
