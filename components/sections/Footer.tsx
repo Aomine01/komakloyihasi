@@ -6,7 +6,7 @@ const links = [
   { label: "Ko'makchilar", href: '/loyihalar' },
   { label: 'Statistika', href: '/statistika' },
   { label: 'FAQ', href: '/faq' },
-  { label: "Bog'lanish", href: '/aloqa' },
+  { label: "Bog'lanish", href: 'https://t.me/komakmentor' },
 ];
 
 export default function Footer() {
