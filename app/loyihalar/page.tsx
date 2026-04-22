@@ -59,7 +59,7 @@ export default async function LoyihalarPage() {
   return (
     <>
       <Navbar />
-      <main className="relative z-10 bg-surface rounded-b-[2.5rem] shadow-xl pb-10 min-h-screen">
+      <main className="min-h-screen bg-surface">
         <KomakchilarPage
           viloyatlar={viloyatlarData}
           totalProjects={Number(stats.totalProjects)}
