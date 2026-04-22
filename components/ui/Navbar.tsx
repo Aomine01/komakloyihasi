@@ -46,13 +46,13 @@ export default function Navbar() {
             : 'bg-transparent backdrop-blur-sm'
           }`}
       >
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-24 md:h-28 lg:h-32">
+        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-20 md:h-24">
 
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="inline-flex items-center group relative w-[250px] h-[80px] md:w-[350px] md:h-[100px] lg:w-[450px] lg:h-[120px]">
+            <Link href="/" className="inline-flex items-center group relative w-[180px] h-[52px] md:w-[240px] md:h-[68px] lg:w-[300px] lg:h-[80px]">
               <Image
-                src={isDarkHeader ? "/logowhite.png" : "/logoClear.png"}
+                src={isDarkHeader ? "/Group 211.svg" : "/Group 202.svg"}
                 alt="Ko'mak Logo"
                 fill
                 priority

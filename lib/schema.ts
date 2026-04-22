@@ -38,6 +38,8 @@ export const projects = mysqlTable('projects', {
   studentsCount: int('students_count'),
   languages: json('languages').$type<string[]>(),
   photoUrl: varchar('photo_url', { length: 500 }),
+  galleryUrls: json('gallery_urls').$type<string[]>(),
+  documentUrls: json('document_urls').$type<string[]>(),
   isPublished: boolean('is_published').default(false),
   fundedAt: date('funded_at'),
   createdAt: timestamp('created_at').defaultNow(),

@@ -13,18 +13,17 @@ export default function Footer() {
   return (
     <footer className="bg-[#00685f] text-white pt-16 pb-8 font-sans selection:bg-white selection:text-[#00685f] relative overflow-hidden">
       
-      {/* Giant Background Logo Text (Placed behind other texts) */}
-      <div className="absolute left-0 bottom-[-4vw] right-0 w-full select-none pointer-events-none flex justify-center z-0">
-        <span 
-          className="font-black text-white/10 block tracking-tighter" 
-          style={{ 
-            fontSize: '32vw', 
-            lineHeight: '0.75',
-            letterSpacing: '-0.05em'
-          }}
-        >
-          ko'mak
-        </span>
+      {/* Giant Background SVG Logo Watermark */}
+      <div className="absolute left-0 bottom-0 right-0 w-full select-none pointer-events-none flex justify-center z-0 overflow-hidden">
+        <div className="relative w-full" style={{ height: '28vw' }}>
+          <Image
+            src="/Koʻmak.svg"
+            alt=""
+            fill
+            className="object-contain object-bottom opacity-10"
+            aria-hidden
+          />
+        </div>
       </div>
 
       {/* Subtle shape watermark */}

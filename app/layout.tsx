@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     "chet tili o'rgatish",
     "O'zbekiston",
   ],
+  icons: {
+    icon: '/Group 85.svg',
+    shortcut: '/Group 85.svg',
+    apple: '/Group 85.svg',
+  },
   openGraph: {
     title: "Ko'mak — Orzularga qanot beramiz",
     description:
