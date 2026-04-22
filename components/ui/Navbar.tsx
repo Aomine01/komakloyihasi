@@ -41,20 +41,19 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
             ? 'bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,27,46,0.07)] border-b border-outline-variant/20'
             : 'bg-transparent backdrop-blur-sm'
-        }`}
+          }`}
       >
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-24 md:h-28 lg:h-32">
 
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="inline-flex items-center group relative w-56 h-20 md:w-72 md:h-24">
-              <Image 
-                src="/logoClear.png" 
-                alt="Ko'mak Logo" 
+            <Link href="/" className="inline-flex items-center group relative w-[250px] h-[80px] md:w-[350px] md:h-[100px] lg:w-[450px] lg:h-[120px]">
+              <Image
+                src={isDarkHeader ? "/logowhite.png" : "/logoClear.png"}
+                alt="Ko'mak Logo"
                 fill
                 priority
                 className="object-contain object-left transition-transform duration-300 group-hover:scale-105"
@@ -70,9 +69,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative h-full flex items-center px-4 text-sm font-semibold font-headline tracking-tight transition-colors duration-200 ${
-                    isActive ? activeTextColorClass : textColorClass
-                  }`}
+                  className={`relative h-full flex items-center px-4 text-sm font-semibold font-headline tracking-tight transition-colors duration-200 ${isActive ? activeTextColorClass : textColorClass
+                    }`}
                 >
                   {link.label}
                   {/* Active indicator line */}
@@ -84,9 +82,8 @@ export default function Navbar() {
                     />
                   )}
                   {/* Hover bg */}
-                  <span className={`absolute inset-0 rounded-lg transition-colors duration-200 ${
-                    isActive ? (isDarkHeader ? 'bg-white/10' : 'bg-primary/6') : (isDarkHeader ? 'hover:bg-white/5' : 'hover:bg-surface-container-high')
-                  }`} aria-hidden />
+                  <span className={`absolute inset-0 rounded-lg transition-colors duration-200 ${isActive ? (isDarkHeader ? 'bg-white/10' : 'bg-primary/6') : (isDarkHeader ? 'hover:bg-white/5' : 'hover:bg-surface-container-high')
+                    }`} aria-hidden />
                 </Link>
               );
             })}
@@ -95,12 +92,13 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Link
-              href="/aloqa"
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 ${
-                isDarkHeader 
-                  ? 'bg-white text-primary hover:bg-white/90' 
+              href="https://t.me/komakmentor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 ${isDarkHeader
+                  ? 'bg-white text-primary hover:bg-white/90'
                   : 'bg-gradient-primary text-on-primary hover:opacity-90'
-              }`}
+                }`}
             >
               <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                 chat_bubble
@@ -146,11 +144,10 @@ export default function Navbar() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm font-headline font-semibold transition-colors ${
-                        isActive
+                      className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm font-headline font-semibold transition-colors ${isActive
                           ? 'bg-primary/10 text-primary'
                           : 'text-on-surface hover:bg-surface-container-low'
-                      }`}
+                        }`}
                     >
                       {isActive && (
                         <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -161,7 +158,9 @@ export default function Navbar() {
                 })}
                 <div className="mt-3 pt-3 border-t border-outline-variant/15">
                   <Link
-                    href="/aloqa"
+                    href="https://t.me/komakmentor"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full bg-gradient-primary
                                text-on-primary px-5 py-3.5 rounded-xl font-semibold text-sm
                                shadow-md hover:opacity-90 transition-opacity"
