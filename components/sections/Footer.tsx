@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const links = [
   { label: 'Loyiha haqida', href: '/#about' },
@@ -20,17 +21,15 @@ export default function Footer() {
 
           {/* Brand block */}
           <div className="max-w-sm">
-            <Link href="/" className="inline-flex items-center gap-2 group mb-4">
-              <span
-                className="material-symbols-outlined text-primary text-2xl transition-transform
-                           duration-300 group-hover:scale-110"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                volunteer_activism
-              </span>
-              <span className="text-2xl font-black font-headline text-primary tracking-tight">
-                Ko&apos;mak
-              </span>
+            <Link href="/" className="inline-flex items-center group mb-4">
+              <div className="relative w-36 h-12 transition-transform duration-300 group-hover:scale-105">
+                <Image 
+                  src="/logo.svg" 
+                  alt="Ko'mak Logo" 
+                  fill 
+                  className="object-contain"
+                />
+              </div>
             </Link>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               Chekka va olis hududlarda zamonaviy til o&apos;quv markazlarini ochmoqchi

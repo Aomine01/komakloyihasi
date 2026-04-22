@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
@@ -51,17 +52,17 @@ export default function Navbar() {
           {/* Brand */}
           <Link
             href="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
           >
-            <span
-              className={`material-symbols-outlined text-2xl transition-transform duration-300 group-hover:scale-110 ${logoColorClass}`}
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              volunteer_activism
-            </span>
-            <span className={`text-2xl font-black font-headline tracking-tight ${logoColorClass}`}>
-              Ko&apos;mak
-            </span>
+            <div className="relative w-36 h-12 md:w-44 md:h-14 transition-transform duration-300 group-hover:scale-[1.03]">
+              <Image 
+                src="/logo.svg" 
+                alt="Ko'mak Logo" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop nav */}

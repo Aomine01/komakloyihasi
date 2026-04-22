@@ -79,12 +79,19 @@ const GEO_NAME_TO_REGION: Record<string, string> = {
   'Karakalpakstan': "Qoraqalpog'iston Res."
 };
 
+// GeoJSON id-based override: used when two features share the same name
+const GEO_ID_TO_REGION: Record<string, string> = {
+  'UZTO': 'Toshkent viloyati',
+  'UZTK': 'Toshkent shahri',
+};
+
 const INITIAL_MAP_CENTER: [number, number] = [64.6, 41.6];
 const INITIAL_MAP_ZOOM = 1;
 
 const REGION_CENTERS: Record<string, [number, number]> = {
   'Hammasi': INITIAL_MAP_CENTER,
   'Toshkent viloyati': [69.9, 41.4],
+  'Toshkent shahri': [69.27, 41.3],
   'Samarqand viloyati': [66.4, 39.8],
   'Buxoro viloyati': [63.6, 40.2],
   "Farg'ona viloyati": [71.5, 40.4],
@@ -174,10 +181,9 @@ function BarChart({ data }: { data: number[] }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-40px' });
   return (
-    <div ref={ref} className="h-52 flex items-end gap-1.5">
+    <div ref={ref} className="h-52 flex items-end gap-1 sm:gap-1.5">
       {data.map((v, i) => {
         const h = max > 0 ? (v / max) * 100 : 0;
-        const isLast = i === data.length - 1;
         return (
           <div key={i} className="flex-1 flex flex-col items-center gap-1 group cursor-pointer relative">
             <div className="relative w-full">
@@ -186,14 +192,14 @@ function BarChart({ data }: { data: number[] }) {
                 {v} ta
               </div>
               <motion.div
-                className={`w-full rounded-t-md ${isLast ? 'bg-secondary' : 'bg-primary/70'} group-hover:brightness-110 transition-all`}
+                className="w-full rounded-t-md bg-primary/70 group-hover:bg-primary transition-all"
                 initial={{ height: 0 }}
                 animate={inView ? { height: `${h * 0.52 + 4}px` } : { height: 0 }}
                 transition={{ delay: i * 0.06, duration: 0.6, ease: 'easeOut' }}
                 style={{ minHeight: 4 }}
               />
             </div>
-            <span className="text-[10px] text-on-surface-variant">{MONTHS_SHORT[i]}</span>
+            <span className="text-[9px] sm:text-[10px] text-on-surface-variant">{MONTHS_SHORT[i]}</span>
           </div>
         );
       })}
@@ -329,31 +335,34 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
     ? REGION_ROWS.find(r => r.viloyat.startsWith(activeViloyat))
     : null;
 
-  const currentErkak = activeRegionData ? activeRegionData.erkak : globalErkak;
-  const currentAyol = activeRegionData ? activeRegionData.ayol : globalAyol;
-  const currentLoyiha = activeRegionData ? activeRegionData.loyihalar : globalLoyiha;
+  // If a specific region is selected but has no data (e.g. Toshkent shahri), 
+  // it should show 0 instead of falling back to global totals.
+  const currentErkak = activeViloyat === 'Hammasi' ? globalErkak : (activeRegionData?.erkak || 0);
+  const currentAyol = activeViloyat === 'Hammasi' ? globalAyol : (activeRegionData?.ayol || 0);
+  const currentLoyiha = activeViloyat === 'Hammasi' ? globalLoyiha : (activeRegionData?.loyihalar || 0);
+  const currentMablag = activeViloyat === 'Hammasi' ? globalSumma : (activeRegionData?.mablag || 0);
 
   const genderData = [
-    { label: 'Erkaklar', count: currentErkak, pct: Math.round((currentErkak/currentLoyiha)*100) || 0 },
-    { label: 'Xotin-qizlar', count: currentAyol, pct: Math.round((currentAyol/currentLoyiha)*100) || 0 }
+    { label: 'Erkaklar', count: currentErkak, pct: currentLoyiha > 0 ? Math.round((currentErkak/currentLoyiha)*100) : 0 },
+    { label: 'Xotin-qizlar', count: currentAyol, pct: currentLoyiha > 0 ? Math.round((currentAyol/currentLoyiha)*100) : 0 }
   ];
 
   const kpiCards = [
     {
       icon: 'check_circle',
       label: "Ruxsat berilgan loyihalar",
-      value: activeRegionData ? activeRegionData.loyihalar : globalLoyiha,
+      value: currentLoyiha,
       unit: 'ta',
-      sub: activeRegionData ? `${activeViloyat}da` : "Jami o'rganilgan loyihalar",
+      sub: activeViloyat !== 'Hammasi' ? `${activeViloyat}da` : "Jami o'rganilgan loyihalar",
       trend: "Muvaffaqiyatli moliyalashtirilgan",
       colorIdx: 1,
     },
     {
       icon: 'account_balance',
       label: "Ajratilgan mablag'lar",
-      value: activeRegionData ? activeRegionData.mablag : globalSumma,
+      value: currentMablag,
       unit: 'mln',
-      sub: activeRegionData ? "Hudud uchun" : "Jami ajratilgan ko'mak",
+      sub: activeViloyat !== 'Hammasi' ? "Hudud uchun" : "Jami ajratilgan ko'mak",
       trend: "So'm miqdorida tasdiqlangan",
       colorIdx: 0,
     },
@@ -412,7 +421,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="mt-6 flex flex-wrap gap-4"
+            className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3"
           >
             {[
               { label: "So'nggi yangilanish", value: '20.04.2026' },
@@ -420,9 +429,9 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
               { label: 'Hisobot davri', value: '2025–2026' },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-3 bg-surface-container-lowest rounded-xl px-4 py-3 border border-outline-variant/20 shadow-ambient">
-                <span className="material-symbols-outlined text-primary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>info</span>
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">{item.label}</p>
+                <span className="material-symbols-outlined text-primary text-base shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>info</span>
+                <div className="min-w-0">
+                  <p className="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold truncate">{item.label}</p>
                   <p className="text-sm font-semibold text-on-surface">{item.value}</p>
                 </div>
               </div>
@@ -502,10 +511,14 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                     <Geographies geography="/uz (1).json">
                       {({ geographies }) =>
                         geographies.map((geo) => {
-                          const geoName = geo.properties.name;
-                          const mappedViloyatName = GEO_NAME_TO_REGION[geoName] || geoName;
+                          const geoId = geo.properties.id as string;
+                          const geoName = geo.properties.name as string;
+                          // Use id-based lookup first (handles Tashkent city vs viloyat)
+                          const mappedViloyatName = GEO_ID_TO_REGION[geoId] ?? GEO_NAME_TO_REGION[geoName] ?? geoName;
                           const isActive = activeViloyat === mappedViloyatName;
-                          const regionDataMock = REGION_ROWS.find(r => r.viloyat.startsWith(mappedViloyatName));
+                          const regionDataMock = REGION_ROWS.find(r => r.viloyat === mappedViloyatName);
+                          // Toshkent shahri gets a slightly different shade to distinguish it
+                          const isToshkentCity = geoId === 'UZTK';
 
                           return (
                             <Geography
@@ -515,12 +528,21 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                                  setHoveredRegion(mappedViloyatName + (regionDataMock ? ` — ${regionDataMock.loyihalar} loyiha` : ''));
                               }}
                               onMouseLeave={() => setHoveredRegion('')}
-                              onClick={() => toggleRegion(geoName)}
+                              onClick={() => {
+                                const region = mappedViloyatName;
+                                if (activeViloyat === region) {
+                                  setActiveViloyat('Hammasi');
+                                  animateMapTo(INITIAL_MAP_CENTER, INITIAL_MAP_ZOOM);
+                                } else {
+                                  setActiveViloyat(region);
+                                  animateMapTo(REGION_CENTERS[region] || INITIAL_MAP_CENTER, 2.5);
+                                }
+                              }}
                               style={{
                                 default: {
-                                  fill: isActive ? '#006e2d' : '#bcc9c6',
+                                  fill: isActive ? '#006e2d' : isToshkentCity ? '#a8bab7' : '#bcc9c6',
                                   stroke: '#ffffff',
-                                  strokeWidth: 1.5,
+                                  strokeWidth: isToshkentCity ? 1 : 1.5,
                                   outline: 'none',
                                   transition: 'all 250ms',
                                 },
@@ -631,22 +653,22 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-7 flex flex-col justify-between"
+            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col justify-between"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
               <div>
-                <h3 className="font-body text-lg font-bold text-on-surface">Oylik loyihalar dinamikasi</h3>
-                <p className="text-sm text-on-surface-variant mt-0.5">
+                <h3 className="font-body text-base sm:text-lg font-bold text-on-surface">Oylik loyihalar dinamikasi</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant mt-0.5">
                   {activeViloyat}
                 </p>
               </div>
-              {/* Inline Year Toggle (moved from global filter) */}
-              <div className="flex bg-surface-container p-1 rounded-lg">
+              {/* Inline Year Toggle */}
+              <div className="flex bg-surface-container p-1 rounded-lg self-start sm:self-auto">
                 {YILLAR.map((y) => (
                   <button
                     key={y}
                     onClick={() => setActiveYil(y)}
-                    className={`px-3 py-1 rounded-md text-xs font-semibold transition-all duration-200 ${
+                    className={`px-2.5 sm:px-3 py-1 rounded-md text-xs font-semibold transition-all duration-200 ${
                       activeYil === y
                         ? 'bg-primary text-on-primary shadow-sm'
                         : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
@@ -694,19 +716,19 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             variants={fadeUp}
             className="lg:col-span-2 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient overflow-hidden flex flex-col"
           >
-            <div className="px-6 pt-6 pb-4 border-b border-outline-variant/10">
-                <h3 className="font-body text-lg font-bold text-on-surface">Hududiy ko&apos;rsatkichlar jadvali</h3>
+            <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 border-b border-outline-variant/10">
+                <h3 className="font-body text-base sm:text-lg font-bold text-on-surface">Hududiy ko&apos;rsatkichlar jadvali</h3>
             </div>
             <div className="overflow-x-auto flex-1">
-              <table className="w-full min-w-[650px]">
+              <table className="w-full min-w-[520px]">
                 <thead>
                   <tr className="border-b border-outline-variant/20 bg-surface-container-low">
-                    <th className="text-left text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-6 py-4">#</th>
-                    <th className="text-left text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-4 py-4">Viloyat nomi</th>
-                    <th className="text-center text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-4 py-4">Loyihalar</th>
-                    <th className="text-center text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-4 py-4">Summa</th>
-                    <th className="text-center text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-4 py-4 bg-tertiary/5">Erkaklar</th>
-                    <th className="text-center text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-4 py-4 bg-secondary/5">Ayollar</th>
+                    <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-6 py-3">#</th>
+                    <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-4 py-3">Viloyat</th>
+                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Loyiha</th>
+                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Summa</th>
+                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-tertiary/5">♂</th>
+                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-secondary/5">♀</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -720,30 +742,28 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                       variants={fadeUp}
                       className="border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors"
                     >
-                      <td className="px-6 py-4 text-sm font-bold text-on-surface-variant">
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 text-sm font-bold text-on-surface-variant">
                         {i < 3 ? (
-                          <span className={`inline-flex w-7 h-7 rounded-full items-center justify-center text-xs font-extrabold ${i === 0 ? 'bg-primary text-on-primary' : i === 1 ? 'bg-secondary text-on-secondary' : 'bg-tertiary text-on-tertiary'}`}>
+                          <span className={`inline-flex w-6 h-6 sm:w-7 sm:h-7 rounded-full items-center justify-center text-[10px] sm:text-xs font-extrabold ${i === 0 ? 'bg-primary text-on-primary' : i === 1 ? 'bg-secondary text-on-secondary' : 'bg-tertiary text-on-tertiary'}`}>
                             {i + 1}
                           </span>
                         ) : (
-                          <span className="text-on-surface-variant">{i + 1}</span>
+                          <span className="text-on-surface-variant text-xs sm:text-sm">{i + 1}</span>
                         )}
                       </td>
-                      <td className="px-4 py-4">
-                        <div className="flex items-center gap-3">
-                          <span className="font-medium text-on-surface text-sm">{row.viloyat}</span>
-                        </div>
+                      <td className="px-3 sm:px-4 py-3 sm:py-4">
+                        <span className="font-medium text-on-surface text-xs sm:text-sm">{row.viloyat}</span>
                       </td>
-                      <td className="px-4 py-4 text-center">
-                        <span className="font-headline font-bold text-on-surface">{row.loyihalar}</span>
+                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
+                        <span className="font-headline font-bold text-on-surface text-sm">{row.loyihalar}</span>
                       </td>
-                      <td className="px-4 py-4 text-center">
-                        <span className="text-xs font-extrabold text-primary bg-primary/10 px-3 py-1.5 rounded-md">{row.mablag.toLocaleString().replace(/,/g, ' ')} mln</span>
+                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
+                        <span className="text-[10px] sm:text-xs font-extrabold text-primary bg-primary/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md whitespace-nowrap">{row.mablag.toLocaleString().replace(/,/g, ' ')} mln</span>
                       </td>
-                      <td className="px-4 py-4 text-center bg-tertiary/5">
+                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-tertiary/5">
                         <span className="text-sm font-bold text-on-surface">{row.erkak}</span>
                       </td>
-                      <td className="px-4 py-4 text-center bg-secondary/5">
+                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-secondary/5">
                         <span className="text-sm font-bold text-on-surface">{row.ayol}</span>
                       </td>
                     </motion.tr>
@@ -752,7 +772,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
               </table>
             </div>
             {/* show more */}
-            <div className="px-6 py-4 border-t border-outline-variant/15 flex justify-center bg-surface-container-lowest">
+            <div className="px-4 sm:px-6 py-4 border-t border-outline-variant/15 flex justify-center bg-surface-container-lowest">
               <button
                 onClick={() => setShowAllRows(!showAllRows)}
                 className="flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
@@ -766,7 +786,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
       </section>
 
       {/* ── Data Last Updated Banner ── */}
-      <section className="bg-surface-container-low px-6 py-12 border-t border-outline-variant/10">
+      <section className="bg-surface-container-low px-4 sm:px-6 py-10 sm:py-12 border-t border-outline-variant/10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             custom={0}
@@ -774,25 +794,25 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-gradient-primary rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-on-primary shadow-ambient"
+            className="bg-gradient-primary rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-on-primary shadow-ambient"
           >
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest opacity-80 mb-1">Ma&apos;lumotlar platformasi</p>
-              <h2 className="font-headline text-2xl md:text-3xl font-extrabold">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest opacity-80 mb-1">Ma&apos;lumotlar platformasi</p>
+              <h2 className="font-headline text-xl sm:text-2xl md:text-3xl font-extrabold">
                 Barcha ko&apos;rsatkichlar shaffof va tezkor
               </h2>
-              <p className="mt-2 opacity-80 text-sm">
+              <p className="mt-2 opacity-80 text-xs sm:text-sm">
                 Ko&apos;mak loyihasi ochiq ma&apos;lumotlarni e'lon qilib boradi
               </p>
             </div>
-            <div className="flex items-center flex-wrap gap-4">
-              <div className="text-center bg-white/10 rounded-xl px-6 py-4 backdrop-blur-sm shadow-inner">
-                <p className="font-headline text-3xl font-extrabold">{activeViloyat === 'Hammasi' ? globalLoyiha : activeRegionData?.loyihalar || 0}</p>
-                <p className="text-xs opacity-80 mt-0.5">Faol loyiha</p>
+            <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto">
+              <div className="text-center bg-white/10 rounded-xl px-4 sm:px-6 py-3 sm:py-4 backdrop-blur-sm shadow-inner flex-1 md:flex-none">
+                <p className="font-headline text-2xl sm:text-3xl font-extrabold">{activeViloyat === 'Hammasi' ? globalLoyiha : activeRegionData?.loyihalar || 0}</p>
+                <p className="text-[10px] sm:text-xs opacity-80 mt-0.5">Faol loyiha</p>
               </div>
-              <div className="text-center bg-white/10 rounded-xl px-6 py-4 backdrop-blur-sm shadow-inner">
-                <p className="font-headline text-3xl font-extrabold">{activeViloyat === 'Hammasi' ? 13 : 1}</p>
-                <p className="text-xs opacity-80 mt-0.5">Hudud</p>
+              <div className="text-center bg-white/10 rounded-xl px-4 sm:px-6 py-3 sm:py-4 backdrop-blur-sm shadow-inner flex-1 md:flex-none">
+                <p className="font-headline text-2xl sm:text-3xl font-extrabold">{activeViloyat === 'Hammasi' ? 13 : 1}</p>
+                <p className="text-[10px] sm:text-xs opacity-80 mt-0.5">Hudud</p>
               </div>
             </div>
           </motion.div>
