@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { db } from '@/lib/db';
 import { faqs as faqsTable } from '@/lib/schema';
 import type { FAQ } from '@/lib/types';
@@ -8,6 +9,15 @@ import { eq, asc } from 'drizzle-orm';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata: Metadata = {
+  title: "Ko'p so'raladigan savollar | Ko'mak",
+  description: "Ko'mak loyihasi haqida eng ko'p beriladigan savollar va ularga javoblar.",
+  openGraph: {
+    title: "Ko'p so'raladigan savollar | Ko'mak",
+    description: "Ko'mak loyihasi haqida eng ko'p beriladigan savollar va ularga javoblar.",
+    url: "https://komakloyihasi.uz/faq",
+  },
+};
 async function getFaqs(): Promise<FAQ[]> {
   try {
     return await db

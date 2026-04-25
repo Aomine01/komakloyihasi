@@ -9,6 +9,27 @@ import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const data = await getProject(params.id);
+  if (!data || !data.project.isPublished) {
+    return { title: 'Topilmadi' };
+  }
+  
+  const title = `${data.project.ownerName} | Ko'mak Loyihasi`;
+  const description = data.project.title || "Ko'mak loyihasi ishtirokchisi";
+  
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://komakloyihasi.uz/loyihalar/${params.id}`,
+    }
+  };
+}
 interface Props {
   params: { id: string };
 }

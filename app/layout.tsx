@@ -17,9 +17,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ko'mak — Orzularga qanot beramiz",
+  metadataBase: new URL('https://komakloyihasi.uz'),
+  title: {
+    default: "Ko'mak — Orzularga qanot beramiz",
+    template: "%s | Ko'mak Loyihasi",
+  },
   description:
-    "Chekka va olis hududlarda zamonaviy til o'quv markazlarini ochmoqchi yoshlarga — foizsiz ssuda, davlat ko'magi va yaxlit ekotizim. O'zbekiston Yoshlar fondi loyihasi.",
+    "Chekka hududlarda zamonaviy til o'quv markazlarini ochmoqchi yoshlarga foizsiz ssuda",
   keywords: [
     "Ko'mak",
     'foizsiz ssuda',
@@ -37,8 +41,24 @@ export const metadata: Metadata = {
     title: "Ko'mak — Orzularga qanot beramiz",
     description:
       "Chekka hududlarda zamonaviy til o'quv markazlarini ochmoqchi yoshlarga foizsiz ssuda",
+    url: "https://komakloyihasi.uz",
+    siteName: "Ko'mak Loyihasi",
+    images: [
+      {
+        url: "/komakOG.png",
+        width: 1200,
+        height: 630,
+        alt: "Ko'mak Loyihasi",
+      }
+    ],
     type: 'website',
     locale: 'uz_UZ',
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ko'mak — Orzularga qanot beramiz",
+    description: "Chekka hududlarda zamonaviy til o'quv markazlarini ochmoqchi yoshlarga foizsiz ssuda",
+    images: ["/komakOG.png"],
   },
 };
 
