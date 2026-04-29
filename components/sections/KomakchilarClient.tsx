@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
@@ -13,6 +13,7 @@ interface Person {
   description: string | null;
   images: string[];
   imagePath: string;
+  pdfUrl?: string | null;
 }
 
 interface Viloyat {
@@ -288,12 +289,10 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
                <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10 flex flex-col">
                   <h4 className="font-bold text-primary mb-4 flex items-center gap-2"><span className="material-symbols-outlined text-[18px]">payments</span> Moliyalashtirish</h4>
                   
-                  {parsed.ssudaMiqdori && (
-                    <div className="mb-4">
-                      <p className="text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Ssuda miqdori</p>
-                      <p className="font-headline font-extrabold text-2xl text-on-surface">{parsed.ssudaMiqdori}</p>
-                    </div>
-                  )}
+                  <div className="mb-4">
+                    <p className="text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Ssuda miqdori</p>
+                    <p className="font-headline font-extrabold text-2xl text-on-surface">{parsed.ssudaMiqdori || "130 000 000 so'm"}</p>
+                  </div>
                   {parsed.ssudaSanasi && (
                     <div className="mb-4">
                       <p className="text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Berilgan sana</p>
@@ -316,6 +315,15 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
                    <p className="text-[11px] font-bold uppercase tracking-widest text-primary mb-2">Kelajak maqsadi</p>
                    <p className="text-sm text-on-surface-variant italic relative z-10 leading-relaxed">"{parsed.kelajakMaqsadi}"</p>
                  </div>
+               </div>
+             )}
+             
+             {person.pdfUrl && (
+               <div className="mt-4 pt-4 border-t border-outline-variant/30">
+                 <a href={person.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold hover:bg-primary/90 transition-colors shadow-sm">
+                   <span className="material-symbols-outlined text-xl">picture_as_pdf</span>
+                   Taqdimotni ko'rish (PDF)
+                 </a>
                </div>
              )}
           </div>
@@ -381,6 +389,15 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
               </button>
             )}
           </div>
+
+          {person.pdfUrl && (
+            <div className="mt-6 pt-4 border-t border-outline-variant/30">
+              <a href={person.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold hover:bg-primary/90 transition-colors shadow-sm">
+                <span className="material-symbols-outlined text-xl">picture_as_pdf</span>
+                Taqdimotni ko'rish (PDF)
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </motion.article>
@@ -397,17 +414,28 @@ function RegularCard({ person, viloyatName }: { person: Person; viloyatName: str
       viewport={{ once: true, margin: '-30px' }}
       transition={{ duration: 0.4 }}
       className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(19,27,46,0.06)]
-                 hover:shadow-[0_16px_36px_-4px_rgba(19,27,46,0.1)] transition-all duration-300 hover:-translate-y-1 group"
+                 hover:shadow-[0_16px_36px_-4px_rgba(19,27,46,0.1)] transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full"
     >
       <ImageCarousel person={person} />
-      <div className="p-5 sm:p-6">
-        <h3 className="font-headline text-lg sm:text-xl font-bold text-on-surface mb-2">
+      <div className="p-5 sm:p-6 flex flex-col flex-grow">
+        <h3 className="font-headline text-lg sm:text-xl font-bold text-on-surface mb-3">
           {person.name}
         </h3>
-        <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">
-          <span className="material-symbols-outlined text-[13px]">location_on</span>
-          {viloyatName}
-        </span>
+        <div className="mb-4">
+          <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">
+            <span className="material-symbols-outlined text-[13px]">location_on</span>
+            {viloyatName}
+          </span>
+        </div>
+        
+        {person.pdfUrl && (
+          <div className="mt-auto pt-4 border-t border-outline-variant/20">
+            <a href={person.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface-container-highest hover:bg-primary/10 hover:text-primary text-on-surface font-semibold text-sm transition-colors">
+              <span className="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+              Taqdimotni ko'rish
+            </a>
+          </div>
+        )}
       </div>
     </motion.article>
   );
@@ -529,7 +557,7 @@ export default function KomakchilarClient({ data }: Props) {
           <p className="text-[11px] font-semibold uppercase tracking-widest text-on-surface-variant mb-2.5">
             Viloyat tanlang
           </p>
-          <div ref={tabBarRef} className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+          <div ref={tabBarRef} className="flex gap-2 overflow-x-auto pb-4 pt-1 px-1 custom-scrollbar">
             {/* All tab */}
             <button
               onClick={() => handleTabClick(null)}
@@ -549,26 +577,44 @@ export default function KomakchilarClient({ data }: Props) {
               </span>
             </button>
 
-            {data.viloyatlar.map(v => (
-              <button
-                key={v.slug}
-                data-viloyat={v.slug}
-                onClick={() => handleTabClick(v.slug)}
-                className={`shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full
-                           font-medium text-sm transition-all duration-200 ${
-                  activeViloyat === v.slug
-                    ? 'bg-primary text-on-primary shadow-md'
-                    : 'bg-surface-container-high text-on-surface hover:bg-surface-container-highest'
-                }`}
-              >
-                {v.name.replace(/ viloyati$/i, '')}
-                <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
-                  activeViloyat === v.slug ? 'bg-white/25 text-white' : 'bg-primary/10 text-primary'
-                }`}>
-                  {v.people.length}
-                </span>
-              </button>
-            ))}
+            {[...data.viloyatlar].sort((a, b) => {
+              if (a.slug === 'qoraqalpogiston') return -1;
+              if (b.slug === 'qoraqalpogiston') return 1;
+              if (a.slug === 'toshkent-shahri') return 1;
+              if (b.slug === 'toshkent-shahri') return -1;
+              return a.name.localeCompare(b.name);
+            }).map(v => {
+              const isQoraqalpogiston = v.slug === 'qoraqalpogiston';
+              const displayName = isQoraqalpogiston 
+                ? "Qoraqalpog'iston Respublikasi" 
+                : v.name.replace(/ viloyati$/i, '');
+                
+              return (
+                <React.Fragment key={v.slug}>
+                  <button
+                    data-viloyat={v.slug}
+                    onClick={() => handleTabClick(v.slug)}
+                    className={`shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full
+                               font-medium text-sm transition-all duration-200 ${
+                      activeViloyat === v.slug
+                        ? 'bg-primary text-on-primary shadow-md'
+                        : 'bg-surface-container-high text-on-surface hover:bg-surface-container-highest'
+                    }`}
+                  >
+                    {isQoraqalpogiston && <span className="material-symbols-outlined text-[15px] text-primary mr-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>public</span>}
+                    {displayName}
+                    <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+                      activeViloyat === v.slug ? 'bg-white/25 text-white' : 'bg-primary/10 text-primary'
+                    }`}>
+                      {v.people.length}
+                    </span>
+                  </button>
+                  {isQoraqalpogiston && (
+                    <div className="w-px h-6 bg-outline-variant/40 self-center mx-1 shrink-0" />
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
       </div>

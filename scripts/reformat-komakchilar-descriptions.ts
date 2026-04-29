@@ -442,7 +442,55 @@ SSUDA_MAQSADI: "Elevate" o'quv markazini kengaytirish
 КЕЛАЖАК_МАҚСАДИ: Yoshlarni startap yo'nalishi va ingliz tiliga ixtisoslashgan sohalar (IT, logistika) bo'yicha yo'naltirish
 
 РАСМЛАР:
-- 1.jpg: Shaxsiy rasm`
+- 1.jpg: Shaxsiy rasm`,
+  'xudaybergenova-leyla-alisherovna': `ISM_FAMILIYA: Xudaybergenova Leyla Alisherovna
+LAVOZIM: Tadbirkor va o'qituvchi
+TУГИЛГАН_САНА: 1999-yil
+ТУҒИЛГАН_ЖОЙ: Qoraqalpogʻiston Respublikasi, Nukus shahri
+ЯШАШ_ЖОЙИ: Qoraqalpogʻiston Respublikasi, Nukus shahri
+
+ТАЪЛИМ:
+- Pedagogik kollej
+- Pedagogika instituti
+
+ФАОЛИЯТ:
+- Yoshlarning sifatli ta’lim olishi va xalqaro hamda milliy sertifikatlarni qo‘lga kiritishiga ko'maklashish
+
+КЕЛАЖАК_МАҚСАДИ: Bilimli, mustaqil fikrlaydigan va global maydonda raqobat qila oladigan yangi avlodni tarbiyalash. Innovatsion ta’lim markazlari, rivojlanish platformalari va inkubatsion loyihalar yaratish.`,
+  'ibrohimova-rayhonoy-karimboy-qizi': `ISM_FAMILIYA: Ibrohimova Rayhonoy Karimboy qizi
+LAVOZIM: "Ibrohimova Rayhonoy Karimboy qizi" YaTT o'quv markazi asoschisi, Ingliz tili o'qituvchisi
+TУГИЛГАН_САНА: 2003-yil
+ТУҒИЛГАН_ЖОЙ: Qoraqalpog'iston Respublikasi, Amudaryo tumani
+ЯШАШ_ЖОЙИ: Qoraqalpog'iston Respublikasi, Amudaryo tumani
+
+ТАЪЛИМ:
+- Nukus davlat pedagogika instituti (Ingliz tili va adabiyoti yo‘nalishi)
+- Slovakiya Milliy granti asosida Slovakiyada bir semestr almashinuv dasturi
+
+ФАОЛИЯТ:
+- Ingliz tili fanidan yoshlarni IELTS va CEFR sertifikatlariga tayyorlash
+
+SSUDA_SANASI: 2024-yil mart
+SSUDA_MAQSADI: Amudaryo tumanida o'zining o'quv markaziga asos solish
+
+КЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va ilg'or metodikalar yordamida tayyorlab, kasbga to'g'ri yo'naltirish va ishlash imkonini beruvchi markazlar ochish. Xalqaro grantlarni qo'lga kiritishlariga yordam berish.`,
+  'jumanazarov-sardorbek-rajabboyevich': `ISM_FAMILIYA: Jumanazarov Sardorbek Rajabboyevich
+LAVOZIM: "BRITISH SCHOOL" o'quv markazi asoschisi
+TУГИЛГАН_САНА: 1997-yil
+ТУҒИЛГАН_ЖОЙ: Xorazm viloyati, Xiva tumani
+ЯШАШ_ЖОЙИ: Xorazm viloyati, Xiva shahri
+
+ТАЪЛИМ:
+- Xiva iqtisodiyot va servis kolleji
+- Urganch Davlat Universiteti
+
+ФАОЛИЯТ:
+- Yoshlarga ingliz tilini o'rganish va xalqaro hamda milliy sertifikatlar olishga ko'maklashish
+
+SSUDA_SANASI: 2024-yil mart
+SSUDA_MAQSADI: Xiva shahrida "BRITISH SCHOOL" o'quv markaziga asos solish
+
+КЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va traditsion kasblarga o'qitadigan xalqaro standartlarga javob beradigan xususiy maktab tashkil etish. O'quv markazi binosida kutubxona va IT kurslarini tashkil qilish.`
 };
 
 async function updateDescriptions() {

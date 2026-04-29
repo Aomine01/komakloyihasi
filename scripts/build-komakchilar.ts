@@ -6,11 +6,13 @@ import WordExtractor from 'word-extractor';
 // ─── Config ─────────────────────────────────────────────────────────────────
 
 const SRC_DIR = path.resolve(process.cwd(), 'komakchilar', 'Ozbekiston');
+const QORA_DIR = path.resolve(process.cwd(), 'komakchilar', 'Qoraqalpogiston');
 const DEST_DIR = path.resolve(process.cwd(), 'public', 'assets', 'komakchilar');
 const DATA_FILE = path.resolve(process.cwd(), 'komakchilar-data.json');
 
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
 const DOC_EXTS = new Set(['.doc', '.docx']);
+const PDF_EXTS = new Set(['.pdf']);
 const SKIP_FILES = new Set(['desktop.ini', '.ds_store', 'thumbs.db']);
 
 const wordExtractor = new WordExtractor();
@@ -72,6 +74,7 @@ interface PersonData {
   images: string[];          // sequential filenames: ["1.jpg", "2.jpg", ...]
   originalImages: string[];  // original filenames
   imagePath: string;         // URL path: /assets/komakchilar/viloyat-slug/person-slug/
+  pdfUrl?: string | null;    // URL path to pdf
 }
 
 interface ViloyatData {
@@ -99,9 +102,20 @@ async function main() {
   fs.mkdirSync(DEST_DIR, { recursive: true });
 
   // Scan viloyat directories
-  const viloyatDirs = fs.readdirSync(SRC_DIR)
-    .filter(d => fs.statSync(path.join(SRC_DIR, d)).isDirectory())
-    .sort();
+  const viloyatlarToProcess: { name: string, path: string }[] = [];
+  
+  if (fs.existsSync(SRC_DIR)) {
+    const dirs = fs.readdirSync(SRC_DIR)
+      .filter(d => fs.statSync(path.join(SRC_DIR, d)).isDirectory())
+      .sort();
+    for (const d of dirs) {
+      viloyatlarToProcess.push({ name: d, path: path.join(SRC_DIR, d) });
+    }
+  }
+
+  if (fs.existsSync(QORA_DIR)) {
+    viloyatlarToProcess.push({ name: "Qoraqalpog'iston", path: QORA_DIR });
+  }
 
   const data: KomakchilarData = { viloyatlar: [] };
 
@@ -110,18 +124,23 @@ async function main() {
   let totalFeatured = 0;
   let totalSkippedPeople = 0;
 
-  for (const viloyatName of viloyatDirs) {
-    const viloyatPath = path.join(SRC_DIR, viloyatName);
+  for (const vInfo of viloyatlarToProcess) {
+    const viloyatName = vInfo.name;
+    const viloyatPath = vInfo.path;
     // Clean viloyat name (remove " viloyati" suffix for display if wanted, keep full for name)
     const vilSlug = slugify(viloyatName.replace(/ viloyati$/i, ''));
     
     console.log(`\n━━━ VILOYAT: ${viloyatName} (slug: ${vilSlug}) ━━━`);
 
-    const viloyat: ViloyatData = {
-      name: viloyatName,
-      slug: vilSlug,
-      people: [],
-    };
+    let viloyat = data.viloyatlar.find(v => v.slug === vilSlug);
+    if (!viloyat) {
+      viloyat = {
+        name: viloyatName,
+        slug: vilSlug,
+        people: [],
+      };
+      data.viloyatlar.push(viloyat);
+    }
 
     // Scan person directories
     const personDirs = fs.readdirSync(viloyatPath)
@@ -161,6 +180,7 @@ async function main() {
       const allFiles = fs.readdirSync(personPath);
       const imageFiles: string[] = [];
       const docFiles: string[] = [];
+      const pdfFiles: string[] = [];
 
       for (const fileName of allFiles) {
         if (SKIP_FILES.has(fileName.toLowerCase())) continue;
@@ -175,6 +195,8 @@ async function main() {
           imageFiles.push(fileName);
         } else if (DOC_EXTS.has(ext)) {
           docFiles.push(fileName);
+        } else if (PDF_EXTS.has(ext)) {
+          pdfFiles.push(fileName);
         }
       }
 
@@ -219,6 +241,16 @@ async function main() {
 
       const imagePath = `/assets/komakchilar/${vilSlug}/${personSlug}/`;
 
+      let pdfUrl: string | null = null;
+      if (pdfFiles.length > 0) {
+        const pdfName = pdfFiles[0];
+        const destPdfName = `${personSlug}.pdf`;
+        const srcPath = path.join(personPath, pdfName);
+        const destPath = path.join(destPersonDir, destPdfName);
+        copyFile(srcPath, destPath);
+        pdfUrl = `/assets/komakchilar/${vilSlug}/${personSlug}/${destPdfName}`;
+      }
+
       const person: PersonData = {
         name: personName,
         slug: personSlug,
@@ -227,6 +259,7 @@ async function main() {
         images: sequentialNames,
         originalImages: imageFiles,
         imagePath,
+        pdfUrl,
       };
 
       viloyat.people.push(person);
@@ -243,8 +276,6 @@ async function main() {
       if (!a.featured && b.featured) return 1;
       return a.name.localeCompare(b.name);
     });
-
-    data.viloyatlar.push(viloyat);
   }
 
   // Step 6: Write data JSON

@@ -40,13 +40,16 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 w-full z-50 transition-colors duration-300 ${scrolled
             ? 'bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,27,46,0.07)] border-b border-outline-variant/20'
             : 'bg-transparent backdrop-blur-sm'
           }`}
       >
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-20 md:h-24">
+        <div className="relative flex justify-between items-center max-w-7xl mx-auto px-6 h-20 md:h-24">
 
           {/* Brand */}
           <div className="flex items-center gap-2">
@@ -62,7 +65,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1 h-full">
+          <div className="hidden md:flex items-center gap-1 h-full absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -175,7 +178,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </motion.nav>
 
       {/* Overlay when mobile open */}
       <AnimatePresence>
