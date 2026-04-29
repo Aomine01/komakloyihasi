@@ -7,6 +7,11 @@ const nextConfig = {
   },
   experimental: {
     serverComponentsExternalPackages: ['formidable'],
+    outputFileTracingExcludes: {
+      '*': [
+        './public/assets/komakchilar/**/*',
+      ],
+    },
   },
 };
 
