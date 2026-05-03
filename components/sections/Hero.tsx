@@ -19,12 +19,6 @@ export default function Hero() {
 
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center relative z-10 pt-8 lg:pt-16">
         <div className="space-y-8 flex flex-col items-center">
-          <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp}>
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-container text-on-secondary-container text-sm font-semibold shadow-sm border border-secondary-container/50 hover:bg-secondary-container/80 transition-colors">
-              <span className="material-symbols-outlined text-sm">rocket_launch</span>
-              Ijtimoiy Davlat Loyihasi
-            </div>
-          </motion.div>
 
           <motion.h1 custom={1} initial="hidden" animate="visible" variants={fadeUp} className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-black leading-[1.1] text-on-surface tracking-tight">
             <span className="text-gradient">Ko‘mak</span> - orzularga <br className="hidden md:block" /> qanot beramiz!

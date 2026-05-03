@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Link
-              href="https://t.me/komakmentor"
+                    href="https://t.me/komakadmin"
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 ${isDarkHeader
@@ -161,7 +161,7 @@ export default function Navbar() {
                 })}
                 <div className="mt-3 pt-3 border-t border-outline-variant/15">
                   <Link
-                    href="https://t.me/komakmentor"
+                          href="https://t.me/komakadmin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full bg-gradient-primary

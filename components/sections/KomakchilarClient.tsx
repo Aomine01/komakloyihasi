@@ -102,6 +102,7 @@ function parseTavsif(desc: string | null): ParsedTavsif | null {
 
 function ImageCarousel({ person, labels }: { person: Person; labels?: Record<string, string> }) {
   const [current, setCurrent] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const total = person.images.length;
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
@@ -121,12 +122,17 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full aspect-[4/3] overflow-hidden bg-surface-container rounded-2xl group"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
+    <>
+      <div
+        ref={containerRef}
+        className="relative w-full aspect-square overflow-hidden bg-surface-container rounded-2xl group cursor-pointer"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onClick={(e) => {
+          if ((e.target as HTMLElement).closest('button')) return;
+          setIsFullscreen(true);
+        }}
+      >
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -140,7 +146,7 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
             src={`${person.imagePath}${person.images[current]}`}
             alt={`${person.name} — rasm ${current + 1}`}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             loading="lazy"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
@@ -200,6 +206,69 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
         </div>
       )}
     </div>
+
+      {/* Fullscreen Overlay */}
+      <AnimatePresence>
+        {isFullscreen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 md:p-8" onClick={() => setIsFullscreen(false)}>
+            <button 
+              onClick={(e) => { e.stopPropagation(); setIsFullscreen(false); }}
+              className="absolute top-3 right-3 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50"
+              aria-label="Yopish"
+            >
+              <span className="material-symbols-outlined text-2xl">close</span>
+            </button>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full h-full max-w-5xl max-h-[85vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={`${person.imagePath}${person.images[current]}`}
+                alt={`${person.name} — rasm ${current + 1}`}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                quality={100}
+              />
+              {labels && labels[person.images[current]] && (
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-center text-white text-lg font-medium">
+                  {labels[person.images[current]]}
+                </div>
+              )}
+            </motion.div>
+
+            {/* Navigation arrows for fullscreen */}
+            {total > 1 && (
+              <>
+                <button
+                  onClick={(e) => { e.stopPropagation(); prev(); }}
+                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50"
+                  aria-label="Oldingi"
+                >
+                  <span className="material-symbols-outlined text-3xl">chevron_left</span>
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); next(); }}
+                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50"
+                  aria-label="Keyingi"
+                >
+                  <span className="material-symbols-outlined text-3xl">chevron_right</span>
+                </button>
+                
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 font-medium bg-black/50 px-4 py-1.5 rounded-full backdrop-blur-md">
+                  {current + 1} / {total}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
@@ -227,7 +296,7 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
             </div>
           </div>
           
-          <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col gap-6">
+          <div className="flex-1 p-5 sm:p-8 lg:p-10 flex flex-col gap-5 sm:gap-6">
              <div>
                <div className="flex items-center gap-2 mb-3">
                  <span className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
@@ -239,22 +308,22 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
                    {viloyatName}
                  </span>
                </div>
-               <h3 className="font-headline text-2xl sm:text-3xl font-extrabold text-on-surface leading-tight mb-2">
+               <h3 className="font-headline text-xl sm:text-2xl md:text-3xl font-extrabold text-on-surface leading-tight mb-2">
                  {parsed.ismFamiliya || person.name}
                </h3>
                {parsed.lavozim && (
-                 <p className="text-primary font-medium text-lg">{parsed.lavozim}</p>
+                 <p className="text-primary font-medium text-base sm:text-lg">{parsed.lavozim}</p>
                )}
                
-               <div className="flex flex-wrap gap-x-5 gap-y-2 mt-4 text-[13px] text-on-surface-variant">
+               <div className="flex flex-wrap gap-x-4 sm:gap-x-5 gap-y-2 mt-3 sm:mt-4 text-xs sm:text-[13px] text-on-surface-variant">
                  {parsed.tugilganSana && (
-                   <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px]">calendar_today</span> Tug'ilgan sana: {parsed.tugilganSana}</span>
+                   <span className="flex items-center gap-1 sm:gap-1.5"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">calendar_today</span> Tug'ilgan sana: {parsed.tugilganSana}</span>
                  )}
                  {parsed.tugilganJoy && (
-                   <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px]">home_pin</span> Tug'ilgan joy: {parsed.tugilganJoy}</span>
+                   <span className="flex items-center gap-1 sm:gap-1.5"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">home_pin</span> Tug'ilgan joy: {parsed.tugilganJoy}</span>
                  )}
                  {parsed.yashashJoyi && (
-                   <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px]">location_city</span> Yashash joyi: {parsed.yashashJoyi}</span>
+                   <span className="flex items-center gap-1 sm:gap-1.5"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">location_city</span> Yashash joyi: {parsed.yashashJoyi}</span>
                  )}
                </div>
              </div>
@@ -286,12 +355,12 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
                  )}
                </div>
                
-               <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10 flex flex-col">
-                  <h4 className="font-bold text-primary mb-4 flex items-center gap-2"><span className="material-symbols-outlined text-[18px]">payments</span> Moliyalashtirish</h4>
+               <div className="bg-primary/5 rounded-2xl p-5 sm:p-6 border border-primary/10 flex flex-col">
+                  <h4 className="font-bold text-primary mb-3 sm:mb-4 flex items-center gap-2"><span className="material-symbols-outlined text-[16px] sm:text-[18px]">payments</span> Moliyalashtirish</h4>
                   
-                  <div className="mb-4">
-                    <p className="text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Ssuda miqdori</p>
-                    <p className="font-headline font-extrabold text-2xl text-on-surface">{parsed.ssudaMiqdori || "130 000 000 so'm"}</p>
+                  <div className="mb-3 sm:mb-4">
+                    <p className="text-[10px] sm:text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Ssuda miqdori</p>
+                    <p className="font-headline font-extrabold text-xl sm:text-2xl text-on-surface">{parsed.ssudaMiqdori || "130 000 000 so'm"}</p>
                   </div>
                   {parsed.ssudaSanasi && (
                     <div className="mb-4">
@@ -309,11 +378,11 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
              </div>
              
              {parsed.kelajakMaqsadi && (
-               <div className="mt-auto pt-2">
-                 <div className="bg-surface-container-low rounded-2xl p-6 relative overflow-hidden">
-                   <span className="material-symbols-outlined absolute -right-2 -bottom-2 text-7xl text-on-surface/5" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
-                   <p className="text-[11px] font-bold uppercase tracking-widest text-primary mb-2">Kelajak maqsadi</p>
-                   <p className="text-sm text-on-surface-variant italic relative z-10 leading-relaxed">"{parsed.kelajakMaqsadi}"</p>
+               <div className="mt-auto pt-4 sm:pt-2">
+                 <div className="bg-surface-container-low rounded-2xl p-4 sm:p-6 relative overflow-hidden">
+                   <span className="material-symbols-outlined absolute -right-2 -bottom-2 text-6xl sm:text-7xl text-on-surface/5" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
+                   <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary mb-1.5 sm:mb-2">Kelajak maqsadi</p>
+                   <p className="text-xs sm:text-sm text-on-surface-variant italic relative z-10 leading-relaxed">"{parsed.kelajakMaqsadi}"</p>
                  </div>
                </div>
              )}
@@ -353,26 +422,26 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
         </div>
 
         {/* Content — right side */}
-        <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col">
+        <div className="flex-1 p-5 sm:p-8 lg:p-10 flex flex-col">
           {/* Featured badge */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-              <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+          <div className="flex flex-wrap items-center gap-2 mb-3 sm:mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 rounded-full">
+              <span className="material-symbols-outlined text-[12px] sm:text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
               Tavsif mavjud
             </span>
-            <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">
-              <span className="material-symbols-outlined text-[13px]">location_on</span>
+            <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-1 rounded-full">
+              <span className="material-symbols-outlined text-[11px] sm:text-[13px]">location_on</span>
               {viloyatName}
             </span>
           </div>
 
           {/* Name */}
-          <h3 className="font-headline text-2xl sm:text-3xl font-extrabold text-on-surface mb-4 leading-tight">
+          <h3 className="font-headline text-xl sm:text-2xl lg:text-3xl font-extrabold text-on-surface mb-3 sm:mb-4 leading-tight">
             {person.name}
           </h3>
 
           {/* Description */}
-          <div className="text-on-surface-variant text-[15px] leading-relaxed flex-grow">
+          <div className="text-on-surface-variant text-sm sm:text-[15px] leading-relaxed flex-grow">
             <p className="whitespace-pre-line">
               {displayDesc}
               {isLong && !expanded && '...'}
@@ -417,13 +486,13 @@ function RegularCard({ person, viloyatName }: { person: Person; viloyatName: str
                  hover:shadow-[0_16px_36px_-4px_rgba(19,27,46,0.1)] transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full"
     >
       <ImageCarousel person={person} />
-      <div className="p-5 sm:p-6 flex flex-col flex-grow">
-        <h3 className="font-headline text-lg sm:text-xl font-bold text-on-surface mb-3">
+      <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-grow">
+        <h3 className="font-headline text-lg sm:text-xl font-bold text-on-surface mb-2 sm:mb-3">
           {person.name}
         </h3>
-        <div className="mb-4">
-          <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">
-            <span className="material-symbols-outlined text-[13px]">location_on</span>
+        <div className="mb-3 sm:mb-4">
+          <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">
+            <span className="material-symbols-outlined text-[11px] sm:text-[13px]">location_on</span>
             {viloyatName}
           </span>
         </div>
@@ -475,11 +544,11 @@ export default function KomakchilarClient({ data }: Props) {
     <div className="min-h-screen bg-surface">
 
       {/* ─── HERO ──────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-32 pb-20 px-6">
+      <section className="relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
         <div className="absolute inset-0 bg-gradient-to-br from-[#004f45] via-[#00685f] to-[#008378]" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20"
+        <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full opacity-20"
           style={{ background: 'radial-gradient(circle, #84d5c5 0%, transparent 70%)', transform: 'translate(30%, -30%)' }} />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10"
+        <div className="absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full opacity-10"
           style={{ background: 'radial-gradient(circle, #6bd8cb 0%, transparent 70%)', transform: 'translate(-30%, 30%)' }} />
 
         <div className="relative max-w-7xl mx-auto">
@@ -488,10 +557,10 @@ export default function KomakchilarClient({ data }: Props) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm
-                         text-white/90 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8"
+              className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 border border-white/20 backdrop-blur-sm
+                         text-white/90 text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-6 sm:mb-8"
             >
-              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <span className="material-symbols-outlined text-[12px] sm:text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
                 school
               </span>
               Ko&apos;mak loyihasi ishtirokchilari
@@ -501,8 +570,8 @@ export default function KomakchilarClient({ data }: Props) {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-white
-                         leading-[1.05] tracking-tight mb-5"
+              className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white
+                         leading-[1.1] sm:leading-[1.05] tracking-tight mb-4 sm:mb-5"
             >
               Ko&apos;makchilar
             </motion.h1>
@@ -511,7 +580,7 @@ export default function KomakchilarClient({ data }: Props) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.16 }}
-              className="text-white/70 text-lg leading-relaxed max-w-xl mb-10"
+              className="text-white/75 text-base sm:text-lg leading-relaxed max-w-xl mb-8 sm:mb-10"
             >
               Ko&apos;mak loyihasi doirasida ssuda olgan va o&apos;quv markazlarini tashkil etgan
               yosh tadbirkorlar bilan tanishing.
@@ -532,18 +601,18 @@ export default function KomakchilarClient({ data }: Props) {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 bg-white/10 border border-white/15
-                           backdrop-blur-sm rounded-2xl px-5 py-3"
+                className="flex items-center gap-2.5 sm:gap-3 bg-white/10 border border-white/15
+                           backdrop-blur-sm rounded-2xl px-4 py-2.5 sm:px-5 sm:py-3"
               >
                 <span
-                  className="material-symbols-outlined text-white/80 text-xl"
+                  className="material-symbols-outlined text-white/80 text-lg sm:text-xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   {stat.icon}
                 </span>
                 <div>
-                  <p className="text-white font-headline font-bold text-xl leading-none">{stat.value}</p>
-                  <p className="text-white/55 text-xs mt-0.5">{stat.label}</p>
+                  <p className="text-white font-headline font-bold text-lg sm:text-xl leading-none">{stat.value}</p>
+                  <p className="text-white/55 text-[10px] sm:text-xs mt-0.5">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -554,23 +623,23 @@ export default function KomakchilarClient({ data }: Props) {
       {/* ─── FILTER TAB BAR ──────────────────────────────────── */}
       <div className="sticky top-20 md:top-24 z-30 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/15 shadow-[0_4px_20px_rgba(19,27,46,0.04)]">
         <div className="max-w-7xl mx-auto px-6 py-3">
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-on-surface-variant mb-2.5">
+          <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-on-surface-variant mb-2 sm:mb-2.5">
             Viloyat tanlang
           </p>
           <div ref={tabBarRef} className="flex gap-2 overflow-x-auto pb-4 pt-1 px-1 custom-scrollbar">
             {/* All tab */}
             <button
               onClick={() => handleTabClick(null)}
-              className={`shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full
-                         font-medium text-sm transition-all duration-200 ${
+              className={`shrink-0 inline-flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full
+                         font-medium text-xs sm:text-sm transition-all duration-200 ${
                 activeViloyat === null
                   ? 'bg-primary text-on-primary shadow-md'
                   : 'bg-surface-container-high text-on-surface hover:bg-surface-container-highest'
               }`}
             >
-              <span className="material-symbols-outlined text-[15px]" style={{ fontVariationSettings: "'FILL' 1" }}>apps</span>
+              <span className="material-symbols-outlined text-[14px] sm:text-[15px]" style={{ fontVariationSettings: "'FILL' 1" }}>apps</span>
               Barchasi
-              <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+              <span className={`text-[10px] sm:text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
                 activeViloyat === null ? 'bg-white/25 text-white' : 'bg-primary/10 text-primary'
               }`}>
                 {totalPeople}
@@ -594,16 +663,16 @@ export default function KomakchilarClient({ data }: Props) {
                   <button
                     data-viloyat={v.slug}
                     onClick={() => handleTabClick(v.slug)}
-                    className={`shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full
-                               font-medium text-sm transition-all duration-200 ${
+                    className={`shrink-0 inline-flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full
+                               font-medium text-xs sm:text-sm transition-all duration-200 ${
                       activeViloyat === v.slug
                         ? 'bg-primary text-on-primary shadow-md'
                         : 'bg-surface-container-high text-on-surface hover:bg-surface-container-highest'
                     }`}
                   >
-                    {isQoraqalpogiston && <span className="material-symbols-outlined text-[15px] text-primary mr-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>public</span>}
+                    {isQoraqalpogiston && <span className="material-symbols-outlined text-[14px] sm:text-[15px] text-primary mr-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>public</span>}
                     {displayName}
-                    <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+                    <span className={`text-[10px] sm:text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
                       activeViloyat === v.slug ? 'bg-white/25 text-white' : 'bg-primary/10 text-primary'
                     }`}>
                       {v.people.length}
@@ -641,7 +710,7 @@ export default function KomakchilarClient({ data }: Props) {
                   className="mb-16 last:mb-0"
                 >
                   {/* Section heading */}
-                  <div className="flex items-center gap-4 mb-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-8">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                         <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -649,10 +718,10 @@ export default function KomakchilarClient({ data }: Props) {
                         </span>
                       </div>
                       <div>
-                        <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-on-surface">
+                        <h2 className="font-headline text-xl sm:text-2xl md:text-3xl font-extrabold text-on-surface">
                           {viloyat.name}
                         </h2>
-                        <p className="text-on-surface-variant text-sm">
+                        <p className="text-on-surface-variant text-xs sm:text-sm">
                           {viloyat.people.length} ta ko&apos;makchi
                         </p>
                       </div>
@@ -709,11 +778,11 @@ export default function KomakchilarClient({ data }: Props) {
 
       {/* ─── BOTTOM STATS BAND ───────────────────────────────── */}
       <section className="bg-gradient-to-br from-[#004f45] to-[#00685f] mt-8">
-        <div className="max-w-7xl mx-auto px-6 py-14">
-          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-10">
+        <div className="max-w-7xl mx-auto px-6 py-10 sm:py-14">
+          <p className="text-white/60 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-8 sm:mb-10">
             Loyiha natijalari · 2025–2026
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
             {[
               {
                 icon: 'people',
@@ -735,20 +804,20 @@ export default function KomakchilarClient({ data }: Props) {
               },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/15 flex items-center justify-center shrink-0">
                   <span
-                    className="material-symbols-outlined text-white text-2xl"
+                    className="material-symbols-outlined text-white text-xl sm:text-2xl"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     {item.icon}
                   </span>
                 </div>
                 <div>
-                  <p className="font-headline text-4xl font-extrabold text-white leading-none mb-1">
+                  <p className="font-headline text-3xl sm:text-4xl font-extrabold text-white leading-none mb-1">
                     {item.value}
                   </p>
-                  <p className="font-semibold text-white/90 text-sm mb-0.5">{item.label}</p>
-                  <p className="text-white/55 text-xs">{item.desc}</p>
+                  <p className="font-semibold text-white/90 text-xs sm:text-sm mb-0.5">{item.label}</p>
+                  <p className="text-white/55 text-[10px] sm:text-xs">{item.desc}</p>
                 </div>
               </div>
             ))}

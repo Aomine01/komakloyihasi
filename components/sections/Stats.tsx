@@ -94,7 +94,7 @@ export default function Stats({ stats }: { stats: Stat[] }) {
           <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest rounded-xl shadow-ambient p-8 border border-outline-variant/15">
             <h3 className="font-body text-lg font-semibold text-on-surface mb-6 flex items-center justify-between">
               Moliyalashtirish o&apos;sishi
-              <span className="text-sm font-normal text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full border border-outline-variant/15">2024 Yil</span>
+              <span className="text-sm font-normal text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full border border-outline-variant/15">2025 Yil</span>
             </h3>
             <div className="h-64 flex items-end justify-between gap-2 pt-4">
               <div className="w-full bg-primary/20 rounded-t-sm h-[30%] relative group cursor-pointer hover:bg-primary/30 transition-colors">

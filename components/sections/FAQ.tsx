@@ -106,7 +106,7 @@ export default function FAQSection({ faqs }: { faqs: FAQ[] }) {
   const displayFaqs = faqs && faqs.length > 0 ? faqs : fallbackFaqs;
 
   return (
-    <section id="faq" className="max-w-4xl mx-auto px-6 pt-32 pb-24">
+    <section id="faq" className="max-w-7xl mx-auto px-6 pt-32 pb-24">
       {/* Hero Section */}
       <motion.div custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="text-center mb-16">
         <div className="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-sm font-medium mb-6">
@@ -122,45 +122,76 @@ export default function FAQSection({ faqs }: { faqs: FAQ[] }) {
         </p>
       </motion.div>
 
-      {/* FAQ Accordion List */}
-      <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="max-w-3xl mx-auto">
-        <div className="flex flex-col">
-          {displayFaqs.map((faq) => (
-            <FAQItem
-              key={faq.id}
-              faq={faq}
-              isOpen={openId === faq.id}
-              onToggle={() => setOpenId(openId === faq.id ? null : faq.id)}
-            />
-          ))}
-        </div>
-      </motion.div>
-
-      {/* CTA Section */}
-      <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="mt-20">
-        <div className="bg-surface-container-low rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden border border-outline-variant/15">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
-          <h2 className="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-4">
-            Javob topaolmadingizmi?
-          </h2>
-          <p className="font-body text-on-surface-variant mb-8 max-w-lg mx-auto">
-            Bizning mutaxassislarimiz sizga yordam berishga doim tayyor. O&apos;z savollaringizni to&apos;g&apos;ridan-to&apos;g&apos;ri bizga yo&apos;llang.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-            <a
-              href="https://yoshlarfondi.uz/services/6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-lg font-medium shadow-[0_12px_32px_-4px_rgba(0,104,95,0.2)] hover:shadow-[0_12px_32px_-4px_rgba(0,104,95,0.4)] transition-all flex items-center justify-center"
-            >
-              Mutaxassis bilan bog&apos;lanish
-            </a>
-            <a href="#" className="bg-surface-container-high text-primary px-8 py-3 rounded-lg font-medium hover:bg-surface-container-highest transition-colors flex items-center justify-center">
-              Qo&apos;llanmani yuklab olish
-            </a>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* FAQ Accordion List */}
+        <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="lg:col-span-7">
+          <div className="flex flex-col">
+            {displayFaqs.map((faq) => (
+              <FAQItem
+                key={faq.id}
+                faq={faq}
+                isOpen={openId === faq.id}
+                onToggle={() => setOpenId(openId === faq.id ? null : faq.id)}
+              />
+            ))}
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+
+        {/* Map & CTA Section */}
+        <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="lg:col-span-5 space-y-6 sticky top-24">
+          <div className="bg-surface-container-lowest rounded-3xl p-4 border border-outline-variant/15 shadow-sm hover:shadow-md transition-shadow duration-300">
+            {/* Map */}
+            <div className="relative w-full h-[320px] rounded-2xl overflow-hidden mb-6 bg-surface-container-low">
+              <iframe 
+                src="https://yandex.uz/map-widget/v1/?ll=69.262534%2C41.320043&z=16&pt=69.262534,41.320043,pm2rdm" 
+                width="100%" 
+                height="100%" 
+                frameBorder="0" 
+                allowFullScreen={true} 
+                className="absolute inset-0"
+                title="Yandex Map"
+              />
+            </div>
+            
+            {/* Address & CTA */}
+            <div className="px-2 pb-2">
+              <h3 className="font-headline text-xl font-bold text-on-surface mb-3">
+                Bizning manzil
+              </h3>
+              <p className="font-body text-on-surface-variant flex items-start gap-3 mb-8">
+                <span className="material-symbols-outlined text-primary mt-0.5 shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
+                <span className="leading-relaxed">
+                  Toshkent shahri<br/>
+                  <a href="https://yandex.uz/maps/-/CPSsRMMw" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline mt-1 inline-block">
+                    Alisher Navoiy 11A
+                  </a>
+                </span>
+              </p>
+
+              <div className="bg-surface-container-low rounded-2xl p-6 text-center relative overflow-hidden border border-outline-variant/15">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+                <h4 className="font-headline text-lg font-bold text-on-surface mb-2">
+                  Javob topaolmadingizmi?
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant mb-6">
+                  Mutaxassislarimiz yordam berishga doim tayyor. Savollaringizni bizga yo&apos;llang.
+                </p>
+                <div className="flex flex-col gap-3 relative z-10">
+                  <a
+                    href="https://yoshlarfondi.uz/services/6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-3 rounded-xl font-medium shadow-[0_8px_24px_-4px_rgba(0,104,95,0.2)] hover:shadow-[0_12px_28px_-4px_rgba(0,104,95,0.4)] transition-all flex items-center justify-center text-sm gap-2"
+                  >
+                    <span className="material-symbols-outlined text-[20px]">support_agent</span>
+                    Mutaxassis bilan bog&apos;lanish
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
