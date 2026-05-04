@@ -24,10 +24,10 @@ export default function Asoschilar() {
           <span>Asoschilar</span>
         </div>
         <h2 className="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-6 leading-tight">
-          Loyiha <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">tashkilotchilari</span>
+          Loyiha <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">asoschilari</span>
         </h2>
         <p className="font-body text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-          Ushbu loyiha yoshlar bandligini ta&apos;minlash va tadbirkorlikni rivojlantirish maqsadida davlatimizning nufuzli tashkilotlari hamkorligida amalga oshirilmoqda.
+          Mazkur tashabbus yoshlar bandligini ta&apos;minlash va tadbirkorlikni rivojlantirish maqsadida Yoshlar ishlari agentligi hamda Yoshlar tadbirkorligini rivojlantirish jamg&apos;armasi qoshida tashkil etilgan.
         </p>
       </motion.div>
 
@@ -119,7 +119,7 @@ export default function Asoschilar() {
                   <ul className="space-y-4">
                     {[
                       '18 yoshdan 30 yoshgacha boʻlgan fuqarolar',
-                      'Yakka tartibdagi tadbirkorlar (YaTT)',
+                      'Yakka tartibdagi tadbirkorlar (YTT)',
                       'Dehqonchilik va hunarmandchilik bilan shugʻullanuvchilar',
                       'Ustav fondining 50+ foizi yoshlarga tegishli yuridik shaxslar',
                       'Qishloq xoʻjaligi yerlari ajratilgan yoshlarga xizmat qiluvchi kooperativlar',
@@ -158,10 +158,9 @@ export default function Asoschilar() {
                 <h4 className="font-headline text-2xl font-bold text-on-surface mb-8 text-center">Tashkil etilgan loyihalar</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
-                    { name: 'Ko‘mak', desc: 'Chekka hududlarda zamonaviy ta’lim ekotizimini yaratish, o‘quv markazlarini tashkil etish.' },
+                    { name: 'Ko‘mak', desc: 'Chekka hududlarda zamonaviy ta’lim ekotizimini yaratish va o‘quv markazlari uchun ssuda ajratish loyihasi.' },
                     { name: 'Yoshlar Ventures', desc: 'Istiqbolli startaplarni aniqlab, kapital va mentorlik orqali global bozorga olib chiquvchi venchur fondi.' },
-                    { name: 'Yoshlar Biznes Maktabi', desc: 'Yoshlarga amaliy bilim berish, zamonaviy biznes modellarini o‘rgatishga qaratilgan kompleks ta’lim.' },
-                    { name: 'UzCombinator', desc: 'Startapchilarni global bozorga tayyorlaydigan O‘zbekistondagi ilk intensiv akselerator.' },
+                    { name: 'Yoshlar Biznes Maktabi', desc: 'Yoshlarga amaliy bilim berish va zamonaviy biznes modellarini o‘rgatishga qaratilgan kompleks ta‘lim tizimi.' },
                     { name: 'Yosh Tadbirkorlar Chempionati', desc: 'Eng kuchli, innovatsion biznes va startap loyihalarni aniqlash bo‘yicha respublika bellashuvi.' }
                   ].map((item, i) => (
                     <div key={i} className="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/15 relative overflow-hidden group hover:shadow-md transition-all">
@@ -179,13 +178,13 @@ export default function Asoschilar() {
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
                 
                 <div className="relative z-10 max-w-4xl mx-auto space-y-6">
-                  <p className="font-body text-lg md:text-xl text-primary-container leading-relaxed">
+                  <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed">
                     Jamg‘arma bilan bog‘liq barcha jarayonlar, arizalar qabuli va ishtirokchilarni saralash bosqichlari <strong>yoshlarfondi.uz</strong> elektron platformasi orqali to‘liq onlayn, ochiq hamda shaffof tarzda amalga oshiriladi.
                   </p>
                   <h4 className="font-headline text-3xl md:text-4xl font-extrabold pt-4 tracking-tight">
                     Sizning g‘oyangiz – bizning kelajagimiz!
                   </h4>
-                  <p className="font-body text-lg text-primary-container">
+                  <p className="font-body text-lg text-white/90">
                     Davlatimiz tomonidan yaratilgan ushbu imkoniyatlardan foydalaning va O‘zbekistonning yangi avlod tadbirkorlari qatoridan joy oling!
                   </p>
                   <div className="pt-6">

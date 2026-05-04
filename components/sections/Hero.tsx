@@ -25,7 +25,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp} className="text-lg sm:text-xl md:text-2xl text-on-surface-variant leading-relaxed font-body max-w-3xl text-center">
-            Chekka va olis hududlarda o&apos;quv markazlarini tashkil etish yoki rivojlantirishga qaratilgan imtiyozli ssuda (foizsiz qarz) ajratish loyihasi.
+            Chekka va olis hududlarda o&apos;quv markazi ochish yoki rivojlantirish uchun imtiyozli ssuda ajratuvchi loyiha.
           </motion.p>
 
           <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col sm:flex-row gap-5 pt-6 w-full sm:w-auto justify-center">

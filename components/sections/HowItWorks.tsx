@@ -21,23 +21,23 @@ export default function HowItWorks() {
             Loyiha haqida
           </motion.h2>
           <motion.p custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="text-lg text-on-surface-variant leading-relaxed font-body">
-            &quot;Ko&apos;mak&quot; - chekka va olis hududlarda zamonaviy ta&apos;lim ekotizimini yaratish, o&apos;quv markazlarini tashkil etish va mavjudlarini rivojlantirishga yo&apos;naltirilgan ijtimoiy davlat loyihasidir. Mazkur tashabbus jadid bobolarimiz boshlab bergan ma&apos;rifatparvarlik an&apos;analarini bugungi zamonaviy dunyo bilan birlashtirishni maqsad qilgan.
+            &quot;Ko&apos;mak&quot; – chekka hududlarda zamonaviy ta&apos;lim ekotizimini yaratishga qaratilgan ijtimoiy tashabbusdir. Mazkur tashabbus jadid bobolarimiz boshlab bergan ma&apos;rifatparvarlik an&apos;analarini bugungi zamonaviy dunyo bilan birlashtirishni maqsad qilgan.
           </motion.p>
           <div className="grid sm:grid-cols-3 gap-6 md:gap-8 pt-8 md:pt-12">
             <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-ambient text-left border border-outline-variant/15">
               <span className="material-symbols-outlined text-4xl text-primary mb-4">cast_for_education</span>
-              <h3 className="font-headline text-xl font-semibold text-on-surface mb-2">Ta&apos;lim ekotizimi</h3>
-              <p className="text-on-surface-variant text-sm">Zamonaviy o&apos;quv dasturlari va metodikalari asosida sifatli ta&apos;lim muhitini shakllantirish.</p>
+              <h3 className="font-headline text-xl font-semibold text-on-surface mb-2">Sifatli ta&apos;lim</h3>
+              <p className="text-on-surface-variant text-sm">Zamonaviy metodikalar asosida qishloq yoshlari uchun sifatli bilim olish muhitini yarating.</p>
             </motion.div>
             <motion.div custom={3} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-ambient text-left border border-outline-variant/15">
               <span className="material-symbols-outlined text-4xl text-primary mb-4">groups</span>
-              <h3 className="font-headline text-xl font-semibold text-on-surface mb-2">Ijtimoiy yordam</h3>
-              <p className="text-on-surface-variant text-sm">Ijtimoiy himoyaga muhtoj yoshlarni qo&apos;llab-quvvatlash va ularning bandligini ta&apos;minlash.</p>
+              <h3 className="font-headline text-xl font-semibold text-on-surface mb-2">Ijtimoiy ko&apos;mak</h3>
+              <p className="text-on-surface-variant text-sm">Ijtimoiy himoyaga muhtoj yoshlarni qo&apos;llab-quvvatlang va ularning bandligini ta&apos;minlang.</p>
             </motion.div>
             <motion.div custom={4} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-ambient text-left border border-outline-variant/15">
               <span className="material-symbols-outlined text-4xl text-primary mb-4">public</span>
-              <h3 className="font-headline text-xl font-semibold text-on-surface mb-2">Masofaviy hududlar</h3>
-              <p className="text-on-surface-variant text-sm">Infratuzilmasi rivojlanmagan joylarda yoshlar uchun markazlar tashkil etish ustuvorligi.</p>
+              <h3 className="font-headline text-xl font-semibold text-on-surface mb-2">Hududlar rivoji</h3>
+              <p className="text-on-surface-variant text-sm">Infratuzilmasi rivojlanmagan olis joylarda yangi o&apos;quv markazlari tashkil eting.</p>
             </motion.div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function HowItWorks() {
                   <span className="material-symbols-outlined">lightbulb</span>
                 </span>
                 <h3 className="font-headline text-xl font-bold text-on-surface mb-3">Intellektual tadbirkorlik</h3>
-                <p className="text-on-surface-variant">Ta&apos;lim sohasiga sarmoya kiritayotgan yosh tadbirkorlarni imtiyozli moliyalashtirish orqali ularning faoliyatini barqarorlashtirish.</p>
+                <p className="text-on-surface-variant">Ta&apos;lim sohasiga sarmoya kiritayotgan yosh tadbirkorlarni imtiyozli moliyalashtirish orqali ularni qo&apos;llab-quvvatlash.</p>
               </div>
             </motion.div>
 
@@ -91,8 +91,8 @@ export default function HowItWorks() {
                 <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-on-primary mb-6">
                   <span className="material-symbols-outlined">handshake</span>
                 </span>
-                <h3 className="font-headline text-2xl font-bold text-on-surface mb-4">Ijtimoiy adolat</h3>
-                <p className="text-on-surface-variant text-lg">Bilim olish hamma uchun ochiq bo&apos;lishi kerak. Biz ijtimoiy himoyaga muhtoj qatlamni sifatli ta&apos;lim bilan qamrab olishga ko&apos;maklashamiz.</p>
+                <h3 className="font-headline text-2xl font-bold text-on-surface mb-4">Imtiyozli ssuda olish shartlari</h3>
+                <p className="text-on-surface-variant text-lg">Loyiha doirasida xorijiy tillarga ixtisoslashgan o&apos;quv markazlarini tashkil etish va kengaytirish uchun ssuda ajratiladi.</p>
               </div>
             </motion.div>
           </div>
@@ -115,7 +115,7 @@ export default function HowItWorks() {
                   </div>
                   <div>
                     <h4 className="font-headline font-semibold text-on-surface text-lg">Yosh chegarasi</h4>
-                    <p className="text-on-surface-variant">Ariza topshiruvchi yoshlar 18 yoshdan 30 yoshgacha bo&apos;lishi lozim.</p>
+                    <p className="text-on-surface-variant">Ariza topshiruvchilar 18 yoshdan 30 yoshgacha bo&apos;lishi lozim.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -124,7 +124,7 @@ export default function HowItWorks() {
                   </div>
                   <div>
                     <h4 className="font-headline font-semibold text-on-surface text-lg">Malaka talabi</h4>
-                    <p className="text-on-surface-variant">Loyiha xorijiy tillar bo&apos;yicha C1 darajadagi milliy yoki unga tenglashtirilgan xalqaro sertifikatga ega yoshlarga mo&apos;ljallangan.</p>
+                    <p className="text-on-surface-variant">Xorijiy tillar bo&apos;yicha kamida C1 darajasidagi milliy yoki xalqaro sertifikat talab etiladi.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -133,7 +133,7 @@ export default function HowItWorks() {
                   </div>
                   <div>
                     <h4 className="font-headline font-semibold text-on-surface text-lg">Yuridik maqom</h4>
-                    <p className="text-on-surface-variant">O&apos;quv markazi faoliyatini qonuniy yo&apos;lga qo&apos;yish uchun ariza topshiruvchi YaTT yoki MCHJ sifatida ro&apos;yxatdan o&apos;tgan bo&apos;lishi kerak.</p>
+                    <p className="text-on-surface-variant">Tadbirkorlik faoliyatini YTT yoki MCHJ shaklida davlat ro&apos;yxatidan o&apos;tkazish kerak.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -142,7 +142,7 @@ export default function HowItWorks() {
                   </div>
                   <div>
                     <h4 className="font-headline font-semibold text-on-surface text-lg">Hududiy ustuvorlik</h4>
-                    <p className="text-on-surface-variant">&quot;Ko&apos;mak&quot; loyihasining eng muhim jihati - chekka va olis hududlarda xorijiy tillarga ixtisoslashgan o&apos;quv markazlari ochishga rag&apos;batlantirishdir.</p>
+                    <p className="text-on-surface-variant">O&apos;quv markazlarini asosan olis va chekka hududlarda tashkil etilishi lozim.</p>
                   </div>
                 </li>
               </ul>
@@ -155,13 +155,10 @@ export default function HowItWorks() {
                   <span className="material-symbols-outlined text-sm">support_agent</span>
                   Sizga tayanchmiz
                 </div>
-                <h3 className="font-headline text-2xl font-bold text-on-surface mb-4">Davlat va yosh tadbirkor o&apos;rtasidagi ko&apos;prik</h3>
+                <h3 className="font-headline text-2xl font-bold text-on-surface mb-4">Ko&apos;mak – Davlat va yosh tadbirkor o&apos;rtasidagi ishonchli ko&apos;prik</h3>
                 <p className="text-on-surface-variant mb-6">
-                  Ushbu loyiha shunchaki moliyaviy yordam emas. Bu mablag&apos;lar hisobiga siz o&apos;quv markaz tashkil etishingiz, o&apos;quv darsliklari xarid qilishingiz, zamonaviy xonalarni jihozlashingiz hamda o&apos;quv jarayoniga innovatsion ta&apos;lim texnologiyalarini joriy etishingiz mumkin.
+                  Yoshlarning orzularini haqiqatga aylantirish va ularga har qadamda tayanch bo&apos;lish – bizning oliy maqsadimiz!
                 </p>
-                <div className="bg-surface-container p-4 rounded-xl">
-                  <p className="text-sm text-on-surface-variant">Biz yoshlarning orzularini haqiqatga aylantirish, ularning orqasida mustahkam tayanch borligini his qilishlari uchun xizmat qilamiz.</p>
-                </div>
               </div>
             </motion.div>
           </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography, ZoomableGroup, Marker } from 'react-simple-maps';
 import type { Stat } from '@/lib/types';
 
 /* ────────────────────────── helpers ────────────────────────── */
@@ -30,7 +30,7 @@ const fadeUp = {
 };
 
 /* ────────────────────────── static data ────────────────────── */
-const YILLAR = ['2025-2026', '2026', '2025'];
+const YILLAR = ['Umumiy', '2026', '2025'];
 
 // Monthly data per region (simulated for dynamics)
 const MONTHLY_DATA: Record<string, number[]> = {
@@ -42,8 +42,8 @@ const MONTHS_SHORT = ['Yan','Fev','Mar','Apr','May','Iyun','Iyul','Avg','Sen','O
 
 const PIE_DATA = [
   { label: "Jihozlash va ta'mirlash", pct: 40, color: '#00685f' },
-  { label: "O'quv resurslari", pct: 30, color: '#008378' },
-  { label: 'Texnologiyalar', pct: 20, color: '#006e2d' },
+  { label: "O'quv resurslari", pct: 30, color: '#14b8a6' },
+  { label: 'Texnologiyalar', pct: 20, color: '#f59e0b' },
   { label: 'Boshqalar', pct: 10, color: '#b3c5ff' },
 ];
 
@@ -207,40 +207,86 @@ function BarChart({ data }: { data: number[] }) {
   );
 }
 
-function PieChart() {
+function PieChart({ totalMablag }: { totalMablag: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-40px' });
-  // build conic-gradient stops
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const radius = 15.91549430918954; // circumference is exactly 100
   let cumulative = 0;
-  const stops = PIE_DATA.map((d) => {
-    const start = cumulative;
+  
+  const slices = PIE_DATA.map((d, i) => {
+    // Add a 3% gap between slices, making sure it doesn't drop below 0
+    const visiblePct = Math.max(0, d.pct - 3);
+    const dasharray = `${visiblePct} ${100 - visiblePct}`;
+    const dashoffset = -cumulative;
     cumulative += d.pct;
-    return `${d.color} ${start}% ${cumulative}%`;
-  }).join(', ');
+    return { ...d, dasharray, dashoffset, index: i };
+  });
+
+  const activeSlice = activeIndex !== null ? slices[activeIndex] : null;
 
   return (
     <div ref={ref} className="flex flex-col sm:flex-row items-center justify-center gap-8">
       <div className="relative w-44 h-44 shrink-0">
         <motion.div
-          className="w-full h-full rounded-full"
-          style={{ background: `conic-gradient(${stops})` }}
+          className="w-full h-full"
           initial={{ opacity: 0, scale: 0.7, rotate: -90 }}
           animate={inView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-        />
-        <div className="absolute inset-5 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-inner">
-          <div className="text-center">
-            <span className="block font-headline font-extrabold text-xl text-on-surface">100%</span>
-            <span className="text-[10px] text-on-surface-variant leading-tight">Jami mablag'</span>
+        >
+          <svg viewBox="0 0 42 42" className="w-full h-full -rotate-90 drop-shadow-sm">
+            {slices.map((slice) => {
+              const isActive = activeIndex === slice.index;
+              return (
+                <motion.circle
+                  key={slice.label}
+                  cx="21"
+                  cy="21"
+                  r={radius}
+                  fill="transparent"
+                  stroke={slice.color}
+                  strokeWidth={isActive ? 8 : 5.5}
+                  strokeLinecap="round" // Gives the slices a rounded look like the reference
+                  strokeDasharray={slice.dasharray}
+                  strokeDashoffset={slice.dashoffset}
+                  onMouseEnter={() => setActiveIndex(slice.index)}
+                  onMouseLeave={() => setActiveIndex(null)}
+                  onClick={() => setActiveIndex(isActive ? null : slice.index)}
+                  style={{ cursor: 'pointer', outline: 'none', transition: 'stroke-width 0.3s ease' }}
+                />
+              );
+            })}
+          </svg>
+        </motion.div>
+        <div className="absolute inset-5 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-inner pointer-events-none">
+          <div className="text-center px-2">
+            <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider block mb-0.5">
+              {activeSlice ? activeSlice.label : 'Umumiy'}
+            </span>
+            <span className="block font-headline font-extrabold text-[22px] text-on-surface leading-none">
+              {activeSlice ? `${activeSlice.pct}%` : totalMablag.toLocaleString('uz-UZ').replace(/,/g, ' ')}
+            </span>
+            {!activeSlice && (
+              <span className="text-[10px] text-on-surface-variant font-bold block mt-0.5">
+                mln. so'm
+              </span>
+            )}
           </div>
         </div>
       </div>
       <div className="space-y-3">
-        {PIE_DATA.map((d) => (
-          <div key={d.label} className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: d.color }} />
-            <span className="text-sm text-on-surface-variant">{d.label}</span>
-            <span className="ml-auto text-sm font-semibold text-on-surface">{d.pct}%</span>
+        {slices.map((d) => (
+          <div 
+            key={d.label} 
+            className={`flex items-center gap-3 p-1.5 rounded-md cursor-pointer transition-colors ${activeIndex === d.index ? 'bg-surface-container' : 'hover:bg-surface-container/50'}`}
+            onMouseEnter={() => setActiveIndex(d.index)}
+            onMouseLeave={() => setActiveIndex(null)}
+            onClick={() => setActiveIndex(activeIndex === d.index ? null : d.index)}
+          >
+            <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: d.color, transform: activeIndex === d.index ? 'scale(1.3)' : 'scale(1)', transition: 'transform 0.2s' }} />
+            <span className={`text-sm ${activeIndex === d.index ? 'font-bold text-on-surface' : 'text-on-surface-variant'}`}>{d.label}</span>
+            <span className={`ml-auto text-sm ${activeIndex === d.index ? 'font-bold text-on-surface' : 'font-semibold text-on-surface'}`}>{d.pct}%</span>
           </div>
         ))}
       </div>
@@ -278,7 +324,7 @@ function GenderBar({ label, count, pct, delay, isFemale }: { label: string; coun
 /* ────────────────────────── main component ──────────────────── */
 export default function StatisticsPage({ stats }: { stats: Stat[] }) {
   const [activeViloyat, setActiveViloyat] = useState('Hammasi');
-  const [activeYil, setActiveYil] = useState('2025-2026');
+  const [activeYil, setActiveYil] = useState('Umumiy');
   const [showAllRows, setShowAllRows] = useState(false);
   const [hoveredRegion, setHoveredRegion] = useState('');
   const [mapPosition, setMapPosition] = useState({ center: INITIAL_MAP_CENTER, zoom: INITIAL_MAP_ZOOM });
@@ -344,7 +390,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
 
   const genderData = [
     { label: 'Erkaklar', count: currentErkak, pct: currentLoyiha > 0 ? Math.round((currentErkak/currentLoyiha)*100) : 0 },
-    { label: 'Xotin-qizlar', count: currentAyol, pct: currentLoyiha > 0 ? Math.round((currentAyol/currentLoyiha)*100) : 0 }
+    { label: 'Ayollar', count: currentAyol, pct: currentLoyiha > 0 ? Math.round((currentAyol/currentLoyiha)*100) : 0 }
   ];
 
   const kpiCards = [
@@ -449,18 +495,19 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
         </div>
       </section>
 
-      {/* ── Regional Map (Now acts as the main filter, placed near top) ── */}
+      {/* ── Regional Map & Main Stats ── */}
       <section className="px-6 max-w-7xl mx-auto mb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Map */}
-          <motion.div
-            custom={0}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUp}
-            className="lg:col-span-2 bg-[#f4f7f6] rounded-2xl border border-outline-variant/20 shadow-[inset_0_4px_24px_rgba(0,104,95,0.05)] overflow-hidden relative flex flex-col min-h-[300px] sm:min-h-[400px]"
-          >
+        <motion.div
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          variants={fadeUp}
+          className="bg-[#f4f7f6] rounded-[24px] border border-outline-variant/20 shadow-[inset_0_4px_24px_rgba(0,104,95,0.05)] overflow-hidden relative flex flex-col lg:flex-row min-h-[400px] lg:min-h-[500px]"
+          style={{ backgroundImage: 'radial-gradient(rgba(0, 104, 95, 0.15) 1px, transparent 1px)', backgroundSize: '16px 16px' }}
+        >
+          {/* Left side: Map area */}
+          <div className="flex-1 relative order-2 lg:order-1 min-h-[400px] flex flex-col">
             {/* Map Header */}
             <div className="px-6 pt-6 pb-2 flex justify-between items-start z-10 pointer-events-none border-b border-outline-variant/10">
                 <div>
@@ -479,21 +526,33 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
               </div>
             )}
 
-            {/* Reset Map Selection Button */}
-            {activeViloyat !== 'Hammasi' && (
+            {/* Zoom Controls Panel */}
+            <div className="absolute top-6 right-6 z-20 flex flex-col bg-surface-container-lowest/90 backdrop-blur-sm rounded-xl shadow-sm border border-outline-variant/20 p-1">
+              <button 
+                onClick={() => setMapPosition(p => ({ ...p, zoom: Math.min(p.zoom * 1.5, 5) }))} 
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors"
+                title="Yaqinlashtirish"
+              >
+                <span className="material-symbols-outlined text-[20px]">add</span>
+              </button>
+              <button 
+                onClick={() => setMapPosition(p => ({ ...p, zoom: Math.max(p.zoom / 1.5, 1) }))} 
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors"
+                title="Uzoqlashtirish"
+              >
+                <span className="material-symbols-outlined text-[20px]">remove</span>
+              </button>
+              <div className="w-full h-[1px] bg-outline-variant/20 my-0.5" />
               <button 
                 onClick={() => { setActiveViloyat('Hammasi'); animateMapTo(INITIAL_MAP_CENTER, INITIAL_MAP_ZOOM); }}
-                className="absolute top-6 right-6 z-20 bg-white/90 backdrop-blur-sm hover:bg-surface-container-high text-primary text-sm font-semibold px-4 py-2 rounded-xl shadow border border-primary/20 transition-all flex items-center gap-1"
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors"
+                title="Barchasini ko'rsatish"
               >
-                <span className="material-symbols-outlined text-sm">restart_alt</span>
-                Barchasini ko'rsatish
+                <span className="material-symbols-outlined text-[18px]">refresh</span>
               </button>
-            )}
+            </div>
             
-            <div 
-              className="flex-1 relative overflow-hidden" 
-              style={{ backgroundImage: 'radial-gradient(rgba(0, 104, 95, 0.15) 1px, transparent 1px)', backgroundSize: '16px 16px' }}
-            >
+            <div className="flex-1 relative overflow-hidden">
                 <ComposableMap
                   projection="geoMercator"
                   projectionConfig={{ scale: 1800, center: [65.0, 41.5] }}
@@ -512,11 +571,9 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                         geographies.map((geo) => {
                           const geoId = geo.properties.id as string;
                           const geoName = geo.properties.name as string;
-                          // Use id-based lookup first (handles Tashkent city vs viloyat)
                           const mappedViloyatName = GEO_ID_TO_REGION[geoId] ?? GEO_NAME_TO_REGION[geoName] ?? geoName;
                           const isActive = activeViloyat === mappedViloyatName;
                           const regionDataMock = REGION_ROWS.find(r => r.viloyat === mappedViloyatName);
-                          // Toshkent shahri gets a slightly different shade to distinguish it
                           const isToshkentCity = geoId === 'UZTK';
 
                           return (
@@ -539,15 +596,15 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                               }}
                               style={{
                                 default: {
-                                  fill: isActive ? '#006e2d' : isToshkentCity ? '#a8bab7' : '#bcc9c6',
+                                  fill: isActive ? '#00685f' : isToshkentCity ? '#cbd5e1' : '#e2e8f0',
                                   stroke: '#ffffff',
-                                  strokeWidth: isToshkentCity ? 1 : 1.5,
+                                  strokeWidth: isActive ? 2 : 1,
                                   outline: 'none',
                                   transition: 'all 250ms',
                                 },
                                 hover: {
-                                  fill: isActive ? '#006e2d' : '#89f5e7',
-                                  stroke: '#00685f',
+                                  fill: isActive ? '#005320' : '#89f5e7',
+                                  stroke: isActive ? '#ffffff' : '#00685f',
                                   strokeWidth: 1.5,
                                   outline: 'none',
                                   cursor: 'pointer',
@@ -566,67 +623,69 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                   </ZoomableGroup>
                 </ComposableMap>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Side region list (Scorecard) */}
-          <motion.div
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-6 flex flex-col gap-3 overflow-y-auto"
-            style={{ maxHeight: 400 }}
-          >
-            <div className="flex items-center justify-between mb-2">
-                <div>
-                    <h3 className="font-body font-bold text-on-surface text-lg leading-tight">Holat</h3>
-                    <p className="text-xs text-on-surface-variant font-medium">{activeViloyat === 'Hammasi' ? 'Respublika bo\'yicha' : activeViloyat + ' hududi'}</p>
+          {/* Right side: Stats Panel */}
+          <div className="w-full lg:w-[420px] p-6 lg:p-8 flex flex-col justify-center gap-6 relative z-10 order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-outline-variant/10 bg-transparent">
+            
+            {/* Card 1: Ajratilgan Loyihalar */}
+            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-5 flex items-center gap-5">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-inner">
+                <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              </div>
+              <div className="flex-1">
+                <p className="text-xs text-on-surface-variant font-semibold mb-1">
+                  {activeViloyat === 'Hammasi' ? "Respublika bo'yicha ajratilgan loyihalar" : `${activeViloyat} hududida ajratilgan loyihalar`}
+                </p>
+                <p className="font-headline text-3xl font-extrabold text-on-surface leading-none">{currentLoyiha.toLocaleString().replace(/,/g, ' ')}</p>
+              </div>
+            </div>
+
+            {/* Card 2: Moliyaviy Mablag' */}
+            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 flex flex-col">
+              <p className="text-sm text-on-surface-variant font-semibold mb-2">Jami ajratilgan moliyaviy mablag'</p>
+              <div className="flex items-baseline gap-1.5 mb-6">
+                <p className="font-headline text-[32px] font-extrabold text-on-surface leading-none">
+                  {currentMablag.toLocaleString('uz-UZ').replace(/,/g, ' ')}
+                </p>
+                <span className="text-sm font-bold text-on-surface-variant">mln. so'm</span>
+              </div>
+              
+              {/* Stacked Progress Bar */}
+              <div className="h-2.5 flex rounded-full overflow-hidden mb-5 bg-surface-container-low">
+                <motion.div className="h-full bg-[#3b82f6]" initial={{ width: 0 }} animate={{ width: '40%' }} transition={{ duration: 1 }} />
+                <motion.div className="h-full bg-[#10b981]" initial={{ width: 0 }} animate={{ width: '20%' }} transition={{ duration: 1 }} />
+                <motion.div className="h-full bg-[#f59e0b]" initial={{ width: 0 }} animate={{ width: '40%' }} transition={{ duration: 1 }} />
+              </div>
+
+              {/* Legend for Stacked Bar */}
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center justify-between text-[13px]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-4 h-1.5 rounded-full bg-[#3b82f6] shrink-0"></span>
+                    <span className="text-on-surface-variant font-medium">Talab qilingan mablag'</span>
+                  </div>
+                  <span className="font-bold text-on-surface text-right whitespace-nowrap ml-2">{Math.round(currentMablag * 1.25).toLocaleString('uz-UZ').replace(/,/g, ' ')} <span className="text-[10px] text-on-surface-variant font-normal">mln. so'm</span></span>
                 </div>
+                <div className="flex items-center justify-between text-[13px]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-4 h-1.5 rounded-full bg-[#10b981] shrink-0"></span>
+                    <span className="text-on-surface-variant font-medium">Jamg'arma tomonidan ajratilgan mablag'</span>
+                  </div>
+                  <span className="font-bold text-on-surface text-right whitespace-nowrap ml-2">{Math.round(currentMablag * 0.15).toLocaleString('uz-UZ').replace(/,/g, ' ')} <span className="text-[10px] text-on-surface-variant font-normal">mln. so'm</span></span>
+                </div>
+                <div className="flex items-center justify-between text-[13px]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-4 h-1.5 rounded-full bg-[#f59e0b] shrink-0"></span>
+                    <span className="text-on-surface-variant font-medium">Bank kreditlari</span>
+                  </div>
+                  <span className="font-bold text-on-surface text-right whitespace-nowrap ml-2">{Math.round(currentMablag * 0.85).toLocaleString('uz-UZ').replace(/,/g, ' ')} <span className="text-[10px] text-on-surface-variant font-normal">mln. so'm</span></span>
+                </div>
+              </div>
             </div>
-            <div className="flex-1 flex flex-col gap-3">
-                {filteredRows.map((row, i) => {
-                  const maxLoyiha = REGION_ROWS[0].loyihalar;
-                  const fillPct = Math.round((row.loyihalar / maxLoyiha) * 100);
-                  return (
-                    <div key={row.viloyat} className="group cursor-pointer" onClick={() => {
-                        const rv = row.viloyat.split(' ')[0];
-                        setActiveViloyat(rv);
-                        animateMapTo(REGION_CENTERS[rv] || INITIAL_MAP_CENTER, 2.5);
-                      }}>
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-extrabold shrink-0 ${
-                              i === 0
-                                ? 'bg-primary text-on-primary'
-                                : i === 1
-                                ? 'bg-secondary text-on-secondary'
-                                : i === 2
-                                ? 'bg-tertiary text-on-tertiary'
-                                : 'bg-surface-container text-on-surface-variant'
-                            }`}
-                          >
-                            {i + 1}
-                          </span>
-                          <span className="text-xs font-medium text-on-surface group-hover:text-primary transition-colors">{row.viloyat}</span>
-                        </div>
-                        <span className="text-xs font-bold text-primary">{row.loyihalar} ta</span>
-                      </div>
-                      <div className="h-1.5 bg-surface-container rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-gradient-to-r from-primary to-primary-container rounded-full"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${fillPct}%` }}
-                          transition={{ delay: i * 0.07, duration: 0.7, ease: 'easeOut' }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-            </div>
-          </motion.div>
-        </div>
+
+          </div>
+        </motion.div>
       </section>
 
       {/* ── Charts Row (Pie & Bar) ── */}
@@ -642,7 +701,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col justify-center"
           >
             <h3 className="font-body text-lg font-bold text-on-surface mb-8">Loyihalar taqsimoti</h3>
-            <PieChart />
+            <PieChart totalMablag={currentMablag} />
           </motion.div>
 
           {/* Bar chart — Right side now with Year Toggle */}
@@ -696,7 +755,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col gap-6"
           >
              <div>
-                <h3 className="font-body text-lg font-bold text-on-surface">Jinsi bo&apos;yicha statistika</h3>
+                <h3 className="font-body text-lg font-bold text-on-surface">Gender bo&apos;yicha statistika</h3>
                 <p className="text-sm text-on-surface-variant mt-1">{activeViloyat === 'Hammasi' ? 'Jami ajratilgan qarzlar bo\'yicha' : activeViloyat + ' hududida'}</p>
              </div>
              <div className="space-y-6 flex-1 flex flex-col justify-center">

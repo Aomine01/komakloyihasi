@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { label: 'Asosiy', href: '/' },
-  { label: 'Statistika', href: '/statistika' },
+  { label: 'Natijalar', href: '/statistika' },
   { label: "Ko'makchilar", href: '/loyihalar' },
   { label: 'FAQ', href: '/faq' },
 ];
@@ -53,9 +53,9 @@ export default function Navbar() {
 
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="inline-flex items-center group relative w-[180px] h-[52px] md:w-[240px] md:h-[68px] lg:w-[300px] lg:h-[80px]">
+            <Link href="/" className="inline-flex items-center group relative w-[140px] h-[40px] md:w-[180px] md:h-[50px] lg:w-[220px] lg:h-[60px]">
               <Image
-                src={isDarkHeader ? "/Group 211.svg" : "/Group 202.svg"}
+                src={isDarkHeader ? "/Group 211.svg" : "/Group 212.svg"}
                 alt="Ko'mak Logo"
                 fill
                 priority

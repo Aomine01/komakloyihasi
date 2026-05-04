@@ -4,7 +4,7 @@ import Image from 'next/image';
 const links = [
   { label: 'Loyiha haqida', href: '/#about' },
   { label: "Ko'makchilar", href: '/loyihalar' },
-  { label: 'Statistika', href: '/statistika' },
+  { label: 'Natijalar', href: '/statistika' },
   { label: 'FAQ', href: '/faq' },
   { label: "Bog'lanish", href: 'https://t.me/komakadmin' },
 ];
