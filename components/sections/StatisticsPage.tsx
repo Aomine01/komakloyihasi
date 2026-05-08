@@ -50,11 +50,14 @@ const MONTHLY_DATA: Record<string, number[]> = {
 
 const MONTHS_SHORT = ['Okt','Noy','Dek','Yan','Fev','Mar','Apr','May','Iyun','Iyul','Avg','Sen'];
 
-// Faoliyat holati (Activity Status)
+// Loyihalarning umumiy holati (Project Status)
 const ACTIVITY_DATA = [
-  { label: 'Faol', count: 221, pct: 73, color: '#00685f' },
-  { label: 'Jarayonda', count: 35, pct: 12, color: '#3b82f6' },
-  { label: 'Nofaol', count: 46, pct: 15, color: '#ef4444' },
+  { label: 'Moliyalashtirildi', count: 385, pct: 54, color: '#00685f' },
+  { label: 'Hujjatlar yig\'ilmoqda', count: 172, pct: 24, color: '#3b82f6' },
+  { label: 'Rad etilgan', count: 135, pct: 19, color: '#ef4444' },
+  { label: 'Imzoda', count: 9, pct: 1, color: '#f59e0b' },
+  { label: 'G\'aznaga taqdim', count: 7, pct: 1, color: '#8b5cf6' },
+  { label: 'MFY to\'g\'ri kelmaydi', count: 4, pct: 1, color: '#64748b' },
 ];
 
 // Xulosa matritsasi
@@ -94,20 +97,197 @@ const PIE_DATA = [
 ];
 
 const REGION_ROWS = [
-  { viloyat: "Qoraqalpog'iston Res.", markazlar: 30, summa: 3800, oqituvchilar: 37, oquvchilar: 754 },
-  { viloyat: 'Andijon viloyati', markazlar: 19, summa: 2450, oqituvchilar: 63, oquvchilar: 1662 },
-  { viloyat: 'Buxoro viloyati', markazlar: 61, summa: 7660, oqituvchilar: 100, oquvchilar: 1966 },
-  { viloyat: 'Jizzax viloyati', markazlar: 17, summa: 2200, oqituvchilar: 17, oquvchilar: 455 },
-  { viloyat: 'Qashqadaryo viloyati', markazlar: 32, summa: 4030, oqituvchilar: 72, oquvchilar: 1705 },
-  { viloyat: 'Navoiy viloyati', markazlar: 20, summa: 2600, oqituvchilar: 50, oquvchilar: 1334 },
-  { viloyat: 'Namangan viloyati', markazlar: 12, summa: 1417, oqituvchilar: 47, oquvchilar: 1627 },
-  { viloyat: 'Samarqand viloyati', markazlar: 21, summa: 2730, oqituvchilar: 59, oquvchilar: 928 },
-  { viloyat: 'Sirdaryo viloyati', markazlar: 5, summa: 650, oqituvchilar: 12, oquvchilar: 201 },
-  { viloyat: 'Surxondaryo viloyati', markazlar: 35, summa: 4550, oqituvchilar: 83, oquvchilar: 1948 },
-  { viloyat: 'Toshkent viloyati', markazlar: 18, summa: 2341, oqituvchilar: 46, oquvchilar: 772 },
-  { viloyat: "Farg'ona viloyati", markazlar: 19, summa: 2410, oqituvchilar: 82, oquvchilar: 2011 },
-  { viloyat: 'Xorazm viloyati', markazlar: 13, summa: 1690, oqituvchilar: 30, oquvchilar: 1202 },
+  { viloyat: 'Buxoro viloyati', markazlar: 66, summa: 8490, erkak: 27, ayol: 39 },
+  { viloyat: 'Surxondaryo viloyati', markazlar: 49, summa: 6330, erkak: 29, ayol: 20 },
+  { viloyat: 'Qashqadaryo viloyati', markazlar: 39, summa: 4940, erkak: 25, ayol: 14 },
+  { viloyat: 'Samarqand viloyati', markazlar: 36, summa: 4620, erkak: 23, ayol: 13 },
+  { viloyat: "Farg'ona viloyati", markazlar: 31, summa: 3940, erkak: 18, ayol: 13 },
+  { viloyat: "Qoraqalpog'iston Res.", markazlar: 30, summa: 3800, erkak: 14, ayol: 16 },
+  { viloyat: 'Andijon viloyati', markazlar: 26, summa: 3360, erkak: 18, ayol: 8 },
+  { viloyat: 'Navoiy viloyati', markazlar: 23, summa: 2990, erkak: 10, ayol: 13 },
+  { viloyat: 'Xorazm viloyati', markazlar: 23, summa: 2980, erkak: 11, ayol: 12 },
+  { viloyat: 'Jizzax viloyati', markazlar: 21, summa: 2720, erkak: 16, ayol: 5 },
+  { viloyat: 'Toshkent viloyati', markazlar: 19, summa: 2411, erkak: 16, ayol: 3 },
+  { viloyat: 'Namangan viloyati', markazlar: 17, summa: 2067, erkak: 13, ayol: 4 },
+  { viloyat: 'Sirdaryo viloyati', markazlar: 5, summa: 650, erkak: 3, ayol: 2 },
 ].sort((a,b) => b.markazlar - a.markazlar);
+
+const TUMAN_DATA: Record<string, Array<{tuman: string, soni: number, summa: number}>> = {
+  'Buxoro viloyati': [
+    { tuman: 'Jondor t.', soni: 14, summa: 1810 },
+    { tuman: "G'ijduvon t.", soni: 11, summa: 1430 },
+    { tuman: 'Shofirkon t.', soni: 9, summa: 1170 },
+    { tuman: 'Romitan t.', soni: 7, summa: 910 },
+    { tuman: "Qorako'l t.", soni: 5, summa: 650 },
+    { tuman: 'Peshku t.', soni: 5, summa: 650 },
+    { tuman: 'Vobkent t.', soni: 4, summa: 520 },
+    { tuman: 'Buxoro t.', soni: 4, summa: 440 },
+    { tuman: 'Olot t.', soni: 3, summa: 390 },
+    { tuman: 'Qorovulbozor t.', soni: 2, summa: 260 },
+    { tuman: 'Kogon t.', soni: 2, summa: 260 },
+  ],
+  'Surxondaryo viloyati': [
+    { tuman: "Jarqo'rg'on t.", soni: 13, summa: 1690 },
+    { tuman: 'Sariosiyo t.', soni: 5, summa: 650 },
+    { tuman: "Sho'rchi t.", soni: 4, summa: 520 },
+    { tuman: "Qumqo'rg'on t.", soni: 4, summa: 520 },
+    { tuman: 'Muzrabot t.', soni: 4, summa: 480 },
+    { tuman: 'Termiz t.', soni: 3, summa: 390 },
+    { tuman: 'Oltinsoy t.', soni: 3, summa: 390 },
+    { tuman: 'Angor t.', soni: 3, summa: 390 },
+    { tuman: 'Uzun t.', soni: 2, summa: 260 },
+    { tuman: 'Qiziriq t.', soni: 2, summa: 260 },
+    { tuman: 'Boysun t.', soni: 2, summa: 260 },
+    { tuman: 'Termiz sh.', soni: 1, summa: 130 },
+    { tuman: 'Sherobod t.', soni: 1, summa: 130 },
+    { tuman: 'Denov t.', soni: 1, summa: 130 },
+    { tuman: 'Bandixon t.', soni: 1, summa: 130 },
+  ],
+  'Qashqadaryo viloyati': [
+    { tuman: 'Qamashi t.', soni: 8, summa: 940 },
+    { tuman: 'Koson t.', soni: 5, summa: 620 },
+    { tuman: 'Kasbi t.', soni: 4, summa: 520 },
+    { tuman: 'Qarshi t.', soni: 4, summa: 520 },
+    { tuman: "Yakkabog' t.", soni: 3, summa: 390 },
+    { tuman: 'Shaxrisabz t.', soni: 3, summa: 390 },
+    { tuman: "Ko'kdala t.", soni: 3, summa: 390 },
+    { tuman: 'Muborak t.', soni: 2, summa: 260 },
+    { tuman: "G'uzor t.", soni: 2, summa: 260 },
+    { tuman: 'Nishon t.', soni: 1, summa: 130 },
+    { tuman: 'Mirishkor t.', soni: 1, summa: 130 },
+    { tuman: 'Kitob t.', soni: 1, summa: 130 },
+    { tuman: 'Dehqonobod t.', soni: 1, summa: 130 },
+    { tuman: 'Chiroqchi t.', soni: 1, summa: 130 },
+  ],
+  'Samarqand viloyati': [
+    { tuman: 'Urgut t.', soni: 6, summa: 720 },
+    { tuman: 'Narpay t.', soni: 4, summa: 520 },
+    { tuman: "Kattaqo'rg'on sh.", soni: 4, summa: 520 },
+    { tuman: 'Samarqand t.', soni: 3, summa: 390 },
+    { tuman: 'Paxtachi t.', soni: 3, summa: 390 },
+    { tuman: 'Jomboy t.', soni: 3, summa: 390 },
+    { tuman: "Bulung'ur t.", soni: 3, summa: 390 },
+    { tuman: 'Payariq t.', soni: 2, summa: 260 },
+    { tuman: 'Nurobod t.', soni: 2, summa: 260 },
+    { tuman: 'Ishtixon t.', soni: 2, summa: 260 },
+    { tuman: 'Tayloq t.', soni: 1, summa: 130 },
+    { tuman: "Qo'shrabod t.", soni: 1, summa: 130 },
+    { tuman: 'Oqdaryo t.', soni: 1, summa: 130 },
+    { tuman: "Kattaqo'rg'on t.", soni: 1, summa: 130 },
+  ],
+  "Farg'ona viloyati": [
+    { tuman: "O'zbekiston t.", soni: 5, summa: 650 },
+    { tuman: 'Furqat t.', soni: 4, summa: 520 },
+    { tuman: 'Oltiariq t.', soni: 3, summa: 390 },
+    { tuman: 'Buvayda t.', soni: 3, summa: 390 },
+    { tuman: "Bag'dod t.", soni: 3, summa: 390 },
+    { tuman: "Qo'shtepa t.", soni: 2, summa: 200 },
+    { tuman: "Farg'ona t.", soni: 2, summa: 260 },
+    { tuman: "Farg'ona sh.", soni: 2, summa: 260 },
+    { tuman: 'Yozyovon t.', soni: 1, summa: 130 },
+    { tuman: "So'x t.", soni: 1, summa: 130 },
+    { tuman: 'Rishton t.', soni: 1, summa: 100 },
+    { tuman: 'Quvasoy sh.', soni: 1, summa: 130 },
+    { tuman: 'Quva t.', soni: 1, summa: 130 },
+    { tuman: "Qo'qon sh.", soni: 1, summa: 130 },
+    { tuman: 'Beshariq t.', soni: 1, summa: 130 },
+  ],
+  "Qoraqalpog'iston Res.": [
+    { tuman: 'Taqiyatosh t.', soni: 5, summa: 650 },
+    { tuman: "Qonliko'l t.", soni: 4, summa: 420 },
+    { tuman: 'Nukus t.', soni: 3, summa: 390 },
+    { tuman: 'Nukus sh.', soni: 3, summa: 390 },
+    { tuman: 'Amudaryo t.', soni: 3, summa: 390 },
+    { tuman: "Xo'jayli t.", soni: 2, summa: 260 },
+    { tuman: "Taxtako'pir t.", soni: 2, summa: 260 },
+    { tuman: 'Shumanay t.', soni: 2, summa: 260 },
+    { tuman: "Qorao'zak t.", soni: 2, summa: 260 },
+    { tuman: "To'rtko'l t.", soni: 1, summa: 130 },
+    { tuman: "Qo'ng'irot t.", soni: 1, summa: 130 },
+    { tuman: 'Kegeyli t.', soni: 1, summa: 130 },
+    { tuman: 'Beruniy t.', soni: 1, summa: 130 },
+  ],
+  'Andijon viloyati': [
+    { tuman: 'Paxtaobod t.', soni: 7, summa: 900 },
+    { tuman: 'Andijon t.', soni: 5, summa: 650 },
+    { tuman: 'Izboskan t.', soni: 3, summa: 390 },
+    { tuman: 'Baliqchi t.', soni: 3, summa: 390 },
+    { tuman: "Xo'jaobod t.", soni: 2, summa: 250 },
+    { tuman: "Qo'rg'ontepa t.", soni: 2, summa: 260 },
+    { tuman: "Bo'zton t.", soni: 2, summa: 260 },
+    { tuman: 'Marhamat t.', soni: 1, summa: 130 },
+    { tuman: 'Buloqboshi t.', soni: 1, summa: 130 },
+  ],
+  'Navoiy viloyati': [
+    { tuman: 'Xatirchi t.', soni: 7, summa: 910 },
+    { tuman: 'Nurota t.', soni: 3, summa: 390 },
+    { tuman: 'Zarafshon sh.', soni: 2, summa: 260 },
+    { tuman: 'Uchquduq t.', soni: 2, summa: 260 },
+    { tuman: 'Tomdi t.', soni: 2, summa: 260 },
+    { tuman: 'Karmana t.', soni: 2, summa: 260 },
+    { tuman: 'Qiziltepa t.', soni: 1, summa: 130 },
+    { tuman: 'Navoiy sh.', soni: 1, summa: 130 },
+    { tuman: 'Navbahor t.', soni: 1, summa: 130 },
+    { tuman: 'Konimex t.', soni: 1, summa: 130 },
+    { tuman: "G'ozg'on sh.", soni: 1, summa: 130 },
+  ],
+  'Xorazm viloyati': [
+    { tuman: 'Yangiariq t.', soni: 4, summa: 520 },
+    { tuman: 'Xiva sh.', soni: 4, summa: 520 },
+    { tuman: 'Yangibozor t.', soni: 3, summa: 390 },
+    { tuman: 'Xonqa t.', soni: 2, summa: 260 },
+    { tuman: 'Xazorasp t.', soni: 2, summa: 260 },
+    { tuman: "Qo'shko'pir t.", soni: 2, summa: 250 },
+    { tuman: "Bog'ot t.", soni: 2, summa: 260 },
+    { tuman: 'Urganch t.', soni: 1, summa: 130 },
+    { tuman: "Tuproqqal'a t.", soni: 1, summa: 130 },
+    { tuman: 'Shovot t.', soni: 1, summa: 130 },
+    { tuman: 'Gurlan t.', soni: 1, summa: 130 },
+  ],
+  'Jizzax viloyati': [
+    { tuman: "G'allaorol t.", soni: 7, summa: 910 },
+    { tuman: 'Zomin t.', soni: 4, summa: 520 },
+    { tuman: 'Zarbdor t.', soni: 3, summa: 380 },
+    { tuman: 'Sh.Rashidov', soni: 2, summa: 260 },
+    { tuman: 'Zafarobod t.', soni: 1, summa: 130 },
+    { tuman: 'Jizzax sh.', soni: 1, summa: 130 },
+    { tuman: "Do'stlik t.", soni: 1, summa: 130 },
+    { tuman: 'Baxmal t.', soni: 1, summa: 130 },
+    { tuman: 'Arnasoy t.', soni: 1, summa: 130 },
+  ],
+  'Toshkent viloyati': [
+    { tuman: 'Yuqorichirchiq t.', soni: 2, summa: 260 },
+    { tuman: 'Toshkent t.', soni: 2, summa: 261 },
+    { tuman: 'Piskent t.', soni: 2, summa: 260 },
+    { tuman: 'Parkent t.', soni: 2, summa: 260 },
+    { tuman: 'Qibray t.', soni: 2, summa: 260 },
+    { tuman: 'Zangiota t.', soni: 2, summa: 260 },
+    { tuman: "Yangiyo'l sh.", soni: 1, summa: 130 },
+    { tuman: 'Chinoz t.', soni: 1, summa: 130 },
+    { tuman: "O'rtachirchiq t.", soni: 1, summa: 130 },
+    { tuman: 'Olmaliq sh.', soni: 1, summa: 130 },
+    { tuman: "Oqqo'rg'on t.", soni: 1, summa: 130 },
+    { tuman: "Bo'stonliq t.", soni: 1, summa: 130 },
+    { tuman: 'Ohangaron t.', soni: 1, summa: 70 },
+  ],
+  'Namangan viloyati': [
+    { tuman: "Uchqo'rg'on t.", soni: 5, summa: 570 },
+    { tuman: 'Uychi t.', soni: 3, summa: 337 },
+    { tuman: 'Kosonsoy t.', soni: 3, summa: 385 },
+    { tuman: "Yangiqo'rg'on t.", soni: 2, summa: 260 },
+    { tuman: 'Pop t.', soni: 1, summa: 130 },
+    { tuman: 'Norin t.', soni: 1, summa: 125 },
+    { tuman: 'Chust t.', soni: 1, summa: 130 },
+    { tuman: "To'raqo'rg'on t.", soni: 1, summa: 130 },
+  ],
+  'Sirdaryo viloyati': [
+    { tuman: 'Sirdaryo t.', soni: 1, summa: 130 },
+    { tuman: 'Sardoba t.', soni: 1, summa: 130 },
+    { tuman: 'Oqoltin t.', soni: 1, summa: 130 },
+    { tuman: 'Mirzaobod t.', soni: 1, summa: 130 },
+    { tuman: 'Guliston t.', soni: 1, summa: 130 },
+  ],
+};
 
 const GEO_NAME_TO_REGION: Record<string, string> = {
   'Tashkent': 'Toshkent viloyati',
@@ -195,7 +375,7 @@ function KPICard({
       whileInView="visible"
       viewport={{ once: true, margin: '-40px' }}
       variants={fadeUp}
-      className={`relative bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/20 shadow-ambient overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,104,95,0.15)]`}
+      className={`relative bg-white rounded-2xl p-6 shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,104,95,0.15)]`}
     >
       {/* decorative blob */}
       <div className={`absolute -right-8 -top-8 w-36 h-36 rounded-full ${c.bg} blur-2xl group-hover:scale-110 transition-transform duration-500 pointer-events-none`} />
@@ -350,66 +530,82 @@ function PieChart({ totalMablag }: { totalMablag: number }) {
   const gap = 3.5;
 
   return (
-    <div ref={ref} className="flex flex-col sm:flex-row items-center justify-center gap-8 w-full">
-      <div className="relative w-48 h-48 shrink-0 flex items-center justify-center">
-        <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90 overflow-visible">
-          {PIE_DATA.map((d, i) => {
-            const radius = 22 + i * (ringWidth + gap);
-            const circumference = 2 * Math.PI * radius;
-            const strokeDasharray = `${(d.pct / 100) * circumference} ${circumference}`;
-            const isHovered = hoveredIndex === i;
-            const isOtherHovered = hoveredIndex !== null && hoveredIndex !== i;
+    <div ref={ref} className="w-full">
+      <div className="flex items-center gap-8">
+        {/* Donut Chart */}
+        <div className="relative w-40 h-40 sm:w-48 sm:h-48 shrink-0 flex items-center justify-center">
+          <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90 overflow-visible">
+            {PIE_DATA.map((d, i) => {
+              const radius = 22 + i * (ringWidth + gap);
+              const circumference = 2 * Math.PI * radius;
+              const strokeDasharray = `${(d.pct / 100) * circumference} ${circumference}`;
+              const isHovered = hoveredIndex === i;
+              const isOtherHovered = hoveredIndex !== null && hoveredIndex !== i;
 
-            return (
-              <g key={d.label}>
-                {/* Background track */}
-                <circle
-                  cx="50" cy="50" r={radius}
-                  fill="none" stroke={d.color} strokeWidth={ringWidth}
-                  strokeOpacity="0.1"
-                />
-                {/* Foreground progress */}
-                <motion.circle
-                  cx="50" cy="50" r={radius}
-                  fill="none" stroke={d.color} strokeWidth={isHovered ? ringWidth + 1.5 : ringWidth}
-                  strokeLinecap="round"
-                  strokeDasharray={strokeDasharray}
-                  initial={{ strokeDashoffset: circumference }}
-                  animate={inView ? { strokeDashoffset: 0 } : {}}
-                  transition={{ duration: 1.5, delay: i * 0.15, ease: "easeOut" }}
-                  style={{
-                    opacity: isOtherHovered ? 0.3 : 1,
-                    filter: isHovered ? `drop-shadow(0 0 6px ${d.color}80)` : 'none',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={() => setHoveredIndex(i)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  className="cursor-pointer outline-none"
-                />
-              </g>
-            );
-          }).reverse()}
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="text-center">
-             <span className="block text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-0.5">Jami</span>
-             <span className="block font-headline font-extrabold text-xl text-on-surface leading-none">{totalMablag.toLocaleString('uz-UZ').replace(/,/g, ' ')}</span>
+              return (
+                <g key={d.label}>
+                  <circle
+                    cx="50" cy="50" r={radius}
+                    fill="none" stroke={d.color} strokeWidth={ringWidth}
+                    strokeOpacity="0.1"
+                  />
+                  <motion.circle
+                    cx="50" cy="50" r={radius}
+                    fill="none" stroke={d.color} strokeWidth={isHovered ? ringWidth + 1.5 : ringWidth}
+                    strokeLinecap="round"
+                    strokeDasharray={strokeDasharray}
+                    initial={{ strokeDashoffset: circumference }}
+                    animate={inView ? { strokeDashoffset: 0 } : {}}
+                    transition={{ duration: 1.5, delay: i * 0.15, ease: "easeOut" }}
+                    style={{
+                      opacity: isOtherHovered ? 0.3 : 1,
+                      filter: isHovered ? `drop-shadow(0 0 6px ${d.color}80)` : 'none',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={() => setHoveredIndex(i)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    className="cursor-pointer outline-none"
+                  />
+                </g>
+              );
+            }).reverse()}
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="text-center">
+               <span className="block text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-0.5">Umumiy</span>
+               <span className="block font-headline font-extrabold text-lg text-on-surface leading-none">{totalMablag.toLocaleString('uz-UZ').replace(/,/g, ' ')}</span>
+               <span className="block text-[9px] text-on-surface-variant font-medium mt-0.5">mln. so&apos;m</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="space-y-3 flex-1 w-full">
-        {PIE_DATA.map((d, i) => (
-          <div 
-            key={d.label} 
-            className={`flex items-center gap-3 p-2 rounded-xl cursor-pointer transition-all duration-300 ${hoveredIndex === i ? 'bg-surface-container shadow-sm scale-105' : 'hover:bg-surface-container/50'}`}
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className="w-3.5 h-3.5 rounded-full shrink-0 shadow-inner" style={{ backgroundColor: d.color, transform: hoveredIndex === i ? 'scale(1.2)' : 'scale(1)', transition: 'transform 0.2s' }} />
-            <span className={`text-sm ${hoveredIndex === i ? 'font-bold text-on-surface' : 'font-medium text-on-surface-variant'}`}>{d.label}</span>
-            <span className={`ml-auto text-sm ${hoveredIndex === i ? 'font-extrabold text-on-surface' : 'font-semibold text-on-surface'}`}>{d.pct}%</span>
-          </div>
-        ))}
+
+        {/* Legend */}
+        <div className="flex-1 space-y-2">
+          {PIE_DATA.map((d, i) => (
+            <div key={d.label} className="relative group cursor-pointer"
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className={`flex items-center justify-between transition-opacity duration-200 ${hoveredIndex !== null && hoveredIndex !== i ? 'opacity-40' : 'opacity-100'}`}>
+                <div className="flex items-center gap-1.5">
+                  <div className="relative flex items-center justify-center w-3.5 h-3.5">
+                     <div className="absolute inset-0 rounded-full opacity-20" style={{ backgroundColor: d.color }} />
+                     <motion.div 
+                        className="w-1.5 h-1.5 rounded-full" 
+                        style={{ backgroundColor: d.color }}
+                        animate={{ scale: [1, 1.5, 1], opacity: [1, 0.7, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                     />
+                  </div>
+                  <span className="text-xs font-semibold text-on-surface-variant group-hover:text-on-surface transition-colors">{d.label}</span>
+                </div>
+                <div className="text-right flex items-baseline gap-1">
+                  <span className="text-sm font-extrabold text-on-surface">{d.pct}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -475,7 +671,7 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
             </span>
             <div className="flex items-baseline gap-1.5 sm:gap-2">
                <span className="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface">{erkak.pct}%</span>
-               <span className="text-xs sm:text-sm font-semibold text-on-surface-variant">{erkak.count} nafar</span>
+               <span className="text-xs sm:text-sm font-semibold text-on-surface-variant whitespace-nowrap">{erkak.count} nafar</span>
             </div>
          </div>
          <div className="text-right">
@@ -483,7 +679,7 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
               {ayol.label} <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(20,184,166,0.4)]" />
             </span>
             <div className="flex items-baseline justify-end gap-1.5 sm:gap-2">
-               <span className="text-xs sm:text-sm font-semibold text-on-surface-variant">{ayol.count} nafar</span>
+               <span className="text-xs sm:text-sm font-semibold text-on-surface-variant whitespace-nowrap">{ayol.count} nafar</span>
                <span className="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface">{ayol.pct}%</span>
             </div>
          </div>
@@ -496,7 +692,6 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
 export default function StatisticsPage({ stats }: { stats: Stat[] }) {
   const [activeViloyat, setActiveViloyat] = useState('Hammasi');
   const [activeYil, setActiveYil] = useState('Umumiy');
-  const [showAllRows, setShowAllRows] = useState(false);
   const [hoveredRegion, setHoveredRegion] = useState('');
   const [mapPosition, setMapPosition] = useState({ center: INITIAL_MAP_CENTER, zoom: INITIAL_MAP_ZOOM });
   
@@ -530,24 +725,26 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
   };
 
   const monthlyData = MONTHLY_DATA[activeViloyat] ?? MONTHLY_DATA.default;
-  const filteredRows = activeViloyat === 'Hammasi' 
-    ? REGION_ROWS 
-    : REGION_ROWS.filter(r => r.viloyat.startsWith(activeViloyat));
-  const tableRows = showAllRows ? filteredRows : filteredRows.slice(0, 5);
 
-  // Global totals (new dashboard data: 29.04.2026)
-  let globalMarkazlar = 302;
-  let globalSumma = 38528; // mln so'm
-  let globalOqituvchilar = 698;
-  let globalOquvchilar = 16565;
-  let globalErkak = 408;
-  let globalAyol = 292;
+  // Build unified display rows: viloyat overview OR tuman drill-down
+  const isTumanView = activeViloyat !== 'Hammasi';
+  const displayRows: Array<{name: string, soni: number, summa: number, erkak?: number, ayol?: number}> = isTumanView
+    ? (TUMAN_DATA[activeViloyat] || []).map(t => ({ name: t.tuman, soni: t.soni, summa: t.summa }))
+    : REGION_ROWS.map(r => ({ name: r.viloyat, soni: r.markazlar, summa: r.summa, erkak: r.erkak, ayol: r.ayol }));
+  const tableRows = displayRows;
+
+  // Global totals (new dashboard data: 07.05.2026)
+  let globalMarkazlar = 385;
+  let globalSumma = 49298; // mln so'm
+  let globalErkak = 223;
+  let globalAyol = 162;
+  let globalUmumiyLoyihalar = 712; // total applications across all statuses
   
   if (activeViloyat === 'Hammasi') {
      if (activeYil === '2025') {
-        globalMarkazlar = 126; globalSumma = 16126; globalOqituvchilar = 280; globalOquvchilar = 6200; globalErkak = 87; globalAyol = 39;
+        globalMarkazlar = 160; globalSumma = 20480; globalErkak = 93; globalAyol = 67;
      } else if (activeYil === '2026') {
-        globalMarkazlar = 176; globalSumma = 22402; globalOqituvchilar = 418; globalOquvchilar = 10365; globalErkak = 321; globalAyol = 253;
+        globalMarkazlar = 225; globalSumma = 28818; globalErkak = 130; globalAyol = 95;
      }
   }
 
@@ -557,31 +754,29 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
 
   const currentMarkazlar = activeViloyat === 'Hammasi' ? globalMarkazlar : (activeRegionData?.markazlar || 0);
   const currentSumma = activeViloyat === 'Hammasi' ? globalSumma : (activeRegionData?.summa || 0);
-  const currentOqituvchilar = activeViloyat === 'Hammasi' ? globalOqituvchilar : (activeRegionData?.oqituvchilar || 0);
-  const currentOquvchilar = activeViloyat === 'Hammasi' ? globalOquvchilar : (activeRegionData?.oquvchilar || 0);
-  const currentErkak = activeViloyat === 'Hammasi' ? globalErkak : 0;
-  const currentAyol = activeViloyat === 'Hammasi' ? globalAyol : 0;
+  const currentErkak = activeViloyat === 'Hammasi' ? globalErkak : (activeRegionData?.erkak || 0);
+  const currentAyol = activeViloyat === 'Hammasi' ? globalAyol : (activeRegionData?.ayol || 0);
   const currentLoyiha = currentMarkazlar;
   const currentMablag = currentSumma;
 
   const genderData = [
-    { label: 'Erkaklar', count: currentErkak, pct: (currentErkak + currentAyol) > 0 ? Math.round((currentErkak/(currentErkak + currentAyol))*100) : 0 },
-    { label: 'Ayollar', count: currentAyol, pct: (currentErkak + currentAyol) > 0 ? Math.round((currentAyol/(currentErkak + currentAyol))*100) : 0 }
+    { label: 'Erkaklar', count: 223, pct: Math.round((223 / (223 + 162)) * 100) },
+    { label: 'Ayollar', count: 162, pct: Math.round((162 / (223 + 162)) * 100) }
   ];
 
   const kpiCards = [
     {
       icon: 'school',
-      label: "O'quv markazlar",
+      label: "Moliyalashtirilgan loyihalar",
       value: currentMarkazlar,
       unit: 'ta',
-      sub: activeViloyat !== 'Hammasi' ? `${activeViloyat}da` : "Jami moliyalashtirilgan markazlar",
-      trend: "Muvaffaqiyatli tashkil etilgan",
+      sub: activeViloyat !== 'Hammasi' ? `${activeViloyat}da` : "Jami moliyalashtirilgan loyihalar",
+      trend: "Umumiy arizalar: 712 ta",
       colorIdx: 1,
     },
     {
       icon: 'account_balance',
-      label: "Jami summa",
+      label: "Jami qarz miqdori",
       value: currentSumma,
       unit: 'mln',
       sub: activeViloyat !== 'Hammasi' ? "Hudud uchun" : "Jami ajratilgan mablag'",
@@ -589,21 +784,21 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
       colorIdx: 0,
     },
     {
-      icon: 'person',
-      label: "O'qituvchilar jami",
-      value: currentOqituvchilar,
+      icon: 'man',
+      label: "Erkaklar",
+      value: currentErkak,
       unit: 'nafar',
-      sub: "Markazlardagi o'qituvchilar",
-      trend: "Pedagogik kadrlar",
+      sub: "Erkak tadbirkorlar",
+      trend: `${(currentErkak + currentAyol) > 0 ? Math.round((currentErkak/(currentErkak + currentAyol))*100) : 0}% ulush`,
       colorIdx: 2,
     },
     {
-      icon: 'groups',
-      label: "O'quvchilar jami",
-      value: currentOquvchilar,
+      icon: 'woman',
+      label: "Ayollar",
+      value: currentAyol,
       unit: 'nafar',
-      sub: "O'quvchilar soni",
-      trend: "O'sish: 114.47%",
+      sub: "Ayol tadbirkorlar",
+      trend: `${(currentErkak + currentAyol) > 0 ? Math.round((currentAyol/(currentErkak + currentAyol))*100) : 0}% ulush`,
       colorIdx: 3,
     },
   ];
@@ -611,7 +806,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
   return (
     <>
       {/* ── Hero Banner ── */}
-      <section className="relative pt-28 pb-10 px-6 overflow-hidden">
+      <section className="relative pt-10 pb-10 px-6 overflow-hidden">
         {/* background decoration */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 -left-20 w-72 h-72 rounded-full bg-primary/5 blur-3xl" />
@@ -646,11 +841,11 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3"
           >
             {[
-              { label: "So'nggi yangilanish", value: '29.04.2026' },
+              { label: "So'nggi yangilanish", value: '07.05.2026' },
               { label: "Ma'lumotlar manbasi", value: 'Yoshlar Fondi' },
               { label: 'Hisobot davri', value: '2025–2026' },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-3 bg-surface-container-lowest rounded-xl px-4 py-3 border border-outline-variant/20 shadow-ambient">
+              <div key={item.label} className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
                 <span className="material-symbols-outlined text-primary text-base shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>info</span>
                 <div className="min-w-0">
                   <p className="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold truncate">{item.label}</p>
@@ -679,7 +874,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
           variants={fadeUp}
-          className="bg-[#f4f7f6] rounded-[24px] border border-outline-variant/20 shadow-[inset_0_4px_24px_rgba(0,104,95,0.05)] overflow-hidden relative flex flex-col lg:flex-row min-h-[400px] lg:min-h-[500px]"
+          className="bg-[#f4f7f6] rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden relative flex flex-col lg:flex-row min-h-[400px] lg:min-h-[500px]"
           style={{ backgroundImage: 'radial-gradient(rgba(0, 104, 95, 0.15) 1px, transparent 1px)', backgroundSize: '16px 16px' }}
         >
           {/* Left side: Map area */}
@@ -805,20 +1000,20 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
           <div className="w-full lg:w-[420px] p-6 lg:p-8 flex flex-col justify-center gap-6 relative z-10 order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-outline-variant/10 bg-transparent">
             
             {/* Card 1: O'quv markazlar */}
-            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-5 flex items-center gap-5">
+            <div className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 flex items-center gap-5">
               <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-inner">
                 <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
               </div>
               <div className="flex-1">
                 <p className="text-xs text-on-surface-variant font-semibold mb-1">
-                  {activeViloyat === 'Hammasi' ? "Respublika bo'yicha o'quv markazlar" : `${activeViloyat} hududida markazlar`}
+                  {activeViloyat === 'Hammasi' ? "Respublika bo'yicha loyihalar" : `${activeViloyat} hududida loyihalar`}
                 </p>
                 <p className="font-headline text-3xl font-extrabold text-on-surface leading-none">{currentMarkazlar.toLocaleString().replace(/,/g, ' ')}</p>
               </div>
             </div>
 
             {/* Card 2: Moliyaviy Mablag' */}
-            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 flex flex-col">
+            <div className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-6 flex flex-col">
               <p className="text-sm text-on-surface-variant font-semibold mb-2">Jami ajratilgan moliyaviy mablag'</p>
               <div className="flex items-baseline gap-1.5 mb-6">
                 <p className="font-headline text-[32px] font-extrabold text-on-surface leading-none">
@@ -864,9 +1059,9 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
         </motion.div>
       </section>
 
-      {/* ── Charts Row (Pie & Bar) ── */}
+      {/* ── Data Grid (Gender & Table) ── */}
       <section className="px-6 max-w-7xl mx-auto mb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Pie chart — Left side now */}
           <motion.div
             custom={0}
@@ -874,10 +1069,130 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col justify-center"
+            className="lg:col-span-1 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 flex flex-col"
           >
-            <h3 className="font-body text-lg font-bold text-on-surface mb-8">Loyihalar taqsimoti</h3>
-            <PieChart totalMablag={currentMablag} />
+            <div className="mb-6">
+               <h3 className="font-body text-lg font-bold text-on-surface leading-snug">Loyihalar taqsimoti</h3>
+               <p className="text-sm text-on-surface-variant mt-1 leading-snug">{activeViloyat === 'Hammasi' ? 'Jami moliyalashtirilgan yo\'nalishlar' : activeViloyat + ' hududida'}</p>
+            </div>
+            <div className="flex-1 flex flex-col justify-center">
+               <PieChart totalMablag={currentMablag} />
+            </div>
+          </motion.div>
+
+          {/* Regional Table */}
+          <motion.div
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            variants={fadeUp}
+            className="lg:col-span-2 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col"
+          >
+            <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 border-b border-outline-variant/10 flex items-center justify-between gap-3">
+                <div>
+                  <h3 className="font-body text-base sm:text-lg font-bold text-on-surface">
+                    {isTumanView ? `${activeViloyat} — Tumanlar` : 'Hududiy ko\'rsatkichlar jadvali'}
+                  </h3>
+                  {isTumanView && (
+                    <p className="text-xs text-on-surface-variant mt-0.5">
+                      {displayRows.length} ta tuman / shahar
+                    </p>
+                  )}
+                </div>
+                {isTumanView && (
+                  <button
+                    onClick={() => { setActiveViloyat('Hammasi'); animateMapTo(INITIAL_MAP_CENTER, INITIAL_MAP_ZOOM); }}
+                    className="flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary/70 transition-colors bg-primary/10 px-3 py-1.5 rounded-lg"
+                  >
+                    <span className="material-symbols-outlined text-sm">arrow_back</span>
+                    Orqaga
+                  </button>
+                )}
+            </div>
+            <div className="overflow-x-auto overflow-y-auto max-h-[480px] flex-1">
+              <table className="w-full min-w-[520px]">
+                <thead className="sticky top-0 z-10">
+                  <tr className="border-b border-outline-variant/20 bg-surface-container-low">
+                    <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-6 py-3">#</th>
+                    <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-4 py-3">{isTumanView ? 'Tuman / Shahar' : 'Hudud'}</th>
+                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">{isTumanView ? 'Loyihalar' : 'Loyihalar'}</th>
+                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Qarz miqdori</th>
+                    {!isTumanView && (
+                      <>
+                        <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-tertiary/5">Erkak</th>
+                        <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-secondary/5">Ayol</th>
+                      </>
+                    )}
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableRows.map((row, i) => (
+                    <motion.tr
+                      key={row.name}
+                      custom={i}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={fadeUp}
+                      className="border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors"
+                    >
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 text-sm font-bold text-on-surface-variant">
+                        {i < 3 ? (
+                          <span className={`inline-flex w-6 h-6 sm:w-7 sm:h-7 rounded-full items-center justify-center text-[10px] sm:text-xs font-extrabold ${i === 0 ? 'bg-primary text-on-primary' : i === 1 ? 'bg-secondary text-on-secondary' : 'bg-tertiary text-on-tertiary'}`}>
+                            {i + 1}
+                          </span>
+                        ) : (
+                          <span className="text-on-surface-variant text-xs sm:text-sm">{i + 1}</span>
+                        )}
+                      </td>
+                      <td className="px-3 sm:px-4 py-3 sm:py-4">
+                        <span className="font-medium text-on-surface text-xs sm:text-sm">{row.name}</span>
+                      </td>
+                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
+                        <span className="font-headline font-bold text-on-surface text-sm">{row.soni}</span>
+                      </td>
+                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
+                        <span className="text-[10px] sm:text-xs font-extrabold text-primary bg-primary/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md whitespace-nowrap">{row.summa.toLocaleString().replace(/,/g, ' ')} mln</span>
+                      </td>
+                      {!isTumanView && (
+                        <>
+                          <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-tertiary/5">
+                            <span className="text-sm font-bold text-on-surface">{row.erkak}</span>
+                          </td>
+                          <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-secondary/5">
+                            <span className="text-sm font-bold text-on-surface">{row.ayol}</span>
+                          </td>
+                        </>
+                      )}
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Charts Row (Pie & Table) ── */}
+      <section className="px-6 max-w-7xl mx-auto mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Gender Breakdown */}
+          <motion.div
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            variants={fadeUp}
+            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 flex flex-col gap-6 self-start lg:sticky lg:top-6"
+          >
+             <div>
+                <h3 className="font-body text-lg font-bold text-on-surface leading-snug">Gender bo&apos;yicha statistika</h3>
+                <p className="text-sm text-on-surface-variant mt-1 leading-snug">Jami ajratilgan qarzlar bo&apos;yicha</p>
+             </div>
+             <div className="flex-1 flex flex-col justify-center">
+                <GenderVisualization data={genderData} />
+             </div>
           </motion.div>
 
           {/* Bar chart — Right side now with Year Toggle */}
@@ -887,7 +1202,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col justify-between"
+            className="lg:col-span-2 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 flex flex-col justify-between"
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
               <div>
@@ -929,31 +1244,31 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 relative overflow-hidden"
+            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden"
           >
             {/* Glowing background */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
             
-            <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Faoliyat holati</h3>
+            <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Loyihalar holati</h3>
             <div className="flex items-center gap-6 relative z-10">
               {/* Concentric Arcs */}
               <div className="relative w-32 h-32 shrink-0">
                 <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
                   {ACTIVITY_DATA.map((d, i) => {
-                    const radius = 42 - (i * 8);
+                    const radius = 44 - (i * 6);
                     const circumference = 2 * Math.PI * radius;
                     const strokeDasharray = `${(d.pct / 100) * circumference} ${circumference}`;
                     return (
                       <g key={d.label}>
-                        <circle cx="50" cy="50" r={radius} fill="none" stroke={d.color} strokeWidth="5" strokeOpacity="0.15" />
+                        <circle cx="50" cy="50" r={radius} fill="none" stroke={d.color} strokeWidth="3.5" strokeOpacity="0.15" />
                         <motion.circle
                           cx="50" cy="50" r={radius}
-                          fill="none" stroke={d.color} strokeWidth="5" strokeLinecap="round"
+                          fill="none" stroke={d.color} strokeWidth="3.5" strokeLinecap="round"
                           strokeDasharray={strokeDasharray}
                           initial={{ strokeDashoffset: circumference }}
                           whileInView={{ strokeDashoffset: 0 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 1.5, delay: i * 0.2, ease: 'easeOut' }}
+                          transition={{ duration: 1.5, delay: i * 0.15, ease: 'easeOut' }}
                           style={{ filter: `drop-shadow(0 0 3px ${d.color}60)` }}
                         />
                       </g>
@@ -961,29 +1276,29 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                   })}
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-headline text-2xl font-extrabold text-on-surface">302</span>
+                  <span className="font-headline text-lg font-extrabold text-on-surface">712</span>
                 </div>
               </div>
               {/* Legend */}
-              <div className="space-y-4 flex-1">
+              <div className="space-y-2 flex-1">
                 {ACTIVITY_DATA.map((d, i) => (
                   <div key={d.label} className="relative group">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="relative flex items-center justify-center w-4 h-4">
+                      <div className="flex items-center gap-1.5">
+                        <div className="relative flex items-center justify-center w-3.5 h-3.5">
                            <div className="absolute inset-0 rounded-full opacity-20" style={{ backgroundColor: d.color }} />
                            <motion.div 
-                              className="w-2 h-2 rounded-full" 
+                              className="w-1.5 h-1.5 rounded-full" 
                               style={{ backgroundColor: d.color }}
                               animate={{ scale: [1, 1.5, 1], opacity: [1, 0.7, 1] }}
                               transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
                            />
                         </div>
-                        <span className="text-sm font-semibold text-on-surface-variant group-hover:text-on-surface transition-colors">{d.label}</span>
+                        <span className="text-xs font-semibold text-on-surface-variant group-hover:text-on-surface transition-colors">{d.label}</span>
                       </div>
                       <div className="text-right flex items-baseline gap-1">
-                        <span className="text-base font-extrabold text-on-surface">{d.count}</span>
-                        <span className="text-[10px] font-bold" style={{ color: d.color }}>{d.pct}%</span>
+                        <span className="text-sm font-extrabold text-on-surface">{d.count}</span>
+                        <span className="text-[9px] font-bold" style={{ color: d.color }}>{d.pct}%</span>
                       </div>
                     </div>
                   </div>
@@ -999,12 +1314,12 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 relative overflow-hidden"
+            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden"
           >
              <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Xulosa tasnifi</h3>
              <div className="grid grid-cols-2 gap-3 relative z-10">
                 {/* Mavjud card */}
-                <div className="bg-primary/5 rounded-xl p-4 border border-primary/10 transition-transform hover:scale-[1.02]">
+                <div className="bg-primary/5 rounded-xl p-4 transition-transform hover:scale-[1.02]">
                    <div className="text-[10px] font-bold text-primary uppercase tracking-widest mb-3">Mavjud (93)</div>
                    <div className="space-y-2.5">
                       <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Maqsadli</span> <span className="font-bold text-sm text-on-surface">78</span></div>
@@ -1014,7 +1329,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                    </div>
                 </div>
                 {/* Mavjud emas card */}
-                <div className="bg-surface-container/50 rounded-xl p-4 border border-outline-variant/10 transition-transform hover:scale-[1.02]">
+                <div className="bg-surface-container/50 rounded-xl p-4 transition-transform hover:scale-[1.02]">
                    <div className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-3">Yo&apos;q (179)</div>
                    <div className="space-y-2.5">
                       <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Maqsadli</span> <span className="font-bold text-sm text-on-surface">112</span></div>
@@ -1026,7 +1341,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
              </div>
              
              {/* Total bottom bar */}
-             <div className="mt-4 bg-surface-container-low rounded-xl p-3 flex justify-between items-center border border-outline-variant/10 relative z-10">
+             <div className="mt-4 bg-surface-container-low rounded-xl p-3 flex justify-between items-center relative z-10">
                 <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest pl-1">Umumiy xulosalar</span>
                 <span className="font-headline font-extrabold text-xl text-on-surface pr-1">272</span>
              </div>
@@ -1039,7 +1354,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 relative overflow-hidden flex flex-col"
+            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden flex flex-col"
           >
             <h3 className="font-body text-lg font-bold text-on-surface mb-6">Jihozlar</h3>
             <div className="space-y-5 relative z-10 flex-1 flex flex-col justify-center">
@@ -1076,7 +1391,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
       </section>
 
       {/* ── Til taqsimoti & Ta'minot turi ── */}
-      <section className="px-6 max-w-7xl mx-auto mb-10">
+      <section className="px-6 max-w-7xl mx-auto pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Til taqsimoti -> Overlapping Hexagons / Orbs */}
@@ -1086,7 +1401,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="lg:col-span-2 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 relative overflow-hidden"
+            className="lg:col-span-2 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden"
           >
             <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Ingliz tili, Rus tili va Koreys tili</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
@@ -1095,7 +1410,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                  return (
                   <motion.div 
                      key={lang.label} 
-                     className="relative text-center p-5 rounded-2xl bg-surface-container/30 border border-outline-variant/10 hover:bg-surface-container/60 transition-all duration-300 group overflow-hidden cursor-default"
+                     className="relative text-center p-5 rounded-2xl bg-surface-container/30 hover:bg-surface-container/60 transition-all duration-300 group overflow-hidden cursor-default"
                      whileHover={{ y: -4 }}
                   >
                     {/* Background glow on hover */}
@@ -1115,7 +1430,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                          animate={{ rotate: -360 }}
                          transition={{ duration: 15 + i, repeat: Infinity, ease: 'linear' }}
                        />
-                       <div className="relative z-10 flex flex-col items-center justify-center bg-surface-container-lowest w-16 h-16 rounded-full shadow-sm border border-outline-variant/10">
+                       <div className="relative z-10 flex flex-col items-center justify-center bg-white w-16 h-16 rounded-full shadow-sm">
                          <span className="font-headline text-xl font-extrabold text-on-surface leading-none">{lang.value}</span>
                          <span className="text-[9px] font-bold mt-0.5" style={{ color: lang.color }}>{percentage}%</span>
                        </div>
@@ -1134,7 +1449,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col relative overflow-hidden"
+            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 flex flex-col relative overflow-hidden"
           >
             <h3 className="font-body text-lg font-bold text-on-surface mb-5 relative z-10">Ta&apos;minot turi</h3>
             <div className="space-y-4 flex-1 flex flex-col justify-center relative z-10">
@@ -1164,107 +1479,9 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
         </div>
       </section>
 
-      {/* ── Data Grid (Gender & Table) ── */}
-      <section className="px-6 max-w-7xl mx-auto pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Gender Breakdown */}
-          <motion.div
-            custom={0}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUp}
-            className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient p-5 sm:p-7 flex flex-col gap-6"
-          >
-             <div>
-                <h3 className="font-body text-lg font-bold text-on-surface">Gender bo&apos;yicha statistika</h3>
-                <p className="text-sm text-on-surface-variant mt-1">{activeViloyat === 'Hammasi' ? 'Jami ajratilgan qarzlar bo\'yicha' : activeViloyat + ' hududida'}</p>
-             </div>
-             <div className="flex-1 flex flex-col justify-center">
-                <GenderVisualization data={genderData} />
-             </div>
-          </motion.div>
-
-          {/* Regional Table */}
-          <motion.div
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUp}
-            className="lg:col-span-2 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-ambient overflow-hidden flex flex-col"
-          >
-            <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 border-b border-outline-variant/10">
-                <h3 className="font-body text-base sm:text-lg font-bold text-on-surface">Hududiy ko&apos;rsatkichlar jadvali</h3>
-            </div>
-            <div className="overflow-x-auto flex-1">
-              <table className="w-full min-w-[520px]">
-                <thead>
-                  <tr className="border-b border-outline-variant/20 bg-surface-container-low">
-                    <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-6 py-3">#</th>
-                    <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-4 py-3">Hudud</th>
-                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Markazlar</th>
-                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Summa</th>
-                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-tertiary/5">O'qituvchi</th>
-                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-secondary/5">O'quvchi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tableRows.map((row, i) => (
-                    <motion.tr
-                      key={row.viloyat}
-                      custom={i}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={fadeUp}
-                      className="border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors"
-                    >
-                      <td className="px-3 sm:px-6 py-3 sm:py-4 text-sm font-bold text-on-surface-variant">
-                        {i < 3 ? (
-                          <span className={`inline-flex w-6 h-6 sm:w-7 sm:h-7 rounded-full items-center justify-center text-[10px] sm:text-xs font-extrabold ${i === 0 ? 'bg-primary text-on-primary' : i === 1 ? 'bg-secondary text-on-secondary' : 'bg-tertiary text-on-tertiary'}`}>
-                            {i + 1}
-                          </span>
-                        ) : (
-                          <span className="text-on-surface-variant text-xs sm:text-sm">{i + 1}</span>
-                        )}
-                      </td>
-                      <td className="px-3 sm:px-4 py-3 sm:py-4">
-                        <span className="font-medium text-on-surface text-xs sm:text-sm">{row.viloyat}</span>
-                      </td>
-                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
-                        <span className="font-headline font-bold text-on-surface text-sm">{row.markazlar}</span>
-                      </td>
-                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
-                        <span className="text-[10px] sm:text-xs font-extrabold text-primary bg-primary/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md whitespace-nowrap">{row.summa.toLocaleString().replace(/,/g, ' ')} mln</span>
-                      </td>
-                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-tertiary/5">
-                        <span className="text-sm font-bold text-on-surface">{row.oqituvchilar}</span>
-                      </td>
-                      <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-secondary/5">
-                        <span className="text-sm font-bold text-on-surface">{row.oquvchilar}</span>
-                      </td>
-                    </motion.tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {/* show more */}
-            <div className="px-4 sm:px-6 py-4 border-t border-outline-variant/15 flex justify-center bg-surface-container-lowest">
-              <button
-                onClick={() => setShowAllRows(!showAllRows)}
-                className="flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
-              >
-                <span className="material-symbols-outlined text-base">{showAllRows ? 'expand_less' : 'expand_more'}</span>
-                {showAllRows ? "Kamroq ko'rsatish" : "Barchasini ko'rsatish"}
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ── Data Last Updated Banner ── */}
-      <section className="bg-surface-container-low px-4 sm:px-6 py-10 sm:py-12 border-t border-outline-variant/10">
+      <section className="px-4 sm:px-6 py-10 sm:py-12">
         <div className="max-w-7xl mx-auto">
           <motion.div
             custom={0}
@@ -1286,7 +1503,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto">
               <div className="text-center bg-white/10 rounded-xl px-4 sm:px-6 py-3 sm:py-4 backdrop-blur-sm shadow-inner flex-1 md:flex-none">
                 <p className="font-headline text-2xl sm:text-3xl font-extrabold">{activeViloyat === 'Hammasi' ? globalMarkazlar : activeRegionData?.markazlar || 0}</p>
-                <p className="text-[10px] sm:text-xs opacity-80 mt-0.5">O&apos;quv markaz</p>
+                <p className="text-[10px] sm:text-xs opacity-80 mt-0.5">Loyiha</p>
               </div>
               <div className="text-center bg-white/10 rounded-xl px-4 sm:px-6 py-3 sm:py-4 backdrop-blur-sm shadow-inner flex-1 md:flex-none">
                 <p className="font-headline text-2xl sm:text-3xl font-extrabold">{activeViloyat === 'Hammasi' ? 13 : 1}</p>

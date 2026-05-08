@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import { db } from '@/lib/db';
 import { stats as statsTable } from '@/lib/schema';
 import type { Stat } from '@/lib/types';
-import Navbar from '@/components/ui/Navbar';
 import StatisticsPage from '@/components/sections/StatisticsPage';
-import Footer from '@/components/sections/Footer';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,12 +23,8 @@ export default async function AdminStatistikaPage() {
   const statsData = await getStats();
 
   return (
-    <>
-      <Navbar />
-      <main>
-        <StatisticsPage stats={statsData} />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen bg-[#f0f4f8]" style={{ backgroundImage: 'radial-gradient(rgba(0, 104, 95, 0.06) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+      <StatisticsPage stats={statsData} />
+    </main>
   );
 }
