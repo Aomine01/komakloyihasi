@@ -1,52 +1,231 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' },
+    transition: { delay: i * 0.14, duration: 0.75, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Detect reduced motion preference
+  useEffect(() => {
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
+
+  // Lazy-load and play video only when visible & allowed
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    if (!video || !section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Set source and start loading
+          if (!video.src && !video.querySelector('source')?.getAttribute('data-loaded')) {
+            const source = video.querySelector('source');
+            if (source) {
+              source.setAttribute('data-loaded', 'true');
+              video.load();
+            }
+          }
+          video.play().catch(() => {/* autoplay blocked — poster stays visible */});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [prefersReducedMotion]);
+
+  // Video speed + scroll-driven zoom
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      video.playbackRate = 0.8;
+      setVideoLoaded(true);
+    };
+    video.addEventListener('canplay', handleCanPlay);
+
+    const onScroll = () => {
+      if (!video) return;
+      const progress = Math.min(window.scrollY / window.innerHeight, 1);
+      video.style.transform = `scale(${1 + progress * 0.18})`;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
-    <section className="pt-28 pb-16 lg:pt-48 lg:pb-32 px-6 relative overflow-hidden bg-surface">
-      <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[600px] h-[600px] bg-primary-fixed rounded-full mix-blend-multiply filter blur-[120px] opacity-30" />
-      <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[500px] h-[500px] bg-secondary-fixed rounded-full mix-blend-multiply filter blur-[120px] opacity-20" />
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
 
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center relative z-10 pt-8 lg:pt-16">
-        <div className="space-y-8 flex flex-col items-center">
+      {/* ── Poster fallback — shown instantly ────────────────────── */}
+      <div
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+          videoLoaded && !prefersReducedMotion ? 'opacity-0' : 'opacity-100'
+        }`}
+        style={{ backgroundImage: "url('/hero-poster.png')" }}
+        aria-hidden="true"
+      />
 
-          <motion.h1 custom={1} initial="hidden" animate="visible" variants={fadeUp} className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-black leading-[1.1] text-on-surface tracking-tight">
-            <span className="text-gradient">Ko‘mak</span> - orzularga <br className="hidden md:block" /> qanot beramiz!
-          </motion.h1>
+      {/* ── Video background — loads lazily ───────────────────────── */}
+      {!prefersReducedMotion && (
+        <video
+          ref={videoRef}
+          loop
+          muted
+          playsInline
+          preload="none"
+          onTimeUpdate={(e) => {
+            const video = e.currentTarget;
+            if (!video.duration) return;
+            const timeLeft = video.duration - video.currentTime;
+            // Fade out 1.5 seconds before the video ends to hide the sharp cut
+            if (timeLeft <= 1.5) {
+              video.style.opacity = '0';
+            } else {
+              video.style.opacity = '1';
+            }
+          }}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ transformOrigin: 'center center' }}
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+      )}
 
-          <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp} className="text-lg sm:text-xl md:text-2xl text-on-surface-variant leading-relaxed font-body max-w-3xl text-center">
-            Chekka va olis hududlarda o&apos;quv markazi ochish yoki rivojlantirish uchun imtiyozli ssuda ajratuvchi loyiha.
-          </motion.p>
+      {/* ── Overlay — rich deep-teal gradient matching the reference ── */}
+      <div className="absolute inset-0 bg-[#004f45]/40 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#002f29]/70 via-[#003b33]/80 to-[#001f1a]/95" />
 
-          <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col sm:flex-row gap-5 pt-6 w-full sm:w-auto justify-center">
-            <a
-              href="https://yoshlarfondi.uz/services/6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center items-center gap-2 bg-gradient-primary text-on-primary px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold hover:opacity-90 transition-all text-base sm:text-lg shadow-lg hover:shadow-xl w-full sm:w-auto hover:-translate-y-0.5 duration-200"
-            >
-              Loyihaga qo&apos;shilish
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </a>
-            <a
-              href="#about"
-              className="inline-flex justify-center items-center gap-2 bg-surface-container-high text-primary px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold hover:bg-surface-container-highest transition-all text-base sm:text-lg w-full sm:w-auto border border-outline-variant/30 hover:-translate-y-0.5 duration-200"
-            >
-              Batafsil ma&apos;lumot
-            </a>
-          </motion.div>
-        </div>
+      {/* ── Content ──────────────────────────────────────────────── */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center pt-24">
+
+        {/* Main heading */}
+        <motion.h1
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="font-headline font-black text-white leading-[1.06] tracking-tight mb-7"
+          style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)' }}
+        >
+          Ko&apos;mak — orzularga
+          <br className="hidden sm:block" />
+          <span
+            style={{
+              backgroundImage: 'linear-gradient(135deg, #a8f0e8 0%, #5dd9c9 40%, #fff 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            {' '}qanot beramiz!
+          </span>
+        </motion.h1>
+
+        {/* Sub-text */}
+        <motion.p
+          custom={1}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="text-white/80 leading-relaxed max-w-2xl mb-12"
+          style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}
+        >
+          Chekka va olis hududlarda o&apos;quv markazi ochish yoki rivojlantirish
+          uchun imtiyozli ssuda ajratuvchi loyiha.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          custom={2}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
+        >
+          <a
+            href="https://yoshlarfondi.uz/services/6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex justify-center items-center gap-2.5
+                       bg-white text-[#00685f] px-8 py-4 rounded-2xl font-bold text-base
+                       hover:bg-white/92 active:scale-[0.97] transition-all duration-200
+                       shadow-[0_4px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_40px_rgba(0,0,0,0.35)]
+                       hover:-translate-y-1 w-full sm:w-auto"
+          >
+            Loyihaga qo&apos;shilish
+            <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform duration-200">
+              arrow_forward
+            </span>
+          </a>
+          <a
+            href="#about"
+            className="inline-flex justify-center items-center gap-2
+                       bg-white/[0.12] text-white border border-white/[0.28] backdrop-blur-md
+                       px-8 py-4 rounded-2xl font-bold text-base
+                       hover:bg-white/[0.22] hover:border-white/50 active:scale-[0.97]
+                       transition-all duration-200 hover:-translate-y-1 w-full sm:w-auto"
+          >
+            Batafsil ma&apos;lumot
+          </a>
+        </motion.div>
       </div>
+
+      {/* ── Scroll indicator ─────────────────────────────────────── */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.4 }}
+        type="button"
+        aria-label="Pastga aylantiring"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2
+                   opacity-50 hover:opacity-90 transition-opacity duration-300 cursor-pointer group"
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+      >
+        <div className="h-14 w-px bg-white/30 overflow-hidden relative">
+          <motion.div
+            className="absolute left-0 w-full bg-white/90"
+            style={{ height: '45%' }}
+            animate={{ top: ['-45%', '115%'] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+          />
+        </div>
+        <span className="text-[10px] text-white/60 group-hover:text-white/90 tracking-[0.22em] uppercase font-semibold transition-all duration-300">
+          Pastga
+        </span>
+      </motion.button>
     </section>
   );
 }

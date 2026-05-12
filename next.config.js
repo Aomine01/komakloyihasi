@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   images: {
     remotePatterns: [],
-    unoptimized: true,
+    // Vercel supports image optimization out of the box
+    // This enables automatic WebP/AVIF conversion + responsive sizing
   },
+  poweredByHeader: false,
   experimental: {
     serverComponentsExternalPackages: ['formidable'],
     outputFileTracingExcludes: {

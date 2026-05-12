@@ -16,6 +16,51 @@ interface Props {
 }
 
 export default function KomakchilarPage({ viloyatlar, totalProjects, totalStudents }: Props) {
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const [heroVideoLoaded, setHeroVideoLoaded] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Detect reduced motion preference
+  useEffect(() => {
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
+
+  // Lazy-load hero video
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const video = heroVideoRef.current;
+    const section = heroSectionRef.current;
+    if (!video || !section) return;
+
+    const handleCanPlay = () => setHeroVideoLoaded(true);
+    video.addEventListener('canplay', handleCanPlay);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (!video.querySelector('source')?.getAttribute('data-loaded')) {
+            video.querySelector('source')?.setAttribute('data-loaded', 'true');
+            video.load();
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(section);
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      observer.disconnect();
+    };
+  }, [prefersReducedMotion]);
   const [selectedViloyat, setSelectedViloyat] = useState<string | null>(null);
   const [tumanlar, setTumanlar] = useState<Tuman[]>([]);
   const [selectedTuman, setSelectedTuman] = useState<string | null>(null);
@@ -116,122 +161,165 @@ export default function KomakchilarPage({ viloyatlar, totalProjects, totalStuden
     <div className="min-h-screen bg-surface">
 
       {/* ─── HERO ──────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-28 pb-20 px-6">
-        {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#004f45] via-[#00685f] to-[#008378]" />
-        {/* Ambient orbs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20"
-          style={{ background: 'radial-gradient(circle, #84d5c5 0%, transparent 70%)', transform: 'translate(30%, -30%)' }} />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10"
-          style={{ background: 'radial-gradient(circle, #6bd8cb 0%, transparent 70%)', transform: 'translate(-30%, 30%)' }} />
+      <section
+        ref={heroSectionRef}
+        className="relative overflow-hidden min-h-[85vh] flex flex-col items-center justify-center pt-28 pb-20 px-6"
+      >
+        {/* Poster fallback — shown instantly */}
+        <div
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            heroVideoLoaded && !prefersReducedMotion ? 'opacity-0' : 'opacity-100'
+          }`}
+          style={{ backgroundImage: "url('/hero-poster.png')" }}
+          aria-hidden="true"
+        />
 
-        <div className="relative max-w-7xl mx-auto">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45 }}
-              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm
-                         text-white/90 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8"
-            >
-              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                school
-              </span>
-              Moliyalashtirilgan o&apos;quv markazlari
-            </motion.div>
+        {/* Background Video — loads lazily */}
+        {!prefersReducedMotion && (
+          <video
+            ref={heroVideoRef}
+            loop
+            muted
+            playsInline
+            preload="none"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              heroVideoLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
+        )}
+        
+        {/* Green Filter */}
+        <div className="absolute inset-0 bg-[#00685f]/75 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#004f45]/50 via-transparent to-[#004f45]/80" />
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-white
-                         leading-[1.05] tracking-tight mb-5"
-            >
-              Ko&apos;makchilar
-            </motion.h1>
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center mt-8">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md
+                       text-white/90 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] px-5 py-2.5 rounded-full mb-6"
+          >
+            <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+              school
+            </span>
+            Moliyalashtirilgan o&apos;quv markazlari
+          </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.16 }}
-              className="text-white/70 text-lg leading-relaxed max-w-xl mb-10"
-            >
-              Ko&apos;mak loyihasi doirasida moliyalashtirilgan o&apos;quv markazlari katalogi.
-              Hudud va tuman bo&apos;yicha saralang.
-            </motion.p>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="font-headline text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white
+                       leading-tight tracking-tight mb-6 drop-shadow-lg"
+          >
+            Ko&apos;makchilar
+          </motion.h1>
 
-            {/* Search */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.24 }}
-              className="relative max-w-xl"
-            >
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/50 text-xl pointer-events-none select-none">
-                search
-              </span>
-              <input
-                ref={searchRef}
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Markaz nomi yoki tadbirkor ismi..."
-                className="w-full pl-12 pr-12 py-4 rounded-2xl bg-white/10 border border-white/20
-                           text-white placeholder:text-white/40 outline-none
-                           focus:bg-white/20 focus:border-white/40 transition-all duration-200
-                           text-sm font-body backdrop-blur-sm"
-              />
-              <AnimatePresence>
-                {searchQuery && (
-                  <motion.button
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white
-                               transition-colors w-6 h-6 flex items-center justify-center rounded-full
-                               bg-white/10 hover:bg-white/20"
-                  >
-                    <span className="material-symbols-outlined text-base">close</span>
-                  </motion.button>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </div>
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+            className="text-white/90 text-lg md:text-xl leading-relaxed max-w-2xl mb-12 font-medium drop-shadow-md"
+          >
+            Ko&apos;mak loyihasi doirasida moliyalashtirilgan o&apos;quv markazlari katalogi.
+            Hudud va tuman bo&apos;yicha saralang.
+          </motion.p>
 
           {/* Stats badges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-12 flex flex-wrap gap-3"
+            transition={{ duration: 0.6, delay: 0.24 }}
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 w-full max-w-4xl"
           >
             {[
-              { icon: 'storefront', value: totalProjects || '—', label: "O'quv markaz" },
-              { icon: 'group', value: totalStudents ? `${totalStudents.toLocaleString()}+` : '—', label: "O'quvchi" },
-              { icon: 'location_on', value: totalRegions, label: 'Hudud' },
+              { icon: 'storefront', value: totalProjects || '—', label: "O'QUV MARKAZ" },
+              { icon: 'group', value: totalStudents ? `${totalStudents.toLocaleString()}+` : '—', label: "O'QUVCHI" },
+              { icon: 'location_on', value: totalRegions, label: 'HUDUD' },
             ].map((stat, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 bg-white/10 border border-white/15
-                           backdrop-blur-sm rounded-2xl px-5 py-3"
+                className="flex items-center justify-center sm:justify-start gap-4 bg-white/10 hover:bg-white/20 border border-white/20
+                           backdrop-blur-md rounded-2xl px-6 py-4 transition-all duration-300 w-full sm:w-auto min-w-[220px]"
               >
                 <span
-                  className="material-symbols-outlined text-white/80 text-xl"
+                  className="material-symbols-outlined text-white/90 text-3xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   {stat.icon}
                 </span>
-                <div>
-                  <p className="text-white font-headline font-bold text-xl leading-none">{stat.value}</p>
-                  <p className="text-white/55 text-xs mt-0.5">{stat.label}</p>
+                <div className="text-left">
+                  <p className="text-white font-headline font-bold text-3xl leading-none tracking-tight">{stat.value}</p>
+                  <p className="text-white/70 text-[10px] sm:text-xs mt-1.5 uppercase tracking-[0.1em] font-bold">{stat.label}</p>
                 </div>
               </div>
             ))}
           </motion.div>
+          
+          {/* Search */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.32 }}
+            className="relative w-full max-w-xl mx-auto mt-14"
+          >
+            <span className="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-white/50 text-xl pointer-events-none select-none">
+              search
+            </span>
+            <input
+              ref={searchRef}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Markaz nomi yoki tadbirkor ismi..."
+              className="w-full pl-14 pr-12 py-4 rounded-2xl bg-white/15 border border-white/30
+                         text-white placeholder:text-white/60 outline-none
+                         focus:bg-white/25 focus:border-white/50 transition-all duration-300
+                         text-base font-body backdrop-blur-md shadow-lg"
+            />
+            <AnimatePresence>
+              {searchQuery && (
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white
+                             transition-colors w-8 h-8 flex items-center justify-center rounded-full
+                             bg-white/10 hover:bg-white/20"
+                >
+                  <span className="material-symbols-outlined text-sm">close</span>
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
+
+        {/* Scroll down indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
+          onClick={() => {
+            window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+          }}
+        >
+          <div className="h-12 w-[2px] bg-white/40 overflow-hidden relative">
+            <motion.div 
+              className="absolute top-0 left-0 w-full h-1/2 bg-white"
+              animate={{ top: ['-50%', '100%'] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+            />
+          </div>
+          <span className="text-[10px] text-white tracking-[0.2em] uppercase font-bold">Pastga aylantiring</span>
+        </motion.div>
       </section>
 
       {/* ─── FILTER PANEL ──────────────────────────────────────────── */}

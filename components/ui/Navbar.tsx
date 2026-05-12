@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [pathname]);
 
   // Determine if the current page has a dark hero section and we are not scrolled
-  const isDarkHeader = pathname === '/loyihalar' && !scrolled;
+  const isDarkHeader = (pathname === '/' || pathname === '/loyihalar') && !scrolled;
 
   const textColorClass = isDarkHeader ? 'text-white/80 hover:text-white' : 'text-on-surface-variant hover:text-primary';
   const activeTextColorClass = isDarkHeader ? 'text-white' : 'text-primary';
@@ -72,20 +72,12 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative h-full flex items-center px-4 text-sm font-semibold font-headline tracking-tight transition-colors duration-200 ${isActive ? activeTextColorClass : textColorClass
+                  className={`group relative h-full flex items-center px-4 text-sm font-semibold font-headline tracking-tight transition-colors duration-200 ${isActive ? activeTextColorClass : textColorClass
                     }`}
                 >
-                  {link.label}
-                  {/* Active indicator line */}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
-                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] rounded-t-full ${indicatorColorClass}`}
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  {/* Hover bg */}
-                  <span className={`absolute inset-0 rounded-lg transition-colors duration-200 ${isActive ? (isDarkHeader ? 'bg-white/10' : 'bg-primary/6') : (isDarkHeader ? 'hover:bg-white/5' : 'hover:bg-surface-container-high')
+                  <span className="relative z-10">{link.label}</span>
+                  {/* Hover bg (Pill shape) */}
+                  <span className={`absolute top-1/2 -translate-y-1/2 left-0 right-0 h-10 rounded-full transition-colors duration-200 ${isActive ? (isDarkHeader ? 'bg-white/10' : 'bg-primary/10') : (isDarkHeader ? 'group-hover:bg-white/10' : 'group-hover:bg-surface-container-high')
                     }`} aria-hidden />
                 </Link>
               );
