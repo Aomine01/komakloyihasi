@@ -1,16 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' },
-  }),
-};
 
 const priorities = [
   { icon: 'trending_up', title: 'Tadbirkorlikni rivojlantirish', desc: 'Yoshlarning biznes g\'oyalarini amaliy loyihalarga aylantirishga ko\'maklashish.' },
@@ -44,18 +36,29 @@ const projects = [
 
 export default function Asoschilar() {
   const [activeTab, setActiveTab] = useState<'agentlik' | 'jamgarma'>('jamgarma');
+  const reduceMotion = useReducedMotion();
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: reduceMotion ? 0 : i * 0.1, duration: reduceMotion ? 0.2 : 0.6, ease: 'easeOut' },
+    }),
+  };
 
   return (
     <section id="asoschilar" className="py-14 sm:py-20 md:py-28 px-4 md:px-6 bg-surface overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: reduceMotion ? 0.2 : 0.5 }}
           className="text-center mb-8 sm:mb-12"
         >
+
           <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
             <span className="w-6 h-[3px] rounded-full bg-primary flex-shrink-0" />
             <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary/80">Asoschilar</span>

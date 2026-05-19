@@ -1,1228 +1,1418 @@
-{
-  "viloyatlar": [
-    {
-      "name": "Andijon viloyati",
-      "slug": "andijon",
-      "people": [
-        {
-          "name": "Akromov Izzatillo Murodjon o'g'li",
-          "slug": "akromov-izzatillo-murodjon-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Akramov Izzatillo Murodjon o'g'li\nLAVOZIM: \"Idrok School LC\" o'quv markazi rahbari va ingliz tili o'qituvchisi\nTУГИЛГАН_САНА: 2000-yil\nТУҒИЛГАН_ЖОЙ: Andijon viloyati, Marhamat tumani\nЯШАШ_ЖОЙИ: Andijon viloyati, Marhamat tumani\n\nТАЪЛИМ:\n- 2025: Andijon iqtisodiyot va qurilish instituti, Iqtisodiyot yo'nalishi (bakalavr)\n\nФАОЛИЯТ:\n- 2022-2025: \"Renessans 2022\" o'quv markazi, ingliz tili o'qituvchisi (700+ o'quvchi)\n- 2025: C1 sertifikatini 3 marta qo'lga kiritgan\n- 2023: \"Islom Karimov davlat stipendiyasi\" sohibi\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: O'zining \"Idrok School LC\" o'quv markaziga asos solish va Robototexnika, kompyuter savodxonligi kurslarini ochish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarning iqtidorini yuzaga chiqarish, zamonaviy va an'anaviy kasblarga o'qitadigan inkubatsion markazlar tashkil etish va jahon bozoriga yetakchi mutaxassislarni yetishtirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: Markazning oldingi holati\n- 3.jpg: O'quv xonasining hozirgi holati",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-38-14.jpg",
-            "photo_2_2026-04-16_17-38-14.jpg",
-            "photo_3_2026-04-16_17-38-14.jpg",
-            "photo_4_2026-04-16_17-38-14.jpg",
-            "photo_5_2026-04-16_17-38-14.jpg",
-            "photo_6_2026-04-16_17-38-14.jpg",
-            "photo_7_2026-04-16_17-38-14.jpg",
-            "photo_8_2026-04-16_17-38-14.jpg",
-            "photo_9_2026-04-16_17-38-14.jpg",
-            "photo_10_2026-04-16_17-38-14.jpg",
-            "photo_11_2026-04-16_17-38-14.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/akromov-izzatillo-murodjon-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Ashirbekov O'tkirbek Umarbek o'g'li",
-          "slug": "ashirbekov-otkirbek-umarbek-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Ashirbekov O'tkirbek Umarbek o'g'li\nLAVOZIM: \"Ai Hikma Academy\" o'quv markazi rahbari va ingliz tili o'qituvchisi\nTУГИЛГАН_САНА: 2005-yil\nТУҒИЛГАН_ЖОЙ: Andijon viloyati, Shahrixon tumani\nЯШАШ_ЖОЙИ: Andijon viloyati, Bo'ston tumani\n\nТАЪЛИМ:\n- Andijon chet tillari instituti (talaba)\n\nФАОЛИЯТ:\n- Yoshlarga ingliz tilini o'rganish va xalqaro sertifikatlar olishga yordam bermoqda\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil yanvar\nSSUDA_MAQSADI: Bo'ston tumani Guzar MFY da \"Ai Hikma Academy\" o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va innovatsion kasblarga o'qitadigan va ish bilan ta'minlaydigan inkubatsion markazlar tashkil etish. Kutubxona, shaxmat to'garaklari va IT kurslarini tashkillashtirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: O'quv xonasining holati",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg"
-          ],
-          "originalImages": [
-            "photo_2_2026-04-16_17-48-13.jpg",
-            "photo_3_2026-04-16_17-48-13.jpg",
-            "photo_4_2026-04-16_17-48-13.jpg",
-            "photo_5_2026-04-16_17-48-13.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/ashirbekov-otkirbek-umarbek-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Nodirbek Maxmudov",
-          "slug": "nodirbek-maxmudov",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Maxmudov Nodirbek Ma'rufjon o'g'li\nLAVOZIM: \"Arizon\" o'quv markazi rahbari\nTУГИЛГАН_САНА: 1997-yil 19-fevral\nТУҒИЛГАН_ЖОЙ: Andijon viloyati, Xo'jaobod tumani\nЯШАШ_ЖОЙИ: Andijon viloyati, Xo'jaobod tumani\n\nТАЪЛИМ:\n- 2016: Xo'jaobod tuman qurilish kasb-hunar kolleji\n\nФАОЛИЯТ:\n- 2023-hozirgacha: \"Arizon\" o'quv markazi rahbari\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2023-yil\nSSUDA_MAQSADI: \"Arizon\" o'quv markazi faoliyatini boshlash\n\nКЕЛАЖАК_МАҚСАДИ: O'quv markazi faoliyatini yanada rivojlantirish va yoshlarga sifatli ta'lim berish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: Markaz faoliyati",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.png",
-            "8.png"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-32-25.jpg",
-            "photo_2_2026-04-16_17-32-25.jpg",
-            "photo_3_2026-04-16_17-32-25.jpg",
-            "photo_4_2026-04-16_17-32-25.jpg",
-            "photo_5_2026-04-16_17-32-25.jpg",
-            "photo_6_2026-04-16_17-32-25.jpg",
-            "Screenshot 2026-04-18 124155.png",
-            "Screenshot 2026-04-18 124314.png"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/nodirbek-maxmudov/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Tulanboyev Shoxsuvor Dilmurod o'g'li",
-          "slug": "tulanboyev-shoxsuvor-dilmurod-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Yunusov Ilyos Fayozjon o'g'li\nLAVOZIM: Ilm Learning Centre asoschisi va ingliz tili o'qituvchisi\nTУГИЛГАН_САНА: 1997-yil 22-avgust\nТУҒИЛГАН_ЖОЙ: Buxoro viloyati, G'ijduvon tumani\nЯШАШ_ЖОЙИ: Navoiy viloyati, Zarafshon shahri\n\nТАЪЛИМ:\n- 2004–2008: Zarafshon 3-umumta'lim maktabi (boshlang'ich sinf)\n- 2008–2013: Zarafshon 10-umumta'lim maktabi (yuqori sinf)\n- 2013–2016: Zarafshon Akademik litseyi, ijtimoiy fanlar yo'nalishi\n- 2017–2021: Navoiy Davlat Pedagogika Instituti, Milliy g'oya yo'nalishi\n\nФАОЛИЯТ:\n- 2021–2025: Zarafshon 3-umumta'lim maktabi, o'qituvchi\n- 2021: \"Ilm\" ingliz tili o'quv markaziga asos solgan\n- 1000+ o'quvchi o'qitgan, 100+ sertifikat sohiblari\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil fevral\nSSUDA_MAQSADI: O'quv markazining moddiy-texnika bazasini yaxshilash va faoliyatini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Zamonaviy ta'lim tizimini rivojlantirish, yoshlarni xalqaro darajada raqobatbardosh kadrlar sifatida tayyorlash va inkubatsion ta'lim markazlarini tashkil etish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: Markazning oldingi holati\n- 3.jpg: O'quv xonasining hozirgi holati",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-36-44.jpg",
-            "photo_2_2026-04-16_17-36-44.jpg",
-            "20260215_151648.jpg",
-            "20260215_151705.jpg",
-            "20260215_151849.jpg",
-            "20260215_152017.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/tulanboyev-shoxsuvor-dilmurod-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Mirzaraximov Ilxomjon A'zamjon o'g'li",
-          "slug": "mirzaraximov-ilxomjon-azamjon-ogli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-54-52.jpg",
-            "photo_2_2026-04-16_17-54-52.jpg",
-            "photo_3_2026-04-16_17-54-52.jpg",
-            "photo_4_2026-04-16_17-54-52.jpg",
-            "photo_5_2026-04-16_17-54-52.jpg",
-            "photo_6_2026-04-16_17-54-52.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/mirzaraximov-ilxomjon-azamjon-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Saydullo Sotvoldiyev Bahodirjon o'g'li",
-          "slug": "saydullo-sotvoldiyev-bahodirjon-ogli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-35-20.jpg",
-            "photo_2_2026-04-16_17-35-20.jpg",
-            "photo_3_2026-04-16_17-35-20.jpg",
-            "photo_4_2026-04-16_17-35-20.jpg",
-            "photo_5_2026-04-16_17-35-20.jpg",
-            "photo_6_2026-04-16_17-35-20.jpg",
-            "photo_7_2026-04-16_17-35-20.jpg",
-            "photo_8_2026-04-16_17-35-20.jpg",
-            "IMG_0817.JPG",
-            "IMG_1184.JPG",
-            "IMG_20251229_132447_284.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/saydullo-sotvoldiyev-bahodirjon-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Saynazarova Mashhuraxon To'lqinjon qizi",
-          "slug": "saynazarova-mashhuraxon-tolqinjon-qizi",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg",
-            "14.jpg",
-            "15.jpg",
-            "16.jpg",
-            "17.jpg",
-            "18.jpg",
-            "19.jpg",
-            "20.jpg",
-            "21.jpg"
-          ],
-          "originalImages": [
-            "photo_2_2026-04-16_17-46-25.jpg",
-            "photo_3_2026-04-16_17-46-25.jpg",
-            "photo_4_2026-04-16_17-46-25.jpg",
-            "photo_5_2026-04-16_17-46-25.jpg",
-            "photo_6_2026-04-16_17-46-25.jpg",
-            "photo_7_2026-04-16_17-46-25.jpg",
-            "photo_8_2026-04-16_17-46-25.jpg",
-            "photo_9_2026-04-16_17-46-25.jpg",
-            "photo_10_2026-04-16_17-46-25.jpg",
-            "photo_11_2026-04-16_17-46-25.jpg",
-            "photo_12_2026-04-16_17-46-25.jpg",
-            "photo_13_2026-04-16_17-46-25.jpg",
-            "photo_14_2026-04-16_17-46-25.jpg",
-            "photo_15_2026-04-16_17-46-25.jpg",
-            "photo_16_2026-04-16_17-46-25.jpg",
-            "photo_17_2026-04-16_17-46-25.jpg",
-            "photo_18_2026-04-16_17-46-25.jpg",
-            "photo_19_2026-04-16_17-46-25.jpg",
-            "photo_20_2026-04-16_17-46-25.jpg",
-            "photo_21_2026-04-16_17-46-25.jpg",
-            "photo_22_2026-04-16_17-46-25.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/andijon/saynazarova-mashhuraxon-tolqinjon-qizi/",
-          "pdfUrl": "/assets/komakchilar/andijon/saynazarova-mashhuraxon-tolqinjon-qizi/saynazarova-mashhuraxon-tolqinjon-qizi.pdf"
-        }
-      ]
-    },
-    {
-      "name": "Buxoro viloyati",
-      "slug": "buxoro",
-      "people": [
-        {
-          "name": "Odilov Dilshodbek Dilmurod o'g'li",
-          "slug": "odilov-dilshodbek-dilmurod-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Odilov Dilshodbek Dilmurod o'g'li\nLAVOZIM: Ingliz tili o'qituvchisi, YaTT\nTУГИЛГАН_САНА: 1999-yil 3-fevral\nТУҒИЛГАН_ЖОЙ: Buxoro viloyati, Jondor tumani\nЯШАШ_ЖОЙИ: Buxoro viloyati, Jondor tumani\n\nТАЪЛИМ:\n- Buxoro Neft va Gaz kolleji\n- Buxoro muhandislik texnologiya instituti (neft va gaz yo'nalishi)\n\nФАОЛИЯТ:\n- 3 yildan beri ingliz tilidan dars berib keladi\n- IELTS: 7.5\n- 500 dan ortiq o'quvchilarga IELTS va CEFR sertifikatlariga tayyorlashda yordam bergan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: O'quv markaziga asos solish va zamonaviy ta'lim sharoitlarini yaratish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy bilimlarga o'qitish orqali xalqaro sertifikatlar olishga ko'maklashish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg",
-            "14.jpg"
-          ],
-          "originalImages": [
-            "3W7A8643.00_18_49_09.Still001.jpg",
-            "IMAGE 2026-04-16 17_02_15.jpg",
-            "IMAGE 2026-04-16 17_02_19.jpg",
-            "IMAGE 2026-04-16 17_02_20.jpg",
-            "IMAGE 2026-04-16 17_02_24.jpg",
-            "IMG_20260331_125353_834.jpg",
-            "IMG_20260331_125353_936.jpg",
-            "IMG_20260331_125353_966.jpg",
-            "IMG_20260331_125353_989.jpg",
-            "IMG_20260331_125353_991.jpg",
-            "IMG_20260331_125354_070.jpg",
-            "-5319283203753316274_119.jpg",
-            "-5319283203753316275_119.jpg",
-            "-5319283203753316278_119.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/buxoro/odilov-dilshodbek-dilmurod-ogli/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Farg'ona viloyati",
-      "slug": "fargona",
-      "people": [
-        {
-          "name": "Abdumuxtorova Masturaxon Mo'minjon qizi",
-          "slug": "abdumuxtorova-masturaxon-mominjon-qizi",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Abdumuxtorova Masturaxon Mo'minjon qizi\nLAVOZIM: \"Farobiy Borliq ilmi\" o'quv markazi asoschisi\nTУГИЛГАН_САНА: 2002-yil\nТУҒИЛГАН_ЖОЙ: Farg'ona viloyati, Furqat tumani\nЯШАШ_ЖОЙИ: Farg'ona viloyati, Furqat tumani\n\nТАЪЛИМ:\n- Qo'qon davlat pedagogika instituti (Davlat granti)\n\nФАОЛИЯТ:\n- Mutaxassis darajasidan 1-toifali ustoz darajasiga erishgan\n- Yoshlarni xalqaro va milliy sertifikatlar olishga tayyorlamoqda\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil fevral\nSSUDA_MAQSADI: Furqat tumani Navbahor shaharchasida \"Farobiy Borliq ilmi\" o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: O'quv markazlar faoliyatini kengaytirish, chekka hududlarda innovatsion maktabga asos solib, o'quvchilarni kreativ qilib tarbiyalash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_18-46-05.jpg",
-            "photo_2_2026-04-16_18-46-05.jpg",
-            "photo_3_2026-04-16_18-46-05.jpg",
-            "photo_4_2026-04-16_18-46-05.jpg",
-            "photo_5_2026-04-16_18-46-05.jpg",
-            "photo_6_2026-04-16_18-46-05.jpg",
-            "photo_7_2026-04-16_18-46-05.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/fargona/abdumuxtorova-masturaxon-mominjon-qizi/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Eminov jamshid Vositxon",
-          "slug": "eminov-jamshid-vositxon",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Eminov Jamshid Vositxon o'g'li\nLAVOZIM: Ingliz tili o'qituvchisi va ta'lim menejeri\nTУГИЛГАН_САНА: 2004-yil\nТУҒИЛГАН_ЖОЙ: Farg'ona viloyati, Rishton tumani\nЯШАШ_ЖОЙИ: Farg'ona viloyati, Rishton tumani\n\nТАЪЛИМ:\n- Farg'ona viloyati Rishton tumani 27-sonli o'rta maktab\n- Westminster International University in Tashkent (Biznes boshqaruvi va Marketing)\n\nФАОЛИЯТ:\n- ANKLAF hududida xususiy o'quv markaziga asos solgan va muvaffaqiyatli boshqarmoqda\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: Xususiy o'quv markazini modernizatsiya qilish\n\nКЕЛАЖАК_МАҚСАДИ: Ta'lim tizimida ajdodlarimiz hayoti va ilmiy merosiga asoslangan alohida fan joriy etish orqali yoshlarning milliy o'zligiga sodiqligini kuchaytirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg"
-          ],
-          "originalImages": [
-            "jamshid.jpg",
-            "IMG_1224.JPG",
-            "IMG_1225.JPG",
-            "IMG_1226.JPG",
-            "IMG_1227.JPG",
-            "IMG_1228.JPG"
-          ],
-          "imagePath": "/assets/komakchilar/fargona/eminov-jamshid-vositxon/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Hoshimjonov Xurramshox Yolqinjon o'g'li",
-          "slug": "hoshimjonov-xurramshox-yolqinjon-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Hoshimjonov Xurramshox Yolqinjon o'g'li\nLAVOZIM: LingoValley va Smart Edu Cram School asoschisi\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Farg'ona viloyati\nЯШАШ_ЖОЙИ: Farg'ona viloyati\n\nТАЪЛИМ:\n- 2019-2023: Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti (Tarjima nazariyasi va amaliyoti)\n- 2025: Webster universiteti, TESOL (Magistratura)\n\nФАОЛИЯТ:\n- 2025: LingoValley til markazini tashkil etgan\n- 2025: Smart Edu Cram School o'quv markazini tashkil etgan\n- 4 nafar yosh o'qituvchini ish bilan ta'minlagan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O'quv markazi binosini ta'mirlash va zamonaviy jihozlar (televizor, 7 kompyuter) xarid qilish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarga zamonaviy texnologiyalar asosida ta'lim olish imkoniyatini kengaytirish va professional o'qituvchilarni qo'llab-quvvatlash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-17_09-29-05.jpg",
-            "photo_2_2026-04-17_09-29-05.jpg",
-            "photo_3_2026-04-17_09-29-05.jpg",
-            "photo_4_2026-04-17_09-29-05.jpg",
-            "photo_5_2026-04-17_09-29-05.jpg",
-            "photo_6_2026-04-17_09-29-05.jpg",
-            "photo_7_2026-04-17_09-29-05.jpg",
-            "photo_8_2026-04-17_09-29-05.jpg",
-            "photo_9_2026-04-17_09-29-05.jpg",
-            "photo_10_2026-04-17_09-29-05.jpg",
-            "photo_11_2026-04-17_09-29-05.jpg",
-            "photo_12_2026-04-17_09-29-05.jpg",
-            "photo_13_2026-04-17_09-29-05.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/fargona/hoshimjonov-xurramshox-yolqinjon-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Umarova So'g'diyona G'ofurjon qizi",
-          "slug": "umarova-sogdiyona-gofurjon-qizi",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Umarova So'g'diyona G'ofurjon qizi\nLAVOZIM: Legacy Education Center asoschisi\nTУГИЛГАН_САНА: 2005-yil\nТУҒИЛГАН_ЖОЙ: Farg'ona viloyati, Beshariq tumani\nЯШАШ_ЖОЙИ: Farg'ona viloyati, Beshariq tumani\n\nТАЪЛИМ:\n- Toshkent Xalqaro Westminster Universiteti, Iqtisodiyot va moliya (4-bosqich talabasi)\n\nФАОЛИЯТ:\n- CEFR B2 va IELTS 7 ball olgan o'quvchilarni yetishtirib chiqarmoqda\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: Beshariq tumanida Legacy Education Center o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Moliya va iqtisodiyot sohasida yetuk mutaxassis bo'lish, yoshlarni zamonaviy bilim va xalqaro sertifikatlar orqali kelajakka tayyorlovchi ta'lim ekotizimini kengaytirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_18-18-11.jpg",
-            "photo_2_2026-04-16_18-18-11.jpg",
-            "photo_3_2026-04-16_18-18-11.jpg",
-            "photo_4_2026-04-16_18-18-11.jpg",
-            "photo_5_2026-04-16_18-18-11.jpg",
-            "photo_6_2026-04-16_18-18-11.jpg",
-            "photo_7_2026-04-16_18-18-11.jpg",
-            "photo_8_2026-04-16_18-18-11.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/fargona/umarova-sogdiyona-gofurjon-qizi/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Jizzax viloyati",
-      "slug": "jizzax",
-      "people": [
-        {
-          "name": "Xudayorov Farmonqul Anarboy",
-          "slug": "xudayorov-farmonqul-anarboy",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Xudayorov Farmonqul Anarboy o'g'li\nLAVOZIM: \"DUOLINGO\" o'quv markazi asoschisi\nTУГИЛГАН_САНА: 1996-yil\nТУҒИЛГАН_ЖОЙ: Jizzax viloyati, Zarbdor tumani\nЯШАШ_ЖОЙИ: Jizzax viloyati, Zarbdor tumani\n\nТАЪЛИМ:\n- Tibbiyot kolleji\n- Jizzax Davlat Universiteti\n\nФАОЛИЯТ:\n- Rus tili o'qituvchisi va tadbirkor\n- O'quv markazida 4 nafar milliy sertifikatga ega o'qituvchilar ishlamoqda\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: Jizzax viloyati Zarbdor tumanida \"DUOLINGO\" o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni an'anaviy va zamonaviy kasblar (IT muhandisi, 3D modeller, AI mutaxassisi) bo'yicha o'qitish, kutubxona va shaxmat to'garaklari tashkil qilish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-17_10-07-21.jpg",
-            "photo_2_2026-04-17_10-07-21.jpg",
-            "photo_3_2026-04-17_10-07-21.jpg",
-            "photo_4_2026-04-17_10-07-21.jpg",
-            "photo_5_2026-04-17_10-07-21.jpg",
-            "photo_6_2026-04-17_10-07-21.jpg",
-            "photo_7_2026-04-17_10-07-21.jpg",
-            "photo_8_2026-04-17_10-07-21.jpg",
-            "photo_9_2026-04-17_10-07-21.jpg",
-            "photo_10_2026-04-17_10-07-21.jpg",
-            "photo_11_2026-04-17_10-07-21.jpg",
-            "photo_12_2026-04-17_10-07-21.jpg",
-            "photo_13_2026-04-17_10-07-21.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/jizzax/xudayorov-farmonqul-anarboy/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Namangan viloyati",
-      "slug": "namangan",
-      "people": [
-        {
-          "name": "Akramjonov Maqsudbek",
-          "slug": "akramjonov-maqsudbek",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Akramjonov Maqsudbek Anvarjon o'g'li\nLAVOZIM: \"ICEBERG\" birlashgan o'quv markazi rahbari, IELTS instructor\nTУГИЛГАН_САНА: 2003-yil 6-yanvar\nТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani\nЯШАШ_ЖОЙИ: Namangan viloyati, Uychi tumani\n\nТАЪЛИМ:\n- 2009-2020: Uychi tumani 5-maktab\n- 2020-2025: Namangan Davlat Universiteti (Tarix, bakalavr)\n- 2025-hozir: Namangan Davlat Pedagogika Instituti (Magistratura)\n\nФАОЛИЯТ:\n- 3 yildan buyon IELTS instructor (IELTS 7.5, Multilevel C1)\n- 20+ ilmiy maqolalar, 10+ kitoblar muallifi\n- \"ICEBERG\" o'quv markazi rahbari\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O'quv markaz faoliyatini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Yangi filiallar ochish, ta'lim faoliyatini yanada kengaytirish va ko'proq yoshlarning sifatli ta'lim olishiga imkon yaratish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg"
-          ],
-          "originalImages": [
-            "Maqsudbek  Akramjonov.jpg",
-            "20260331_135827.jpg",
-            "20260331_135848.jpg",
-            "20260331_140130.jpg",
-            "20260331_140210.jpg",
-            "20260331_140225.jpg",
-            "20260331_140622.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/namangan/akramjonov-maqsudbek/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Ismoilov Doniyorbek Baxodir o'g'li",
-          "slug": "ismoilov-doniyorbek-baxodir-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Ismoilov Doniyorbek Boxodir o'g'li\nLAVOZIM: \"Discover\" o'quv markazi rahbari\nTУГИЛГАН_САНА: 1998-yil 22-mart\nТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani\nЯШАШ_ЖОЙИ: Namangan viloyati, Uychi tumani\n\nТАЪЛИМ:\n- 2014: Uychi tuman 1-maktab\n- 2017: Namangan 2-akademik litsey\n- 2021: Andijon Davlat Universiteti\n\nФАОЛИЯТ:\n- 7 yil ta'lim sohasida ish tajribasi (1000+ o'quvchi)\n- 2021: Istanbulda 1 oy \"Work and Travel\" amaliyoti\n- Hozirda 3 ta filialga ega\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil mart\nSSUDA_MAQSADI: \"Discover\" o'quv markazi faoliyatini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Innovatsion o'qitish usullarini joriy etish orqali raqobatbardosh, bilimli va zamonaviy fikrlaydigan yoshlarni tarbiyalash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg"
-          ],
-          "originalImages": [
-            "Doniyorbek.JPG"
-          ],
-          "imagePath": "/assets/komakchilar/namangan/ismoilov-doniyorbek-baxodir-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Nasriddinov Azizbek",
-          "slug": "nasriddinov-azizbek",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Nasriddinov Azizbek G'anisher o'g'li\nLAVOZIM: \"ICE BERG\" o'quv markazi asoschisi, Yoshlar faoli\nTУГИЛГАН_САНА: 2000-yil\nТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani\nЯШАШ_ЖОЙИ: Namangan viloyati, Uychi tumani\n\nТАЪЛИМ:\n- 2023-2025: Namangan davlat texnika universiteti (Magistratura)\n\nФАОЛИЯТ:\n- C1 (CEFR) va IELTS 7.5 natijasiga ega\n- \"ICE BERG\" orqali 3000+ yoshlarga ta'lim bergan\n- \"CLEAN UYCHI\" ijtimoiy loyihasini amalga oshirgan va \"ICE BERG LIBRARY\" tashkil etgan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O'quv markazni va kutubxonani jihozlash\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni kabs-hunar va xorijiy tillarga yo'naltirish, ishsiz yoshlar bandligini ta'minlash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-00-16.jpg",
-            "photo_1_2026-04-16_17-01-36.jpg",
-            "photo_2_2026-04-16_17-00-16.jpg",
-            "photo_2_2026-04-16_17-01-36.jpg",
-            "photo_3_2026-04-16_17-00-16.jpg",
-            "photo_3_2026-04-16_17-01-36.jpg",
-            "photo_4_2026-04-16_17-01-36.jpg",
-            "photo_5_2026-04-16_17-01-36.jpg",
-            "photo_6_2026-04-16_17-01-36.jpg",
-            "photo_7_2026-04-16_17-01-36.jpg",
-            "20260326_144346.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/namangan/nasriddinov-azizbek/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Navoiy viloyati",
-      "slug": "navoiy",
-      "people": [
-        {
-          "name": "Rahmatov Solijon Shuhratovich",
-          "slug": "rahmatov-solijon-shuhratovich",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Raxmatov Solijon Shuxratovich\nLAVOZIM: \"Solijon's School\" o'quv markazi asoschisi\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Navoiy viloyati, Konimex tumani\nЯШАШ_ЖОЙИ: Navoiy viloyati, Konimex tumani\n\nТАЪЛИМ:\n- SolBridge International School of Business (Janubiy Koreya)\n- MDIS Tashkent (Singapur Menejmentni Rivojlantirish Instituti)\n\nФАОЛИЯТ:\n- 4 yillik pedagogik faoliyat davomida 170+ yoshlarni xalqaro sertifikatlarga tayyorlagan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: Konimex tumanida zamonaviy o'quv markazi tashkil etish\n\nКЕЛАЖАК_МАҚСАДИ: Chekka hududlardagi yoshlarning zamonaviy bilim va ko'nikmalarini shakllantirish, yuqori malakali kadrlar tayyorlash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.png",
-            "6.png",
-            "7.png",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg"
-          ],
-          "originalImages": [
-            "IMG_2913.JPG",
-            "IMG_2926.JPG",
-            "IMG_2927.JPG",
-            "IMG_2928.JPG",
-            "IMG_8054.PNG",
-            "IMG_8056.PNG",
-            "IMG_8057.PNG",
-            "IMG_8448.JPG",
-            "IMG_8455.JPG",
-            "IMG_8465.JPG",
-            "IMG_9643.JPG"
-          ],
-          "imagePath": "/assets/komakchilar/navoiy/rahmatov-solijon-shuhratovich/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Qashqadaryo viloyati",
-      "slug": "qashqadaryo",
-      "people": [
-        {
-          "name": "Qulmatov Temurbek Yusuf o'g'li",
-          "slug": "qulmatov-temurbek-yusuf-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Qulmatov Temurbek Yusuf o'g'li\nLAVOZIM: \"Cosmos\" o'quv markazi rahbari\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Qashqadaryo viloyati, Koson tumani\nЯШАШ_ЖОЙИ: Qashqadaryo viloyati, Koson tumani\n\nТАЪЛИМ:\n- Toshkent davlat yuridik universiteti\n\nФАОЛИЯТ:\n- Qorabayir qishlog'ida \"Cosmos\" o'quv markazini tashkil etgan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: \"Cosmos\" o'quv markazini ochish va jihozlash\n\nКЕЛАЖАК_МАҚСАДИ: Ta'lim tarmog'ini kengaytirib, innovatsion ta'lim ekotizimini shakllantirish, minglab yoshlarning hayotini o'zgartiradigan kuchli ta'lim brendini yaratish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-17_09-32-24.jpg",
-            "photo_2_2026-04-17_09-32-24.jpg",
-            "photo_3_2026-04-17_09-32-24.jpg",
-            "photo_4_2026-04-17_09-32-24.jpg",
-            "photo_5_2026-04-17_09-32-24.jpg",
-            "photo_6_2026-04-17_09-32-24.jpg",
-            "photo_7_2026-04-17_09-32-24.jpg",
-            "photo_8_2026-04-17_09-32-24.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qashqadaryo/qulmatov-temurbek-yusuf-ogli/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Qoraqalpog'iston",
-      "slug": "qoraqalpogiston",
-      "people": [
-        {
-          "name": "Ibrohimova Rayhonoy Karimboy qizi",
-          "slug": "ibrohimova-rayhonoy-karimboy-qizi",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Ibrohimova Rayhonoy Karimboy qizi\nLAVOZIM: \"Ibrohimova Rayhonoy Karimboy qizi\" YaTT o'quv markazi asoschisi, Ingliz tili o'qituvchisi\nTУГИЛГАН_САНА: 2003-yil\nТУҒИЛГАН_ЖОЙ: Qoraqalpog'iston Respublikasi, Amudaryo tumani\nЯШАШ_ЖОЙИ: Qoraqalpog'iston Respublikasi, Amudaryo tumani\n\nТАЪЛИМ:\n- Nukus davlat pedagogika instituti (Ingliz tili va adabiyoti yo‘nalishi)\n- Slovakiya Milliy granti asosida Slovakiyada bir semestr almashinuv dasturi\n\nФАОЛИЯТ:\n- Ingliz tili fanidan yoshlarni IELTS va CEFR sertifikatlariga tayyorlash\n\nSSUDA_SANASI: 2025-yil mart\nSSUDA_MAQSADI: Amudaryo tumanida o'zining o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va ilg'or metodikalar yordamida tayyorlab, kasbga to'g'ri yo'naltirish va ishlash imkonini beruvchi markazlar ochish. Xalqaro grantlarni qo'lga kiritishlariga yordam berish.",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg"
-          ],
-          "originalImages": [
-            "ААА+++.jpg",
-            "IMAGE 2026-04-17 09_32_28.jpg",
-            "IMAGE 2026-04-17 09_32_31.jpg",
-            "IMAGE 2026-04-17 09_32_33.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/ibrohimova-rayhonoy-karimboy-qizi/",
-          "pdfUrl": null
-        },
-        {
-          "name": "XUDAYBERGENOVA LEYLA ALISHEROVNA",
-          "slug": "xudaybergenova-leyla-alisherovna",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Xudaybergenova Leyla Alisherovna\nLAVOZIM: Tadbirkor va o'qituvchi\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Qoraqalpogʻiston Respublikasi, Nukus shahri\nЯШАШ_ЖОЙИ: Qoraqalpogʻiston Respublikasi, Nukus shahri\n\nТАЪЛИМ:\n- Pedagogik kollej\n- Pedagogika instituti\n\nФАОЛИЯТ:\n- Yoshlarning sifatli ta’lim olishi va xalqaro hamda milliy sertifikatlarni qo‘lga kiritishiga ko'maklashish\n\nКЕЛАЖАК_МАҚСАДИ: Bilimli, mustaqil fikrlaydigan va global maydonda raqobat qila oladigan yangi avlodni tarbiyalash. Innovatsion ta’lim markazlari, rivojlanish platformalari va inkubatsion loyihalar yaratish.",
-          "images": [
-            "1.jpg"
-          ],
-          "originalImages": [
-            "IMAGE 2026-04-17 09_37_18.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/xudaybergenova-leyla-alisherovna/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Allaniyozov Nursulton Dauletniyaz uli",
-          "slug": "allaniyozov-nursulton-dauletniyaz-uli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png",
-            "2.png"
-          ],
-          "originalImages": [
-            "1749165E-F9A5-4B15-A08F-48E28E045777.png",
-            "42085432-9DF7-4E2F-8205-1794573589FD.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/allaniyozov-nursulton-dauletniyaz-uli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Durdana Turkpenbaeva",
-          "slug": "durdana-turkpenbaeva",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg"
-          ],
-          "originalImages": [
-            "IMAGE 2026-04-17 09_57_11.jpg",
-            "IMAGE 2026-04-17 09_57_12.jpg",
-            "IMAGE 2026-04-17 09_57_15.jpg",
-            "IMAGE 2026-04-17 09_57_17.jpg",
-            "IMAGE 2026-04-17 09_57_18.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/durdana-turkpenbaeva/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Erniyazova Ulbosin",
-          "slug": "erniyazova-ulbosin",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg"
-          ],
-          "originalImages": [
-            "IMAGE 2026-04-17 09_58_21.jpg",
-            "IMAGE 2026-04-17 09_58_22.jpg",
-            "IMAGE 2026-04-17 09_58_24.jpg",
-            "IMAGE 2026-04-17 09_59_04.jpg",
-            "IMAGE 2026-04-17 09_59_18.jpg",
-            "IMAGE 2026-04-17 09_59_22.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/erniyazova-ulbosin/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Imamiddinov Sardorbek Olimboy o'g'li",
-          "slug": "imamiddinov-sardorbek-olimboy-ogli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg"
-          ],
-          "originalImages": [
-            "IMG_20250610_121132.jpg",
-            "IMG_20250923_000535.jpg",
-            "IMG_20250924_091209.jpg",
-            "IMG_20250924_151540.jpg",
-            "IMG_20251210_163135.jpg",
-            "IMG_20260123_141923.jpg",
-            "IMG_20260218_185454.jpg",
-            "IMG_20260331_112044.jpg",
-            "IMG_20260331_112059.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/imamiddinov-sardorbek-olimboy-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Isakov Jenisbek Islambekovich",
-          "slug": "isakov-jenisbek-islambekovich",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png",
-            "2.png"
-          ],
-          "originalImages": [
-            "D3DF0B44-54E1-4E6E-9532-4533F27B2A79.png",
-            "FD8B1F7B-F92F-4A55-A426-2F6685B878B3.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/isakov-jenisbek-islambekovich/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Kdirniyazov Quwandiq Ruslan ugli",
-          "slug": "kdirniyazov-quwandiq-ruslan-ugli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png",
-            "2.png"
-          ],
-          "originalImages": [
-            "EB2AFB3A-5900-4CEC-8667-2C7DD2496D4E.png",
-            "C84A9CD5-FF4E-4265-B6B3-291C0CBF21EF.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/kdirniyazov-quwandiq-ruslan-ugli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Medetbaeva Perizat Kuatbayevna",
-          "slug": "medetbaeva-perizat-kuatbayevna",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png",
-            "2.png"
-          ],
-          "originalImages": [
-            "19B16CAF-5D83-4925-832B-3ED362182695.png",
-            "A4490967-9F01-45BA-94B8-8895E5D80799.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/medetbaeva-perizat-kuatbayevna/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Miradova Maxim",
-          "slug": "miradova-maxim",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg"
-          ],
-          "originalImages": [
-            "photo_2026-04-29_16-52-48.jpg",
-            "photo_2026-04-29_16-53-04.jpg",
-            "photo_2026-04-29_16-53-07.jpg",
-            "photo_2026-04-29_16-53-10.jpg",
-            "photo_2026-04-29_16-53-12.jpg",
-            "photo_2026-04-29_16-53-14.jpg",
-            "photo_2026-04-29_16-53-17.jpg",
-            "photo_2026-04-29_16-53-20.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/miradova-maxim/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Muratniyazov Sultanbek Karamatdin uli",
-          "slug": "muratniyazov-sultanbek-karamatdin-uli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png",
-            "2.png"
-          ],
-          "originalImages": [
-            "704DBCB4-A0E0-4F25-8B52-851ED9AE68DE.png",
-            "BC80543D-11D9-43A3-AAFC-5D16704192C2.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/muratniyazov-sultanbek-karamatdin-uli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Nurmaxanova Elyonora Tolibay qizi",
-          "slug": "nurmaxanova-elyonora-tolibay-qizi",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png"
-          ],
-          "originalImages": [
-            "7B7AC7E2-6FC1-4641-AFFF-912F56383312.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/nurmaxanova-elyonora-tolibay-qizi/",
-          "pdfUrl": null
-        },
-        {
-          "name": "O'rinbaeva Shahnoza",
-          "slug": "orinbaeva-shahnoza",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg"
-          ],
-          "originalImages": [
-            "photo_2026-04-29_16-48-23.jpg",
-            "photo_2026-04-29_16-48-43.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/orinbaeva-shahnoza/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Qayratdinov Azizbek Asqar ugli",
-          "slug": "qayratdinov-azizbek-asqar-ugli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.png",
-            "2.png"
-          ],
-          "originalImages": [
-            "8F88A1FF-4E9B-4A27-B2A7-7721AA462860.png",
-            "AEC15690-FF65-4B33-92F0-092B31A57E33.png"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/qayratdinov-azizbek-asqar-ugli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Sarsenbayeva Aqsungul Muratbayevna",
-          "slug": "sarsenbayeva-aqsungul-muratbayevna",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg"
-          ],
-          "originalImages": [
-            "IMAGE 2026-04-17 09_43_02.jpg",
-            "IMAGE 2026-04-17 09_43_08.jpg",
-            "IMAGE 2026-04-17 09_43_10.jpg",
-            "IMAGE 2026-04-17 09_43_12.jpg",
-            "IMAGE 2026-04-17 09_43_13.jpg",
-            "IMAGE 2026-04-17 09_43_16.jpg",
-            "IMAGE 2026-04-17 09_43_18.jpg",
-            "IMAGE 2026-04-17 09_43_19.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/sarsenbayeva-aqsungul-muratbayevna/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Tursinova Saule",
-          "slug": "tursinova-saule",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg"
-          ],
-          "originalImages": [
-            "IMAGE 2026-04-17 09_54_43.jpg",
-            "IMAGE 2026-04-17 09_54_44.jpg",
-            "IMAGE 2026-04-17 09_54_47.jpg",
-            "IMAGE 2026-04-17 09_54_48.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/tursinova-saule/",
-          "pdfUrl": "/assets/komakchilar/qoraqalpogiston/tursinova-saule/tursinova-saule.pdf"
-        },
-        {
-          "name": "Uderbaeva Guljamal",
-          "slug": "uderbaeva-guljamal",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg"
-          ],
-          "originalImages": [
-            "IMAGE 2026-04-17 10_01_38.jpg",
-            "IMAGE 2026-04-17 10_01_39.jpg",
-            "IMAGE 2026-04-17 10_01_41.jpg",
-            "IMAGE 2026-04-17 10_01_43.jpg",
-            "IMAGE 2026-04-17 10_01_45.jpg",
-            "IMAGE 2026-04-17 10_01_47.jpg",
-            "IMAGE 2026-04-17 10_01_49.jpg",
-            "IMAGE 2026-04-17 10_02_52.jpg",
-            "IMAGE 2026-04-17 10_02_54.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/qoraqalpogiston/uderbaeva-guljamal/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Samarqand viloyati",
-      "slug": "samarqand",
-      "people": [
-        {
-          "name": "Quchqorova Marjona Akmal qizi",
-          "slug": "quchqorova-marjona-akmal-qizi",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Qochqarova Marjona Akmalovna\nLAVOZIM: \"I-Teach\" o'quv markazi rahbari\nTУГИЛГАН_САНА: 2002-yil 30-iyul\nТУҒИЛГАН_ЖОЙ: Samarqand viloyati, Kattaqo'rg'on tumani\nЯШАШ_ЖОЙИ: Samarqand viloyati, Kattaqo'rg'on tumani\n\nТАЪЛИМ:\n- 2020: Samarqand davlat chet tillari universiteti (Xorijiy til va adabiyot)\n\nФАОЛИЯТ:\n- 2023-yilda IELTS 8.0 ball olgan\n- Dubayda buxgalteriya sohasida tajriba oshirgan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: Kattaqo'rg'on tumanida \"I-Teach\" o'quv markazini ochish\n\nКЕЛАЖАК_МАҚСАДИ: Chekka hududda o'z o'quv markazi orqali sifatli ta'limni joriy etish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-16-47.jpg",
-            "photo_2_2026-04-16_17-16-47.jpg",
-            "photo_3_2026-04-16_17-16-47.jpg",
-            "photo_4_2026-04-16_17-16-47.jpg",
-            "photo_5_2026-04-16_17-16-47.jpg",
-            "photo_6_2026-04-16_17-16-47.jpg",
-            "photo_7_2026-04-16_17-16-47.jpg",
-            "photo_8_2026-04-16_17-16-47.jpg",
-            "photo_9_2026-04-16_17-16-47.jpg",
-            "photo_10_2026-04-16_17-16-47.jpg",
-            "photo_11_2026-04-16_17-16-47.jpg",
-            "photo_12_2026-04-16_17-16-47.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/samarqand/quchqorova-marjona-akmal-qizi/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Sirdaryo viloyati",
-      "slug": "sirdaryo",
-      "people": [
-        {
-          "name": "Чўлиева Муфаззалхон Нозиржон қизи",
-          "slug": "person",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Cho'liyeva Mufazzalxon Nazirjon qizi\nLAVOZIM: Ingliz tili o'qituvchisi\nTУГИЛГАН_САНА: 1995-yil 19-dekabr\nТУҒИЛГАН_ЖОЙ: Farg'ona viloyati\nЯШАШ_ЖОЙИ: Sirdaryo viloyati\n\nТАЪЛИМ:\n- Guliston davlat universiteti (Davlat granti)\n\nФАОЛИЯТ:\n- Nordik universitetida asosiy shtatda faoliyat yuritadi\n- IELTS 7.5, C1 sertifikatlariga ega\n- DTM imtihonida ekspert sifatida ishtirok etgan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O'quv markaz faoliyatini boshlash\n\nКЕЛАЖАК_МАҚСАДИ: Zamonaviy texnologiya va innovatsiyalarga asoslangan ilm muhitini tashkil etish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg"
-          ],
-          "originalImages": [
-            "Chuliyeva Mufazzalxon.JPG",
-            "photo_1_2026-04-16_16-46-03.jpg",
-            "photo_2_2026-04-16_16-46-03.jpg",
-            "photo_3_2026-04-16_16-46-03.jpg",
-            "photo_4_2026-04-16_16-46-03.jpg",
-            "photo_5_2026-04-16_16-46-03.jpg",
-            "photo_6_2026-04-16_16-46-03.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/sirdaryo/person/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Surxondaryo viloyati",
-      "slug": "surxondaryo",
-      "people": [
-        {
-          "name": "Narmatova Bibizebinisso Sharofuddin qizi",
-          "slug": "narmatova-bibizebinisso-sharofuddin-qizi",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Narmatova Bibizebiniso Sharofuddin qizi\nLAVOZIM: \"IELTS ALL\" o'quv markazi rahbari\nTУГИЛГАН_САНА: 2000-yil\nТУҒИЛГАН_ЖОЙ: Surxondaryo viloyati, Jarqo'rg'on tumani\nЯШАШ_ЖОЙИ: Surxondaryo viloyati, Qumqo'rg'on tumani\n\nТАЪЛИМ:\n- Yuridik kolleji\n- Toshkent Milliy universiteti\n\nФАОЛИЯТ:\n- Ingliz tili o'qituvchisi va tadbirkor\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: Qumqo'rg'on tumanida \"IELTS ALL\" o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Inkubatsion markazlar, kutubxona va shaxmat to'garaklari tashkillashtirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg",
-            "14.jpg",
-            "15.jpg",
-            "16.jpg",
-            "17.jpg",
-            "18.jpg",
-            "19.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-17_10-19-06.jpg",
-            "photo_2_2026-04-17_10-19-06.jpg",
-            "photo_3_2026-04-17_10-19-06.jpg",
-            "photo_4_2026-04-17_10-19-06.jpg",
-            "photo_5_2026-04-17_10-19-06.jpg",
-            "photo_6_2026-04-17_10-19-06.jpg",
-            "photo_7_2026-04-17_10-19-06.jpg",
-            "photo_8_2026-04-17_10-19-06.jpg",
-            "photo_9_2026-04-17_10-19-06.jpg",
-            "photo_10_2026-04-17_10-19-06.jpg",
-            "photo_11_2026-04-17_10-19-06.jpg",
-            "photo_12_2026-04-17_10-19-06.jpg",
-            "photo_13_2026-04-17_10-19-06.jpg",
-            "photo_14_2026-04-17_10-19-06.jpg",
-            "photo_15_2026-04-17_10-19-06.jpg",
-            "photo_16_2026-04-17_10-19-06.jpg",
-            "photo_17_2026-04-17_10-19-06.jpg",
-            "photo_18_2026-04-17_10-19-06.jpg",
-            "DSC08620 (2).JPG"
-          ],
-          "imagePath": "/assets/komakchilar/surxondaryo/narmatova-bibizebinisso-sharofuddin-qizi/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Toshkent viloyati",
-      "slug": "toshkent",
-      "people": [
-        {
-          "name": "Abduxamidov Azimbek Alisher o'g'li",
-          "slug": "abduxamidov-azimbek-alisher-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Abduxamidov Azimbek Alisher o'g'li\nLAVOZIM: \"STEPUP School\" o'quv markazi asoschisi\nTУГИЛГАН_САНА: 2002-yil\nТУҒИЛГАН_ЖОЙ: Samarqand viloyati, Bulung'ur tumani\nЯШАШ_ЖОЙИ: Toshkent viloyati\n\nТАЪЛИМ:\n- Nizomiy nomidagi Toshkent Davlat Pedagogika Universiteti (Ta'limda boshqaruv)\n\nФАОЛИЯТ:\n- 5 yil davomida ingliz tilidan repetitorlik qilgan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2026-yil boshida\nSSUDA_MAQSADI: \"STEPUP School\" o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Zamonaviy kasblar, IT, AI va Robototexnika yo'nalishlarini keng qamrovda yo'lga qo'yish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg"
-          ],
-          "originalImages": [
-            "azimbek.jpg",
-            "IMG_20260326_074703_042.jpg",
-            "IMG_20260326_074703_484.jpg",
-            "IMG_20260326_074703_613.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/toshkent/abduxamidov-azimbek-alisher-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Salimov Abrorjon Adxam o'g'li",
-          "slug": "salimov-abrorjon-adxam-ogli",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Salimov Abrorjon Adxam o'g'li\nLAVOZIM: \"Elevate\" ingliz tili markazi rahbari\nTУГИЛГАН_САНА: 1995-yil\nТУҒИЛГАН_ЖОЙ: Toshkent shahri, Yunusobod tumani\nЯШАШ_ЖОЙИ: Toshkent shahri\n\nТАЪЛИМ:\n- 2014-2018: Westminster Universiteti (Iqtisod va moliya)\n\nФАОЛИЯТ:\n- 11 yillik o'qitish tajribasi\n- 3 yil Amerikadagi logistika kompaniyasida ishlagan\n\nSSUDA_MIQDORI: 130 000 000 so'm\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: \"Elevate\" o'quv markazini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni startap yo'nalishi va ingliz tiliga ixtisoslashgan sohalar (IT, logistika) bo'yicha yo'naltirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_17-59-46.jpg",
-            "photo_2_2026-04-16_17-59-46.jpg",
-            "photo_3_2026-04-16_17-59-46.jpg",
-            "IMG_2395.JPG",
-            "DSC08294 (2).JPG",
-            "IMG_20220327_125827.jpg",
-            "PANO_20220415_133320.jpg",
-            "PANO_20220415_133341.jpg",
-            "PANO_20220415_133454.jpg",
-            "IMG_20220805_175241.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/toshkent/salimov-abrorjon-adxam-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Abdusattorov Dilzod Akbar o'g'li",
-          "slug": "abdusattorov-dilzod-akbar-ogli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpeg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_18-03-10.jpg",
-            "photo_2_2026-04-16_18-03-10.jpg",
-            "photo_3_2026-04-16_18-03-10.jpg",
-            "photo_4_2026-04-16_18-03-10.jpg",
-            "photo_5_2026-04-16_18-03-10.jpg",
-            "photo_6_2026-04-16_18-03-10.jpg",
-            "photo_7_2026-04-16_18-03-10.jpg",
-            "photo_8_2026-04-16_18-03-10.jpg",
-            "photo_9_2026-04-16_18-03-10.jpg",
-            "photo_10_2026-04-16_18-03-10.jpg",
-            "photo_11_2026-04-16_18-03-10.jpg",
-            "IMG_7330.JPEG"
-          ],
-          "imagePath": "/assets/komakchilar/toshkent/abdusattorov-dilzod-akbar-ogli/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Alimov Bekpulat Sanjar o‘g‘li",
-          "slug": "alimov-bekpulat-sanjar-ogli",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-16_18-15-28.jpg",
-            "photo_2_2026-04-16_18-15-28.jpg",
-            "photo_3_2026-04-16_18-15-28.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/toshkent/alimov-bekpulat-sanjar-ogli/",
-          "pdfUrl": null
-        }
-      ]
-    },
-    {
-      "name": "Xorazm viloyati",
-      "slug": "xorazm",
-      "people": [
-        {
-          "name": "Jumanazarov Sardorbek Rajabboyevich",
-          "slug": "jumanazarov-sardorbek-rajabboyevich",
-          "featured": true,
-          "description": "ISM_FAMILIYA: Jumanazarov Sardorbek Rajabboyevich\nLAVOZIM: \"BRITISH SCHOOL\" o'quv markazi asoschisi\nTУГИЛГАН_САНА: 1997-yil\nТУҒИЛГАН_ЖОЙ: Xorazm viloyati, Xiva tumani\nЯШАШ_ЖОЙИ: Xorazm viloyati, Xiva shahri\n\nТАЪЛИМ:\n- Xiva iqtisodiyot va servis kolleji\n- Urganch Davlat Universiteti\n\nФАОЛИЯТ:\n- Yoshlarga ingliz tilini o'rganish va xalqaro hamda milliy sertifikatlar olishga ko'maklashish\n\nSSUDA_SANASI: 2025-yil mart\nSSUDA_MAQSADI: Xiva shahrida \"BRITISH SCHOOL\" o'quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va traditsion kasblarga o'qitadigan xalqaro standartlarga javob beradigan xususiy maktab tashkil etish. O'quv markazi binosida kutubxona va IT kurslarini tashkil qilish.",
-          "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg",
-            "8.jpg",
-            "9.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg"
-          ],
-          "originalImages": [
-            "photo_1_2026-04-17_09-52-08.jpg",
-            "photo_2_2026-04-17_09-52-08.jpg",
-            "photo_3_2026-04-17_09-52-08.jpg",
-            "photo_4_2026-04-17_09-52-08.jpg",
-            "photo_5_2026-04-17_09-52-08.jpg",
-            "photo_6_2026-04-17_09-52-08.jpg",
-            "photo_7_2026-04-17_09-52-08.jpg",
-            "photo_8_2026-04-17_09-52-08.jpg",
-            "photo_9_2026-04-17_09-52-08.jpg",
-            "photo_10_2026-04-17_09-52-08.jpg",
-            "photo_11_2026-04-17_09-52-08.jpg",
-            "photo_12_2026-04-17_09-52-08.jpg",
-            "photo_13_2026-04-17_09-52-08.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/xorazm/jumanazarov-sardorbek-rajabboyevich/",
-          "pdfUrl": null
-        }
-      ]
-    }
-  ]
+﻿{
+    "viloyatlar":  [
+                       {
+                           "name":  "Andijon viloyati",
+                           "slug":  "andijon",
+                           "people":  [
+                                          {
+                                              "name":  "Akromov Izzatillo Murodjon o\u0027g\u0027li",
+                                              "slug":  "akromov-izzatillo-murodjon-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Akramov Izzatillo Murodjon o\u0027g\u0027li\nLAVOZIM: \"Idrok School LC\" o\u0027quv markazi rahbari va ingliz tili o\u0027qituvchisi\nTУГИЛГАН_САНА: 2000-yil\nТУҒИЛГАН_ЖОЙ: Andijon viloyati, Marhamat tumani\nЯШАШ_ЖОЙИ: Andijon viloyati, Marhamat tumani\n\nТАЪЛИМ:\n- 2025: Andijon iqtisodiyot va qurilish instituti, Iqtisodiyot yo\u0027nalishi (bakalavr)\n\nФАОЛИЯТ:\n- 2022-2025: \"Renessans 2022\" o\u0027quv markazi, ingliz tili o\u0027qituvchisi (700+ o\u0027quvchi)\n- 2025: C1 sertifikatini 3 marta qo\u0027lga kiritgan\n- 2023: \"Islom Karimov davlat stipendiyasi\" sohibi\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: O\u0027zining \"Idrok School LC\" o\u0027quv markaziga asos solish va Robototexnika, kompyuter savodxonligi kurslarini ochish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarning iqtidorini yuzaga chiqarish, zamonaviy va an\u0027anaviy kasblarga o\u0027qitadigan inkubatsion markazlar tashkil etish va jahon bozoriga yetakchi mutaxassislarni yetishtirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: Markazning oldingi holati\n- 3.jpg: O\u0027quv xonasining hozirgi holati",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-16_17-38-14.jpg",
+                                                                     "photo_10_2026-04-16_17-38-14.jpg",
+                                                                     "photo_11_2026-04-16_17-38-14.jpg",
+                                                                     "photo_2_2026-04-16_17-38-14.jpg",
+                                                                     "photo_3_2026-04-16_17-38-14.jpg",
+                                                                     "photo_4_2026-04-16_17-38-14.jpg",
+                                                                     "photo_5_2026-04-16_17-38-14.jpg",
+                                                                     "photo_6_2026-04-16_17-38-14.jpg",
+                                                                     "photo_7_2026-04-16_17-38-14.jpg",
+                                                                     "photo_8_2026-04-16_17-38-14.jpg",
+                                                                     "photo_9_2026-04-16_17-38-14.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/akromov-izzatillo-murodjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ashirbekov O\u0027tkirbek Umarbek o\u0027g\u0027li",
+                                              "slug":  "ashirbekov-otkirbek-umarbek-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Ashirbekov O\u0027tkirbek Umarbek o\u0027g\u0027li\nLAVOZIM: \"Ai Hikma Academy\" o\u0027quv markazi rahbari va ingliz tili o\u0027qituvchisi\nTУГИЛГАН_САНА: 2005-yil\nТУҒИЛГАН_ЖОЙ: Andijon viloyati, Shahrixon tumani\nЯШАШ_ЖОЙИ: Andijon viloyati, Bo\u0027ston tumani\n\nТАЪЛИМ:\n- Andijon chet tillari instituti (talaba)\n\nФАОЛИЯТ:\n- Yoshlarga ingliz tilini o\u0027rganish va xalqaro sertifikatlar olishga yordam bermoqda\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil yanvar\nSSUDA_MAQSADI: Bo\u0027ston tumani Guzar MFY da \"Ai Hikma Academy\" o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va innovatsion kasblarga o\u0027qitadigan va ish bilan ta\u0027minlaydigan inkubatsion markazlar tashkil etish. Kutubxona, shaxmat to\u0027garaklari va IT kurslarini tashkillashtirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: O\u0027quv xonasining holati",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2_2026-04-16_17-48-13.jpg",
+                                                                     "photo_3_2026-04-16_17-48-13.jpg",
+                                                                     "photo_4_2026-04-16_17-48-13.jpg",
+                                                                     "photo_5_2026-04-16_17-48-13.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/ashirbekov-otkirbek-umarbek-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Mirzaraximov Ilxomjon A\u0027zamjon o\u0027g\u0027li",
+                                              "slug":  "mirzaraximov-ilxomjon-azamjon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-16_17-54-52.jpg",
+                                                                     "photo_2_2026-04-16_17-54-52.jpg",
+                                                                     "photo_3_2026-04-16_17-54-52.jpg",
+                                                                     "photo_4_2026-04-16_17-54-52.jpg",
+                                                                     "photo_5_2026-04-16_17-54-52.jpg",
+                                                                     "photo_6_2026-04-16_17-54-52.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/mirzaraximov-ilxomjon-azamjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Nodirbek Maxmudov",
+                                              "slug":  "nodirbek-maxmudov",
+                                              "featured":  true,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.png",
+                                                             "8.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-16_17-32-25.jpg",
+                                                                     "photo_2_2026-04-16_17-32-25.jpg",
+                                                                     "photo_3_2026-04-16_17-32-25.jpg",
+                                                                     "photo_4_2026-04-16_17-32-25.jpg",
+                                                                     "photo_5_2026-04-16_17-32-25.jpg",
+                                                                     "photo_6_2026-04-16_17-32-25.jpg",
+                                                                     "Screenshot 2026-04-18 124155.png",
+                                                                     "Screenshot 2026-04-18 124314.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/nodirbek-maxmudov/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Saydullo Sotvoldiyev Bahodirjon o\u0027g\u0027li",
+                                              "slug":  "saydullo-sotvoldiyev-bahodirjon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_0817.JPG",
+                                                                     "IMG_1184.JPG",
+                                                                     "IMG_20251229_132447_284.jpg",
+                                                                     "photo_1_2026-04-16_17-35-20.jpg",
+                                                                     "photo_2_2026-04-16_17-35-20.jpg",
+                                                                     "photo_3_2026-04-16_17-35-20.jpg",
+                                                                     "photo_4_2026-04-16_17-35-20.jpg",
+                                                                     "photo_5_2026-04-16_17-35-20.jpg",
+                                                                     "photo_6_2026-04-16_17-35-20.jpg",
+                                                                     "photo_7_2026-04-16_17-35-20.jpg",
+                                                                     "photo_8_2026-04-16_17-35-20.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/saydullo-sotvoldiyev-bahodirjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Saynazarova Mashhuraxon To\u0027lqinjon qizi",
+                                              "slug":  "saynazarova-mashhuraxon-tolqinjon-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg",
+                                                             "14.jpg",
+                                                             "15.jpg",
+                                                             "16.jpg",
+                                                             "17.jpg",
+                                                             "18.jpg",
+                                                             "19.jpg",
+                                                             "20.jpg",
+                                                             "21.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_10_2026-04-16_17-46-25.jpg",
+                                                                     "photo_11_2026-04-16_17-46-25.jpg",
+                                                                     "photo_12_2026-04-16_17-46-25.jpg",
+                                                                     "photo_13_2026-04-16_17-46-25.jpg",
+                                                                     "photo_14_2026-04-16_17-46-25.jpg",
+                                                                     "photo_15_2026-04-16_17-46-25.jpg",
+                                                                     "photo_16_2026-04-16_17-46-25.jpg",
+                                                                     "photo_17_2026-04-16_17-46-25.jpg",
+                                                                     "photo_18_2026-04-16_17-46-25.jpg",
+                                                                     "photo_19_2026-04-16_17-46-25.jpg",
+                                                                     "photo_2_2026-04-16_17-46-25.jpg",
+                                                                     "photo_20_2026-04-16_17-46-25.jpg",
+                                                                     "photo_21_2026-04-16_17-46-25.jpg",
+                                                                     "photo_22_2026-04-16_17-46-25.jpg",
+                                                                     "photo_3_2026-04-16_17-46-25.jpg",
+                                                                     "photo_4_2026-04-16_17-46-25.jpg",
+                                                                     "photo_5_2026-04-16_17-46-25.jpg",
+                                                                     "photo_6_2026-04-16_17-46-25.jpg",
+                                                                     "photo_7_2026-04-16_17-46-25.jpg",
+                                                                     "photo_8_2026-04-16_17-46-25.jpg",
+                                                                     "photo_9_2026-04-16_17-46-25.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/saynazarova-mashhuraxon-tolqinjon-qizi/",
+                                              "pdfUrl":  "/assets/komakchilar/andijon/saynazarova-mashhuraxon-tolqinjon-qizi/saynazarova-mashhuraxon-tolqinjon-qizi.pdf"
+                                          },
+                                          {
+                                              "name":  "Tulanboyev Shoxsuvor Dilmurod o\u0027g\u0027li",
+                                              "slug":  "tulanboyev-shoxsuvor-dilmurod-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Yunusov Ilyos Fayozjon o\u0027g\u0027li\nLAVOZIM: Ilm Learning Centre asoschisi va ingliz tili o\u0027qituvchisi\nTУГИЛГАН_САНА: 1997-yil 22-avgust\nТУҒИЛГАН_ЖОЙ: Buxoro viloyati, G\u0027ijduvon tumani\nЯШАШ_ЖОЙИ: Navoiy viloyati, Zarafshon shahri\n\nТАЪЛИМ:\n- 2004–2008: Zarafshon 3-umumta\u0027lim maktabi (boshlang\u0027ich sinf)\n- 2008–2013: Zarafshon 10-umumta\u0027lim maktabi (yuqori sinf)\n- 2013–2016: Zarafshon Akademik litseyi, ijtimoiy fanlar yo\u0027nalishi\n- 2017–2021: Navoiy Davlat Pedagogika Instituti, Milliy g\u0027oya yo\u0027nalishi\n\nФАОЛИЯТ:\n- 2021–2025: Zarafshon 3-umumta\u0027lim maktabi, o\u0027qituvchi\n- 2021: \"Ilm\" ingliz tili o\u0027quv markaziga asos solgan\n- 1000+ o\u0027quvchi o\u0027qitgan, 100+ sertifikat sohiblari\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil fevral\nSSUDA_MAQSADI: O\u0027quv markazining moddiy-texnika bazasini yaxshilash va faoliyatini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Zamonaviy ta\u0027lim tizimini rivojlantirish, yoshlarni xalqaro darajada raqobatbardosh kadrlar sifatida tayyorlash va inkubatsion ta\u0027lim markazlarini tashkil etish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm\n- 2.jpg: Markazning oldingi holati\n- 3.jpg: O\u0027quv xonasining hozirgi holati",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "20260215_151648.jpg",
+                                                                     "20260215_151705.jpg",
+                                                                     "20260215_151849.jpg",
+                                                                     "20260215_152017.jpg",
+                                                                     "photo_1_2026-04-16_17-36-44.jpg",
+                                                                     "photo_2_2026-04-16_17-36-44.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/tulanboyev-shoxsuvor-dilmurod-ogli/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Buxoro viloyati",
+                           "slug":  "buxoro",
+                           "people":  [
+                                          {
+                                              "name":  "Odilov Dilshodbek Dilmurod o\u0027g\u0027li",
+                                              "slug":  "odilov-dilshodbek-dilmurod-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Odilov Dilshodbek Dilmurod o\u0027g\u0027li\nLAVOZIM: Ingliz tili o\u0027qituvchisi, YaTT\nTУГИЛГАН_САНА: 1999-yil 3-fevral\nТУҒИЛГАН_ЖОЙ: Buxoro viloyati, Jondor tumani\nЯШАШ_ЖОЙИ: Buxoro viloyati, Jondor tumani\n\nТАЪЛИМ:\n- Buxoro Neft va Gaz kolleji\n- Buxoro muhandislik texnologiya instituti (neft va gaz yo\u0027nalishi)\n\nФАОЛИЯТ:\n- 3 yildan beri ingliz tilidan dars berib keladi\n- IELTS: 7.5\n- 500 dan ortiq o\u0027quvchilarga IELTS va CEFR sertifikatlariga tayyorlashda yordam bergan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: O\u0027quv markaziga asos solish va zamonaviy ta\u0027lim sharoitlarini yaratish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy bilimlarga o\u0027qitish orqali xalqaro sertifikatlar olishga ko\u0027maklashish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg",
+                                                             "14.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "3W7A8643.00_18_49_09.Still001.jpg",
+                                                                     "-5319283203753316274_119.jpg",
+                                                                     "-5319283203753316275_119.jpg",
+                                                                     "-5319283203753316278_119.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_15.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_19.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_20.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_24.jpg",
+                                                                     "IMG_20260331_125353_834.jpg",
+                                                                     "IMG_20260331_125353_936.jpg",
+                                                                     "IMG_20260331_125353_966.jpg",
+                                                                     "IMG_20260331_125353_989.jpg",
+                                                                     "IMG_20260331_125353_991.jpg",
+                                                                     "IMG_20260331_125354_070.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/odilov-dilshodbek-dilmurod-ogli/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Farg\u0027ona viloyati",
+                           "slug":  "fargona",
+                           "people":  [
+                                          {
+                                              "name":  "Abdumuxtorova Masturaxon Mo\u0027minjon qizi",
+                                              "slug":  "abdumuxtorova-masturaxon-mominjon-qizi",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Abdumuxtorova Masturaxon Mo\u0027minjon qizi\nLAVOZIM: \"Farobiy Borliq ilmi\" o\u0027quv markazi asoschisi\nTУГИЛГАН_САНА: 2002-yil\nТУҒИЛГАН_ЖОЙ: Farg\u0027ona viloyati, Furqat tumani\nЯШАШ_ЖОЙИ: Farg\u0027ona viloyati, Furqat tumani\n\nТАЪЛИМ:\n- Qo\u0027qon davlat pedagogika instituti (Davlat granti)\n\nФАОЛИЯТ:\n- Mutaxassis darajasidan 1-toifali ustoz darajasiga erishgan\n- Yoshlarni xalqaro va milliy sertifikatlar olishga tayyorlamoqda\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil fevral\nSSUDA_MAQSADI: Furqat tumani Navbahor shaharchasida \"Farobiy Borliq ilmi\" o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: O\u0027quv markazlar faoliyatini kengaytirish, chekka hududlarda innovatsion maktabga asos solib, o\u0027quvchilarni kreativ qilib tarbiyalash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-16_18-46-05.jpg",
+                                                                     "photo_2_2026-04-16_18-46-05.jpg",
+                                                                     "photo_3_2026-04-16_18-46-05.jpg",
+                                                                     "photo_4_2026-04-16_18-46-05.jpg",
+                                                                     "photo_5_2026-04-16_18-46-05.jpg",
+                                                                     "photo_6_2026-04-16_18-46-05.jpg",
+                                                                     "photo_7_2026-04-16_18-46-05.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/fargona/abdumuxtorova-masturaxon-mominjon-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Eminov jamshid Vositxon",
+                                              "slug":  "eminov-jamshid-vositxon",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Eminov Jamshid Vositxon o\u0027g\u0027li\nLAVOZIM: Ingliz tili o\u0027qituvchisi va ta\u0027lim menejeri\nTУГИЛГАН_САНА: 2004-yil\nТУҒИЛГАН_ЖОЙ: Farg\u0027ona viloyati, Rishton tumani\nЯШАШ_ЖОЙИ: Farg\u0027ona viloyati, Rishton tumani\n\nТАЪЛИМ:\n- Farg\u0027ona viloyati Rishton tumani 27-sonli o\u0027rta maktab\n- Westminster International University in Tashkent (Biznes boshqaruvi va Marketing)\n\nФАОЛИЯТ:\n- ANKLAF hududida xususiy o\u0027quv markaziga asos solgan va muvaffaqiyatli boshqarmoqda\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: Xususiy o\u0027quv markazini modernizatsiya qilish\n\nКЕЛАЖАК_МАҚСАДИ: Ta\u0027lim tizimida ajdodlarimiz hayoti va ilmiy merosiga asoslangan alohida fan joriy etish orqali yoshlarning milliy o\u0027zligiga sodiqligini kuchaytirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_1224.JPG",
+                                                                     "IMG_1225.JPG",
+                                                                     "IMG_1226.JPG",
+                                                                     "IMG_1227.JPG",
+                                                                     "IMG_1228.JPG",
+                                                                     "jamshid.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/fargona/eminov-jamshid-vositxon/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Hoshimjonov Xurramshox Yolqinjon o\u0027g\u0027li",
+                                              "slug":  "hoshimjonov-xurramshox-yolqinjon-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Hoshimjonov Xurramshox Yolqinjon o\u0027g\u0027li\nLAVOZIM: LingoValley va Smart Edu Cram School asoschisi\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Farg\u0027ona viloyati\nЯШАШ_ЖОЙИ: Farg\u0027ona viloyati\n\nТАЪЛИМ:\n- 2019-2023: Alisher Navoiy nomidagi Toshkent davlat o\u0027zbek tili va adabiyoti universiteti (Tarjima nazariyasi va amaliyoti)\n- 2025: Webster universiteti, TESOL (Magistratura)\n\nФАОЛИЯТ:\n- 2025: LingoValley til markazini tashkil etgan\n- 2025: Smart Edu Cram School o\u0027quv markazini tashkil etgan\n- 4 nafar yosh o\u0027qituvchini ish bilan ta\u0027minlagan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O\u0027quv markazi binosini ta\u0027mirlash va zamonaviy jihozlar (televizor, 7 kompyuter) xarid qilish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarga zamonaviy texnologiyalar asosida ta\u0027lim olish imkoniyatini kengaytirish va professional o\u0027qituvchilarni qo\u0027llab-quvvatlash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_09-29-05.jpg",
+                                                                     "photo_10_2026-04-17_09-29-05.jpg",
+                                                                     "photo_11_2026-04-17_09-29-05.jpg",
+                                                                     "photo_12_2026-04-17_09-29-05.jpg",
+                                                                     "photo_13_2026-04-17_09-29-05.jpg",
+                                                                     "photo_2_2026-04-17_09-29-05.jpg",
+                                                                     "photo_3_2026-04-17_09-29-05.jpg",
+                                                                     "photo_4_2026-04-17_09-29-05.jpg",
+                                                                     "photo_5_2026-04-17_09-29-05.jpg",
+                                                                     "photo_6_2026-04-17_09-29-05.jpg",
+                                                                     "photo_7_2026-04-17_09-29-05.jpg",
+                                                                     "photo_8_2026-04-17_09-29-05.jpg",
+                                                                     "photo_9_2026-04-17_09-29-05.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/fargona/hoshimjonov-xurramshox-yolqinjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Umarova So\u0027g\u0027diyona G\u0027ofurjon qizi",
+                                              "slug":  "umarova-sogdiyona-gofurjon-qizi",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Umarova So\u0027g\u0027diyona G\u0027ofurjon qizi\nLAVOZIM: Legacy Education Center asoschisi\nTУГИЛГАН_САНА: 2005-yil\nТУҒИЛГАН_ЖОЙ: Farg\u0027ona viloyati, Beshariq tumani\nЯШАШ_ЖОЙИ: Farg\u0027ona viloyati, Beshariq tumani\n\nТАЪЛИМ:\n- Toshkent Xalqaro Westminster Universiteti, Iqtisodiyot va moliya (4-bosqich talabasi)\n\nФАОЛИЯТ:\n- CEFR B2 va IELTS 7 ball olgan o\u0027quvchilarni yetishtirib chiqarmoqda\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: Beshariq tumanida Legacy Education Center o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Moliya va iqtisodiyot sohasida yetuk mutaxassis bo\u0027lish, yoshlarni zamonaviy bilim va xalqaro sertifikatlar orqali kelajakka tayyorlovchi ta\u0027lim ekotizimini kengaytirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-16_18-18-11.jpg",
+                                                                     "photo_2_2026-04-16_18-18-11.jpg",
+                                                                     "photo_3_2026-04-16_18-18-11.jpg",
+                                                                     "photo_4_2026-04-16_18-18-11.jpg",
+                                                                     "photo_5_2026-04-16_18-18-11.jpg",
+                                                                     "photo_6_2026-04-16_18-18-11.jpg",
+                                                                     "photo_7_2026-04-16_18-18-11.jpg",
+                                                                     "photo_8_2026-04-16_18-18-11.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/fargona/umarova-sogdiyona-gofurjon-qizi/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Jizzax viloyati",
+                           "slug":  "jizzax",
+                           "people":  [
+                                          {
+                                              "name":  "Xudayorov Farmonqul Anarboy",
+                                              "slug":  "xudayorov-farmonqul-anarboy",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Xudayorov Farmonqul Anarboy o\u0027g\u0027li\nLAVOZIM: \"DUOLINGO\" o\u0027quv markazi asoschisi\nTУГИЛГАН_САНА: 1996-yil\nТУҒИЛГАН_ЖОЙ: Jizzax viloyati, Zarbdor tumani\nЯШАШ_ЖОЙИ: Jizzax viloyati, Zarbdor tumani\n\nТАЪЛИМ:\n- Tibbiyot kolleji\n- Jizzax Davlat Universiteti\n\nФАОЛИЯТ:\n- Rus tili o\u0027qituvchisi va tadbirkor\n- O\u0027quv markazida 4 nafar milliy sertifikatga ega o\u0027qituvchilar ishlamoqda\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: Jizzax viloyati Zarbdor tumanida \"DUOLINGO\" o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni an\u0027anaviy va zamonaviy kasblar (IT muhandisi, 3D modeller, AI mutaxassisi) bo\u0027yicha o\u0027qitish, kutubxona va shaxmat to\u0027garaklari tashkil qilish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_10-07-21.jpg",
+                                                                     "photo_10_2026-04-17_10-07-21.jpg",
+                                                                     "photo_11_2026-04-17_10-07-21.jpg",
+                                                                     "photo_12_2026-04-17_10-07-21.jpg",
+                                                                     "photo_13_2026-04-17_10-07-21.jpg",
+                                                                     "photo_2_2026-04-17_10-07-21.jpg",
+                                                                     "photo_3_2026-04-17_10-07-21.jpg",
+                                                                     "photo_4_2026-04-17_10-07-21.jpg",
+                                                                     "photo_5_2026-04-17_10-07-21.jpg",
+                                                                     "photo_6_2026-04-17_10-07-21.jpg",
+                                                                     "photo_7_2026-04-17_10-07-21.jpg",
+                                                                     "photo_8_2026-04-17_10-07-21.jpg",
+                                                                     "photo_9_2026-04-17_10-07-21.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/xudayorov-farmonqul-anarboy/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Namangan viloyati",
+                           "slug":  "namangan",
+                           "people":  [
+                                          {
+                                              "name":  "Akramjonov Maqsudbek",
+                                              "slug":  "akramjonov-maqsudbek",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Akramjonov Maqsudbek Anvarjon o\u0027g\u0027li\nLAVOZIM: \"ICEBERG\" birlashgan o\u0027quv markazi rahbari, IELTS instructor\nTУГИЛГАН_САНА: 2003-yil 6-yanvar\nТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani\nЯШАШ_ЖОЙИ: Namangan viloyati, Uychi tumani\n\nТАЪЛИМ:\n- 2009-2020: Uychi tumani 5-maktab\n- 2020-2025: Namangan Davlat Universiteti (Tarix, bakalavr)\n- 2025-hozir: Namangan Davlat Pedagogika Instituti (Magistratura)\n\nФАОЛИЯТ:\n- 3 yildan buyon IELTS instructor (IELTS 7.5, Multilevel C1)\n- 20+ ilmiy maqolalar, 10+ kitoblar muallifi\n- \"ICEBERG\" o\u0027quv markazi rahbari\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O\u0027quv markaz faoliyatini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Yangi filiallar ochish, ta\u0027lim faoliyatini yanada kengaytirish va ko\u0027proq yoshlarning sifatli ta\u0027lim olishiga imkon yaratish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "20260331_135827.jpg",
+                                                                     "20260331_135848.jpg",
+                                                                     "20260331_140130.jpg",
+                                                                     "20260331_140210.jpg",
+                                                                     "20260331_140225.jpg",
+                                                                     "20260331_140622.jpg",
+                                                                     "Maqsudbek  Akramjonov.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/namangan/akramjonov-maqsudbek/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ismoilov Doniyorbek Baxodir o\u0027g\u0027li",
+                                              "slug":  "ismoilov-doniyorbek-baxodir-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Ismoilov Doniyorbek Boxodir o\u0027g\u0027li\nLAVOZIM: \"Discover\" o\u0027quv markazi rahbari\nTУГИЛГАН_САНА: 1998-yil 22-mart\nТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani\nЯШАШ_ЖОЙИ: Namangan viloyati, Uychi tumani\n\nТАЪЛИМ:\n- 2014: Uychi tuman 1-maktab\n- 2017: Namangan 2-akademik litsey\n- 2021: Andijon Davlat Universiteti\n\nФАОЛИЯТ:\n- 7 yil ta\u0027lim sohasida ish tajribasi (1000+ o\u0027quvchi)\n- 2021: Istanbulda 1 oy \"Work and Travel\" amaliyoti\n- Hozirda 3 ta filialga ega\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil mart\nSSUDA_MAQSADI: \"Discover\" o\u0027quv markazi faoliyatini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Innovatsion o\u0027qitish usullarini joriy etish orqali raqobatbardosh, bilimli va zamonaviy fikrlaydigan yoshlarni tarbiyalash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Doniyorbek.JPG",
+                                                                     "IMG_2612.HEIC",
+                                                                     "IMG_2613.HEIC",
+                                                                     "IMG_2614.HEIC",
+                                                                     "IMG_2615.HEIC"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/namangan/ismoilov-doniyorbek-baxodir-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Nasriddinov Azizbek",
+                                              "slug":  "nasriddinov-azizbek",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Nasriddinov Azizbek G\u0027anisher o\u0027g\u0027li\nLAVOZIM: \"ICE BERG\" o\u0027quv markazi asoschisi, Yoshlar faoli\nTУГИЛГАН_САНА: 2000-yil\nТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani\nЯШАШ_ЖОЙИ: Namangan viloyati, Uychi tumani\n\nТАЪЛИМ:\n- 2023-2025: Namangan davlat texnika universiteti (Magistratura)\n\nФАОЛИЯТ:\n- C1 (CEFR) va IELTS 7.5 natijasiga ega\n- \"ICE BERG\" orqali 3000+ yoshlarga ta\u0027lim bergan\n- \"CLEAN UYCHI\" ijtimoiy loyihasini amalga oshirgan va \"ICE BERG LIBRARY\" tashkil etgan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: O\u0027quv markazni va kutubxonani jihozlash\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni kabs-hunar va xorijiy tillarga yo\u0027naltirish, ishsiz yoshlar bandligini ta\u0027minlash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "20260326_144346.jpg",
+                                                                     "photo_1_2026-04-16_17-00-16.jpg",
+                                                                     "photo_1_2026-04-16_17-01-36.jpg",
+                                                                     "photo_2_2026-04-16_17-00-16.jpg",
+                                                                     "photo_2_2026-04-16_17-01-36.jpg",
+                                                                     "photo_3_2026-04-16_17-00-16.jpg",
+                                                                     "photo_3_2026-04-16_17-01-36.jpg",
+                                                                     "photo_4_2026-04-16_17-01-36.jpg",
+                                                                     "photo_5_2026-04-16_17-01-36.jpg",
+                                                                     "photo_6_2026-04-16_17-01-36.jpg",
+                                                                     "photo_7_2026-04-16_17-01-36.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/namangan/nasriddinov-azizbek/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Navoiy viloyati",
+                           "slug":  "navoiy",
+                           "people":  [
+                                          {
+                                              "name":  "Rahmatov Solijon Shuhratovich",
+                                              "slug":  "rahmatov-solijon-shuhratovich",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Raxmatov Solijon Shuxratovich\nLAVOZIM: \"Solijon\u0027s School\" o\u0027quv markazi asoschisi\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Navoiy viloyati, Konimex tumani\nЯШАШ_ЖОЙИ: Navoiy viloyati, Konimex tumani\n\nТАЪЛИМ:\n- SolBridge International School of Business (Janubiy Koreya)\n- MDIS Tashkent (Singapur Menejmentni Rivojlantirish Instituti)\n\nФАОЛИЯТ:\n- 4 yillik pedagogik faoliyat davomida 170+ yoshlarni xalqaro sertifikatlarga tayyorlagan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: Konimex tumanida zamonaviy o\u0027quv markazi tashkil etish\n\nКЕЛАЖАК_МАҚСАДИ: Chekka hududlardagi yoshlarning zamonaviy bilim va ko\u0027nikmalarini shakllantirish, yuqori malakali kadrlar tayyorlash\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.png",
+                                                             "6.png",
+                                                             "7.png",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_2913.JPG",
+                                                                     "IMG_2926.JPG",
+                                                                     "IMG_2927.JPG",
+                                                                     "IMG_2928.JPG",
+                                                                     "IMG_8054.PNG",
+                                                                     "IMG_8056.PNG",
+                                                                     "IMG_8057.PNG",
+                                                                     "IMG_8448.JPG",
+                                                                     "IMG_8455.JPG",
+                                                                     "IMG_8465.JPG",
+                                                                     "IMG_9643.JPG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/navoiy/rahmatov-solijon-shuhratovich/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Qashqadaryo viloyati",
+                           "slug":  "qashqadaryo",
+                           "people":  [
+                                          {
+                                              "name":  "Qulmatov Temurbek Yusuf o\u0027g\u0027li",
+                                              "slug":  "qulmatov-temurbek-yusuf-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Qulmatov Temurbek Yusuf o\u0027g\u0027li\nLAVOZIM: \"Cosmos\" o\u0027quv markazi rahbari\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Qashqadaryo viloyati, Koson tumani\nЯШАШ_ЖОЙИ: Qashqadaryo viloyati, Koson tumani\n\nТАЪЛИМ:\n- Toshkent davlat yuridik universiteti\n\nФАОЛИЯТ:\n- Qorabayir qishlog\u0027ida \"Cosmos\" o\u0027quv markazini tashkil etgan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: \"Cosmos\" o\u0027quv markazini ochish va jihozlash\n\nКЕЛАЖАК_МАҚСАДИ: Ta\u0027lim tarmog\u0027ini kengaytirib, innovatsion ta\u0027lim ekotizimini shakllantirish, minglab yoshlarning hayotini o\u0027zgartiradigan kuchli ta\u0027lim brendini yaratish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_09-32-24.jpg",
+                                                                     "photo_2_2026-04-17_09-32-24.jpg",
+                                                                     "photo_3_2026-04-17_09-32-24.jpg",
+                                                                     "photo_4_2026-04-17_09-32-24.jpg",
+                                                                     "photo_5_2026-04-17_09-32-24.jpg",
+                                                                     "photo_6_2026-04-17_09-32-24.jpg",
+                                                                     "photo_7_2026-04-17_09-32-24.jpg",
+                                                                     "photo_8_2026-04-17_09-32-24.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/qulmatov-temurbek-yusuf-ogli/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Qoraqalpog\u0027iston",
+                           "slug":  "qoraqalpogiston",
+                           "people":  [
+                                          {
+                                              "name":  "Imamiddinov Sardorbek Olimboy o\u0027g\u0027li",
+                                              "slug":  "imamiddinov-sardorbek-olimboy-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_20250610_121132.jpg",
+                                                                     "IMG_20250923_000535.jpg",
+                                                                     "IMG_20250924_091209.jpg",
+                                                                     "IMG_20250924_151540.jpg",
+                                                                     "IMG_20251210_163135.jpg",
+                                                                     "IMG_20260123_141923.jpg",
+                                                                     "IMG_20260218_185454.jpg",
+                                                                     "IMG_20260331_112044.jpg",
+                                                                     "IMG_20260331_112059.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/imamiddinov-sardorbek-olimboy-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Allaniyozov Nursulton Dauletniyaz uli",
+                                              "slug":  "allaniyozov-nursulton-dauletniyaz-uli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "1749165E-F9A5-4B15-A08F-48E28E045777.png",
+                                                                     "42085432-9DF7-4E2F-8205-1794573589FD.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/allaniyozov-nursulton-dauletniyaz-uli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Durdana Turkpenbaeva",
+                                              "slug":  "durdana-turkpenbaeva",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 09_57_11.jpg",
+                                                                     "IMAGE 2026-04-17 09_57_12.jpg",
+                                                                     "IMAGE 2026-04-17 09_57_15.jpg",
+                                                                     "IMAGE 2026-04-17 09_57_17.jpg",
+                                                                     "IMAGE 2026-04-17 09_57_18.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/durdana-turkpenbaeva/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Erniyazova Ulbosin",
+                                              "slug":  "erniyazova-ulbosin",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 09_58_21.jpg",
+                                                                     "IMAGE 2026-04-17 09_58_22.jpg",
+                                                                     "IMAGE 2026-04-17 09_58_24.jpg",
+                                                                     "IMAGE 2026-04-17 09_59_04.jpg",
+                                                                     "IMAGE 2026-04-17 09_59_18.jpg",
+                                                                     "IMAGE 2026-04-17 09_59_22.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/erniyazova-ulbosin/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ibrohimova Rayhonoy Karimboy qizi",
+                                              "slug":  "ibrohimova-rayhonoy-karimboy-qizi",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Ibrohimova Rayhonoy Karimboy qizi\nLAVOZIM: \"Ibrohimova Rayhonoy Karimboy qizi\" YaTT o\u0027quv markazi asoschisi, Ingliz tili o\u0027qituvchisi\nTУГИЛГАН_САНА: 2003-yil\nТУҒИЛГАН_ЖОЙ: Qoraqalpog\u0027iston Respublikasi, Amudaryo tumani\nЯШАШ_ЖОЙИ: Qoraqalpog\u0027iston Respublikasi, Amudaryo tumani\n\nТАЪЛИМ:\n- Nukus davlat pedagogika instituti (Ingliz tili va adabiyoti yo‘nalishi)\n- Slovakiya Milliy granti asosida Slovakiyada bir semestr almashinuv dasturi\n\nФАОЛИЯТ:\n- Ingliz tili fanidan yoshlarni IELTS va CEFR sertifikatlariga tayyorlash\n\nSSUDA_SANASI: 2025-yil mart\nSSUDA_MAQSADI: Amudaryo tumanida o\u0027zining o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va ilg\u0027or metodikalar yordamida tayyorlab, kasbga to\u0027g\u0027ri yo\u0027naltirish va ishlash imkonini beruvchi markazlar ochish. Xalqaro grantlarni qo\u0027lga kiritishlariga yordam berish.",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 09_32_28.jpg",
+                                                                     "IMAGE 2026-04-17 09_32_31.jpg",
+                                                                     "IMAGE 2026-04-17 09_32_33.jpg",
+                                                                     "ААА+++.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/ibrohimova-rayhonoy-karimboy-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Isakov Jenisbek Islambekovich",
+                                              "slug":  "isakov-jenisbek-islambekovich",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "D3DF0B44-54E1-4E6E-9532-4533F27B2A79.png",
+                                                                     "FD8B1F7B-F92F-4A55-A426-2F6685B878B3.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/isakov-jenisbek-islambekovich/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Kdirniyazov Quwandiq Ruslan ugli",
+                                              "slug":  "kdirniyazov-quwandiq-ruslan-ugli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "C84A9CD5-FF4E-4265-B6B3-291C0CBF21EF.png",
+                                                                     "EB2AFB3A-5900-4CEC-8667-2C7DD2496D4E.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/kdirniyazov-quwandiq-ruslan-ugli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Medetbaeva Perizat Kuatbayevna",
+                                              "slug":  "medetbaeva-perizat-kuatbayevna",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "19B16CAF-5D83-4925-832B-3ED362182695.png",
+                                                                     "A4490967-9F01-45BA-94B8-8895E5D80799.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/medetbaeva-perizat-kuatbayevna/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Miradova Maxim",
+                                              "slug":  "miradova-maxim",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2026-04-29_16-52-48.jpg",
+                                                                     "photo_2026-04-29_16-53-04.jpg",
+                                                                     "photo_2026-04-29_16-53-07.jpg",
+                                                                     "photo_2026-04-29_16-53-10.jpg",
+                                                                     "photo_2026-04-29_16-53-12.jpg",
+                                                                     "photo_2026-04-29_16-53-14.jpg",
+                                                                     "photo_2026-04-29_16-53-17.jpg",
+                                                                     "photo_2026-04-29_16-53-20.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/miradova-maxim/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Muratniyazov Sultanbek Karamatdin uli",
+                                              "slug":  "muratniyazov-sultanbek-karamatdin-uli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "704DBCB4-A0E0-4F25-8B52-851ED9AE68DE.png",
+                                                                     "BC80543D-11D9-43A3-AAFC-5D16704192C2.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/muratniyazov-sultanbek-karamatdin-uli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Nurmaxanova Elyonora Tolibay qizi",
+                                              "slug":  "nurmaxanova-elyonora-tolibay-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "7B7AC7E2-6FC1-4641-AFFF-912F56383312.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/nurmaxanova-elyonora-tolibay-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "O\u0027rinbaeva Shahnoza",
+                                              "slug":  "orinbaeva-shahnoza",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2026-04-29_16-48-23.jpg",
+                                                                     "photo_2026-04-29_16-48-43.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/orinbaeva-shahnoza/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Qayratdinov Azizbek Asqar ugli",
+                                              "slug":  "qayratdinov-azizbek-asqar-ugli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "8F88A1FF-4E9B-4A27-B2A7-7721AA462860.png",
+                                                                     "AEC15690-FF65-4B33-92F0-092B31A57E33.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/qayratdinov-azizbek-asqar-ugli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Sarsenbayeva Aqsungul Muratbayevna",
+                                              "slug":  "sarsenbayeva-aqsungul-muratbayevna",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 09_43_02.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_08.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_10.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_12.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_13.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_16.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_18.jpg",
+                                                                     "IMAGE 2026-04-17 09_43_19.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/sarsenbayeva-aqsungul-muratbayevna/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Tursinova Saule",
+                                              "slug":  "tursinova-saule",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 09_54_43.jpg",
+                                                                     "IMAGE 2026-04-17 09_54_44.jpg",
+                                                                     "IMAGE 2026-04-17 09_54_47.jpg",
+                                                                     "IMAGE 2026-04-17 09_54_48.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/tursinova-saule/",
+                                              "pdfUrl":  "/assets/komakchilar/qoraqalpogiston/tursinova-saule/tursinova-saule.pdf"
+                                          },
+                                          {
+                                              "name":  "Uderbaeva Guljamal",
+                                              "slug":  "uderbaeva-guljamal",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 10_01_38.jpg",
+                                                                     "IMAGE 2026-04-17 10_01_39.jpg",
+                                                                     "IMAGE 2026-04-17 10_01_41.jpg",
+                                                                     "IMAGE 2026-04-17 10_01_43.jpg",
+                                                                     "IMAGE 2026-04-17 10_01_45.jpg",
+                                                                     "IMAGE 2026-04-17 10_01_47.jpg",
+                                                                     "IMAGE 2026-04-17 10_01_49.jpg",
+                                                                     "IMAGE 2026-04-17 10_02_52.jpg",
+                                                                     "IMAGE 2026-04-17 10_02_54.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/uderbaeva-guljamal/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "XUDAYBERGENOVA LEYLA ALISHEROVNA",
+                                              "slug":  "xudaybergenova-leyla-alisherovna",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Xudaybergenova Leyla Alisherovna\nLAVOZIM: Tadbirkor va o\u0027qituvchi\nTУГИЛГАН_САНА: 1999-yil\nТУҒИЛГАН_ЖОЙ: Qoraqalpogʻiston Respublikasi, Nukus shahri\nЯШАШ_ЖОЙИ: Qoraqalpogʻiston Respublikasi, Nukus shahri\n\nТАЪЛИМ:\n- Pedagogik kollej\n- Pedagogika instituti\n\nФАОЛИЯТ:\n- Yoshlarning sifatli ta’lim olishi va xalqaro hamda milliy sertifikatlarni qo‘lga kiritishiga ko\u0027maklashish\n\nКЕЛАЖАК_МАҚСАДИ: Bilimli, mustaqil fikrlaydigan va global maydonda raqobat qila oladigan yangi avlodni tarbiyalash. Innovatsion ta’lim markazlari, rivojlanish platformalari va inkubatsion loyihalar yaratish.",
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-17 09_37_18.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qoraqalpogiston/xudaybergenova-leyla-alisherovna/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Samarqand viloyati",
+                           "slug":  "samarqand",
+                           "people":  [
+                                          {
+                                              "name":  "Quchqorova Marjona Akmal qizi",
+                                              "slug":  "quchqorova-marjona-akmal-qizi",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Qochqarova Marjona Akmalovna\nLAVOZIM: \"I-Teach\" o\u0027quv markazi rahbari\nTУГИЛГАН_САНА: 2002-yil 30-iyul\nТУҒИЛГАН_ЖОЙ: Samarqand viloyati, Kattaqo\u0027rg\u0027on tumani\nЯШАШ_ЖОЙИ: Samarqand viloyati, Kattaqo\u0027rg\u0027on tumani\n\nТАЪЛИМ:\n- 2020: Samarqand davlat chet tillari universiteti (Xorijiy til va adabiyot)\n\nФАОЛИЯТ:\n- 2023-yilda IELTS 8.0 ball olgan\n- Dubayda buxgalteriya sohasida tajriba oshirgan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: Kattaqo\u0027rg\u0027on tumanida \"I-Teach\" o\u0027quv markazini ochish\n\nКЕЛАЖАК_МАҚСАДИ: Chekka hududda o\u0027z o\u0027quv markazi orqali sifatli ta\u0027limni joriy etish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-16_17-16-47.jpg",
+                                                                     "photo_10_2026-04-16_17-16-47.jpg",
+                                                                     "photo_11_2026-04-16_17-16-47.jpg",
+                                                                     "photo_12_2026-04-16_17-16-47.jpg",
+                                                                     "photo_2_2026-04-16_17-16-47.jpg",
+                                                                     "photo_3_2026-04-16_17-16-47.jpg",
+                                                                     "photo_4_2026-04-16_17-16-47.jpg",
+                                                                     "photo_5_2026-04-16_17-16-47.jpg",
+                                                                     "photo_6_2026-04-16_17-16-47.jpg",
+                                                                     "photo_7_2026-04-16_17-16-47.jpg",
+                                                                     "photo_8_2026-04-16_17-16-47.jpg",
+                                                                     "photo_9_2026-04-16_17-16-47.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/samarqand/quchqorova-marjona-akmal-qizi/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Sirdaryo viloyati",
+                           "slug":  "sirdaryo",
+                           "people":  [
+                                          {
+                                              "name":  "Chuliyeva Mufazzalxon Nozirjon qizi",
+                                              "slug":  "chuliyeva-mufazzalxon-nozirzhan-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Chuliyeva Mufazzalxon.JPG",
+                                                                     "photo_1_2026-04-16_16-46-03.jpg",
+                                                                     "photo_2_2026-04-16_16-46-03.jpg",
+                                                                     "photo_3_2026-04-16_16-46-03.jpg",
+                                                                     "photo_4_2026-04-16_16-46-03.jpg",
+                                                                     "photo_5_2026-04-16_16-46-03.jpg",
+                                                                     "photo_6_2026-04-16_16-46-03.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/sirdaryo/chuliyeva-mufazzalxon-nozirzhan-qizi/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Surxondaryo viloyati",
+                           "slug":  "surxondaryo",
+                           "people":  [
+                                          {
+                                              "name":  "Narmatova Bibizebinisso Sharofuddin qizi",
+                                              "slug":  "narmatova-bibizebinisso-sharofuddin-qizi",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Narmatova Bibizebiniso Sharofuddin qizi\nLAVOZIM: \"IELTS ALL\" o\u0027quv markazi rahbari\nTУГИЛГАН_САНА: 2000-yil\nТУҒИЛГАН_ЖОЙ: Surxondaryo viloyati, Jarqo\u0027rg\u0027on tumani\nЯШАШ_ЖОЙИ: Surxondaryo viloyati, Qumqo\u0027rg\u0027on tumani\n\nТАЪЛИМ:\n- Yuridik kolleji\n- Toshkent Milliy universiteti\n\nФАОЛИЯТ:\n- Ingliz tili o\u0027qituvchisi va tadbirkor\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil dekabr\nSSUDA_MAQSADI: Qumqo\u0027rg\u0027on tumanida \"IELTS ALL\" o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Inkubatsion markazlar, kutubxona va shaxmat to\u0027garaklari tashkillashtirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg",
+                                                             "14.jpg",
+                                                             "15.jpg",
+                                                             "16.jpg",
+                                                             "17.jpg",
+                                                             "18.jpg",
+                                                             "19.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "DSC08620 (2).JPG",
+                                                                     "photo_1_2026-04-17_10-19-06.jpg",
+                                                                     "photo_10_2026-04-17_10-19-06.jpg",
+                                                                     "photo_11_2026-04-17_10-19-06.jpg",
+                                                                     "photo_12_2026-04-17_10-19-06.jpg",
+                                                                     "photo_13_2026-04-17_10-19-06.jpg",
+                                                                     "photo_14_2026-04-17_10-19-06.jpg",
+                                                                     "photo_15_2026-04-17_10-19-06.jpg",
+                                                                     "photo_16_2026-04-17_10-19-06.jpg",
+                                                                     "photo_17_2026-04-17_10-19-06.jpg",
+                                                                     "photo_18_2026-04-17_10-19-06.jpg",
+                                                                     "photo_2_2026-04-17_10-19-06.jpg",
+                                                                     "photo_3_2026-04-17_10-19-06.jpg",
+                                                                     "photo_4_2026-04-17_10-19-06.jpg",
+                                                                     "photo_5_2026-04-17_10-19-06.jpg",
+                                                                     "photo_6_2026-04-17_10-19-06.jpg",
+                                                                     "photo_7_2026-04-17_10-19-06.jpg",
+                                                                     "photo_8_2026-04-17_10-19-06.jpg",
+                                                                     "photo_9_2026-04-17_10-19-06.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/surxondaryo/narmatova-bibizebinisso-sharofuddin-qizi/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Toshkent viloyati",
+                           "slug":  "toshkent",
+                           "people":  [
+                                          {
+                                              "name":  "Abdug\u0027aniyev Alibek Komiljon o\u0027g\u0027li",
+                                              "slug":  "abduganiyev-alibek-komiljon-ogli",
+                                              "featured":  false,
+                                              "description":  "Zanigota tumani Bog’ishamol MFYda joylashgan o’quv markaz faoliyati o’rganildi. Tumani agentlik rahbari tashabbuskor bilan birgalikda. \r\n\r\nO’quv markaz ayni paytda 120 dan ziyod o’quvchini sig’dira oladi.",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2026-05-19_11-02-54.jpg",
+                                                                     "photo_2026-05-19_11-03-01.jpg",
+                                                                     "photo_2026-05-19_11-03-04.jpg",
+                                                                     "photo_2026-05-19_11-03-08.jpg",
+                                                                     "photo_2026-05-19_11-03-10.jpg",
+                                                                     "photo_2026-05-19_11-03-15.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/abduganiyev-alibek-komiljon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Abdukarimov Valixon Abduxamid o\u0027g\u0027li",
+                                              "slug":  "abdukarimov-valixon-abduxamid-ogli",
+                                              "featured":  false,
+                                              "description":  "Chinor tumani Nafis MFY da yangi tashabbuskor Abdukarimov Valixon Abduxamid o’g’li joyiga Tuman bo’limi raxbari va mfy yetakchisi bn borildi xozirda oquv markaz faoliyat yuritishni boshlagan ammo toliq jihozlanmaganligi uchun Ko’mak loyihasidan foydalanmoqchi",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "personal img.jpg",
+                                                                     "photo_2026-05-19_11-19-23.jpg",
+                                                                     "photo_2026-05-19_11-19-26.jpg",
+                                                                     "photo_2026-05-19_11-19-30.jpg",
+                                                                     "photo_2026-05-19_11-19-34.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/abdukarimov-valixon-abduxamid-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Abdusattorov Dilzod Akbar o\u0027g\u0027li",
+                                              "slug":  "abdusattorov-dilzod-akbar-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_7330.JPEG",
+                                                                     "photo_1_2026-04-16_18-03-10.jpg",
+                                                                     "photo_10_2026-04-16_18-03-10.jpg",
+                                                                     "photo_11_2026-04-16_18-03-10.jpg",
+                                                                     "photo_2_2026-04-16_18-03-10.jpg",
+                                                                     "photo_3_2026-04-16_18-03-10.jpg",
+                                                                     "photo_4_2026-04-16_18-03-10.jpg",
+                                                                     "photo_5_2026-04-16_18-03-10.jpg",
+                                                                     "photo_6_2026-04-16_18-03-10.jpg",
+                                                                     "photo_7_2026-04-16_18-03-10.jpg",
+                                                                     "photo_8_2026-04-16_18-03-10.jpg",
+                                                                     "photo_9_2026-04-16_18-03-10.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/abdusattorov-dilzod-akbar-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Abduxamidov Azimbek Alisher o\u0027g\u0027li",
+                                              "slug":  "abduxamidov-azimbek-alisher-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Abduxamidov Azimbek Alisher o\u0027g\u0027li\nLAVOZIM: \"STEPUP School\" o\u0027quv markazi asoschisi\nTУГИЛГАН_САНА: 2002-yil\nТУҒИЛГАН_ЖОЙ: Samarqand viloyati, Bulung\u0027ur tumani\nЯШАШ_ЖОЙИ: Toshkent viloyati\n\nТАЪЛИМ:\n- Nizomiy nomidagi Toshkent Davlat Pedagogika Universiteti (Ta\u0027limda boshqaruv)\n\nФАОЛИЯТ:\n- 5 yil davomida ingliz tilidan repetitorlik qilgan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2026-yil boshida\nSSUDA_MAQSADI: \"STEPUP School\" o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Zamonaviy kasblar, IT, AI va Robototexnika yo\u0027nalishlarini keng qamrovda yo\u0027lga qo\u0027yish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "azimbek.jpg",
+                                                                     "IMG_20260326_074703_042.jpg",
+                                                                     "IMG_20260326_074703_484.jpg",
+                                                                     "IMG_20260326_074703_613.jpg",
+                                                                     "IMG_20260331_103436_184.HEIC"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/abduxamidov-azimbek-alisher-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Alimov Bekpulat Sanjar o‘g‘li",
+                                              "slug":  "alimov-bekpulat-sanjar-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "personal info.jpg",
+                                                                     "photo_1_2026-04-16_18-15-28.jpg",
+                                                                     "photo_2_2026-04-16_18-15-28.jpg",
+                                                                     "photo_2026-05-19_11-23-30.jpg",
+                                                                     "photo_2026-05-19_11-23-34.jpg",
+                                                                     "photo_3_2026-04-16_18-15-28.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/alimov-bekpulat-sanjar-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Hojimurodov Ibrohim Olimjon o\u0027g\u0027li",
+                                              "slug":  "hojimurodov-ibrohim-olimjon-ogli",
+                                              "featured":  false,
+                                              "description":  "Qibray tumani G’afur G’ulom MFY da joylashgan yana bir loyiha, “Proline Learning Center” rahbari Abdurashidov Samandar o’quv markaziga Yoshlar ishlari agentligi Qibray tuman bosh mutaxasisi bilan birgalikda tashrif buyuruldi va Qarz(ssuda) mablag’larining maqsali sarflanganligi va o’quv markaz faoliyat bo’yicha monitoring ishlari amalga oshirildi",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "personal img.jpg",
+                                                                     "photo_2026-05-19_11-06-04.jpg",
+                                                                     "photo_2026-05-19_11-06-11.jpg",
+                                                                     "photo_2026-05-19_11-06-14.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/hojimurodov-ibrohim-olimjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Risqiboyev Boburjon Zafar o\u0027g\u0027li",
+                                              "slug":  "risqiboyev-boburjon-zafar-ogli",
+                                              "featured":  false,
+                                              "description":  "Пискент туман Муротали мфй да жойдашган Математик МЧЖ га келинди. Рахбари Иброхимов Юнус билан гаплашилди.",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2026-05-19_11-16-11.jpg",
+                                                                     "photo_2026-05-19_11-16-20.jpg",
+                                                                     "photo_2026-05-19_11-16-23.jpg",
+                                                                     "photo_2026-05-19_11-16-26.jpg",
+                                                                     "photo_2026-05-19_11-16-30.jpg",
+                                                                     "photo_2026-05-19_11-16-33.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/risqiboyev-boburjon-zafar-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Salimov Abrorjon Adxam o\u0027g\u0027li",
+                                              "slug":  "salimov-abrorjon-adxam-ogli",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Salimov Abrorjon Adxam o\u0027g\u0027li\nLAVOZIM: \"Elevate\" ingliz tili markazi rahbari\nTУГИЛГАН_САНА: 1995-yil\nТУҒИЛГАН_ЖОЙ: Toshkent shahri, Yunusobod tumani\nЯШАШ_ЖОЙИ: Toshkent shahri\n\nТАЪЛИМ:\n- 2014-2018: Westminster Universiteti (Iqtisod va moliya)\n\nФАОЛИЯТ:\n- 11 yillik o\u0027qitish tajribasi\n- 3 yil Amerikadagi logistika kompaniyasida ishlagan\n\nSSUDA_MIQDORI: 130 000 000 so\u0027m\nSSUDA_SANASI: 2025-yil\nSSUDA_MAQSADI: \"Elevate\" o\u0027quv markazini kengaytirish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni startap yo\u0027nalishi va ingliz tiliga ixtisoslashgan sohalar (IT, logistika) bo\u0027yicha yo\u0027naltirish\n\nРАСМЛАР:\n- 1.jpg: Shaxsiy rasm",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "DSC08294 (2).JPG",
+                                                                     "IMG_20220327_125827.jpg",
+                                                                     "IMG_20220805_175241.jpg",
+                                                                     "IMG_2395.JPG",
+                                                                     "PANO_20220415_133320.jpg",
+                                                                     "PANO_20220415_133341.jpg",
+                                                                     "PANO_20220415_133454.jpg",
+                                                                     "photo_1_2026-04-16_17-59-46.jpg",
+                                                                     "photo_2_2026-04-16_17-59-46.jpg",
+                                                                     "photo_3_2026-04-16_17-59-46.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/salimov-abrorjon-adxam-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Tashpulatov Dilmurod Abdumannop o’g’li",
+                                              "slug":  "tashpulatov-dilmurod-abdumannop-ogli",
+                                              "featured":  false,
+                                              "description":  "Chinoz tumani Yo’ltushgan MFYda tashabbuskor Tashpulatov Dilmurod Abdumannop o’g’liga tegishli o’quv markazni joyiga borib organildi Tuman bo’limi boshlig’i va MFY yetakchisi ishtirokida. Oquv markaz 3 kun dan ishga tushish rejalashtirilgan xozirda tayorgarlik ishlari olib borilmoqdi",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2026-05-19_10-56-32.jpg",
+                                                                     "photo_2026-05-19_10-56-43.jpg",
+                                                                     "photo_2026-05-19_10-56-46.jpg",
+                                                                     "photo_2026-05-19_10-56-48.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/tashpulatov-dilmurod-abdumannop-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Yusufov Sunnatulloh Hikmatillo o\u0027g\u0027li",
+                                              "slug":  "yusufov-sunnatulloh-hikmatillo-ogli",
+                                              "featured":  false,
+                                              "description":  "Toshkent tumani Fayzobod  MFYda tashabbuskor Yusufov Sunnatulloh  o’quv markazni joyiga borib organildi Tuman bo’limi boshlig’i va MFY yetakchisi ishtirokida. Oquv markaz 1 hafta dan song ishga tushish rejalashtirilgan xozirda tayorgarlik ishlari olib borilmoqdi",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_2026-05-19_10-59-35.jpg",
+                                                                     "photo_2026-05-19_10-59-47.jpg",
+                                                                     "photo_2026-05-19_10-59-50.jpg",
+                                                                     "photo_2026-05-19_11-00-09.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/yusufov-sunnatulloh-hikmatillo-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Abdugapporov Botir Erkin ugli",
+                                              "slug":  "abdugapporov-botir-erkin-ugli",
+                                              "featured":  false,
+                                              "description":  "Оккургон туманида очилган хозинги кунда 3 та филиали мавжуд IELTS DELIVERY укув марказини урганиш жараёни.\r\nТашаббускор Абдугаппоров Ботир Эркин угли билан сухбат килинди.",
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "personalImg.png",
+                                                                     "photo_2026-05-19_10-52-25.jpg",
+                                                                     "photo_2026-05-19_10-52-54.jpg",
+                                                                     "photo_2026-05-19_10-52-57.jpg",
+                                                                     "photo_2026-05-19_10-53-01.jpg",
+                                                                     "photo_2026-05-19_10-53-05.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/abdugapporov-botir-erkin-ugli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Rixsiboeva Maftuna Zayniddin qizi",
+                                              "slug":  "rixsiboeva-maftuna-zayniddin-qizi",
+                                              "featured":  false,
+                                              "description":  "Бустонлик туман Яккатут мфй да очилга Crystal укув маркази рахбари Рихсибоева Мафтуна билан гаплашилди ва муаммоларини ва келажакдаги режалари билан танишилди",
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "personal img.png",
+                                                                     "photo_2026-05-19_11-26-08.jpg",
+                                                                     "photo_2026-05-19_11-26-17.jpg",
+                                                                     "photo_2026-05-19_11-26-21.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/rixsiboeva-maftuna-zayniddin-qizi/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       },
+                       {
+                           "name":  "Xorazm viloyati",
+                           "slug":  "xorazm",
+                           "people":  [
+                                          {
+                                              "name":  "Jumanazarov Sardorbek Rajabboyevich",
+                                              "slug":  "jumanazarov-sardorbek-rajabboyevich",
+                                              "featured":  true,
+                                              "description":  "ISM_FAMILIYA: Jumanazarov Sardorbek Rajabboyevich\nLAVOZIM: \"BRITISH SCHOOL\" o\u0027quv markazi asoschisi\nTУГИЛГАН_САНА: 1997-yil\nТУҒИЛГАН_ЖОЙ: Xorazm viloyati, Xiva tumani\nЯШАШ_ЖОЙИ: Xorazm viloyati, Xiva shahri\n\nТАЪЛИМ:\n- Xiva iqtisodiyot va servis kolleji\n- Urganch Davlat Universiteti\n\nФАОЛИЯТ:\n- Yoshlarga ingliz tilini o\u0027rganish va xalqaro hamda milliy sertifikatlar olishga ko\u0027maklashish\n\nSSUDA_SANASI: 2025-yil mart\nSSUDA_MAQSADI: Xiva shahrida \"BRITISH SCHOOL\" o\u0027quv markaziga asos solish\n\nКЕЛАЖАК_МАҚСАДИ: Yoshlarni zamonaviy va traditsion kasblarga o\u0027qitadigan xalqaro standartlarga javob beradigan xususiy maktab tashkil etish. O\u0027quv markazi binosida kutubxona va IT kurslarini tashkil qilish.",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_09-52-08.jpg",
+                                                                     "photo_10_2026-04-17_09-52-08.jpg",
+                                                                     "photo_11_2026-04-17_09-52-08.jpg",
+                                                                     "photo_12_2026-04-17_09-52-08.jpg",
+                                                                     "photo_13_2026-04-17_09-52-08.jpg",
+                                                                     "photo_2_2026-04-17_09-52-08.jpg",
+                                                                     "photo_3_2026-04-17_09-52-08.jpg",
+                                                                     "photo_4_2026-04-17_09-52-08.jpg",
+                                                                     "photo_5_2026-04-17_09-52-08.jpg",
+                                                                     "photo_6_2026-04-17_09-52-08.jpg",
+                                                                     "photo_7_2026-04-17_09-52-08.jpg",
+                                                                     "photo_8_2026-04-17_09-52-08.jpg",
+                                                                     "photo_9_2026-04-17_09-52-08.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/xorazm/jumanazarov-sardorbek-rajabboyevich/",
+                                              "pdfUrl":  null
+                                          }
+                                      ]
+                       }
+                   ]
 }

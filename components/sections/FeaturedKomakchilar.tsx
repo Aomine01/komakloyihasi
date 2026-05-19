@@ -1,10 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import komakchilarData from '@/komakchilar-data.json';
 
 interface Person {
   name: string;
@@ -33,6 +32,9 @@ function extractField(desc: string, key: string): string {
 }
 
 function getFeaturedPeople(): FeaturedPerson[] {
+  // Import dynamically to avoid blocking the main thread on mount
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const komakchilarData = require('@/komakchilar-data.json');
   const result: FeaturedPerson[] = [];
   for (const viloyat of komakchilarData.viloyatlar) {
     for (const person of viloyat.people) {
@@ -262,18 +264,38 @@ export default function FeaturedKomakchilar() {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [lightboxAlt, setLightboxAlt] = useState('');
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const prefersReducedMotion = useReducedMotion();
 
-  const allPeople = useRef(getFeaturedPeople()).current;
+  // Detect weak device — skip expensive shuffle
+  const isWeak = useMemo(() => {
+    if (typeof navigator === 'undefined') return false;
+    if (navigator.hardwareConcurrency <= 2) return true;
+    const conn = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection;
+    return !!(conn?.saveData || conn?.effectiveType === '2g' || conn?.effectiveType === 'slow-2g');
+  }, []);
 
-  const sequence = useMemo(() => {
-    if (allPeople.length <= 1) return allPeople;
-    const gap = Math.min(3, Math.floor(allPeople.length / 2));
-    return createSmartSequence(allPeople, gap);
-  }, [allPeople]);
+  // Defer the heavy JSON parse + shuffle to after mount
+  const [sequence, setSequence] = useState<FeaturedPerson[]>([]);
+  const [allPeople, setAllPeople] = useState<FeaturedPerson[]>([]);
+
+  useEffect(() => {
+    // Use setTimeout to push off the main thread during initial paint
+    const id = setTimeout(() => {
+      const people = getFeaturedPeople();
+      setAllPeople(people);
+      if (people.length <= 1 || isWeak) {
+        setSequence(people);
+      } else {
+        const gap = Math.min(3, Math.floor(people.length / 2));
+        setSequence(createSmartSequence(people, gap));
+      }
+    }, 0);
+    return () => clearTimeout(id);
+  }, [isWeak]);
 
   const total = sequence.length;
-  const person = sequence[current];
-  const hasMultipleImages = person.images.length > 1;
+  const person = total > 0 ? sequence[current] : null;
+  const hasMultipleImages = person ? person.images.length > 1 : false;
 
   useEffect(() => {
     setImageIndex(0);
@@ -290,12 +312,14 @@ export default function FeaturedKomakchilar() {
   }, [total]);
 
   const nextImage = useCallback(() => {
+    if (!person) return;
     setImageIndex(i => (i + 1) % person.images.length);
-  }, [person.images.length]);
+  }, [person]);
 
   const prevImage = useCallback(() => {
+    if (!person) return;
     setImageIndex(i => (i - 1 + person.images.length) % person.images.length);
-  }, [person.images.length]);
+  }, [person]);
 
   const isEffectivelyPaused = isPaused || !!lightboxSrc;
 
@@ -313,13 +337,34 @@ export default function FeaturedKomakchilar() {
   };
   const closeLightbox = () => setLightboxSrc(null);
 
-  if (total === 0) return null;
+  // Loading state — show skeleton while deferred data loads
+  if (total === 0) {
+    return (
+      <section className="py-14 sm:py-16 md:py-24 px-4 md:px-6 bg-surface-container-low overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="h-8 w-1/3 bg-surface-container-high rounded-xl animate-pulse mb-4" />
+          <div className="h-[480px] bg-surface-container-high rounded-3xl animate-pulse" />
+        </div>
+      </section>
+    );
+  }
 
-  const slideVariants = {
-    enter: (dir: number) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (dir: number) => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
-  };
+  // Slide transitions — instant on reduced-motion devices
+  const slideVariants = prefersReducedMotion
+    ? {
+        enter: () => ({ opacity: 0 }),
+        center: { opacity: 1 },
+        exit: () => ({ opacity: 0 }),
+      }
+    : {
+        enter: (dir: number) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
+        center: { x: 0, opacity: 1 },
+        exit: (dir: number) => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
+      };
+
+  const slideTransition = prefersReducedMotion
+    ? { duration: 0.15 }
+    : { duration: 0.45, ease: [0.22, 1, 0.36, 1] };
 
   return (
     <>
@@ -359,25 +404,25 @@ export default function FeaturedKomakchilar() {
           >
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
-                key={`${current}-${person.slug}`}
+                key={`${current}-${person!.slug}`}
                 custom={direction}
                 variants={slideVariants}
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={slideTransition}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-surface-container-lowest rounded-2xl sm:rounded-3xl overflow-hidden
                            shadow-[0_16px_48px_-12px_rgba(19,27,46,0.1)] border border-outline-variant/15"
               >
                 {/* Image Side — shows current person's current image */}
                 <div className="relative aspect-[4/5] lg:aspect-auto lg:min-h-[480px] xl:min-h-[520px] overflow-hidden group">
                   <PersonImageSlider
-                    images={person.images}
-                    imagePath={person.imagePath}
+                    images={person!.images}
+                    imagePath={person!.imagePath}
                     currentIndex={imageIndex}
                     onChange={setImageIndex}
                     onOpenLightbox={openLightbox}
-                    personName={person.name}
+                    personName={person!.name}
                     allPeopleTotal={allPeople.length}
                     peopleCurrent={(current % allPeople.length) + 1}
                   />
@@ -390,7 +435,7 @@ export default function FeaturedKomakchilar() {
                     <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                       <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">
                         <span className="material-symbols-outlined text-[11px] sm:text-[13px]">location_on</span>
-                        {person.viloyatName}
+                        {person!.viloyatName}
                       </span>
                       <span className="inline-flex items-center gap-1 bg-amber-50 border border-amber-200 text-amber-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">
                         <span className="material-symbols-outlined text-[11px] sm:text-[13px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -401,21 +446,22 @@ export default function FeaturedKomakchilar() {
                     {/* Name & Position — desktop */}
                     <div className="hidden lg:block">
                       <h3 className="font-headline text-2xl xl:text-3xl font-extrabold text-on-surface leading-tight mb-1.5">
-                        {person.name}
+                        {person!.name}
                       </h3>
-                      <p className="text-primary font-medium text-base xl:text-lg">{person.lavozim}</p>
+                      <p className="text-primary font-medium text-base xl:text-lg">{person!.lavozim}</p>
                     </div>
                     <div className="lg:hidden">
-                      <p className="text-primary font-medium text-sm sm:text-base">{person.lavozim}</p>
+                      <p className="text-primary font-medium text-sm sm:text-base">{person!.lavozim}</p>
                     </div>
 
                     {/* Location */}
-                    {person.location && (
+                    {person!.location && (
                       <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-on-surface-variant">
                         <span className="material-symbols-outlined text-[14px] sm:text-[16px]">home_pin</span>
-                        {person.location}
+                        {person!.location}
                       </div>
                     )}
+
 
                     {/* Loan Info Card */}
                     <div className="bg-primary/5 rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-primary/10">

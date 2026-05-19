@@ -12,11 +12,24 @@ const fadeUp = {
   }),
 };
 
+/** Returns true on connections / hardware that can't handle video well */
+function isWeakDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  // Low CPU cores (≤ 2)
+  if (navigator.hardwareConcurrency <= 2) return true;
+  // Slow network connection
+  const conn = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection;
+  if (conn?.saveData) return true;
+  if (conn?.effectiveType === '2g' || conn?.effectiveType === 'slow-2g') return true;
+  return false;
+}
+
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [skipVideo] = useState(() => isWeakDevice());
 
   // Detect reduced motion preference
   useEffect(() => {
@@ -29,7 +42,7 @@ export default function Hero() {
 
   // Lazy-load and play video only when visible & allowed
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || skipVideo) return;
 
     const video = videoRef.current;
     const section = sectionRef.current;
@@ -38,7 +51,6 @@ export default function Hero() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Set source and start loading
           if (!video.src && !video.querySelector('source')?.getAttribute('data-loaded')) {
             const source = video.querySelector('source');
             if (source) {
@@ -56,12 +68,12 @@ export default function Hero() {
 
     observer.observe(section);
     return () => observer.disconnect();
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, skipVideo]);
 
-  // Video speed + scroll-driven zoom
+  // Video speed + scroll-driven zoom (throttled via rAF)
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || skipVideo) return;
 
     const handleCanPlay = () => {
       video.playbackRate = 0.8;
@@ -69,18 +81,27 @@ export default function Hero() {
     };
     video.addEventListener('canplay', handleCanPlay);
 
+    // Throttle scroll with requestAnimationFrame to avoid jank on weak CPUs
+    let rafId: number | null = null;
     const onScroll = () => {
-      if (!video) return;
-      const progress = Math.min(window.scrollY / window.innerHeight, 1);
-      video.style.transform = `scale(${1 + progress * 0.18})`;
+      if (rafId !== null) return; // already scheduled
+      rafId = requestAnimationFrame(() => {
+        if (video) {
+          const progress = Math.min(window.scrollY / window.innerHeight, 1);
+          video.style.transform = `scale(${1 + progress * 0.18})`;
+        }
+        rafId = null;
+      });
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
       video.removeEventListener('canplay', handleCanPlay);
       window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [skipVideo]);
+
 
   return (
     <section
@@ -88,17 +109,17 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
 
-      {/* ── Poster fallback — shown instantly ────────────────────── */}
+      {/* ── Poster fallback — shown instantly (permanent on weak devices) ── */}
       <div
         className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-          videoLoaded && !prefersReducedMotion ? 'opacity-0' : 'opacity-100'
+          videoLoaded && !prefersReducedMotion && !skipVideo ? 'opacity-0' : 'opacity-100'
         }`}
         style={{ backgroundImage: "url('/hero-poster.png')" }}
         aria-hidden="true"
       />
 
-      {/* ── Video background — loads lazily ───────────────────────── */}
-      {!prefersReducedMotion && (
+      {/* ── Video background — skipped on weak devices / reduced motion ── */}
+      {!prefersReducedMotion && !skipVideo && (
         <video
           ref={videoRef}
           loop

@@ -1,12 +1,30 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, useInView, animate, AnimatePresence } from 'framer-motion';
-import { ComposableMap, Geographies, Geography, ZoomableGroup, Marker } from 'react-simple-maps';
+import { motion, useInView, animate, AnimatePresence, useReducedMotion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import type { Stat } from '@/lib/types';
 
+// Lazy-load the heavy D3/react-simple-maps bundle — only when the map section becomes visible
+const ComposableMap = dynamic(
+  () => import('react-simple-maps').then(m => ({ default: m.ComposableMap })),
+  { ssr: false, loading: () => <div className="w-full h-full bg-surface-container-high animate-pulse rounded-xl" /> }
+);
+const Geographies = dynamic(
+  () => import('react-simple-maps').then(m => ({ default: m.Geographies })),
+  { ssr: false }
+);
+const Geography = dynamic(
+  () => import('react-simple-maps').then(m => ({ default: m.Geography })),
+  { ssr: false }
+);
+const ZoomableGroup = dynamic(
+  () => import('react-simple-maps').then(m => ({ default: m.ZoomableGroup })),
+  { ssr: false }
+);
+
 /* ────────────────────────── helpers ────────────────────────── */
-function useCounter(target: number, inView: boolean, duration = 1.8) {
+function useCounter(target: number, inView: boolean, duration = 1.0) {
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (!inView) return;
@@ -20,6 +38,10 @@ function useCounter(target: number, inView: boolean, duration = 1.8) {
   return value;
 }
 
+/* ────────────────────────── static data ────────────────────── */
+
+// Module-level static fadeUp used by sub-components (KPICard, etc.)
+// The main StatisticsPage component overrides this with a reduced-motion-aware version.
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: (i = 0) => ({
@@ -29,7 +51,6 @@ const fadeUp = {
   }),
 };
 
-/* ────────────────────────── static data ────────────────────── */
 const YILLAR = ['Umumiy', '2026', '2025'];
 
 // Growth timeline (Oct 2025 – Mar 2026)
@@ -690,11 +711,23 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
 
 /* ────────────────────────── main component ──────────────────── */
 export default function StatisticsPage({ stats }: { stats: Stat[] }) {
+  const reduceMotion = useReducedMotion();
   const [activeViloyat, setActiveViloyat] = useState('Hammasi');
   const [activeYil, setActiveYil] = useState('Umumiy');
   const [hoveredRegion, setHoveredRegion] = useState('');
   const [mapPosition, setMapPosition] = useState({ center: INITIAL_MAP_CENTER, zoom: INITIAL_MAP_ZOOM });
-  
+
+  // Adaptive animation — instant on reduced-motion / weak devices
+  const fadeUp = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 28 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: reduceMotion ? 0 : i * 0.08, duration: reduceMotion ? 0.15 : 0.55, ease: 'easeOut' },
+    }),
+  };
+
+
   // Smoothly animate between map regions
   const animateMapTo = (targetCenter: [number, number], targetZoom: number) => {
     const startCenter = mapPosition.center;

@@ -1,27 +1,30 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' },
-  }),
-};
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function HowItWorks() {
+  const reduceMotion = useReducedMotion();
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: reduceMotion ? 0 : i * 0.1, duration: reduceMotion ? 0.2 : 0.6, ease: 'easeOut' },
+    }),
+  };
+
   return (
     <>
       {/* About Section */}
       <section className="py-14 sm:py-20 md:py-28 px-4 md:px-6 bg-surface-container-low" id="about">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: reduceMotion ? 0.2 : 0.5 }}
+
             className="text-center mb-10 sm:mb-14"
           >
             <div className="flex items-center gap-2.5 mb-3 sm:mb-4">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Public_Sans, Inter } from 'next/font/google';
 import './globals.css';
+import ConsoleGreeting from '@/components/ConsoleGreeting';
 
 const publicSans = Public_Sans({
   subsets: ['latin'],
@@ -84,6 +85,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+        <ConsoleGreeting />
         {children}
       </body>
     </html>
