@@ -71,10 +71,10 @@ export default function Komakchilar() {
     <section id="komakchilar" className="bg-surface py-20 px-6 relative">
       <div className="absolute inset-0 bg-surface-container-low rounded-[2.5rem] -z-10 mix-blend-multiply opacity-50 m-6" />
       <div className="max-w-7xl mx-auto py-12">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-medium text-sm mb-6 tracking-wide">
-          <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-          Muvaffaqiyatli Loyihalar
-        </span>
+        <div className="flex items-center gap-2.5 mb-6">
+          <span className="w-6 h-[3px] rounded-full bg-primary flex-shrink-0" />
+          <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary/80">Muvaffaqiyatli Loyihalar</span>
+        </div>
         <h2 className="font-headline text-4xl md:text-5xl font-extrabold text-on-surface leading-tight tracking-tight mb-4">
           Ta&apos;lim kelajagini <br/> yaratayotgan markazlar
         </h2>

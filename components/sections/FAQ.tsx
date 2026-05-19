@@ -109,9 +109,9 @@ export default function FAQSection({ faqs }: { faqs: FAQ[] }) {
     <section id="faq" className="max-w-7xl mx-auto px-6 pt-32 pb-24">
       {/* Hero Section */}
       <motion.div custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-          <span className="material-symbols-outlined text-sm">help</span>
-          <span>Ko‘p beriladigan savollar</span>
+        <div className="flex items-center gap-2.5 mb-6">
+          <span className="w-6 h-[3px] rounded-full bg-primary flex-shrink-0" />
+          <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary/80">Ko‘p beriladigan savollar</span>
         </div>
         <h2 className="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-6 leading-tight">
           Sizning savollaringizga <br className="hidden md:block" />{' '}
