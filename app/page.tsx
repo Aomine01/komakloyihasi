@@ -16,10 +16,6 @@ const FeaturedKomakchilar = nextDynamic(() => import('@/components/sections/Feat
   ssr: false,
   loading: () => <div className="min-h-[60vh] bg-surface-container-low animate-pulse" />,
 });
-const CallbackForm = nextDynamic(() => import('@/components/sections/CallbackForm'), {
-  ssr: false,
-  loading: () => <div className="min-h-[50vh] bg-surface animate-pulse" />,
-});
 const Asoschilar = nextDynamic(() => import('@/components/sections/Asoschilar'), {
   ssr: false,
   loading: () => <div className="min-h-[40vh] bg-surface animate-pulse" />,
@@ -30,24 +26,6 @@ const Footer = nextDynamic(() => import('@/components/sections/Footer'), {
 });
 
 export const dynamic = 'force-dynamic';
-
-const fallbackViloyatlar = komakchilarData.viloyatlar.map((v, i) => ({
-  id: v.slug || `vil-${i}`,
-  name: v.name,
-  slug: v.slug,
-  createdAt: new Date(),
-  updatedAt: new Date(),
-}));
-
-async function getViloyatlar() {
-  try {
-    const data = await db.select().from(viloyatlarTable).orderBy(viloyatlarTable.name);
-    return data.length > 0 ? data : fallbackViloyatlar;
-  } catch (error) {
-    console.error('Error fetching regions for homepage, using fallback:', error);
-    return fallbackViloyatlar;
-  }
-}
 
 async function getKomakchilarData() {
   try {
@@ -106,10 +84,7 @@ async function getKomakchilarData() {
 }
 
 export default async function HomePage() {
-  const [viloyatlarData, projectsData] = await Promise.all([
-    getViloyatlar(),
-    getKomakchilarData(),
-  ]);
+  const projectsData = await getKomakchilarData();
 
   return (
     <>
@@ -119,7 +94,6 @@ export default async function HomePage() {
         <HowItWorks />
         <FeaturedKomakchilar data={projectsData} />
         <Asoschilar />
-        <CallbackForm viloyatlar={viloyatlarData} />
       </main>
       <Footer />
     </>
