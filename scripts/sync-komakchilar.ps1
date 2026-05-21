@@ -21,6 +21,22 @@ $DataFile     = Join-Path $ProjectRoot "komakchilar-data.json"
 # --- helpers ---
 function To-Slug($name) {
     $s = $name.ToLower()
+    
+    # Cyrillic to Latin transliteration
+    $cyrillicToLatin = @{
+        [char]0x0430='a'; [char]0x0431='b'; [char]0x0432='v'; [char]0x0433='g'; [char]0x0434='d';
+        [char]0x0435='e'; [char]0x0451='yo'; [char]0x0436='j'; [char]0x0437='z'; [char]0x0438='i';
+        [char]0x0439='y'; [char]0x043A='k'; [char]0x043B='l'; [char]0x043C='m'; [char]0x043D='n';
+        [char]0x043E='o'; [char]0x043F='p'; [char]0x0440='r'; [char]0x0441='s'; [char]0x0442='t';
+        [char]0x0443='u'; [char]0x0444='f'; [char]0x0445='x'; [char]0x0446='ts'; [char]0x0447='ch';
+        [char]0x0448='sh'; [char]0x0449='sh'; [char]0x044A=''; [char]0x044B='i'; [char]0x044C='';
+        [char]0x044D='e'; [char]0x044E='yu'; [char]0x044F='ya'; [char]0x045E='o'; [char]0x049B='q';
+        [char]0x0493='g'; [char]0x04B3='h'
+    }
+    foreach ($key in $cyrillicToLatin.Keys) {
+        $s = $s.Replace([string]$key, $cyrillicToLatin[$key])
+    }
+
     # Replace Uzbek letters
     $s = $s -replace "o'", "o" -replace "g'", "g" -replace "'", "" -replace "ʻ", ""
     # Normalize unicode (NFD → ASCII-friendly)

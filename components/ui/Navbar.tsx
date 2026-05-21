@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
+
+
 const navLinks = [
   { label: 'Asosiy', href: '/' },
   { label: 'Natijalar', href: '/statistika' },
@@ -55,6 +57,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Link href="/" className="inline-flex items-center group relative w-[140px] h-[40px] md:w-[180px] md:h-[50px] lg:w-[220px] lg:h-[60px]">
               <Image
+                unoptimized
                 src={isDarkHeader ? "/Group 211.svg" : "/Group 212.svg"}
                 alt="Ko'mak Logo"
                 fill

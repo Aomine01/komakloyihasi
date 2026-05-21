@@ -5,6 +5,8 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
+
 interface Person {
   name: string;
   slug: string;
@@ -173,7 +175,7 @@ function CarouselBlurredImage({ src, alt, priority }: { src: string; alt: string
     <div className="relative w-full h-full flex items-center justify-center">
       <img src={src} alt="" aria-hidden
         className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110" />
-      <Image src={src} alt={alt} fill
+      <Image src={src} alt={alt} fill unoptimized
         className="object-contain relative z-10 drop-shadow-md"
         sizes="(max-width: 1024px) 100vw, 50vw"
         priority={priority} />

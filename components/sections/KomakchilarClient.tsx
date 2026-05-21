@@ -1,8 +1,19 @@
 'use client';
 
-import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useCallback, useEffect, useMemo, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+
+
+
+// ─── Performance: detect weak device once ────────────────────────────────────
+const isWeakDevice = typeof navigator !== 'undefined' && (
+  navigator.hardwareConcurrency <= 4 ||
+  !!(navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection?.saveData ||
+  (navigator as Navigator & { connection?: { effectiveType?: string } }).connection?.effectiveType === '2g'
+);
+
+const isMobileUA = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -95,33 +106,37 @@ function parseTavsif(desc: string | null): ParsedTavsif | null {
   return parsed;
 }
 
-// ─── Blurred Image ───────────────────────────────────────────────────────────
+// ─── Blurred Image (skip blur on mobile/weak for GPU savings) ────────────────
 
-function BlurredImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
+const BlurredImage = memo(function BlurredImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
+  const skipBlur = isMobileUA || isWeakDevice;
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      <img
-        src={src}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110"
-      />
+    <div className="relative w-full h-full flex items-center justify-center bg-surface-container">
+      {!skipBlur && (
+        <img
+          src={src}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110"
+        />
+      )}
       <Image
+        unoptimized
         src={src}
         alt={alt}
         fill
         className="object-contain relative z-10 drop-shadow-sm"
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         loading={priority ? undefined : 'lazy'}
         priority={priority}
       />
     </div>
   );
-}
+});
 
-// ─── Image Carousel ──────────────────────────────────────────────────────────
+// ─ Image Carousel ──────────────────────────────────────────────────────────
 
-function ImageCarousel({ person, labels }: { person: Person; labels?: Record<string, string> }) {
+const ImageCarousel = memo(function ImageCarousel({ person, labels }: { person: Person; labels?: Record<string, string> }) {
   const [current, setCurrent] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const total = person.images.length;
@@ -145,7 +160,7 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
     <>
       <div
         ref={containerRef}
-        className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container rounded-2xl group cursor-pointer"
+        className="relative w-full aspect-[4/5] sm:aspect-[4/5] overflow-hidden bg-surface-container rounded-2xl group cursor-pointer"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onClick={(e) => {
@@ -156,10 +171,10 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
-            initial={{ opacity: 0 }}
+            initial={isWeakDevice ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            exit={isWeakDevice ? undefined : { opacity: 0 }}
+            transition={{ duration: isWeakDevice ? 0.1 : 0.3 }}
             className="absolute inset-0"
           >
             <BlurredImage
@@ -247,6 +262,7 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
               onClick={(e) => e.stopPropagation()}
             >
               <Image
+                unoptimized
                 src={`${person.imagePath}${person.images[current]}`}
                 alt={`${person.name} — rasm ${current + 1}`}
                 fill
@@ -288,7 +304,7 @@ function ImageCarousel({ person, labels }: { person: Person; labels?: Record<str
       </AnimatePresence>
     </>
   );
-}
+});
 
 // ─── Collapsible List ────────────────────────────────────────────────────────
 
@@ -326,7 +342,7 @@ function CollapsibleList({ items, icon, title, color }: { items: string[]; icon:
   );
 }
 
-// ─── Featured Card ───────────────────────────────────────────────────────────
+// ─── Featured Card — Vertical Card Layout ────────────────────────────────────
 
 function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: string }) {
   const [expanded, setExpanded] = useState(false);
@@ -336,136 +352,124 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
   if (parsed) {
     return (
       <motion.article
-        initial={{ opacity: 0, y: 24 }}
+        initial={isWeakDevice ? false : { opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.5 }}
-        className="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_40px_-8px_rgba(19,27,46,0.08)]
-                   border border-primary/15 hover:shadow-[0_20px_50px_-8px_rgba(19,27,46,0.12)] transition-shadow duration-300"
+        viewport={{ once: true, margin: '-30px' }}
+        transition={{ duration: isWeakDevice ? 0.15 : 0.5 }}
+        className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_2px_12px_-2px_rgba(19,27,46,0.06)]
+                   border border-outline-variant/10 hover:shadow-[0_4px_20px_-2px_rgba(19,27,46,0.1)] transition-shadow duration-300 flex flex-col"
       >
-        <div className="flex flex-col xl:flex-row">
-          {/* Image */}
-          <div className="xl:w-[45%] shrink-0">
-            <div className="xl:h-full xl:min-h-[500px] relative">
-              <ImageCarousel person={person} labels={parsed.rasmlar} />
-            </div>
+        {/* Image — top, full width, shorter on mobile */}
+        <div className="relative w-full aspect-[3/2] sm:aspect-[4/3] overflow-hidden bg-surface-container">
+          <ImageCarousel person={person} labels={parsed.rasmlar} />
+        </div>
+
+        {/* Content */}
+        <div className="p-3 sm:p-4 flex flex-col flex-1 gap-2 sm:gap-3">
+          {/* Viloyat badge */}
+          <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] font-semibold px-2 py-0.5 rounded-full self-start">
+            <span className="material-symbols-outlined text-[11px]">location_on</span>
+            {viloyatName}
+          </span>
+
+          {/* Name */}
+          <h3 className="font-headline text-[13px] sm:text-sm font-bold text-on-surface leading-tight line-clamp-2">
+            {parsed.ismFamiliya || person.name}
+          </h3>
+
+          {/* Position */}
+          {parsed.lavozim && (
+            <p className="text-primary text-xs line-clamp-2 leading-snug">{parsed.lavozim}</p>
+          )}
+
+          {/* Loan amount */}
+          <div className="bg-primary/[0.06] rounded-lg p-2 sm:p-2.5 border border-primary/10 mt-auto">
+            <p className="text-[8px] sm:text-[9px] text-on-surface-variant font-bold uppercase tracking-wider">Ssuda miqdori</p>
+            <p className="font-headline font-bold text-sm sm:text-base text-on-surface">{parsed.ssudaMiqdori || "130 000 000 so'm"}</p>
           </div>
 
-          {/* Content */}
-          <div className="flex-1 p-5 sm:p-8 lg:p-10 flex flex-col gap-4 sm:gap-5">
-            {/* Badges */}
-            <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full">
-                <span className="material-symbols-outlined text-[12px] sm:text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                Tavsif mavjud
-              </span>
-              <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-1 rounded-full">
-                <span className="material-symbols-outlined text-[11px] sm:text-[13px]">location_on</span>
-                {viloyatName}
-              </span>
-            </div>
-
-            {/* Name */}
-            <h3 className="font-headline text-xl sm:text-2xl md:text-3xl font-extrabold text-on-surface leading-tight">
-              {parsed.ismFamiliya || person.name}
-            </h3>
-
-            {/* Toggle — show only on mobile */}
-            <div className="md:hidden mt-1">
-              <button
-                onClick={() => setExpanded(!expanded)}
-                className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border border-primary/20
-                           text-primary font-semibold text-sm hover:bg-primary/5 transition-colors"
-              >
-                <span className="material-symbols-outlined text-base">
-                  {expanded ? 'expand_less' : 'expand_more'}
-                </span>
-                {expanded ? "Yopish" : "Batafsil ko'rish"}
-              </button>
-            </div>
-
-            {/* Collapsible details — collapsed on mobile, always open on desktop */}
-            <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out
-                ${expanded ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'}
-                md:max-h-none md:opacity-100`}
+          {/* Toggle — mobile only */}
+          <div className="sm:hidden">
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="inline-flex items-center justify-center gap-1 w-full py-2 rounded-lg border border-outline-variant/20
+                         text-on-surface-variant font-medium text-xs hover:bg-surface-container transition-colors"
             >
-              {/* Position */}
-              {parsed.lavozim && (
-                <p className="text-primary font-medium text-base sm:text-lg">{parsed.lavozim}</p>
+              <span className="material-symbols-outlined text-base">
+                {expanded ? 'expand_less' : 'expand_more'}
+              </span>
+              {expanded ? "Yopish" : "Batafsil"}
+            </button>
+          </div>
+
+          {/* Collapsible details */}
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-in-out
+              ${expanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
+              sm:max-h-none sm:opacity-100`}
+          >
+            {/* Personal info */}
+            <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[10px] text-on-surface-variant mb-3">
+              {parsed.tugilganSana && (
+                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[11px]">calendar_today</span> {parsed.tugilganSana}</span>
               )}
-
-              {/* Personal info — compact row */}
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs sm:text-[13px] text-on-surface-variant mb-4">
-                {parsed.tugilganSana && (
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">calendar_today</span> {parsed.tugilganSana}</span>
-                )}
-                {parsed.tugilganJoy && (
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">home_pin</span> {parsed.tugilganJoy}</span>
-                )}
-                {parsed.yashashJoyi && (
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px] sm:text-[16px]">location_city</span> {parsed.yashashJoyi}</span>
-                )}
-              </div>
-
-              {/* Loan amount card */}
-              <div className="bg-primary/5 rounded-2xl p-4 sm:p-5 border border-primary/10 mb-4">
-                <h4 className="font-bold text-primary mb-2 sm:mb-3 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[16px] sm:text-[18px]">payments</span>
-                  Moliyalashtirish
-                </h4>
-                <div className="mb-2 sm:mb-3">
-                  <p className="text-[10px] sm:text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-0.5">Ssuda miqdori</p>
-                  <p className="font-headline font-extrabold text-xl sm:text-2xl text-on-surface">{parsed.ssudaMiqdori || "130 000 000 so'm"}</p>
-                </div>
-                {parsed.ssudaSanasi && (
-                  <div className="mb-2">
-                    <p className="text-[10px] sm:text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-0.5">Berilgan sana</p>
-                    <p className="font-semibold text-on-surface text-sm">{parsed.ssudaSanasi}</p>
-                  </div>
-                )}
-                {parsed.ssudaMaqsadi && (
-                  <div>
-                    <p className="text-[10px] sm:text-[11px] text-on-surface-variant font-bold uppercase tracking-widest mb-0.5">Maqsad</p>
-                    <p className="text-[13px] text-on-surface leading-relaxed">{parsed.ssudaMaqsadi}</p>
-                  </div>
-                )}
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-outline-variant/30" />
-
-              {/* Ta'lim & Faoliyat */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                <div className="space-y-5">
-                  {parsed.talim && parsed.talim.length > 0 && (
-                    <CollapsibleList items={parsed.talim} icon="school" title="Ta'lim" color="primary" />
-                  )}
-                  {parsed.faoliyat && parsed.faoliyat.length > 0 && (
-                    <CollapsibleList items={parsed.faoliyat} icon="work" title="Faoliyat" color="primary" />
-                  )}
-                </div>
-              </div>
-
-              {/* Kelajak maqsadi */}
-              {parsed.kelajakMaqsadi && (
-                <div className="bg-surface-container-low rounded-2xl p-4 sm:p-6 relative overflow-hidden mt-4">
-                  <span className="material-symbols-outlined absolute -right-2 -bottom-2 text-6xl sm:text-7xl text-on-surface/5" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
-                  <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary mb-1.5 sm:mb-2">Kelajak maqsadi</p>
-                  <p className="text-xs sm:text-sm text-on-surface-variant italic relative z-10 leading-relaxed">"{parsed.kelajakMaqsadi}"</p>
-                </div>
+              {parsed.tugilganJoy && (
+                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[11px]">home_pin</span> {parsed.tugilganJoy}</span>
               )}
-
-              {/* PDF link */}
-              {person.pdfUrl && (
-                <div className="pt-3 border-t border-outline-variant/30 mt-4">
-                  <a href={person.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-bold hover:bg-primary/90 transition-colors shadow-sm text-sm">
-                    <span className="material-symbols-outlined text-xl">picture_as_pdf</span>
-                    Taqdimotni ko'rish (PDF)
-                  </a>
-                </div>
+              {parsed.yashashJoyi && (
+                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[11px]">location_city</span> {parsed.yashashJoyi}</span>
               )}
             </div>
+
+            {/* Ta'lim */}
+            {parsed.talim && parsed.talim.length > 0 && (
+              <div className="mb-3">
+                <h4 className="font-bold text-on-surface text-xs mb-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined text-primary text-sm">school</span>
+                  Ta'lim
+                </h4>
+                <ul className="space-y-0.5">
+                  {parsed.talim.slice(0, 3).map((item, i) => (
+                    <li key={i} className="text-[10px] text-on-surface-variant pl-2 relative before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-primary/40 before:rounded-full leading-snug">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Faoliyat */}
+            {parsed.faoliyat && parsed.faoliyat.length > 0 && (
+              <div className="mb-3">
+                <h4 className="font-bold text-on-surface text-xs mb-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined text-primary text-sm">work</span>
+                  Faoliyat
+                </h4>
+                <ul className="space-y-0.5">
+                  {parsed.faoliyat.slice(0, 3).map((item, i) => (
+                    <li key={i} className="text-[10px] text-on-surface-variant pl-2 relative before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-primary/40 before:rounded-full leading-snug">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Kelajak maqsadi */}
+            {parsed.kelajakMaqsadi && (
+              <div className="bg-surface-container-low rounded-lg p-2.5 mb-3">
+                <p className="text-[9px] font-bold uppercase tracking-wider text-primary mb-0.5">Kelajak maqsadi</p>
+                <p className="text-[10px] text-on-surface-variant italic leading-relaxed line-clamp-2">"{parsed.kelajakMaqsadi}"</p>
+              </div>
+            )}
+
+            {/* PDF link */}
+            {person.pdfUrl && (
+              <a href={person.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[10px] text-on-surface-variant hover:text-primary font-medium transition-colors">
+                <span className="material-symbols-outlined text-sm">picture_as_pdf</span>
+                Taqdimotni ko'rish
+              </a>
+            )}
           </div>
         </div>
       </motion.article>
@@ -477,21 +481,21 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
+      initial={isWeakDevice ? false : { opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5 }}
-      className="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_12px_40px_-8px_rgba(19,27,46,0.08)]
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{ duration: isWeakDevice ? 0.15 : 0.5 }}
+      className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_-8px_rgba(19,27,46,0.08)]
                  border border-primary/15 hover:shadow-[0_20px_50px_-8px_rgba(19,27,46,0.12)] transition-shadow duration-300"
     >
-      <div className="flex flex-col lg:flex-row">
-        <div className="lg:w-[45%] shrink-0">
-          <div className="lg:h-full lg:min-h-[400px] relative">
+      <div className="flex flex-col">
+        <div className="w-full shrink-0">
+          <div className="h-full min-h-[250px] sm:min-h-[350px] md:min-h-[400px] relative">
             <ImageCarousel person={person} />
           </div>
         </div>
 
-        <div className="flex-1 p-5 sm:p-8 lg:p-10 flex flex-col">
+        <div className="flex-1 p-4 sm:p-6 lg:p-10 flex flex-col">
           <div className="flex flex-wrap items-center gap-2 mb-3 sm:mb-4">
             <span className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 rounded-full">
               <span className="material-symbols-outlined text-[12px] sm:text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -503,11 +507,11 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
             </span>
           </div>
 
-          <h3 className="font-headline text-xl sm:text-2xl lg:text-3xl font-extrabold text-on-surface mb-3 sm:mb-4 leading-tight">
+          <h3 className="font-headline text-lg sm:text-xl lg:text-3xl font-extrabold text-on-surface mb-2 sm:mb-4 leading-tight">
             {person.name}
           </h3>
 
-          <div className="text-on-surface-variant text-sm sm:text-[15px] leading-relaxed flex-grow">
+          <div className="text-on-surface-variant text-xs sm:text-sm lg:text-[15px] leading-relaxed flex-grow">
             <p className="whitespace-pre-line">
               {displayDesc}
               {isLong && !expanded && '...'}
@@ -548,49 +552,58 @@ function RegularCard({ person, viloyatName }: { person: Person; viloyatName: str
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 20 }}
+      initial={isWeakDevice ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-30px' }}
-      transition={{ duration: 0.4 }}
-      className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(19,27,46,0.06)]
-                 hover:shadow-[0_16px_36px_-4px_rgba(19,27,46,0.1)] transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full"
+      viewport={{ once: true, margin: '-20px' }}
+      transition={{ duration: isWeakDevice ? 0.1 : 0.4 }}
+      className="bg-surface-container-lowest rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(19,27,46,0.06)]
+                 hover:shadow-[0_12px_32px_-4px_rgba(19,27,46,0.1)] transition-all duration-300 sm:hover:-translate-y-0.5 group"
     >
-      <ImageCarousel person={person} />
-      <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-grow gap-1.5">
-        {/* Viloyat badge */}
-        <span className="self-start inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">
-          <span className="material-symbols-outlined text-[11px] sm:text-[13px]">location_on</span>
-          {viloyatName}
-        </span>
+      <div className="flex">
+        {/* Image — left side */}
+        <div className="w-[38%] sm:w-[40%] shrink-0">
+          <div className="h-full min-h-[160px] sm:min-h-[200px] relative">
+            <ImageCarousel person={person} />
+          </div>
+        </div>
 
-        {/* Name */}
-        <h3 className="font-headline text-lg sm:text-xl font-bold text-on-surface leading-tight">
-          {person.name}
-        </h3>
+        {/* Content — right side */}
+        <div className="flex-1 p-2.5 sm:p-4 lg:p-5 flex flex-col justify-between gap-1.5 sm:gap-2">
+          <div>
+            {/* Viloyat badge */}
+            <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[9px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded-full mb-1.5">
+              <span className="material-symbols-outlined text-[10px] sm:text-[11px]">location_on</span>
+              {viloyatName}
+            </span>
 
-        {/* Loan amount + location — from parsed data */}
-        {loanAmount && (
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm mt-1">
-            <span className="font-headline font-bold text-primary">{loanAmount}</span>
+            {/* Name */}
+            <h3 className="font-headline text-[13px] sm:text-base lg:text-lg font-bold text-on-surface leading-tight line-clamp-2">
+              {person.name}
+            </h3>
+
+            {/* Loan amount */}
+            {loanAmount && (
+              <p className="font-headline font-bold text-primary text-xs sm:text-sm mt-1">{loanAmount}</p>
+            )}
+
+            {/* Location */}
             {location && (
-              <>
-                <span className="text-outline-variant/60">·</span>
-                <span className="text-on-surface-variant text-xs">{location}</span>
-              </>
+              <p className="text-[10px] sm:text-xs text-on-surface-variant mt-0.5 flex items-center gap-1">
+                <span className="material-symbols-outlined text-[12px]">location_city</span>
+                {location}
+              </p>
             )}
           </div>
-        )}
 
-        {/* PDF link — subtle */}
-        {person.pdfUrl && (
-          <div className="mt-auto pt-3">
+          {/* PDF link */}
+          {person.pdfUrl && (
             <a href={person.pdfUrl} target="_blank" rel="noopener noreferrer"
-               className="inline-flex items-center gap-1 text-xs text-on-surface-variant hover:text-primary font-medium transition-colors">
-              <span className="material-symbols-outlined text-[16px]">picture_as_pdf</span>
-              Taqdimotni ko'rish
+               className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-on-surface-variant hover:text-primary font-medium transition-colors mt-2">
+              <span className="material-symbols-outlined text-[14px]">picture_as_pdf</span>
+              PDF
             </a>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </motion.article>
   );
@@ -600,6 +613,7 @@ function RegularCard({ person, viloyatName }: { person: Person; viloyatName: str
 
 export default function KomakchilarClient({ data }: Props) {
   const [activeViloyat, setActiveViloyat] = useState<string | null>(null);
+  const [visibleViloyat, setVisibleViloyat] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -663,15 +677,65 @@ export default function KomakchilarClient({ data }: Props) {
     searchRef.current?.focus();
   }, []);
 
-  // Scroll active tab into view
+  // Scroll active or visible tab into view
   useEffect(() => {
-    if (activeViloyat && tabBarRef.current) {
-      const activeBtn = tabBarRef.current.querySelector(`[data-viloyat="${activeViloyat}"]`);
+    const slugToScroll = activeViloyat || visibleViloyat;
+    if (slugToScroll && tabBarRef.current) {
+      const activeBtn = tabBarRef.current.querySelector(`[data-viloyat="${slugToScroll}"]`);
       if (activeBtn) {
         activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
     }
-  }, [activeViloyat]);
+  }, [activeViloyat, visibleViloyat]);
+
+  // Scrollspy effect — throttled to avoid jank on weak devices
+  const visibleRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (activeViloyat) {
+      setVisibleViloyat(null);
+      visibleRef.current = null;
+      return;
+    }
+
+    let rafId: number;
+    let lastRun = 0;
+    const THROTTLE = isWeakDevice ? 250 : 100; // ms
+
+    const handleScroll = () => {
+      const now = Date.now();
+      if (now - lastRun < THROTTLE) return;
+      lastRun = now;
+
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const sections = Object.values(sectionRefs.current).filter(Boolean) as HTMLElement[];
+        let currentVis: string | null = null;
+
+        for (const section of sections) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.2) {
+            currentVis = section.id.replace('viloyat-', '');
+            break;
+          }
+        }
+
+        if (currentVis && currentVis !== visibleRef.current) {
+          visibleRef.current = currentVis;
+          setVisibleViloyat(currentVis);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    const initTimer = setTimeout(handleScroll, 150);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+      clearTimeout(initTimer);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeViloyat, filteredViloyatlar]);
 
   const handleTabClick = (slug: string | null) => {
     setActiveViloyat(slug);
@@ -683,7 +747,7 @@ export default function KomakchilarClient({ data }: Props) {
     <div className="min-h-screen bg-surface">
 
       {/* ─── HERO ──────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-20 sm:pt-28 lg:pt-32 pb-10 sm:pb-16 lg:pb-20 px-4 sm:px-6">
+      <section className="relative overflow-hidden pt-16 sm:pt-28 lg:pt-32 pb-8 sm:pb-16 lg:pb-20 px-4 sm:px-6">
         <div className="absolute inset-0 bg-gradient-to-br from-[#004f45] via-[#00685f] to-[#008378]" />
         {/* Decorative circles — desktop only */}
         <div className="hidden md:block absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full opacity-20"
@@ -695,7 +759,7 @@ export default function KomakchilarClient({ data }: Props) {
           <div className="max-w-3xl">
             {/* Badge — hidden on mobile to save space */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={isWeakDevice ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
               className="hidden sm:inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm
@@ -708,20 +772,20 @@ export default function KomakchilarClient({ data }: Props) {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
+              initial={isWeakDevice ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white
-                         leading-[1.1] sm:leading-[1.05] tracking-tight mb-3 sm:mb-5"
+              className="font-headline text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white
+                         leading-[1.1] sm:leading-[1.05] tracking-tight mb-2 sm:mb-5"
             >
               Ko&apos;makchilar
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={isWeakDevice ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.16 }}
-              className="text-white/75 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-6 sm:mb-10"
+              className="text-white/75 text-xs sm:text-base lg:text-lg leading-relaxed max-w-xl mb-4 sm:mb-10"
             >
               Ko&apos;mak loyihasi doirasida ssuda olgan va o&apos;quv markazlarini tashkil etgan
               yosh tadbirkorlar bilan tanishing.
@@ -730,10 +794,10 @@ export default function KomakchilarClient({ data }: Props) {
 
           {/* Stats — compact on mobile */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={isWeakDevice ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.32 }}
-            className="flex flex-wrap gap-2 sm:gap-3"
+            className="flex flex-wrap gap-1.5 sm:gap-3"
           >
             {[
               { icon: 'people', value: debouncedSearch ? totalFilteredPeople : totalPeople, label: "Ko'makchi" },
@@ -762,11 +826,11 @@ export default function KomakchilarClient({ data }: Props) {
       </section>
 
       {/* ─── FILTER BAR: Search + Viloyat Pills ─────────────────── */}
-      <div className="sticky top-20 md:top-24 z-30 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/15 shadow-[0_4px_20px_rgba(19,27,46,0.04)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3">
+      <div className="sticky top-14 sm:top-20 md:top-24 z-30 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/15 shadow-[0_4px_20px_rgba(19,27,46,0.04)]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-3">
 
           {/* Search input */}
-          <div className="relative mb-2 sm:mb-3">
+          <div className="relative mb-1.5 sm:mb-3">
             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-lg pointer-events-none select-none">
               search
             </span>
@@ -800,23 +864,23 @@ export default function KomakchilarClient({ data }: Props) {
 
           {/* Pills row with nav arrows */}
           <div className="relative">
-            {/* Left arrow */}
+            {/* Left arrow — hidden on small mobile */}
             <button
               onClick={() => {
                 const el = tabBarRef.current;
                 if (!el) return;
                 el.scrollBy({ left: -200, behavior: 'smooth' });
               }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-8 h-8 rounded-full
+              className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-8 h-8 rounded-full
                          bg-surface-container-lowest shadow border border-outline-variant/20
-                         flex items-center justify-center text-on-surface hover:bg-surface-container
+                         items-center justify-center text-on-surface hover:bg-surface-container
                          transition-colors"
               aria-label="Oldingi viloyatlar"
             >
               <span className="material-symbols-outlined text-lg">chevron_left</span>
             </button>
 
-          <div ref={tabBarRef} className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide px-3 sm:px-4">
+          <div ref={tabBarRef} className="flex gap-1 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide px-1 sm:px-4">
             {/* All tab */}
             <button
               onClick={() => handleTabClick(null)}
@@ -857,6 +921,8 @@ export default function KomakchilarClient({ data }: Props) {
                                font-medium text-xs sm:text-sm transition-all duration-200 ${
                       activeViloyat === v.slug
                         ? 'bg-primary text-on-primary shadow-md'
+                        : activeViloyat === null && visibleViloyat === v.slug
+                        ? 'bg-primary/20 text-primary border border-primary/20 shadow-sm'
                         : 'bg-surface-container-high text-on-surface hover:bg-surface-container-highest'
                     }`}
                   >
@@ -876,16 +942,16 @@ export default function KomakchilarClient({ data }: Props) {
             })}
           </div>
 
-            {/* Right arrow */}
+            {/* Right arrow — hidden on small mobile */}
             <button
               onClick={() => {
                 const el = tabBarRef.current;
                 if (!el) return;
                 el.scrollBy({ left: 200, behavior: 'smooth' });
               }}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-8 h-8 rounded-full
+              className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-8 h-8 rounded-full
                          bg-surface-container-lowest shadow border border-outline-variant/20
-                         flex items-center justify-center text-on-surface hover:bg-surface-container
+                         items-center justify-center text-on-surface hover:bg-surface-container
                          transition-colors"
               aria-label="Keyingi viloyatlar"
             >
@@ -1006,10 +1072,10 @@ export default function KomakchilarClient({ data }: Props) {
           ) : (
             <motion.div
               key={activeViloyat ?? 'all'}
-              initial={{ opacity: 0, y: 12 }}
+              initial={isWeakDevice ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3 }}
+              exit={isWeakDevice ? undefined : { opacity: 0, y: -12 }}
+              transition={{ duration: isWeakDevice ? 0.1 : 0.3 }}
             >
               {filteredViloyatlar.map(viloyat => {
                 const featured = viloyat.people.filter(p => p.featured);
@@ -1020,10 +1086,10 @@ export default function KomakchilarClient({ data }: Props) {
                     key={viloyat.slug}
                     id={`viloyat-${viloyat.slug}`}
                     ref={el => { sectionRefs.current[viloyat.slug] = el; }}
-                    className="mb-12 sm:mb-16 last:mb-0"
+                    className="mb-8 sm:mb-16 last:mb-0"
                   >
                     {/* Section heading */}
-                    <div className="flex items-center gap-3 mb-5 sm:mb-8">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-8">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                         <span className="material-symbols-outlined text-primary text-base sm:text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                           location_on
@@ -1041,7 +1107,7 @@ export default function KomakchilarClient({ data }: Props) {
 
                     {/* Featured cards */}
                     {featured.length > 0 && (
-                      <div className="flex flex-col gap-6 sm:gap-8 mb-6 sm:mb-8">
+                      <div className={`grid grid-cols-1 ${featured.length > 1 ? 'lg:grid-cols-2' : ''} gap-4 sm:gap-8 mb-4 sm:mb-8`}>
                         {featured.map(person => (
                           <FeaturedCard
                             key={person.slug}
@@ -1054,7 +1120,7 @@ export default function KomakchilarClient({ data }: Props) {
 
                     {/* Regular cards */}
                     {regular.length > 0 && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
                         {regular.map(person => (
                           <RegularCard
                             key={person.slug}

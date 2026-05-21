@@ -59,6 +59,38 @@
                                               "pdfUrl":  null
                                           },
                                           {
+                                              "name":  "Baxodirjonova Gulzarifa Jahongir qizi",
+                                              "slug":  "baxodirjonova-gulzarifa-jahongir-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 15_17_31.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_32.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_35.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_38.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_41.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_45.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_48.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_50.jpg",
+                                                                     "IMAGE 2026-05-19 15_17_55.jpg",
+                                                                     "IMG_8681.JPG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/baxodirjonova-gulzarifa-jahongir-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Mirzaraximov Ilxomjon A\u0027zamjon o\u0027g\u0027li",
                                               "slug":  "mirzaraximov-ilxomjon-azamjon-ogli",
                                               "featured":  false,
@@ -83,9 +115,9 @@
                                               "pdfUrl":  null
                                           },
                                           {
-                                              "name":  "Nodirbek Maxmudov",
-                                              "slug":  "nodirbek-maxmudov",
-                                              "featured":  true,
+                                              "name":  "Nodirbek_Maxmudov",
+                                              "slug":  "nodirbekmaxmudov",
+                                              "featured":  false,
                                               "description":  null,
                                               "images":  [
                                                              "1.jpg",
@@ -107,7 +139,7 @@
                                                                      "Screenshot 2026-04-18 124155.png",
                                                                      "Screenshot 2026-04-18 124314.png"
                                                                  ],
-                                              "imagePath":  "/assets/komakchilar/andijon/nodirbek-maxmudov/",
+                                              "imagePath":  "/assets/komakchilar/andijon/nodirbekmaxmudov/",
                                               "pdfUrl":  null
                                           },
                                           {
@@ -199,6 +231,26 @@
                                               "pdfUrl":  "/assets/komakchilar/andijon/saynazarova-mashhuraxon-tolqinjon-qizi/saynazarova-mashhuraxon-tolqinjon-qizi.pdf"
                                           },
                                           {
+                                              "name":  "Sharobiddinova Umida Shuxratjon qizi _EDO HOME_",
+                                              "slug":  "sharobiddinova-umida-shuxratjon-qizi-edo-home",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 07_09_47.png",
+                                                                     "IMAGE 2026-05-19 14_43_12.jpg",
+                                                                     "IMAGE 2026-05-19 14_43_13.jpg",
+                                                                     "IMAGE 2026-05-19 14_43_15.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/sharobiddinova-umida-shuxratjon-qizi-edo-home/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Tulanboyev Shoxsuvor Dilmurod o\u0027g\u0027li",
                                               "slug":  "tulanboyev-shoxsuvor-dilmurod-ogli",
                                               "featured":  true,
@@ -209,7 +261,14 @@
                                                              "3.jpg",
                                                              "4.jpg",
                                                              "5.jpg",
-                                                             "6.jpg"
+                                                             "6.jpg",
+                                                             "7.png",
+                                                             "8.png",
+                                                             "9.png",
+                                                             "10.png",
+                                                             "11.png",
+                                                             "12.png",
+                                                             "13.png"
                                                          ],
                                               "originalImages":  [
                                                                      "20260215_151648.jpg",
@@ -217,9 +276,94 @@
                                                                      "20260215_151849.jpg",
                                                                      "20260215_152017.jpg",
                                                                      "photo_1_2026-04-16_17-36-44.jpg",
-                                                                     "photo_2_2026-04-16_17-36-44.jpg"
+                                                                     "photo_2_2026-04-16_17-36-44.jpg",
+                                                                     "Screenshot 2026-05-19 at 15.19.49.png",
+                                                                     "Screenshot 2026-05-19 at 15.20.38.png",
+                                                                     "Screenshot 2026-05-19 at 15.21.17.png",
+                                                                     "Screenshot 2026-05-19 at 15.21.42.png",
+                                                                     "Screenshot 2026-05-19 at 15.22.12.png",
+                                                                     "Screenshot 2026-05-19 at 15.22.44.png",
+                                                                     "Screenshot 2026-05-19 at 15.22.58.png"
                                                                  ],
                                               "imagePath":  "/assets/komakchilar/andijon/tulanboyev-shoxsuvor-dilmurod-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Tursunov Elyorbek Turg_unboy o_g_li",
+                                              "slug":  "tursunov-elyorbek-turgunboy-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 07_05_46.png",
+                                                                     "IMAGE 2026-05-19 15_25_02.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_10.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_12.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_19.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_21.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_23.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_26.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_48.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_50.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_54.jpg",
+                                                                     "IMAGE 2026-05-19 15_25_55.jpg",
+                                                                     "IMAGE 2026-05-19 15_26_05.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/tursunov-elyorbek-turgunboy-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Yaqubov Odilbek Sobirjon oʻgʻli",
+                                              "slug":  "yaqubov-odilbek-sobirjon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 08_43_59.png",
+                                                                     "IMAGE 2026-05-19 15_02_47.jpg",
+                                                                     "Screenshot 2026-05-19 at 15.10.50.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/yaqubov-odilbek-sobirjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Zokirov Nodirbek Avazbek o_g_li",
+                                              "slug":  "zokirov-nodirbek-avazbek-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 14_18_46.jpg",
+                                                                     "IMAGE 2026-05-19 14_18_50.jpg",
+                                                                     "IMAGE 2026-05-19 14_18_52.jpg",
+                                                                     "IMAGE 2026-05-19 14_18_54.jpg",
+                                                                     "photo_2026-05-19 12.37.01.jpeg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/andijon/zokirov-nodirbek-avazbek-ogli/",
                                               "pdfUrl":  null
                                           }
                                       ]
@@ -228,6 +372,198 @@
                            "name":  "Buxoro viloyati",
                            "slug":  "buxoro",
                            "people":  [
+                                          {
+                                              "name":  "Azimboev Sanjar",
+                                              "slug":  "azimboev-sanjar",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "DSC_8610.JPG",
+                                                                     "IMAGE 2026-04-16 17_50_42.jpg",
+                                                                     "IMAGE 2026-04-16 17_50_46.jpg",
+                                                                     "IMAGE 2026-04-16 17_50_55.jpg",
+                                                                     "IMAGE 2026-04-16 17_50_58.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/azimboev-sanjar/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Azimboyev Sanjar Farhod o\u0027g\u0027li",
+                                              "slug":  "azimboyev-sanjar-farhod-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-16 17_38_18.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_24.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_26.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_29.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_30.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_48.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_50.jpg",
+                                                                     "IMAGE 2026-04-16 17_38_51.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/azimboyev-sanjar-farhod-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ergasheva Nasiba To\u0027lqin",
+                                              "slug":  "ergasheva-nasiba-tolqin",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.png",
+                                                             "3.png",
+                                                             "4.png",
+                                                             "5.png",
+                                                             "6.png",
+                                                             "7.png",
+                                                             "8.png",
+                                                             "9.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "32DCF046-4C94-456D-860C-44BA70978CB0.png",
+                                                                     "32DCF046-4C94-456D-860C-44BA70978CB0_copy.png",
+                                                                     "53479FBB-DBC9-4211-AFF8-2C0513FC6078.png",
+                                                                     "53479FBB-DBC9-4211-AFF8-2C0513FC6078_copy.png",
+                                                                     "C468E423-F027-425C-A743-8D4551866057.png",
+                                                                     "C468E423-F027-425C-A743-8D4551866057_copy.png",
+                                                                     "EA46619B-E741-47E8-ADE0-0C72BDE56297.png",
+                                                                     "EA46619B-E741-47E8-ADE0-0C72BDE56297_copy.png",
+                                                                     "IMAGE 2026-05-19 11_51_43.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/ergasheva-nasiba-tolqin/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Feruza",
+                                              "slug":  "feruza",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Feruza Jaloliddinovna , EDU ZONE.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/feruza/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Gadoyev Doston Zokir o\u0027g\u0027li",
+                                              "slug":  "gadoyev-doston-zokir-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 29 ð░ð┐ÐÇ. 2026 ð│., 16_42_19.png",
+                                                                     "IMAGE 2026-04-16 17_28_45.jpg",
+                                                                     "IMAGE 2026-04-16 17_28_45_copy.jpg",
+                                                                     "IMAGE 2026-04-16 17_28_51.jpg",
+                                                                     "IMAGE 2026-04-16 17_28_51_copy.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/gadoyev-doston-zokir-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Muzaffarov Muhammadali Farmon o‘g‘li",
+                                              "slug":  "muzaffarov-muhammadali-farmon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Muzaffarov Muhammmadali Farmon òg_li , Muzaffarov academy.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/muzaffarov-muhammadali-farmon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Naimova Bahor Dilshod qizi",
+                                              "slug":  "naimova-bahor-dilshod-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-16 16_51_35.jpg",
+                                                                     "IMAGE 2026-04-16 16_53_42.jpg",
+                                                                     "IMAGE 2026-04-16 17_43_51.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/naimova-bahor-dilshod-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Nargiza",
+                                              "slug":  "nargiza",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Maxmudova Nargiza.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/nargiza/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Narziyev Shabozjon",
+                                              "slug":  "narziyev-shabozjon",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-16 17_30_41.jpg",
+                                                                     "IMAGE 2026-04-16 17_30_46.jpg",
+                                                                     "IMAGE 2026-04-16 17_31_05.jpg",
+                                                                     "IMAGE 2026-04-16 17_31_10.jpg",
+                                                                     "IMAGE 2026-04-16 17_32_02.jpg",
+                                                                     "IMAGE 2026-04-16 17_32_08.jpg",
+                                                                     "IMAGE 2026-04-16 17_32_13.jpg",
+                                                                     "IMAGE 2026-04-16 17_32_17.jpg",
+                                                                     "IMAGE 2026-04-16 17_32_23.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/narziyev-shabozjon/",
+                                              "pdfUrl":  null
+                                          },
                                           {
                                               "name":  "Odilov Dilshodbek Dilmurod o\u0027g\u0027li",
                                               "slug":  "odilov-dilshodbek-dilmurod-ogli",
@@ -247,25 +583,207 @@
                                                              "11.jpg",
                                                              "12.jpg",
                                                              "13.jpg",
-                                                             "14.jpg"
+                                                             "14.jpg",
+                                                             "15.jpg",
+                                                             "16.jpg",
+                                                             "17.jpg",
+                                                             "18.jpg",
+                                                             "19.jpg",
+                                                             "20.jpg",
+                                                             "21.jpg",
+                                                             "22.jpg",
+                                                             "23.jpg",
+                                                             "24.jpg",
+                                                             "25.jpg",
+                                                             "26.jpg",
+                                                             "27.jpg",
+                                                             "28.jpg",
+                                                             "29.jpg",
+                                                             "30.jpg"
                                                          ],
                                               "originalImages":  [
                                                                      "3W7A8643.00_18_49_09.Still001.jpg",
+                                                                     "3W7A8643.00_18_49_09.Still001_copy.jpg",
                                                                      "-5319283203753316274_119.jpg",
+                                                                     "-5319283203753316274_119_copy.jpg",
                                                                      "-5319283203753316275_119.jpg",
+                                                                     "-5319283203753316275_119_copy.jpg",
+                                                                     "-5319283203753316276_119.jpg",
+                                                                     "-5319283203753316277_119.jpg",
                                                                      "-5319283203753316278_119.jpg",
+                                                                     "-5319283203753316278_119_copy.jpg",
                                                                      "IMAGE 2026-04-16 17_02_15.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_15_copy.jpg",
                                                                      "IMAGE 2026-04-16 17_02_19.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_19_copy.jpg",
                                                                      "IMAGE 2026-04-16 17_02_20.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_20_copy.jpg",
                                                                      "IMAGE 2026-04-16 17_02_24.jpg",
+                                                                     "IMAGE 2026-04-16 17_02_24_copy.jpg",
                                                                      "IMG_20260331_125353_834.jpg",
+                                                                     "IMG_20260331_125353_834_copy.jpg",
                                                                      "IMG_20260331_125353_936.jpg",
+                                                                     "IMG_20260331_125353_936_copy.jpg",
                                                                      "IMG_20260331_125353_966.jpg",
+                                                                     "IMG_20260331_125353_966_copy.jpg",
                                                                      "IMG_20260331_125353_989.jpg",
+                                                                     "IMG_20260331_125353_989_copy.jpg",
                                                                      "IMG_20260331_125353_991.jpg",
-                                                                     "IMG_20260331_125354_070.jpg"
+                                                                     "IMG_20260331_125353_991_copy.jpg",
+                                                                     "IMG_20260331_125354_070.jpg",
+                                                                     "IMG_20260331_125354_070_copy.jpg"
                                                                  ],
                                               "imagePath":  "/assets/komakchilar/buxoro/odilov-dilshodbek-dilmurod-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Qudratova Dilfuza Shavkat qizi",
+                                              "slug":  "qudratova-dilfuza-shavkat-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-16 16_58_49.jpg",
+                                                                     "IMAGE 2026-04-16 16_58_57.jpg",
+                                                                     "IMAGE 2026-04-16 16_59_13.jpg",
+                                                                     "IMAGE 2026-04-16 16_59_19.jpg",
+                                                                     "IMAGE 2026-04-16 16_59_23.jpg",
+                                                                     "IMAGE 2026-04-16 16_59_30.jpg",
+                                                                     "IMAGE 2026-04-16 16_59_35.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/qudratova-dilfuza-shavkat-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Rano",
+                                              "slug":  "rano",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Ziyodullayeva Ra_no , Al-Buxoriy.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/rano/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Saidova Gulbarchin Dilmurod qizi",
+                                              "slug":  "saidova-gulbarchin-dilmurod-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 23 ð░ð┐ÐÇ. 2026 ð│., 15_20_43.png",
+                                                                     "IMAGE 2026-04-16 17_36_17.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_20.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_25.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_27.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_30.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_32.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_34.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_38.jpg",
+                                                                     "IMAGE 2026-04-16 17_36_41.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/saidova-gulbarchin-dilmurod-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Sherdil , Maestro",
+                                              "slug":  "sherdil-maestro",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Adizov Sherdil Shavkatovich.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/sherdil-maestro/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Shokirov Amirbek Umidjon o_g_li",
+                                              "slug":  "shokirov-amirbek-umidjon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Shokirov Amirbek Umidjon o_g_li.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/shokirov-amirbek-umidjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Shokirova Dilyora Uchqun qizi",
+                                              "slug":  "shokirova-dilyora-uchqun-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Shokirova Dilyora Uchqun qizi , Verity English.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/shokirova-dilyora-uchqun-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Shomurodov Shohruh Olimjon o_g_li",
+                                              "slug":  "shomurodov-shohruh-olimjon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-04-16 17_44_47.jpg",
+                                                                     "IMAGE 2026-04-16 17_44_52.jpg",
+                                                                     "IMAGE 2026-04-16 17_45_00.jpg",
+                                                                     "IMAGE 2026-04-16 17_45_04.jpg",
+                                                                     "IMAGE 2026-04-16 17_45_09.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/shomurodov-shohruh-olimjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Sodiqov Asadbek Ashraf o_g_li",
+                                              "slug":  "sodiqov-asadbek-ashraf-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Sodiqov Asadbek Ashraf o_g_li , PRIME INNOVATION SCHOOL.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/buxoro/sodiqov-asadbek-ashraf-ogli/",
                                               "pdfUrl":  null
                                           }
                                       ]
@@ -274,6 +792,20 @@
                            "name":  "Farg\u0027ona viloyati",
                            "slug":  "fargona",
                            "people":  [
+                                          {
+                                              "name":  "Abdirahimova Feruzabonu Umidjon qizi",
+                                              "slug":  "abdirahimova-feruzabonu-umidjon-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Abdirahimova Feruzabonu Umidjon qizi, Humo Academiya.JPG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/fargona/abdirahimova-feruzabonu-umidjon-qizi/",
+                                              "pdfUrl":  null
+                                          },
                                           {
                                               "name":  "Abdumuxtorova Masturaxon Mo\u0027minjon qizi",
                                               "slug":  "abdumuxtorova-masturaxon-mominjon-qizi",
@@ -363,6 +895,20 @@
                                               "pdfUrl":  null
                                           },
                                           {
+                                              "name":  "javlonbek",
+                                              "slug":  "javlonbek",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Ohunov Javlonbek Iqbol oʻgʻli, PREMIUM ENGLISH.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/fargona/javlonbek/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Umarova So\u0027g\u0027diyona G\u0027ofurjon qizi",
                                               "slug":  "umarova-sogdiyona-gofurjon-qizi",
                                               "featured":  true,
@@ -396,6 +942,180 @@
                            "name":  "Jizzax viloyati",
                            "slug":  "jizzax",
                            "people":  [
+                                          {
+                                              "name":  "Abdug_aniyev Ma_rufjon Farhod o_g_li",
+                                              "slug":  "abduganiyev-marufjon-farhod-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "DSC00270.JPG",
+                                                                     "DSC00271.JPG",
+                                                                     "IMAGE 2026-05-19 16_32_33.jpg",
+                                                                     "IMAGE 2026-05-19 16_32_34.jpg",
+                                                                     "IMAGE 2026-05-19 16_32_36.jpg",
+                                                                     "IMAGE 2026-05-19 16_32_38.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/abduganiyev-marufjon-farhod-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Alikulov Jaloliddin Nasriddin o_g_li",
+                                              "slug":  "alikulov-jaloliddin-nasriddin-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 16_33_19.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_22.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_25.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_29.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_32.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_34.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_36.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_39.jpg",
+                                                                     "IMAGE 2026-05-19 16_33_45.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/alikulov-jaloliddin-nasriddin-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Baxromov Bunyod Farhod o_g_li",
+                                              "slug":  "baxromov-bunyod-farhod-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 16_30_35.jpg",
+                                                                     "IMAGE 2026-05-19 16_30_38.jpg",
+                                                                     "IMAGE 2026-05-19 16_30_41.jpg",
+                                                                     "IMAGE 2026-05-19 16_30_43.jpg",
+                                                                     "IMAGE 2026-05-19 16_30_45.jpg",
+                                                                     "IMG_0932.PNG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/baxromov-bunyod-farhod-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ergashev Ahmadali Quvondiq o’g’li",
+                                              "slug":  "ergashev-ahmadali-quvondiq-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.png",
+                                                             "4.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 16_36_22.jpg",
+                                                                     "IMAGE 2026-05-19 16_36_24.jpg",
+                                                                     "Screenshot 2026-05-19 at 16.38.45.png",
+                                                                     "Screenshot 2026-05-19 at 16.45.26.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/ergashev-ahmadali-quvondiq-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Erkinov Shahzod Erkin o_g_li",
+                                              "slug":  "erkinov-shahzod-erkin-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 17_11_04.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/erkinov-shahzod-erkin-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Karimqulov Sindor Ibrohim o\u0027g\u0027li",
+                                              "slug":  "karimqulov-sindor-ibrohim-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.png",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_6516.HEIC",
+                                                                     "IMG_7322.PNG",
+                                                                     "IMG_7323.JPG",
+                                                                     "IMG_7324.JPG",
+                                                                     "IMG_7325.JPG",
+                                                                     "IMG_7326.JPG",
+                                                                     "IMG_7328.JPG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/karimqulov-sindor-ibrohim-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Maxmudov Tòlqin Yorqin o_g_li",
+                                              "slug":  "maxmudov-tolqin-yorqin-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 16_34_06.jpg",
+                                                                     "IMAGE 2026-05-19 16_34_13.jpg",
+                                                                     "IMAGE 2026-05-19 16_34_16.jpg",
+                                                                     "IMAGE 2026-05-19 16_34_18.jpg",
+                                                                     "IMAGE 2026-05-19 16_34_20.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/maxmudov-tolqin-yorqin-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Tursunov Jasur Abduvali o_g_li",
+                                              "slug":  "tursunov-jasur-abduvali-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 09_03_30.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/jizzax/tursunov-jasur-abduvali-ogli/",
+                                              "pdfUrl":  null
+                                          },
                                           {
                                               "name":  "Xudayorov Farmonqul Anarboy",
                                               "slug":  "xudayorov-farmonqul-anarboy",
@@ -529,6 +1249,104 @@
                            "slug":  "navoiy",
                            "people":  [
                                           {
+                                              "name":  "Bobojonov Husan Ali o‘g‘li",
+                                              "slug":  "bobojonov-husan-ali-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "20250914_111543.jpg",
+                                                                     "20250916_152634.jpg",
+                                                                     "20250924_102208.jpg",
+                                                                     "-2147483648_-214704.jpg",
+                                                                     "IMG_20260331_130537_827.jpg",
+                                                                     "IMG_20260331_130639_137.jpg",
+                                                                     "IMG_20260331_131932_672.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/navoiy/bobojonov-husan-ali-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ismatullayeva Mohinur Ulug‘bek qizi",
+                                              "slug":  "ismatullayeva-mohinur-ulugbek-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.png",
+                                                             "3.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMG_0511.HEIC",
+                                                                     "Screenshot 2026-04-01 163704.png",
+                                                                     "Screenshot 2026-04-01 163729.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/navoiy/ismatullayeva-mohinur-ulugbek-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Muhiddinova Nilufar Sadriddin qizi",
+                                              "slug":  "muhiddinova-nilufar-sadriddin-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "20260306_091639.jpg",
+                                                                     "20260306_092635.jpg",
+                                                                     "20260306_094915.jpg",
+                                                                     "20260401_125756.jpg",
+                                                                     "IMG_20260306_105432_486.jpg",
+                                                                     "IMG_20260306_105432_702.jpg",
+                                                                     "IMG_20260306_105432_949.jpg",
+                                                                     "IMG_20260306_105432_969.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/navoiy/muhiddinova-nilufar-sadriddin-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ostonova Nargiz Shokir qizi",
+                                              "slug":  "ostonova-nargiz-shokir-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_10-35-41.jpg",
+                                                                     "photo_2_2026-04-17_10-35-41.jpg",
+                                                                     "photo_3_2026-04-17_10-35-41.jpg",
+                                                                     "photo_4_2026-04-17_10-35-41.jpg",
+                                                                     "photo_5_2026-04-17_10-35-41.jpg",
+                                                                     "photo_6_2026-04-17_10-35-41.jpg",
+                                                                     "photo_7_2026-04-17_10-35-41.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/navoiy/ostonova-nargiz-shokir-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Rahmatov Solijon Shuhratovich",
                                               "slug":  "rahmatov-solijon-shuhratovich",
                                               "featured":  true,
@@ -561,6 +1379,30 @@
                                                                  ],
                                               "imagePath":  "/assets/komakchilar/navoiy/rahmatov-solijon-shuhratovich/",
                                               "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Yunusov Fayoz",
+                                              "slug":  "yunusov-fayoz",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "20260215_151648.jpg",
+                                                                     "20260215_151705.jpg",
+                                                                     "20260215_151849.jpg",
+                                                                     "20260215_152017.jpg",
+                                                                     "photo_1_2026-04-17_10-31-34.jpg",
+                                                                     "photo_2_2026-04-17_10-31-34.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/navoiy/yunusov-fayoz/",
+                                              "pdfUrl":  null
                                           }
                                       ]
                        },
@@ -568,6 +1410,222 @@
                            "name":  "Qashqadaryo viloyati",
                            "slug":  "qashqadaryo",
                            "people":  [
+                                          {
+                                              "name":  "Alovxonov Shaxzod",
+                                              "slug":  "alovxonov-shaxzod",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_09-35-08.jpg",
+                                                                     "photo_10_2026-04-17_09-35-08.jpg",
+                                                                     "photo_11_2026-04-17_09-35-08.jpg",
+                                                                     "photo_12_2026-04-17_09-35-08.jpg",
+                                                                     "photo_13_2026-04-17_09-35-08.jpg",
+                                                                     "photo_2_2026-04-17_09-35-08.jpg",
+                                                                     "photo_3_2026-04-17_09-35-08.jpg",
+                                                                     "photo_4_2026-04-17_09-35-08.jpg",
+                                                                     "photo_5_2026-04-17_09-35-08.jpg",
+                                                                     "photo_6_2026-04-17_09-35-08.jpg",
+                                                                     "photo_7_2026-04-17_09-35-08.jpg",
+                                                                     "photo_8_2026-04-17_09-35-08.jpg",
+                                                                     "photo_9_2026-04-17_09-35-08.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/alovxonov-shaxzod/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Anvarova Shaxzoda Anvar qizi",
+                                              "slug":  "anvarova-shaxzoda-anvar-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Anvarova Shaxzoda Anvar qizi.jpg",
+                                                                     "photo_1_2026-05-20_10-16-54.jpg",
+                                                                     "photo_2_2026-05-20_10-16-54.jpg",
+                                                                     "photo_3_2026-05-20_10-16-54.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/anvarova-shaxzoda-anvar-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Boymirzayev Shahzod Mavlon o_g_li",
+                                              "slug":  "boymirzayev-shahzod-mavlon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg",
+                                                             "14.jpg",
+                                                             "15.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_10-56-13.jpg",
+                                                                     "photo_1_2026-05-20_10-57-56.jpg",
+                                                                     "photo_10_2026-05-20_10-56-13.jpg",
+                                                                     "photo_2_2026-05-20_10-56-13.jpg",
+                                                                     "photo_2_2026-05-20_10-57-56.jpg",
+                                                                     "photo_3_2026-05-20_10-56-13.jpg",
+                                                                     "photo_3_2026-05-20_10-57-56.jpg",
+                                                                     "photo_4_2026-05-20_10-56-13.jpg",
+                                                                     "photo_4_2026-05-20_10-57-56.jpg",
+                                                                     "photo_5_2026-05-20_10-56-13.jpg",
+                                                                     "photo_5_2026-05-20_10-57-56.jpg",
+                                                                     "photo_6_2026-05-20_10-56-13.jpg",
+                                                                     "photo_7_2026-05-20_10-56-13.jpg",
+                                                                     "photo_8_2026-05-20_10-56-13.jpg",
+                                                                     "photo_9_2026-05-20_10-56-13.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/boymirzayev-shahzod-mavlon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Bozorov Elbek Elmirza o_g_li",
+                                              "slug":  "bozorov-elbek-elmirza-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_11-06-53.jpg",
+                                                                     "photo_2_2026-05-20_11-06-53.jpg",
+                                                                     "photo_3_2026-05-20_11-06-53.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/bozorov-elbek-elmirza-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Do_syarov Jasur Xolmo_min o_g_li",
+                                              "slug":  "dosyarov-jasur-xolmomin-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_10-18-46.jpg",
+                                                                     "photo_2_2026-05-20_10-18-46.jpg",
+                                                                     "photo_3_2026-05-20_10-18-46.jpg",
+                                                                     "photo_4_2026-05-20_10-18-46.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/dosyarov-jasur-xolmomin-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Jo_rabek",
+                                              "slug":  "jorabek",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Qurbonmurodov Jo_rabek Ilhom o_g_li, Kelajak o_quv markazi.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/jorabek/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Normatov G_anisher Ne_mat o_g_li",
+                                              "slug":  "normatov-ganisher-nemat-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_11-14-22.jpg",
+                                                                     "photo_2_2026-05-20_11-14-22.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/normatov-ganisher-nemat-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Nurmamatova Zahro Dilshodovna",
+                                              "slug":  "nurmamatova-zahro-dilshodovna",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 15_24_07.png",
+                                                                     "photo_1_2026-05-20_10-30-45.jpg",
+                                                                     "photo_2_2026-05-20_10-30-45.jpg",
+                                                                     "photo_3_2026-05-20_10-30-45.jpg",
+                                                                     "photo_4_2026-05-20_10-30-45.jpg",
+                                                                     "photo_5_2026-05-20_10-30-45.jpg",
+                                                                     "photo_6_2026-05-20_10-30-45.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/nurmamatova-zahro-dilshodovna/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Po_latov Homid",
+                                              "slug":  "polatov-homid",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-04-17_09-36-26.jpg",
+                                                                     "photo_2_2026-04-17_09-36-26.jpg",
+                                                                     "photo_3_2026-04-17_09-36-26.jpg",
+                                                                     "photo_4_2026-04-17_09-36-26.jpg",
+                                                                     "photo_5_2026-04-17_09-36-26.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/polatov-homid/",
+                                              "pdfUrl":  null
+                                          },
                                           {
                                               "name":  "Qulmatov Temurbek Yusuf o\u0027g\u0027li",
                                               "slug":  "qulmatov-temurbek-yusuf-ogli",
@@ -595,6 +1653,110 @@
                                                                  ],
                                               "imagePath":  "/assets/komakchilar/qashqadaryo/qulmatov-temurbek-yusuf-ogli/",
                                               "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Qurbonmurodov Jo_rabek Ilhom o_g_li",
+                                              "slug":  "qurbonmurodov-jorabek-ilhom-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 14_50_53.png",
+                                                                     "photo_1_2026-05-20_10-26-50.jpg",
+                                                                     "photo_2_2026-05-20_10-26-50.jpg",
+                                                                     "photo_3_2026-05-20_10-26-50.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/qurbonmurodov-jorabek-ilhom-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Ro_ziqulov O‘ktam Annaqul o_g_li",
+                                              "slug":  "roziqulov-oktam-annaqul-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_10-52-11.jpg",
+                                                                     "photo_2_2026-05-20_10-52-11.jpg",
+                                                                     "photo_3_2026-05-20_10-52-11.jpg",
+                                                                     "photo_4_2026-05-20_10-52-11.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/roziqulov-oktam-annaqul-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Sardor",
+                                              "slug":  "sardor",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Usmonov Sardor, Sardor_s English Academy.JPG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/sardor/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Shahzod",
+                                              "slug":  "shahzod",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "ChatGPT Image 24 ð░ð┐ÐÇ. 2026 ð│., 15_19_21.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/shahzod/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Shennayev Dilshod Xusan o_g_li",
+                                              "slug":  "shennayev-dilshod-xusan-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_10-59-27.jpg",
+                                                                     "photo_2_2026-05-20_10-59-27.jpg",
+                                                                     "photo_3_2026-05-20_10-59-27.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/shennayev-dilshod-xusan-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Xayitmuradova Gavhar Jurabek qizi",
+                                              "slug":  "xayitmuradova-gavhar-jurabek-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "photo_1_2026-05-20_10-23-34.jpg",
+                                                                     "photo_2_2026-05-20_10-23-34.jpg",
+                                                                     "photo_3_2026-05-20_10-23-34.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/qashqadaryo/xayitmuradova-gavhar-jurabek-qizi/",
+                                              "pdfUrl":  null
                                           }
                                       ]
                        },
@@ -616,18 +1778,36 @@
                                                              "6.jpg",
                                                              "7.jpg",
                                                              "8.jpg",
-                                                             "9.jpg"
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.jpg",
+                                                             "13.jpg",
+                                                             "14.jpg",
+                                                             "15.jpg",
+                                                             "16.jpg",
+                                                             "17.jpg",
+                                                             "18.jpg"
                                                          ],
                                               "originalImages":  [
                                                                      "IMG_20250610_121132.jpg",
+                                                                     "IMG_20250610_121132_copy.jpg",
                                                                      "IMG_20250923_000535.jpg",
+                                                                     "IMG_20250923_000535_copy.jpg",
                                                                      "IMG_20250924_091209.jpg",
+                                                                     "IMG_20250924_091209_copy.jpg",
                                                                      "IMG_20250924_151540.jpg",
+                                                                     "IMG_20250924_151540_copy.jpg",
                                                                      "IMG_20251210_163135.jpg",
+                                                                     "IMG_20251210_163135_copy.jpg",
                                                                      "IMG_20260123_141923.jpg",
+                                                                     "IMG_20260123_141923_copy.jpg",
                                                                      "IMG_20260218_185454.jpg",
+                                                                     "IMG_20260218_185454_copy.jpg",
                                                                      "IMG_20260331_112044.jpg",
-                                                                     "IMG_20260331_112059.jpg"
+                                                                     "IMG_20260331_112044_copy.jpg",
+                                                                     "IMG_20260331_112059.jpg",
+                                                                     "IMG_20260331_112059_copy.jpg"
                                                                  ],
                                               "imagePath":  "/assets/komakchilar/qoraqalpogiston/imamiddinov-sardorbek-olimboy-ogli/",
                                               "pdfUrl":  null
@@ -993,8 +2173,98 @@
                            "slug":  "sirdaryo",
                            "people":  [
                                           {
-                                              "name":  "Chuliyeva Mufazzalxon Nozirjon qizi",
-                                              "slug":  "chuliyeva-mufazzalxon-nozirzhan-qizi",
+                                              "name":  "Abduraimov Usmonjon To\u0027lqinjon o\u0027g\u0027li",
+                                              "slug":  "abduraimov-usmonjon-tolqinjon-ogli",
+                                              "featured":  false,
+                                              "description":  "Abduraimov Usmonjon To\u0027lqinjon o\u0027g\u0027li\r\n\r\nSirdaryo viloyati Sirdaryo tumanida Xikmatli mahallasida o\u0027zining “Powerty” o\u0027quv markaziga asos solgan. Hozirgi kunda 50 ga yaqin o\u0027quvchilar ushbu markazda xorijiy tillarni o\u0027rganib kelishmoqda.",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 12_13_54.jpg",
+                                                                     "IMAGE 2026-05-19 12_13_54_copy.jpg",
+                                                                     "Screenshot 2026-05-19 at 12.16.40.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/sirdaryo/abduraimov-usmonjon-tolqinjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Cho_liyeva Mufazzalxon Nozirjon qizi",
+                                              "slug":  "choliyeva-mufazzalxon-nozirjon-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "Chuliyeva Mufazzalxon.JPG",
+                                                                     "DSC07251.JPG",
+                                                                     "IMAGE 2026-05-19 12_13_22.jpg",
+                                                                     "IMAGE 2026-05-19 12_13_24.jpg",
+                                                                     "IMAGE 2026-05-19 12_13_27.jpg",
+                                                                     "IMAGE 2026-05-19 12_13_38.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/sirdaryo/choliyeva-mufazzalxon-nozirjon-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Eshpo\u0027latova Shoira Farhod qizi",
+                                              "slug":  "eshpolatova-shoira-farhod-qizi",
+                                              "featured":  false,
+                                              "description":  "Eshpo\u0027latova Shoira Farhod qizi\r\n\r\nUshbu tashabbuskor Sirdaryo viloyati Sardoba tumani Do\u0027stlik mahallasida “Smart English” o\u0027quv markazini tashkil qilgan. Markazda hozirgi kunda o\u0027quvchilar Ingliz tili, Koreys tili va Rus tili kurslari yo\u0027lga qo\u0027yilgan.",
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "DSC07252.JPG",
+                                                                     "DSC07252_copy.JPG",
+                                                                     "DSC07258 (1).JPG",
+                                                                     "DSC07258 (1)_copy.JPG",
+                                                                     "IMAGE 2026-05-19 10_48_52.jpg",
+                                                                     "IMAGE 2026-05-19 10_48_52_copy.jpg",
+                                                                     "Screenshot 2026-05-19 at 11.37.52.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/sirdaryo/eshpolatova-shoira-farhod-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Sultonov Shohrux Xasan o\u0027g\u0027li",
+                                              "slug":  "sultonov-shohrux-xasan-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "DSC07280.JPG",
+                                                                     "DSC07280_copy.JPG",
+                                                                     "DSC07282.JPG",
+                                                                     "DSC07282_copy.JPG",
+                                                                     "DSC07283.JPG"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/sirdaryo/sultonov-shohrux-xasan-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Чўлиева Муфаззалхон Нозиржон қизи",
+                                              "slug":  "cholieva-mufazzalxon-nozirjon-qizi",
                                               "featured":  false,
                                               "description":  null,
                                               "images":  [
@@ -1015,7 +2285,7 @@
                                                                      "photo_5_2026-04-16_16-46-03.jpg",
                                                                      "photo_6_2026-04-16_16-46-03.jpg"
                                                                  ],
-                                              "imagePath":  "/assets/komakchilar/sirdaryo/chuliyeva-mufazzalxon-nozirzhan-qizi/",
+                                              "imagePath":  "/assets/komakchilar/sirdaryo/cholieva-mufazzalxon-nozirjon-qizi/",
                                               "pdfUrl":  null
                                           }
                                       ]
@@ -1185,6 +2455,24 @@
                                               "pdfUrl":  null
                                           },
                                           {
+                                              "name":  "Akbarova Lobar Islomjon qizi",
+                                              "slug":  "akbarova-lobar-islomjon-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-20 12_26_38.jpg",
+                                                                     "IMAGE 2026-05-20 12_26_40.jpg",
+                                                                     "IMAGE 2026-05-20 12_26_44.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/akbarova-lobar-islomjon-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Alimov Bekpulat Sanjar o‘g‘li",
                                               "slug":  "alimov-bekpulat-sanjar-ogli",
                                               "featured":  false,
@@ -1209,6 +2497,30 @@
                                               "pdfUrl":  null
                                           },
                                           {
+                                              "name":  "Ashurova Mohichehra Oybek qizi",
+                                              "slug":  "ashurova-mohichehra-oybek-qizi",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-19 18_12_41.jpg",
+                                                                     "IMAGE 2026-05-19 18_12_43.jpg",
+                                                                     "IMAGE 2026-05-19 18_12_45.jpg",
+                                                                     "IMAGE 2026-05-19 18_12_48.jpg",
+                                                                     "IMAGE 2026-05-19 18_12_50.jpg",
+                                                                     "IMAGE 2026-05-19 18_12_51.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/ashurova-mohichehra-oybek-qizi/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Hojimurodov Ibrohim Olimjon o\u0027g\u0027li",
                                               "slug":  "hojimurodov-ibrohim-olimjon-ogli",
                                               "featured":  false,
@@ -1226,6 +2538,88 @@
                                                                      "photo_2026-05-19_11-06-14.jpg"
                                                                  ],
                                               "imagePath":  "/assets/komakchilar/toshkent/hojimurodov-ibrohim-olimjon-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Mutalibov To_lanboy Ashurali o_g_li",
+                                              "slug":  "mutalibov-tolanboy-ashurali-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.jpg",
+                                                             "8.jpg",
+                                                             "9.jpg",
+                                                             "10.jpg",
+                                                             "11.jpg",
+                                                             "12.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-20 10_25_47.jpg",
+                                                                     "IMAGE 2026-05-20 10_26_12.jpg",
+                                                                     "IMAGE 2026-05-20 10_26_30.jpg",
+                                                                     "IMAGE 2026-05-20 10_26_36.jpg",
+                                                                     "IMAGE 2026-05-20 10_27_07.jpg",
+                                                                     "IMAGE 2026-05-20 10_27_19.jpg",
+                                                                     "IMAGE 2026-05-20 10_27_29.jpg",
+                                                                     "IMAGE 2026-05-20 10_28_16.jpg",
+                                                                     "photo_2026-05-20 10.30.26.jpeg",
+                                                                     "photo_2026-05-20 10.30.47.jpeg",
+                                                                     "photo_2026-05-20 10.31.13.jpeg",
+                                                                     "Screenshot 2026-05-20 at 10.25.23.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/mutalibov-tolanboy-ashurali-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Qahhorov Oloviddin Yoʻlchi oʻgʻli",
+                                              "slug":  "qahhorov-oloviddin-yolchi-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.png",
+                                                             "6.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-20 09_42_38.jpg",
+                                                                     "IMAGE 2026-05-20 09_42_40.jpg",
+                                                                     "IMAGE 2026-05-20 11_24_12.jpg",
+                                                                     "IMAGE 2026-05-20 11_24_18.jpg",
+                                                                     "Screenshot 2026-05-20 at 11.24.47.png",
+                                                                     "Screenshot 2026-05-20 at 11.26.50.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/qahhorov-oloviddin-yolchi-ogli/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
+                                              "name":  "Qodirov Muhammadiso Shavkatkon o_g_li",
+                                              "slug":  "qodirov-muhammadiso-shavkatkon-ogli",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-20 11_06_06.jpg",
+                                                                     "IMAGE 2026-05-20 11_17_56.jpg",
+                                                                     "IMAGE 2026-05-20 11_18_06.jpg",
+                                                                     "IMAGE 2026-05-20 11_18_08.jpg",
+                                                                     "IMAGE 2026-05-20 11_18_10.jpg"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/qodirov-muhammadiso-shavkatkon-ogli/",
                                               "pdfUrl":  null
                                           },
                                           {
@@ -1285,6 +2679,32 @@
                                               "pdfUrl":  null
                                           },
                                           {
+                                              "name":  "Shahzod Komilov Farhod o_g_li, tasischisi Abdujalil Yo_ldoshov",
+                                              "slug":  "shahzod-komilov-farhod-ogli-tasischisi-abdujalil-yoldoshov",
+                                              "featured":  false,
+                                              "description":  null,
+                                              "images":  [
+                                                             "1.jpg",
+                                                             "2.jpg",
+                                                             "3.jpg",
+                                                             "4.jpg",
+                                                             "5.jpg",
+                                                             "6.jpg",
+                                                             "7.png"
+                                                         ],
+                                              "originalImages":  [
+                                                                     "IMAGE 2026-05-20 10_20_12.jpg",
+                                                                     "IMAGE 2026-05-20 10_20_21.jpg",
+                                                                     "IMAGE 2026-05-20 10_20_24.jpg",
+                                                                     "IMAGE 2026-05-20 10_20_25.jpg",
+                                                                     "IMAGE 2026-05-20 10_20_30.jpg",
+                                                                     "IMAGE 2026-05-20 10_20_33.jpg",
+                                                                     "Screenshot 2026-05-20 at 10.22.51.png"
+                                                                 ],
+                                              "imagePath":  "/assets/komakchilar/toshkent/shahzod-komilov-farhod-ogli-tasischisi-abdujalil-yoldoshov/",
+                                              "pdfUrl":  null
+                                          },
+                                          {
                                               "name":  "Tashpulatov Dilmurod Abdumannop o’g’li",
                                               "slug":  "tashpulatov-dilmurod-abdumannop-ogli",
                                               "featured":  false,
@@ -1325,7 +2745,7 @@
                                               "pdfUrl":  null
                                           },
                                           {
-                                              "name":  "Abdugapporov Botir Erkin ugli",
+                                              "name":  "Абдугаппоров Ботир Эркин угли",
                                               "slug":  "abdugapporov-botir-erkin-ugli",
                                               "featured":  false,
                                               "description":  "Оккургон туманида очилган хозинги кунда 3 та филиали мавжуд IELTS DELIVERY укув марказини урганиш жараёни.\r\nТашаббускор Абдугаппоров Ботир Эркин угли билан сухбат килинди.",
@@ -1349,7 +2769,7 @@
                                               "pdfUrl":  null
                                           },
                                           {
-                                              "name":  "Rixsiboeva Maftuna Zayniddin qizi",
+                                              "name":  "Рихсибоева Мафтуна Zayniddin qizi",
                                               "slug":  "rixsiboeva-maftuna-zayniddin-qizi",
                                               "featured":  false,
                                               "description":  "Бустонлик туман Яккатут мфй да очилга Crystal укув маркази рахбари Рихсибоева Мафтуна билан гаплашилди ва муаммоларини ва келажакдаги режалари билан танишилди",

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+
+
 const links = [
   { label: 'Loyiha haqida', href: '/#about' },
   { label: "Ko'makchilar", href: '/loyihalar' },
@@ -17,6 +19,7 @@ export default function Footer() {
       <div className="absolute left-0 bottom-0 right-0 w-full select-none pointer-events-none flex justify-center z-0 overflow-hidden">
         <div className="relative w-full" style={{ height: '28vw' }}>
           <Image
+            unoptimized
             src="/Koʻmak.svg"
             alt=""
             fill
@@ -28,7 +31,7 @@ export default function Footer() {
 
       {/* Subtle shape watermark */}
       <div className="absolute right-0 top-0 w-[40vw] h-[40vw] opacity-10 pointer-events-none translate-x-1/4 -translate-y-1/4 z-0">
-        <Image src="/justshape.png" alt="Ko'mak Shape" fill className="object-contain" />
+        <Image src="/justshape.png" alt="Ko'mak Shape" fill unoptimized className="object-contain" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col min-h-[350px] relative z-10">

@@ -685,13 +685,13 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
       </div>
 
       {/* Stats Below */}
-      <div className="flex justify-between items-end mt-8 px-2 sm:px-4">
+      <div className="flex justify-between items-start mt-8 px-2 sm:px-4">
          <div className="text-left">
             <span className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(0,104,95,0.4)]" /> {erkak.label}
             </span>
-            <div className="flex items-baseline gap-1.5 sm:gap-2">
-               <span className="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface">{erkak.pct}%</span>
+            <div className="flex flex-col">
+               <span className="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface leading-none mb-1">{erkak.pct}%</span>
                <span className="text-xs sm:text-sm font-semibold text-on-surface-variant whitespace-nowrap">{erkak.count} nafar</span>
             </div>
          </div>
@@ -699,9 +699,9 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
             <span className="flex items-center justify-end gap-2 text-[10px] sm:text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1.5">
               {ayol.label} <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(20,184,166,0.4)]" />
             </span>
-            <div className="flex items-baseline justify-end gap-1.5 sm:gap-2">
+            <div className="flex flex-col items-end">
+               <span className="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface leading-none mb-1">{ayol.pct}%</span>
                <span className="text-xs sm:text-sm font-semibold text-on-surface-variant whitespace-nowrap">{ayol.count} nafar</span>
-               <span className="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface">{ayol.pct}%</span>
             </div>
          </div>
       </div>
@@ -710,7 +710,7 @@ function GenderVisualization({ data }: { data: { label: string; count: number; p
 }
 
 /* ────────────────────────── main component ──────────────────── */
-export default function StatisticsPage({ stats }: { stats: Stat[] }) {
+export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats: Stat[], hideMoneyInfo?: boolean }) {
   const reduceMotion = useReducedMotion();
   const [activeViloyat, setActiveViloyat] = useState('Hammasi');
   const [activeYil, setActiveYil] = useState('Umumiy');
@@ -834,7 +834,54 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
       trend: `${(currentErkak + currentAyol) > 0 ? Math.round((currentAyol/(currentErkak + currentAyol))*100) : 0}% ulush`,
       colorIdx: 3,
     },
-  ];
+  ].filter(card => hideMoneyInfo ? card.label !== "Jami qarz miqdori" : true);
+
+  const languageCard = (
+    <motion.div
+      custom={0}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-40px' }}
+      variants={fadeUp}
+      className="lg:col-span-2 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden flex flex-col"
+    >
+      <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Ingliz tili, Rus tili va Koreys tili</h3>
+      <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 relative z-10 items-center">
+        {LANGUAGE_DATA.map((lang, i) => {
+            const percentage = Math.round((lang.value / 404) * 100);
+            return (
+            <motion.div 
+                key={lang.label} 
+                className="relative text-center p-5 rounded-2xl bg-surface-container/30 hover:bg-surface-container/60 transition-all duration-300 group overflow-hidden cursor-default"
+                whileHover={{ y: -4 }}
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300" style={{ backgroundColor: lang.color }} />
+              
+              <div className="relative mx-auto w-24 h-24 mb-5 flex items-center justify-center">
+                  <motion.div 
+                    className="absolute inset-0 opacity-20 transition-all duration-500 group-hover:opacity-40"
+                    style={{ backgroundColor: lang.color, borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 10 + i * 2, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <motion.div 
+                    className="absolute inset-2 opacity-30 transition-all duration-500 group-hover:opacity-60"
+                    style={{ backgroundColor: lang.color, borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 15 + i, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <div className="relative z-10 flex flex-col items-center justify-center bg-white w-16 h-16 rounded-full shadow-sm">
+                    <span className="font-headline text-xl font-extrabold text-on-surface leading-none">{lang.value}</span>
+                    <span className="text-[9px] font-bold mt-0.5" style={{ color: lang.color }}>{percentage}%</span>
+                  </div>
+              </div>
+              <p className="text-xs sm:text-sm font-bold text-on-surface-variant uppercase tracking-widest">{lang.label}</p>
+            </motion.div>
+          )
+        })}
+      </div>
+    </motion.div>
+  );
 
   return (
     <>
@@ -892,7 +939,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
 
       {/* ── KPI Cards ── */}
       <section className="px-6 max-w-7xl mx-auto mb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 ${hideMoneyInfo ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-5`}>
           {kpiCards.map((card, i) => (
             <KPICard key={card.label} {...card} delay={i} />
           ))}
@@ -907,8 +954,8 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
           variants={fadeUp}
-          className="bg-[#f4f7f6] rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden relative flex flex-col lg:flex-row min-h-[400px] lg:min-h-[500px]"
-          style={{ backgroundImage: 'radial-gradient(rgba(0, 104, 95, 0.15) 1px, transparent 1px)', backgroundSize: '16px 16px' }}
+          className="bg-white rounded-3xl shadow-sm border border-outline-variant/10 overflow-hidden relative flex flex-col lg:flex-row min-h-[400px] lg:min-h-[500px]"
+          style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)' }}
         >
           {/* Left side: Map area */}
           <div className="flex-1 relative order-2 lg:order-1 min-h-[400px] flex flex-col">
@@ -1030,7 +1077,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
           </div>
 
           {/* Right side: Stats Panel */}
-          <div className="w-full lg:w-[420px] p-6 lg:p-8 flex flex-col justify-center gap-6 relative z-10 order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-outline-variant/10 bg-transparent">
+          <div className={`${hideMoneyInfo ? 'w-full lg:w-[320px]' : 'w-full lg:w-[420px]'} p-6 lg:p-8 flex flex-col justify-center gap-6 relative z-10 order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-outline-variant/10 bg-transparent`}>
             
             {/* Card 1: O'quv markazlar */}
             <div className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 flex items-center gap-5">
@@ -1046,6 +1093,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             </div>
 
             {/* Card 2: Moliyaviy Mablag' */}
+            {!hideMoneyInfo && (
             <div className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-6 flex flex-col">
               <p className="text-sm text-on-surface-variant font-semibold mb-2">Jami ajratilgan moliyaviy mablag'</p>
               <div className="flex items-baseline gap-1.5 mb-6">
@@ -1087,6 +1135,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                 </div>
               </div>
             </div>
+            )}
 
           </div>
         </motion.div>
@@ -1096,6 +1145,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
       <section className="px-6 max-w-7xl mx-auto mb-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Pie chart — Left side now */}
+          {!hideMoneyInfo && (
           <motion.div
             custom={0}
             initial="hidden"
@@ -1112,6 +1162,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                <PieChart totalMablag={currentMablag} />
             </div>
           </motion.div>
+          )}
 
           {/* Regional Table */}
           <motion.div
@@ -1120,7 +1171,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="lg:col-span-2 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col"
+            className={`${hideMoneyInfo ? 'lg:col-span-3' : 'lg:col-span-2'} bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col`}
           >
             <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 border-b border-outline-variant/10 flex items-center justify-between gap-3">
                 <div>
@@ -1150,7 +1201,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                     <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-6 py-3">#</th>
                     <th className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-3 sm:px-4 py-3">{isTumanView ? 'Tuman / Shahar' : 'Hudud'}</th>
                     <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">{isTumanView ? 'Loyihalar' : 'Loyihalar'}</th>
-                    <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Qarz miqdori</th>
+                    {!hideMoneyInfo && <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3">Qarz miqdori</th>}
                     {!isTumanView && (
                       <>
                         <th className="text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-on-surface-variant px-2 sm:px-4 py-3 bg-tertiary/5">Erkak</th>
@@ -1185,9 +1236,11 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
                       <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
                         <span className="font-headline font-bold text-on-surface text-sm">{row.soni}</span>
                       </td>
+                      {!hideMoneyInfo && (
                       <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
                         <span className="text-[10px] sm:text-xs font-extrabold text-primary bg-primary/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md whitespace-nowrap">{row.summa.toLocaleString().replace(/,/g, ' ')} mln</span>
                       </td>
+                      )}
                       {!isTumanView && (
                         <>
                           <td className="px-2 sm:px-4 py-3 sm:py-4 text-center bg-tertiary/5">
@@ -1209,7 +1262,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
 
       {/* ── Charts Row (Pie & Table) ── */}
       <section className="px-6 max-w-7xl mx-auto mb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {/* Gender Breakdown */}
           <motion.div
             custom={0}
@@ -1217,18 +1270,19 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 flex flex-col gap-6 self-start lg:sticky lg:top-6"
+            className="lg:col-span-1 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 flex flex-col gap-6"
           >
              <div>
                 <h3 className="font-body text-lg font-bold text-on-surface leading-snug">Gender bo&apos;yicha statistika</h3>
-                <p className="text-sm text-on-surface-variant mt-1 leading-snug">Jami ajratilgan qarzlar bo&apos;yicha</p>
+                <p className="text-sm text-on-surface-variant mt-1 leading-snug">{hideMoneyInfo ? 'Jami moliyalashtirilgan loyihalar' : "Jami ajratilgan qarzlar bo'yicha"}</p>
              </div>
              <div className="flex-1 flex flex-col justify-center">
                 <GenderVisualization data={genderData} />
              </div>
           </motion.div>
 
-          {/* Bar chart — Right side now with Year Toggle */}
+          {/* Bar chart OR Language section depending on public/admin */}
+          {!hideMoneyInfo ? (
           <motion.div
             custom={1}
             initial="hidden"
@@ -1263,10 +1317,14 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
             </div>
             <BarChart key={activeViloyat + activeYil} data={monthlyData} />
           </motion.div>
+          ) : (
+             languageCard
+          )}
         </div>
       </section>
 
       {/* ── New Dashboard Sections ── */}
+      {!hideMoneyInfo && (
       <section className="px-6 max-w-7xl mx-auto mb-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
@@ -1422,58 +1480,15 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
           </motion.div>
         </div>
       </section>
+      )}
 
-      {/* ── Til taqsimoti & Ta'minot turi ── */}
+      {/* ── Til taqsimoti & Ta'minot turi (ADMIN ONLY) ── */}
+      {!hideMoneyInfo && (
       <section className="px-6 max-w-7xl mx-auto pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          {/* Til taqsimoti -> Overlapping Hexagons / Orbs */}
-          <motion.div
-            custom={0}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUp}
-            className="lg:col-span-2 bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden"
-          >
-            <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Ingliz tili, Rus tili va Koreys tili</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
-              {LANGUAGE_DATA.map((lang, i) => {
-                 const percentage = Math.round((lang.value / 404) * 100);
-                 return (
-                  <motion.div 
-                     key={lang.label} 
-                     className="relative text-center p-5 rounded-2xl bg-surface-container/30 hover:bg-surface-container/60 transition-all duration-300 group overflow-hidden cursor-default"
-                     whileHover={{ y: -4 }}
-                  >
-                    {/* Background glow on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300" style={{ backgroundColor: lang.color }} />
-                    
-                    <div className="relative mx-auto w-24 h-24 mb-5 flex items-center justify-center">
-                       {/* Abstract liquid shape */}
-                       <motion.div 
-                         className="absolute inset-0 opacity-20 transition-all duration-500 group-hover:opacity-40"
-                         style={{ backgroundColor: lang.color, borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}
-                         animate={{ rotate: 360 }}
-                         transition={{ duration: 10 + i * 2, repeat: Infinity, ease: 'linear' }}
-                       />
-                       <motion.div 
-                         className="absolute inset-2 opacity-30 transition-all duration-500 group-hover:opacity-60"
-                         style={{ backgroundColor: lang.color, borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
-                         animate={{ rotate: -360 }}
-                         transition={{ duration: 15 + i, repeat: Infinity, ease: 'linear' }}
-                       />
-                       <div className="relative z-10 flex flex-col items-center justify-center bg-white w-16 h-16 rounded-full shadow-sm">
-                         <span className="font-headline text-xl font-extrabold text-on-surface leading-none">{lang.value}</span>
-                         <span className="text-[9px] font-bold mt-0.5" style={{ color: lang.color }}>{percentage}%</span>
-                       </div>
-                    </div>
-                    <p className="text-xs sm:text-sm font-bold text-on-surface-variant uppercase tracking-widest">{lang.label}</p>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.div>
+          {/* Til taqsimoti */}
+          {languageCard}
 
           {/* Ta'minot turi -> Glassmorphism glowing edge cards */}
           <motion.div
@@ -1511,6 +1526,7 @@ export default function StatisticsPage({ stats }: { stats: Stat[] }) {
           </motion.div>
         </div>
       </section>
+      )}
 
 
       {/* ── Data Last Updated Banner ── */}

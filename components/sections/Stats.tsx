@@ -42,28 +42,28 @@ export default function Stats({ stats }: { stats: Stat[] }) {
             <motion.div custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col justify-between relative overflow-hidden group border border-outline-variant/15">
               <div className="absolute -right-6 -top-6 bg-surface-container w-32 h-32 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500" />
               <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="p-3 bg-secondary-container text-on-secondary-container rounded-lg">
-                  <span className="material-symbols-outlined shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>account_balance</span>
+                <div className="p-3 bg-primary-container/10 text-primary rounded-lg">
+                  <span className="material-symbols-outlined shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
                 </div>
-                <h3 className="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Ajratilgan Qarzlar</h3>
+                <h3 className="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Moliyalashtirilgan loyihalar</h3>
               </div>
               <div className="relative z-10">
-                <p className="font-headline text-5xl font-extrabold text-primary mb-2">1.2 Trln</p>
-                <p className="text-on-surface-variant text-sm">So&apos;m miqdorida moliyaviy ko&apos;mak</p>
+                <p className="font-headline text-5xl font-extrabold text-primary mb-2">385 ta</p>
+                <p className="text-on-surface-variant text-sm">Jami moliyalashtirilgan loyihalar</p>
               </div>
             </motion.div>
 
             <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col justify-between relative overflow-hidden group border border-outline-variant/15">
               <div className="absolute -right-6 -top-6 bg-surface-container w-32 h-32 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500" />
               <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="p-3 bg-primary-container/10 text-primary rounded-lg">
-                  <span className="material-symbols-outlined shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
+                <div className="p-3 bg-secondary-container text-on-secondary-container rounded-lg">
+                  <span className="material-symbols-outlined shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>man</span>
                 </div>
-                <h3 className="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">O&apos;quv Markazlari</h3>
+                <h3 className="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Erkaklar</h3>
               </div>
               <div className="relative z-10">
-                <p className="font-headline text-5xl font-extrabold text-on-surface mb-2">45 ta</p>
-                <p className="text-on-surface-variant text-sm">Yangi tashkil etilgan markazlar</p>
+                <p className="font-headline text-5xl font-extrabold text-on-surface mb-2">223 nafar</p>
+                <p className="text-on-surface-variant text-sm">Erkak tadbirkorlar</p>
               </div>
             </motion.div>
 
@@ -71,87 +71,20 @@ export default function Stats({ stats }: { stats: Stat[] }) {
               <div className="absolute -right-6 -top-6 bg-surface-container w-32 h-32 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500" />
               <div className="flex items-center gap-3 mb-6 relative z-10">
                 <div className="p-3 bg-tertiary-container/10 text-tertiary rounded-lg">
-                  <span className="material-symbols-outlined shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>groups</span>
+                  <span className="material-symbols-outlined shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>woman</span>
                 </div>
-                <h3 className="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Qamrab olinganlar</h3>
+                <h3 className="font-body text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Ayollar</h3>
               </div>
               <div className="relative z-10">
-                <p className="font-headline text-5xl font-extrabold text-on-surface mb-2">12,500+</p>
-                <p className="text-on-surface-variant text-sm">Ta&apos;lim oluvchi talabalar</p>
+                <p className="font-headline text-5xl font-extrabold text-on-surface mb-2">162 nafar</p>
+                <p className="text-on-surface-variant text-sm">Ayol tadbirkorlar</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Data Visualization Section */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <motion.h2 custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="font-headline text-3xl font-bold text-on-surface mb-10">
-          Tahliliy Ma&apos;lumotlar
-        </motion.h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Bar Chart (Simulated) */}
-          <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest rounded-xl shadow-ambient p-8 border border-outline-variant/15">
-            <h3 className="font-body text-lg font-semibold text-on-surface mb-6 flex items-center justify-between">
-              Moliyalashtirish o&apos;sishi
-              <span className="text-sm font-normal text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full border border-outline-variant/15">2025 Yil</span>
-            </h3>
-            <div className="h-64 flex items-end justify-between gap-2 pt-4">
-              <div className="w-full bg-primary/20 rounded-t-sm h-[30%] relative group cursor-pointer hover:bg-primary/30 transition-colors">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Yan</div>
-              </div>
-              <div className="w-full bg-primary/40 rounded-t-sm h-[45%] relative group cursor-pointer hover:bg-primary/50 transition-colors">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Fev</div>
-              </div>
-              <div className="w-full bg-primary/60 rounded-t-sm h-[60%] relative group cursor-pointer hover:bg-primary/70 transition-colors">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Mar</div>
-              </div>
-              <div className="w-full bg-primary rounded-t-sm h-[85%] relative group cursor-pointer hover:bg-primary-container transition-colors shadow-[0_0_15px_rgba(0,104,95,0.3)]">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Apr</div>
-              </div>
-              <div className="w-full bg-primary/80 rounded-t-sm h-[70%] relative group cursor-pointer hover:bg-primary/90 transition-colors">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">May</div>
-              </div>
-              <div className="w-full bg-secondary/80 rounded-t-sm h-[95%] relative group cursor-pointer hover:bg-secondary transition-colors">
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded">Iyun</div>
-              </div>
-            </div>
-            <div className="flex justify-between mt-4 border-t border-outline-variant/15 pt-2 text-xs text-on-surface-variant">
-              <span>Yan</span><span>Fev</span><span>Mar</span><span>Apr</span><span>May</span><span>Iyun</span>
-            </div>
-          </motion.div>
 
-          {/* Doughnut Chart (Simulated) */}
-          <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="bg-surface-container-lowest rounded-xl shadow-ambient p-8 flex flex-col border border-outline-variant/15">
-            <h3 className="font-body text-lg font-semibold text-on-surface mb-6">Mablag&apos;larni maqsadli sarflash</h3>
-            <div className="flex-grow flex flex-col sm:flex-row items-center justify-center gap-10">
-              <div className="relative w-48 h-48 shrink-0">
-                <div className="absolute inset-0 pie-chart" />
-                <div className="absolute inset-4 bg-surface-container-lowest rounded-full flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="block font-headline font-bold text-2xl text-on-surface">100%</span>
-                    <span className="text-xs text-on-surface-variant">Jami qarz</span>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                  <span className="text-sm text-on-surface-variant">Xonalarni jihozlash (40%)</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-primary-container" />
-                  <span className="text-sm text-on-surface-variant">O&apos;quv darsliklari (35%)</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-secondary" />
-                  <span className="text-sm text-on-surface-variant">Innovatsion texnologiyalar (25%)</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Regional Map Section */}
       <section className="bg-surface-container-low py-20 px-6">
