@@ -1004,6 +1004,14 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
             </div>
             
             <div className="flex-1 relative overflow-hidden">
+                {/* Dotted background pattern */}
+                <div
+                  className="absolute inset-0 pointer-events-none z-0 opacity-[0.35]"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
+                    backgroundSize: '18px 18px',
+                  }}
+                />
                 <ComposableMap
                   projection="geoMercator"
                   projectionConfig={{ scale: 1800, center: [65.0, 41.5] }}
