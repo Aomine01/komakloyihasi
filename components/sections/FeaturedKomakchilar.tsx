@@ -171,11 +171,12 @@ function Lightbox({ src, alt, onClose }: LightboxProps) {
 // ── Blurred Image ───────────────────────────────────────────────────────────
 function CarouselBlurredImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden bg-surface-variant/30">
       <img src={src} alt="" aria-hidden
-        className="absolute inset-0 w-full h-full object-cover blur-[40px] opacity-70 saturate-150 scale-125 pointer-events-none" />
+        className="absolute inset-0 w-full h-full object-cover blur-[40px] opacity-80 saturate-150 scale-125 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/5 pointer-events-none" />
       <Image src={src} alt={alt} fill
-        className="object-contain relative z-10 drop-shadow-md"
+        className="object-contain relative z-10 drop-shadow-2xl"
         sizes="(max-width: 1024px) 100vw, 50vw"
         priority={priority} />
     </div>
