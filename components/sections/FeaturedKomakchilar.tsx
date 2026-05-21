@@ -173,7 +173,7 @@ function CarouselBlurredImage({ src, alt, priority }: { src: string; alt: string
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       <img src={src} alt="" aria-hidden
-        className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110" />
+        className="absolute inset-0 w-full h-full object-cover blur-[40px] opacity-70 saturate-150 scale-125 pointer-events-none" />
       <Image src={src} alt={alt} fill
         className="object-contain relative z-10 drop-shadow-md"
         sizes="(max-width: 1024px) 100vw, 50vw"

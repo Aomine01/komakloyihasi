@@ -117,7 +117,7 @@ const BlurredImage = memo(function BlurredImage({ src, alt, priority }: { src: s
           src={src}
           alt=""
           aria-hidden
-          className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110"
+          className="absolute inset-0 w-full h-full object-cover blur-[40px] opacity-70 saturate-150 scale-125 pointer-events-none"
         />
       )}
       <Image
