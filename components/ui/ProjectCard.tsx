@@ -34,6 +34,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              unoptimized
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-container to-secondary-container">

@@ -33,17 +33,16 @@ function extractField(desc: string, key: string): string {
   return '';
 }
 
-function getFeaturedPeople(): FeaturedPerson[] {
-  // Import dynamically to avoid blocking the main thread on mount
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const komakchilarData = require('@/komakchilar-data.json');
+function getFeaturedPeople(data?: any): FeaturedPerson[] {
+  const sourceData = data || require('@/komakchilar-data.json');
   const result: FeaturedPerson[] = [];
-  for (const viloyat of komakchilarData.viloyatlar) {
-    for (const person of viloyat.people) {
-      if (person.featured && person.description && person.images.length > 0) {
-        const lavozim = extractField(person.description, 'LAVOZIM');
-        const location = extractField(person.description, 'ЯШАШ_ЖОЙИ') ||
-                         extractField(person.description, 'ТУҒИЛГАН_ЖОЙ') ||
+  for (const viloyat of sourceData.viloyatlar || []) {
+    for (const person of viloyat.people || []) {
+      if (person.featured && person.images && person.images.length > 0) {
+        const desc = person.description || '';
+        const lavozim = extractField(desc, 'LAVOZIM');
+        const location = extractField(desc, 'ЯШАШ_ЖОЙИ') ||
+                         extractField(desc, 'ТУҒИЛГАН_ЖОЙ') ||
                          viloyat.name;
         result.push({
           ...person,
@@ -157,7 +156,7 @@ function Lightbox({ src, alt, onClose }: LightboxProps) {
         <motion.div animate={{ scale: zoom }} transition={{ type: 'spring', stiffness: 260, damping: 28 }}
           style={{ transformOrigin: 'center center' }} className="relative w-[90vw] h-[80vh] flex items-center justify-center">
           <Image src={src} alt={alt} fill sizes="100vw" priority
-            className="object-contain rounded-xl shadow-2xl" draggable={false} />
+            className="object-contain rounded-xl shadow-2xl" draggable={false} unoptimized />
         </motion.div>
       </div>
 
@@ -179,7 +178,8 @@ function CarouselBlurredImage({ src, alt, priority }: { src: string; alt: string
       <Image src={src} alt={alt} fill
         className="object-contain relative z-10 drop-shadow-lg"
         sizes="(max-width: 1024px) 100vw, 50vw"
-        priority={priority} />
+        priority={priority}
+        unoptimized />
     </div>
   );
 }
@@ -193,7 +193,13 @@ function PersonImageSlider({ images, imagePath, currentIndex, onChange, onOpenLi
   const src = `${imagePath}${images[currentIndex]}`;
 
   return (
-    <div className="relative w-full h-full">
+    <div
+      className="relative w-full h-full cursor-pointer"
+      onClick={(e) => {
+        if ((e.target as HTMLElement).closest('button')) return;
+        onOpenLightbox(src, personName);
+      }}
+    >
       <CarouselBlurredImage src={src} alt={`${personName} — rasm ${currentIndex + 1}`} />
 
       {/* Gradient overlay for mobile name */}
@@ -259,7 +265,7 @@ function PersonImageSlider({ images, imagePath, currentIndex, onChange, onOpenLi
 }
 
 // ── Main component ──────────────────────────────────────────────────────────
-export default function FeaturedKomakchilar() {
+export default function FeaturedKomakchilar({ data }: { data?: any }) {
   const [current, setCurrent] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -284,7 +290,7 @@ export default function FeaturedKomakchilar() {
   useEffect(() => {
     // Use setTimeout to push off the main thread during initial paint
     const id = setTimeout(() => {
-      const people = getFeaturedPeople();
+      const people = getFeaturedPeople(data);
       setAllPeople(people);
       if (people.length <= 1 || isWeak) {
         setSequence(people);
@@ -294,7 +300,7 @@ export default function FeaturedKomakchilar() {
       }
     }, 0);
     return () => clearTimeout(id);
-  }, [isWeak]);
+  }, [isWeak, data]);
 
   const total = sequence.length;
   const person = total > 0 ? sequence[current] : null;
@@ -418,7 +424,7 @@ export default function FeaturedKomakchilar() {
                            shadow-[0_16px_48px_-12px_rgba(19,27,46,0.1)] border border-outline-variant/15"
               >
                 {/* Image Side — shows current person's current image */}
-                <div className="relative aspect-[4/5] lg:aspect-auto lg:min-h-[480px] xl:min-h-[520px] overflow-hidden group">
+                <div className="relative aspect-[4/3] sm:aspect-[3/2] lg:aspect-auto lg:min-h-[480px] xl:min-h-[520px] overflow-hidden group">
                   <PersonImageSlider
                     images={person!.images}
                     imagePath={person!.imagePath}

@@ -761,10 +761,6 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
 
   // Build unified display rows: viloyat overview OR tuman drill-down
   const isTumanView = activeViloyat !== 'Hammasi';
-  const displayRows: Array<{name: string, soni: number, summa: number, erkak?: number, ayol?: number}> = isTumanView
-    ? (TUMAN_DATA[activeViloyat] || []).map(t => ({ name: t.tuman, soni: t.soni, summa: t.summa }))
-    : REGION_ROWS.map(r => ({ name: r.viloyat, soni: r.markazlar, summa: r.summa, erkak: r.erkak, ayol: r.ayol }));
-  const tableRows = displayRows;
 
   // Global totals (new dashboard data: 07.05.2026)
   let globalMarkazlar = 385;
@@ -772,12 +768,38 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
   let globalErkak = 223;
   let globalAyol = 162;
   let globalUmumiyLoyihalar = 712; // total applications across all statuses
-  
+
+  const statsMap = new Map(stats?.map(s => [s.key, s.value]) || []);
+  let scaleFactorMarkazlar = 1;
+  let scaleFactorSumma = 1;
+
+  if (stats && stats.length > 0) {
+    const dbFunded = statsMap.get('total_funded');
+    const dbLoan = statsMap.get('total_loan_uzs');
+    if (dbFunded) {
+      globalMarkazlar = Math.round(Number(dbFunded));
+      scaleFactorMarkazlar = globalMarkazlar / 385;
+      globalErkak = Math.round((223 / 385) * globalMarkazlar);
+      globalAyol = globalMarkazlar - globalErkak;
+      globalUmumiyLoyihalar = Math.round((712 / 385) * globalMarkazlar);
+    }
+    if (dbLoan) {
+      globalSumma = Math.round(Number(dbLoan) * 1000); // converting billions to millions
+      scaleFactorSumma = globalSumma / 49298;
+    }
+  }
+
   if (activeViloyat === 'Hammasi') {
      if (activeYil === '2025') {
-        globalMarkazlar = 160; globalSumma = 20480; globalErkak = 93; globalAyol = 67;
+        globalMarkazlar = Math.round(160 * scaleFactorMarkazlar);
+        globalSumma = Math.round(20480 * scaleFactorSumma);
+        globalErkak = Math.round(93 * scaleFactorMarkazlar);
+        globalAyol = globalMarkazlar - globalErkak;
      } else if (activeYil === '2026') {
-        globalMarkazlar = 225; globalSumma = 28818; globalErkak = 130; globalAyol = 95;
+        globalMarkazlar = Math.round(225 * scaleFactorMarkazlar);
+        globalSumma = Math.round(28818 * scaleFactorSumma);
+        globalErkak = Math.round(130 * scaleFactorMarkazlar);
+        globalAyol = globalMarkazlar - globalErkak;
      }
   }
 
@@ -785,17 +807,32 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
     ? REGION_ROWS.find(r => r.viloyat.startsWith(activeViloyat))
     : null;
 
-  const currentMarkazlar = activeViloyat === 'Hammasi' ? globalMarkazlar : (activeRegionData?.markazlar || 0);
-  const currentSumma = activeViloyat === 'Hammasi' ? globalSumma : (activeRegionData?.summa || 0);
-  const currentErkak = activeViloyat === 'Hammasi' ? globalErkak : (activeRegionData?.erkak || 0);
-  const currentAyol = activeViloyat === 'Hammasi' ? globalAyol : (activeRegionData?.ayol || 0);
+  const currentMarkazlar = activeViloyat === 'Hammasi' ? globalMarkazlar : Math.round((activeRegionData?.markazlar || 0) * scaleFactorMarkazlar);
+  const currentSumma = activeViloyat === 'Hammasi' ? globalSumma : Math.round((activeRegionData?.summa || 0) * scaleFactorSumma);
+  const currentErkak = activeViloyat === 'Hammasi' ? globalErkak : Math.round((activeRegionData?.erkak || 0) * scaleFactorMarkazlar);
+  const currentAyol = activeViloyat === 'Hammasi' ? globalAyol : Math.round((activeRegionData?.ayol || 0) * scaleFactorMarkazlar);
   const currentLoyiha = currentMarkazlar;
   const currentMablag = currentSumma;
 
   const genderData = [
-    { label: 'Erkaklar', count: 223, pct: Math.round((223 / (223 + 162)) * 100) },
-    { label: 'Ayollar', count: 162, pct: Math.round((162 / (223 + 162)) * 100) }
+    { label: 'Erkaklar', count: currentErkak, pct: (currentErkak + currentAyol) > 0 ? Math.round((currentErkak / (currentErkak + currentAyol)) * 100) : 0 },
+    { label: 'Ayollar', count: currentAyol, pct: (currentErkak + currentAyol) > 0 ? Math.round((currentAyol / (currentErkak + currentAyol)) * 100) : 0 }
   ];
+
+  const displayRows: Array<{name: string, soni: number, summa: number, erkak?: number, ayol?: number}> = isTumanView
+    ? (TUMAN_DATA[activeViloyat] || []).map(t => ({
+        name: t.tuman,
+        soni: Math.round(t.soni * scaleFactorMarkazlar),
+        summa: Math.round(t.summa * scaleFactorSumma)
+      }))
+    : REGION_ROWS.map(r => ({
+        name: r.viloyat,
+        soni: Math.round(r.markazlar * scaleFactorMarkazlar),
+        summa: Math.round(r.summa * scaleFactorSumma),
+        erkak: Math.round(r.erkak * scaleFactorMarkazlar),
+        ayol: Math.round(r.ayol * scaleFactorMarkazlar)
+      }));
+  const tableRows = displayRows;
 
   const kpiCards = [
     {
@@ -804,7 +841,7 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
       value: currentMarkazlar,
       unit: 'ta',
       sub: activeViloyat !== 'Hammasi' ? `${activeViloyat}da` : "Jami moliyalashtirilgan loyihalar",
-      trend: "Umumiy arizalar: 712 ta",
+      trend: `Umumiy arizalar: ${globalUmumiyLoyihalar} ta`,
       colorIdx: 1,
     },
     {

@@ -132,6 +132,7 @@ const BlurredImage = memo(function BlurredImage({ src, alt, priority }: { src: s
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         loading={priority ? undefined : 'lazy'}
         priority={priority}
+        unoptimized
       />
     </div>
   );
@@ -139,9 +140,16 @@ const BlurredImage = memo(function BlurredImage({ src, alt, priority }: { src: s
 
 // ─ Image Carousel ──────────────────────────────────────────────────────────
 
-const ImageCarousel = memo(function ImageCarousel({ person, labels }: { person: Person; labels?: Record<string, string> }) {
+const ImageCarousel = memo(function ImageCarousel({
+  person,
+  labels,
+  onOpenLightbox,
+}: {
+  person: Person;
+  labels?: Record<string, string>;
+  onOpenLightbox?: (person: Person, index: number) => void;
+}) {
   const [current, setCurrent] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const total = person.images.length;
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
@@ -160,151 +168,192 @@ const ImageCarousel = memo(function ImageCarousel({ person, labels }: { person: 
   };
 
   return (
-    <>
-      <div
-        ref={containerRef}
-        className="relative w-full aspect-[4/5] sm:aspect-[4/5] overflow-hidden bg-surface-container rounded-2xl group cursor-pointer"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onClick={(e) => {
-          if ((e.target as HTMLElement).closest('button')) return;
-          setIsFullscreen(true);
-        }}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={isWeakDevice ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={isWeakDevice ? undefined : { opacity: 0 }}
-            transition={{ duration: isWeakDevice ? 0.1 : 0.3 }}
-            className="absolute inset-0"
-          >
-            <BlurredImage
-              src={`${person.imagePath}${person.images[current]}`}
-              alt={`${person.name} — rasm ${current + 1}`}
-              priority={current === 0}
-            />
-            {labels && labels[person.images[current]] && (
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 pb-9 text-center text-white/90 text-sm font-medium z-10">
-                {labels[person.images[current]]}
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation arrows — always visible on mobile, hover on desktop */}
-        {total > 1 && (
-          <>
-            <button
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 w-10 h-10 md:w-8 md:h-8 rounded-full
-                         bg-on-surface/60 text-white flex items-center justify-center
-                         md:opacity-0 md:group-hover:opacity-100 transition-all duration-200
-                         hover:bg-on-surface/80 z-20 shadow-lg backdrop-blur-sm"
-              aria-label="Oldingi"
-            >
-              <span className="material-symbols-outlined text-xl md:text-base">chevron_left</span>
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 w-10 h-10 md:w-8 md:h-8 rounded-full
-                         bg-on-surface/60 text-white flex items-center justify-center
-                         md:opacity-0 md:group-hover:opacity-100 transition-all duration-200
-                         hover:bg-on-surface/80 z-20 shadow-lg backdrop-blur-sm"
-              aria-label="Keyingi"
-            >
-              <span className="material-symbols-outlined text-xl md:text-base">chevron_right</span>
-            </button>
-
-            {/* Dots */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
-              {person.images.slice(0, 8).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
-                  className={`p-1 rounded-full transition-all ${
-                    i === current ? 'bg-white w-5' : 'bg-white/50 w-2'
-                  } h-2`}
-                />
-              ))}
-              {total > 8 && (
-                <span className="text-white/70 text-[10px] ml-1 self-center">+{total - 8}</span>
-              )}
+    <div
+      ref={containerRef}
+      className="relative w-full h-full overflow-hidden bg-surface-container rounded-2xl group cursor-pointer"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onClick={(e) => {
+        if ((e.target as HTMLElement).closest('button')) return;
+        if (onOpenLightbox) {
+          onOpenLightbox(person, current);
+        }
+      }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={isWeakDevice ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={isWeakDevice ? undefined : { opacity: 0 }}
+          transition={{ duration: isWeakDevice ? 0.1 : 0.3 }}
+          className="absolute inset-0"
+        >
+          <BlurredImage
+            src={`${person.imagePath}${person.images[current]}`}
+            alt={`${person.name} — rasm ${current + 1}`}
+            priority={current === 0}
+          />
+          {labels && labels[person.images[current]] && (
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 pb-9 text-center text-white/90 text-sm font-medium z-10">
+              {labels[person.images[current]]}
             </div>
-          </>
-        )}
+          )}
+        </motion.div>
+      </AnimatePresence>
 
-        {/* Image count badge */}
-        {total > 1 && (
-          <div className="absolute top-3 right-3 bg-on-surface/60 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 z-20">
-            <span className="material-symbols-outlined text-[13px]">photo_library</span>
-            {current + 1}/{total}
-          </div>
-        )}
-      </div>
+      {/* Navigation arrows — always visible on mobile, hover on desktop */}
+      {total > 1 && (
+        <>
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 w-10 h-10 md:w-8 md:h-8 rounded-full
+                       bg-on-surface/60 text-white flex items-center justify-center
+                       md:opacity-0 md:group-hover:opacity-100 transition-all duration-200
+                       hover:bg-on-surface/80 z-20 shadow-lg backdrop-blur-sm"
+            aria-label="Oldingi"
+          >
+            <span className="material-symbols-outlined text-xl md:text-base">chevron_left</span>
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 w-10 h-10 md:w-8 md:h-8 rounded-full
+                       bg-on-surface/60 text-white flex items-center justify-center
+                       md:opacity-0 md:group-hover:opacity-100 transition-all duration-200
+                       hover:bg-on-surface/80 z-20 shadow-lg backdrop-blur-sm"
+            aria-label="Keyingi"
+          >
+            <span className="material-symbols-outlined text-xl md:text-base">chevron_right</span>
+          </button>
 
-      {/* Fullscreen Overlay */}
-      <AnimatePresence>
-        {isFullscreen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 md:p-8" onClick={() => setIsFullscreen(false)}>
-            <button
-              onClick={(e) => { e.stopPropagation(); setIsFullscreen(false); }}
-              className="absolute top-3 right-3 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50"
-              aria-label="Yopish"
-            >
-              <span className="material-symbols-outlined text-2xl">close</span>
-            </button>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-full h-full max-w-5xl max-h-[85vh] flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={`${person.imagePath}${person.images[current]}`}
-                alt={`${person.name} — rasm ${current + 1}`}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
+          {/* Dots */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+            {person.images.slice(0, 8).map((_, i) => (
+              <button
+                key={i}
+                onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
+                className={`p-1 rounded-full transition-all ${
+                  i === current ? 'bg-white w-5' : 'bg-white/50 w-2'
+                } h-2`}
               />
-              {labels && labels[person.images[current]] && (
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-center text-white text-lg font-medium">
-                  {labels[person.images[current]]}
-                </div>
-              )}
-            </motion.div>
-
-            {total > 1 && (
-              <>
-                <button
-                  onClick={(e) => { e.stopPropagation(); prev(); }}
-                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50"
-                  aria-label="Oldingi"
-                >
-                  <span className="material-symbols-outlined text-3xl">chevron_left</span>
-                </button>
-                <button
-                  onClick={(e) => { e.stopPropagation(); next(); }}
-                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50"
-                  aria-label="Keyingi"
-                >
-                  <span className="material-symbols-outlined text-3xl">chevron_right</span>
-                </button>
-
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 font-medium bg-black/50 px-4 py-1.5 rounded-full backdrop-blur-md">
-                  {current + 1} / {total}
-                </div>
-              </>
+            ))}
+            {total > 8 && (
+              <span className="text-white/70 text-[10px] ml-1 self-center">+{total - 8}</span>
             )}
           </div>
+        </>
+      )}
+
+      {/* Image count badge */}
+      {total > 1 && (
+        <div className="absolute top-3 right-3 bg-on-surface/60 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 z-20">
+          <span className="material-symbols-outlined text-[13px]">photo_library</span>
+          {current + 1}/{total}
+        </div>
+      )}
+    </div>
+  );
+});
+
+interface LightboxOverlayProps {
+  person: Person;
+  currentIndex: number;
+  onClose: () => void;
+  onChangeIndex: (index: number) => void;
+  labels?: Record<string, string>;
+}
+
+const LightboxOverlay = memo(function LightboxOverlay({
+  person,
+  currentIndex,
+  onClose,
+  onChangeIndex,
+  labels,
+}: LightboxOverlayProps) {
+  const total = person.images.length;
+  const currentImage = person.images[currentIndex];
+
+  const parsed = useMemo(() => parseTavsif(person.description), [person.description]);
+  const activeLabels = labels || parsed?.rasmlar;
+
+  const next = useCallback(() => {
+    onChangeIndex((currentIndex + 1) % total);
+  }, [currentIndex, total, onChangeIndex]);
+
+  const prev = useCallback(() => {
+    onChangeIndex((currentIndex - 1 + total) % total);
+  }, [currentIndex, total, onChangeIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, next, prev]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 md:p-8"
+      onClick={onClose}
+    >
+      <button
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        className="absolute top-3 right-3 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50 shadow-lg"
+        aria-label="Yopish"
+      >
+        <span className="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="relative w-full h-full max-w-5xl max-h-[85vh] flex items-center justify-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Image
+          src={`${person.imagePath}${currentImage}`}
+          alt={`${person.name} — rasm ${currentIndex + 1}`}
+          fill
+          className="object-contain"
+          sizes="100vw"
+          priority
+          unoptimized
+        />
+        {activeLabels && activeLabels[currentImage] && (
+          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-center text-white text-lg font-medium">
+            {activeLabels[currentImage]}
+          </div>
         )}
-      </AnimatePresence>
-    </>
+      </motion.div>
+
+      {total > 1 && (
+        <>
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50 shadow-lg"
+            aria-label="Oldingi"
+          >
+            <span className="material-symbols-outlined text-3xl">chevron_left</span>
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors z-50 shadow-lg"
+            aria-label="Keyingi"
+          >
+            <span className="material-symbols-outlined text-3xl">chevron_right</span>
+          </button>
+
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 font-medium bg-black/50 px-4 py-1.5 rounded-full backdrop-blur-md">
+            {currentIndex + 1} / {total}
+          </div>
+        </>
+      )}
+    </div>
   );
 });
 
@@ -346,7 +395,15 @@ function CollapsibleList({ items, icon, title, color }: { items: string[]; icon:
 
 // ─── Featured Card — Vertical Card Layout ────────────────────────────────────
 
-function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: string }) {
+function FeaturedCard({
+  person,
+  viloyatName,
+  onOpenLightbox,
+}: {
+  person: Person;
+  viloyatName: string;
+  onOpenLightbox?: (person: Person, index: number) => void;
+}) {
   const [expanded, setExpanded] = useState(false);
   const desc = person.description ?? '';
   const parsed = parseTavsif(desc);
@@ -363,7 +420,7 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
       >
         {/* Image — top, full width, shorter on mobile */}
         <div className="relative w-full aspect-[3/2] sm:aspect-[4/3] overflow-hidden bg-surface-container">
-          <ImageCarousel person={person} labels={parsed.rasmlar} />
+          <ImageCarousel person={person} labels={parsed.rasmlar} onOpenLightbox={onOpenLightbox} />
         </div>
 
         {/* Content */}
@@ -492,8 +549,8 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
     >
       <div className="flex flex-col">
         <div className="w-full shrink-0">
-          <div className="h-full min-h-[250px] sm:min-h-[350px] md:min-h-[400px] relative">
-            <ImageCarousel person={person} />
+          <div className="relative w-full aspect-[3/2] sm:aspect-[4/3] overflow-hidden bg-surface-container">
+            <ImageCarousel person={person} onOpenLightbox={onOpenLightbox} />
           </div>
         </div>
 
@@ -547,7 +604,15 @@ function FeaturedCard({ person, viloyatName }: { person: Person; viloyatName: st
 
 // ─── Regular Card ────────────────────────────────────────────────────────────
 
-function RegularCard({ person, viloyatName }: { person: Person; viloyatName: string }) {
+function RegularCard({
+  person,
+  viloyatName,
+  onOpenLightbox,
+}: {
+  person: Person;
+  viloyatName: string;
+  onOpenLightbox?: (person: Person, index: number) => void;
+}) {
   const parsed = parseTavsif(person.description);
   const loanAmount = parsed?.ssudaMiqdori;
   const location = parsed?.yashashJoyi || parsed?.tugilganJoy;
@@ -565,7 +630,7 @@ function RegularCard({ person, viloyatName }: { person: Person; viloyatName: str
         {/* Image — left side */}
         <div className="w-[38%] sm:w-[40%] shrink-0">
           <div className="h-full min-h-[160px] sm:min-h-[200px] relative">
-            <ImageCarousel person={person} />
+            <ImageCarousel person={person} onOpenLightbox={onOpenLightbox} />
           </div>
         </div>
 
@@ -621,6 +686,14 @@ export default function KomakchilarClient({ data }: Props) {
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   const tabBarRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+
+  const [lightboxPerson, setLightboxPerson] = useState<Person | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = useCallback((person: Person, index: number) => {
+    setLightboxPerson(person);
+    setLightboxIndex(index);
+  }, []);
 
   const totalPeople = data.viloyatlar.reduce((sum, v) => sum + v.people.length, 0);
   const totalFeatured = data.viloyatlar.reduce((sum, v) => sum + v.people.filter(p => p.featured).length, 0);
@@ -1115,6 +1188,7 @@ export default function KomakchilarClient({ data }: Props) {
                             key={person.slug}
                             person={person}
                             viloyatName={viloyat.name.replace(/ viloyati$/i, '')}
+                            onOpenLightbox={openLightbox}
                           />
                         ))}
                       </div>
@@ -1128,6 +1202,7 @@ export default function KomakchilarClient({ data }: Props) {
                             key={person.slug}
                             person={person}
                             viloyatName={viloyat.name.replace(/ viloyati$/i, '')}
+                            onOpenLightbox={openLightbox}
                           />
                         ))}
                       </div>
@@ -1185,6 +1260,18 @@ export default function KomakchilarClient({ data }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Top-Level Fullscreen Lightbox Overlay */}
+      <AnimatePresence>
+        {lightboxPerson && (
+          <LightboxOverlay
+            person={lightboxPerson}
+            currentIndex={lightboxIndex}
+            onClose={() => setLightboxPerson(null)}
+            onChangeIndex={setLightboxIndex}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
