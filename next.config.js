@@ -4,7 +4,12 @@ const nextConfig = {
   compress: true,
 
   images: {
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+    ],
     // Auto WebP/AVIF conversion + responsive sizing on Vercel
     formats: ['image/avif', 'image/webp'],
   },

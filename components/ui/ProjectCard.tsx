@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Project } from '@/lib/types';
 
 function formatDate(dateStr: string): string {
@@ -27,11 +28,12 @@ export default function ProjectCard({ project }: { project: Project }) {
         {/* ── Image ── */}
         <div className="h-56 relative overflow-hidden bg-surface-container">
           {photoUrl ? (
-            <img
+            <Image
               src={photoUrl}
               alt={project.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              loading="lazy"
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-container to-secondary-container">

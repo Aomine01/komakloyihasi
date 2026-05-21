@@ -121,7 +121,6 @@ const BlurredImage = memo(function BlurredImage({ src, alt, priority }: { src: s
         />
       )}
       <Image
-        unoptimized
         src={src}
         alt={alt}
         fill
@@ -262,7 +261,6 @@ const ImageCarousel = memo(function ImageCarousel({ person, labels }: { person: 
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                unoptimized
                 src={`${person.imagePath}${person.images[current]}`}
                 alt={`${person.name} — rasm ${current + 1}`}
                 fill

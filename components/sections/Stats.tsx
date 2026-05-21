@@ -2,6 +2,7 @@
 
 import type { Stat } from '@/lib/types';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -27,10 +28,12 @@ export default function Stats({ stats }: { stats: Stat[] }) {
         </motion.div>
         <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={fadeUp} className="md:w-1/2 relative">
           <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10 transform scale-110 translate-x-10 translate-y-10" />
-          <img
+          <Image
             alt="Data visualization"
-            className="rounded-xl shadow-ambient w-full object-cover h-[300px]"
+            className="rounded-xl shadow-ambient w-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmZM0oNlRrd7xnekpddyrh70MSZpK4R1sUbxSeGsZ5DpphPd21o86YVtjdzJYUIsjHLoDwqNQyP-WM33lLhWVAvNPGlUxY1D3Yb4ZGdQXaXQ4tMXp5JaVnQl2O9-cctyAK-kcVQ8_xMWENFGQ0L8hqeuwrC5FrGBAu8u5qkaaB1cWTsiW0FnsrObCbUT9iAu7VfepUMRNJ1GRzDzqkl34-1JYvAUt7ysbSTbFYs4MWUoBUfu1_7CkYmSsfM6UOz1lyQsGwtO5ytRU"
+            width={600}
+            height={300}
           />
         </motion.div>
       </section>
@@ -105,10 +108,12 @@ export default function Stats({ stats }: { stats: Stat[] }) {
                 <p className="text-sm text-on-surface-variant mt-1">Hududlar bo&apos;yicha batafsil ma&apos;lumot</p>
               </div>
             </div>
-            <img
+            <Image
               alt="Map of Uzbekistan"
               className="w-full h-full object-contain opacity-80 rounded-lg"
               src="/uz.svg"
+              fill
+              sizes="(max-width: 768px) 100vw, 80vw"
             />
           </motion.div>
         </div>
