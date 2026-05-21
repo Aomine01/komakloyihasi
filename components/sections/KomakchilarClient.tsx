@@ -120,7 +120,8 @@ const BlurredImage = memo(function BlurredImage({ src, alt, priority }: { src: s
             aria-hidden
             className="absolute inset-0 w-full h-full object-cover blur-[40px] opacity-70 saturate-150 scale-110 pointer-events-none"
           />
-          <div className="absolute inset-0 bg-white/10 pointer-events-none" />
+          {/* Soft vignette to define container edges and slight dimming to make the sharp image pop */}
+          <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.12)] bg-black/5 pointer-events-none" />
         </>
       )}
       <Image
