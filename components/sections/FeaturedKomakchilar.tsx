@@ -155,10 +155,9 @@ function Lightbox({ src, alt, onClose }: LightboxProps) {
 
       <div className="relative overflow-auto flex items-center justify-center w-full h-full px-4 pt-16 pb-16">
         <motion.div animate={{ scale: zoom }} transition={{ type: 'spring', stiffness: 260, damping: 28 }}
-          style={{ transformOrigin: 'center center' }} className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={alt}
-            className="max-h-[80vh] max-w-[90vw] object-contain rounded-xl shadow-2xl" draggable={false} />
+          style={{ transformOrigin: 'center center' }} className="relative w-[90vw] h-[80vh] flex items-center justify-center">
+          <Image src={src} alt={alt} fill sizes="100vw" priority
+            className="object-contain rounded-xl shadow-2xl" draggable={false} />
         </motion.div>
       </div>
 

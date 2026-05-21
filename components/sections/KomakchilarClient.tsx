@@ -266,7 +266,7 @@ const ImageCarousel = memo(function ImageCarousel({ person, labels }: { person: 
                 fill
                 className="object-contain"
                 sizes="100vw"
-                quality={100}
+                priority
               />
               {labels && labels[person.images[current]] && (
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-center text-white text-lg font-medium">

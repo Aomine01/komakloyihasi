@@ -1006,10 +1006,10 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
             <div className="flex-1 relative overflow-hidden">
                 {/* Dotted background pattern */}
                 <div
-                  className="absolute inset-0 pointer-events-none z-0 opacity-[0.35]"
+                  className="absolute inset-0 pointer-events-none z-0 opacity-[0.15]"
                   style={{
-                    backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
-                    backgroundSize: '18px 18px',
+                    backgroundImage: 'radial-gradient(circle, #94a3b8 0.6px, transparent 0.6px)',
+                    backgroundSize: '24px 24px',
                   }}
                 />
                 <ComposableMap
