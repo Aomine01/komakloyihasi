@@ -27,6 +27,15 @@ function slugify(str: string): string {
     .replace(/^-|-$/g, '');
 }
 
+// ─── Normalize Name (for duplicate prevention) ──────────────────────────────
+function normalizeName(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/['`’‘"ʻ\u2018\u2019\u02BB]/g, '') // strip all variations of apostrophe
+    .replace(/[^a-z0-9]/g, '') // remove spaces, underscores, hyphens, non-alphanumerics
+    .trim();
+}
+
 // ─── Copy file helper ────────────────────────────────────────────────────────
 function copyFile(src: string, dest: string): void {
   const dir = path.dirname(dest);
@@ -90,7 +99,7 @@ async function main() {
     process.exit(1);
   }
 
-  const rawData = fs.readFileSync(DATA_FILE, 'utf-8');
+  const rawData = fs.readFileSync(DATA_FILE, 'utf-8').replace(/^\uFEFF/, '');
   const data: KomakchilarData = JSON.parse(rawData);
 
   // Helper to find viloyat by slug
@@ -147,7 +156,17 @@ async function main() {
       // Actually, if we just check if any person in JSON has this exact `name` or `slug` matching `baseSlug`.
       // It's safer to check if `name` matches or `slug` matches.
       
-      const existingPerson = viloyatData.people.find(p => p.slug === baseSlug || p.name === personName);
+      const existingPerson = viloyatData.people.find(p => {
+        const normExistingName = normalizeName(p.name);
+        const normExistingSlug = normalizeName(p.slug);
+        const normNewName = normalizeName(personFolderName);
+        const normNewNameConverted = normalizeName(personName);
+        const normNewSlug = normalizeName(baseSlug);
+
+        return normExistingName === normNewName || 
+               normExistingName === normNewNameConverted || 
+               normExistingSlug === normNewSlug;
+      });
 
       const allFiles = fs.readdirSync(personPath);
       const imageFiles: string[] = [];
