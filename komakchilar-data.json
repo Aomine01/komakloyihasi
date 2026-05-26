@@ -883,21 +883,7 @@
           "pdfUrl": null
         },
         {
-          "name": "Ziyodullayeva Ra'no",
-          "slug": "ziyodullayeva-rano",
-          "featured": false,
-          "description": null,
-          "images": [
-            "1.jpg"
-          ],
-          "originalImages": [
-            "Ziyodullayeva Ra_no , Al-Buxoriy.jpg"
-          ],
-          "imagePath": "/assets/komakchilar/buxoro/ziyodullayeva-rano/",
-          "pdfUrl": null
-        },
-        {
-          "name": "Ziyodullayeva Raʼno Ubaydullo qizi",
+          "name": "Ziyodullayeva Ra'no Ubaydullo qizi",
           "slug": "ziyodullayeva-rano-ubaydullo-qizi",
           "featured": false,
           "description": null,
