@@ -4,7 +4,10 @@ const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
-    extend: {
+      extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       colors: {
         'inverse-on-surface': '#eef0ff',
         'outline-variant': '#bcc9c6',
