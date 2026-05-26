@@ -49,7 +49,7 @@ SSUDA_MAQSADI: Bo'ston tumani Guzar MFY da "Ai Hikma Academy" o'quv markaziga as
 РАСМЛАР:
 - 1.jpg: Shaxsiy rasm
 - 2.jpg: O'quv xonasining holati`,
-  'nodirbek-maxmudov': `ISM_FAMILIYA: Maxmudov Nodirbek Ma'rufjon o'g'li
+  'maxmudov-nodirbek-marufjon-ogli': `ISM_FAMILIYA: Maxmudov Nodirbek Ma'rufjon o'g'li
 LAVOZIM: "Arizon" o'quv markazi rahbari
 TУГИЛГАН_САНА: 1997-yil 19-fevral
 ТУҒИЛГАН_ЖОЙ: Andijon viloyati, Xo'jaobod tumani
@@ -227,7 +227,7 @@ SSUDA_MAQSADI: Jizzax viloyati Zarbdor tumanida "DUOLINGO" o'quv markaziga asos 
 
 РАСМЛАР:
 - 1.jpg: Shaxsiy rasm`,
-  'akramjonov-maqsudbek': `ISM_FAMILIYA: Akramjonov Maqsudbek Anvarjon o'g'li
+  'akramjonov-maqsudbek-anvarjon-ogli': `ISM_FAMILIYA: Akramjonov Maqsudbek Anvarjon o'g'li
 LAVOZIM: "ICEBERG" birlashgan o'quv markazi rahbari, IELTS instructor
 TУГИЛГАН_САНА: 2003-yil 6-yanvar
 ТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani
@@ -275,7 +275,7 @@ SSUDA_MAQSADI: "Discover" o'quv markazi faoliyatini kengaytirish
 
 РАСМЛАР:
 - 1.jpg: Shaxsiy rasm`,
-  'nasriddinov-azizbek': `ISM_FAMILIYA: Nasriddinov Azizbek G'anisher o'g'li
+  'nasriddinov-azizbek-ganisher-ogli': `ISM_FAMILIYA: Nasriddinov Azizbek G'anisher o'g'li
 LAVOZIM: "ICE BERG" o'quv markazi asoschisi, Yoshlar faoli
 TУГИЛГАН_САНА: 2000-yil
 ТУҒИЛГАН_ЖОЙ: Namangan viloyati, Uychi tumani
@@ -359,7 +359,7 @@ SSUDA_MAQSADI: Kattaqo'rg'on tumanida "I-Teach" o'quv markazini ochish
 
 РАСМЛАР:
 - 1.jpg: Shaxsiy rasm`,
-  'person': `ISM_FAMILIYA: Cho'liyeva Mufazzalxon Nazirjon qizi
+  'choliyeva-mufazzalxon-nazirjon-qizi': `ISM_FAMILIYA: Cho'liyeva Mufazzalxon Nazirjon qizi
 LAVOZIM: Ingliz tili o'qituvchisi
 TУГИЛГАН_САНА: 1995-yil 19-dekabr
 ТУҒИЛГАН_ЖОЙ: Farg'ona viloyati
