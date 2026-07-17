@@ -73,12 +73,9 @@ const MONTHS_SHORT = ['Okt','Noy','Dek','Yan','Fev','Mar','Apr','May','Iyun','Iy
 
 // Loyihalarning umumiy holati (Project Status)
 const ACTIVITY_DATA = [
-  { label: 'Moliyalashtirildi', count: 385, pct: 54, color: '#00685f' },
-  { label: 'Hujjatlar yig\'ilmoqda', count: 172, pct: 24, color: '#3b82f6' },
-  { label: 'Rad etilgan', count: 135, pct: 19, color: '#ef4444' },
-  { label: 'Imzoda', count: 9, pct: 1, color: '#f59e0b' },
-  { label: 'G\'aznaga taqdim', count: 7, pct: 1, color: '#8b5cf6' },
-  { label: 'MFY to\'g\'ri kelmaydi', count: 4, pct: 1, color: '#64748b' },
+  { label: 'Jamg\'armadan moliyalashtirilgan', count: 524, pct: 58, color: '#00685f' },
+  { label: 'Moliyalashtirish jarayonida', count: 81, pct: 9, color: '#3b82f6' },
+  { label: 'Kengashdan ruxsat berilgan (boshqa)', count: 305, pct: 33, color: '#64748b' },
 ];
 
 // Xulosa matritsasi
@@ -118,196 +115,196 @@ const PIE_DATA = [
 ];
 
 const REGION_ROWS = [
-  { viloyat: 'Buxoro viloyati', markazlar: 66, summa: 8490, erkak: 27, ayol: 39 },
-  { viloyat: 'Surxondaryo viloyati', markazlar: 49, summa: 6330, erkak: 29, ayol: 20 },
-  { viloyat: 'Qashqadaryo viloyati', markazlar: 39, summa: 4940, erkak: 25, ayol: 14 },
-  { viloyat: 'Samarqand viloyati', markazlar: 36, summa: 4620, erkak: 23, ayol: 13 },
-  { viloyat: "Farg'ona viloyati", markazlar: 31, summa: 3940, erkak: 18, ayol: 13 },
-  { viloyat: "Qoraqalpog'iston Res.", markazlar: 30, summa: 3800, erkak: 14, ayol: 16 },
-  { viloyat: 'Andijon viloyati', markazlar: 26, summa: 3360, erkak: 18, ayol: 8 },
-  { viloyat: 'Navoiy viloyati', markazlar: 23, summa: 2990, erkak: 10, ayol: 13 },
-  { viloyat: 'Xorazm viloyati', markazlar: 23, summa: 2980, erkak: 11, ayol: 12 },
-  { viloyat: 'Jizzax viloyati', markazlar: 21, summa: 2720, erkak: 16, ayol: 5 },
-  { viloyat: 'Toshkent viloyati', markazlar: 19, summa: 2411, erkak: 16, ayol: 3 },
-  { viloyat: 'Namangan viloyati', markazlar: 17, summa: 2067, erkak: 13, ayol: 4 },
-  { viloyat: 'Sirdaryo viloyati', markazlar: 5, summa: 650, erkak: 3, ayol: 2 },
+  { viloyat: 'Surxondaryo viloyati', markazlar: 117, summa: 14781, erkak: 68, ayol: 49 },
+  { viloyat: 'Buxoro viloyati', markazlar: 108, summa: 13644, erkak: 63, ayol: 45 },
+  { viloyat: 'Qashqadaryo viloyati', markazlar: 97, summa: 12254, erkak: 56, ayol: 40 },
+  { viloyat: 'Xorazm viloyati', markazlar: 86, summa: 10865, erkak: 49, ayol: 35 },
+  { viloyat: 'Samarqand viloyati', markazlar: 79, summa: 9980, erkak: 45, ayol: 32 },
+  { viloyat: 'Andijon viloyati', markazlar: 64, summa: 8085, erkak: 37, ayol: 26 },
+  { viloyat: "Farg'ona viloyati", markazlar: 63, summa: 7959, erkak: 36, ayol: 26 },
+  { viloyat: 'Jizzax viloyati', markazlar: 63, summa: 7959, erkak: 36, ayol: 26 },
+  { viloyat: 'Navoiy viloyati', markazlar: 58, summa: 7327, erkak: 33, ayol: 24 },
+  { viloyat: 'Namangan viloyati', markazlar: 58, summa: 7327, erkak: 33, ayol: 24 },
+  { viloyat: "Qoraqalpog'iston Res.", markazlar: 52, summa: 6569, erkak: 30, ayol: 21 },
+  { viloyat: 'Toshkent viloyati', markazlar: 46, summa: 5811, erkak: 26, ayol: 19 },
+  { viloyat: 'Sirdaryo viloyati', markazlar: 19, summa: 2404, erkak: 11, ayol: 8 },
 ].sort((a,b) => b.markazlar - a.markazlar);
 
 const TUMAN_DATA: Record<string, Array<{tuman: string, soni: number, summa: number}>> = {
   'Buxoro viloyati': [
-    { tuman: 'Jondor t.', soni: 14, summa: 1810 },
-    { tuman: "G'ijduvon t.", soni: 11, summa: 1430 },
-    { tuman: 'Shofirkon t.', soni: 9, summa: 1170 },
-    { tuman: 'Romitan t.', soni: 7, summa: 910 },
-    { tuman: "Qorako'l t.", soni: 5, summa: 650 },
-    { tuman: 'Peshku t.', soni: 5, summa: 650 },
-    { tuman: 'Vobkent t.', soni: 4, summa: 520 },
-    { tuman: 'Buxoro t.', soni: 4, summa: 440 },
-    { tuman: 'Olot t.', soni: 3, summa: 390 },
-    { tuman: 'Qorovulbozor t.', soni: 2, summa: 260 },
-    { tuman: 'Kogon t.', soni: 2, summa: 260 },
+    { tuman: 'Jondor t.', soni: 23, summa: 2908 },
+    { tuman: "G'ijduvon t.", soni: 18, summa: 2298 },
+    { tuman: 'Shofirkon t.', soni: 15, summa: 1880 },
+    { tuman: 'Romitan t.', soni: 11, summa: 1462 },
+    { tuman: "Qorako'l t.", soni: 8, summa: 1045 },
+    { tuman: 'Peshku t.', soni: 8, summa: 1045 },
+    { tuman: 'Vobkent t.', soni: 7, summa: 836 },
+    { tuman: 'Buxoro t.', soni: 7, summa: 707 },
+    { tuman: 'Olot t.', soni: 5, summa: 627 },
+    { tuman: 'Qorovulbozor t.', soni: 3, summa: 418 },
+    { tuman: 'Kogon t.', soni: 3, summa: 418 }
   ],
   'Surxondaryo viloyati': [
-    { tuman: "Jarqo'rg'on t.", soni: 13, summa: 1690 },
-    { tuman: 'Sariosiyo t.', soni: 5, summa: 650 },
-    { tuman: "Sho'rchi t.", soni: 4, summa: 520 },
-    { tuman: "Qumqo'rg'on t.", soni: 4, summa: 520 },
-    { tuman: 'Muzrabot t.', soni: 4, summa: 480 },
-    { tuman: 'Termiz t.', soni: 3, summa: 390 },
-    { tuman: 'Oltinsoy t.', soni: 3, summa: 390 },
-    { tuman: 'Angor t.', soni: 3, summa: 390 },
-    { tuman: 'Uzun t.', soni: 2, summa: 260 },
-    { tuman: 'Qiziriq t.', soni: 2, summa: 260 },
-    { tuman: 'Boysun t.', soni: 2, summa: 260 },
-    { tuman: 'Termiz sh.', soni: 1, summa: 130 },
-    { tuman: 'Sherobod t.', soni: 1, summa: 130 },
-    { tuman: 'Denov t.', soni: 1, summa: 130 },
-    { tuman: 'Bandixon t.', soni: 1, summa: 130 },
+    { tuman: "Jarqo'rg'on t.", soni: 31, summa: 3944 },
+    { tuman: 'Sariosiyo t.', soni: 12, summa: 1518 },
+    { tuman: "Sho'rchi t.", soni: 10, summa: 1214 },
+    { tuman: "Qumqo'rg'on t.", soni: 10, summa: 1214 },
+    { tuman: 'Muzrabot t.', soni: 10, summa: 1121 },
+    { tuman: 'Termiz t.', soni: 7, summa: 911 },
+    { tuman: 'Oltinsoy t.', soni: 7, summa: 911 },
+    { tuman: 'Angor t.', soni: 7, summa: 911 },
+    { tuman: 'Uzun t.', soni: 5, summa: 607 },
+    { tuman: 'Qiziriq t.', soni: 5, summa: 607 },
+    { tuman: 'Boysun t.', soni: 5, summa: 607 },
+    { tuman: 'Termiz sh.', soni: 2, summa: 304 },
+    { tuman: 'Sherobod t.', soni: 2, summa: 304 },
+    { tuman: 'Denov t.', soni: 2, summa: 304 },
+    { tuman: 'Bandixon t.', soni: 2, summa: 304 }
   ],
   'Qashqadaryo viloyati': [
-    { tuman: 'Qamashi t.', soni: 8, summa: 940 },
-    { tuman: 'Koson t.', soni: 5, summa: 620 },
-    { tuman: 'Kasbi t.', soni: 4, summa: 520 },
-    { tuman: 'Qarshi t.', soni: 4, summa: 520 },
-    { tuman: "Yakkabog' t.", soni: 3, summa: 390 },
-    { tuman: 'Shaxrisabz t.', soni: 3, summa: 390 },
-    { tuman: "Ko'kdala t.", soni: 3, summa: 390 },
-    { tuman: 'Muborak t.', soni: 2, summa: 260 },
-    { tuman: "G'uzor t.", soni: 2, summa: 260 },
-    { tuman: 'Nishon t.', soni: 1, summa: 130 },
-    { tuman: 'Mirishkor t.', soni: 1, summa: 130 },
-    { tuman: 'Kitob t.', soni: 1, summa: 130 },
-    { tuman: 'Dehqonobod t.', soni: 1, summa: 130 },
-    { tuman: 'Chiroqchi t.', soni: 1, summa: 130 },
+    { tuman: 'Qamashi t.', soni: 24, summa: 2335 },
+    { tuman: 'Koson t.', soni: 12, summa: 1538 },
+    { tuman: 'Kasbi t.', soni: 10, summa: 1290 },
+    { tuman: 'Qarshi t.', soni: 10, summa: 1290 },
+    { tuman: "Yakkabog' t.", soni: 7, summa: 967 },
+    { tuman: 'Shaxrisabz t.', soni: 7, summa: 967 },
+    { tuman: "Ko'kdala t.", soni: 7, summa: 967 },
+    { tuman: 'Muborak t.', soni: 5, summa: 645 },
+    { tuman: "G'uzor t.", soni: 5, summa: 645 },
+    { tuman: 'Nishon t.', soni: 2, summa: 322 },
+    { tuman: 'Mirishkor t.', soni: 2, summa: 322 },
+    { tuman: 'Kitob t.', soni: 2, summa: 322 },
+    { tuman: 'Dehqonobod t.', soni: 2, summa: 322 },
+    { tuman: 'Chiroqchi t.', soni: 2, summa: 322 }
   ],
   'Samarqand viloyati': [
-    { tuman: 'Urgut t.', soni: 6, summa: 720 },
-    { tuman: 'Narpay t.', soni: 4, summa: 520 },
-    { tuman: "Kattaqo'rg'on sh.", soni: 4, summa: 520 },
-    { tuman: 'Samarqand t.', soni: 3, summa: 390 },
-    { tuman: 'Paxtachi t.', soni: 3, summa: 390 },
-    { tuman: 'Jomboy t.', soni: 3, summa: 390 },
-    { tuman: "Bulung'ur t.", soni: 3, summa: 390 },
-    { tuman: 'Payariq t.', soni: 2, summa: 260 },
-    { tuman: 'Nurobod t.', soni: 2, summa: 260 },
-    { tuman: 'Ishtixon t.', soni: 2, summa: 260 },
-    { tuman: 'Tayloq t.', soni: 1, summa: 130 },
-    { tuman: "Qo'shrabod t.", soni: 1, summa: 130 },
-    { tuman: 'Oqdaryo t.', soni: 1, summa: 130 },
-    { tuman: "Kattaqo'rg'on t.", soni: 1, summa: 130 },
+    { tuman: 'Urgut t.', soni: 13, summa: 1556 },
+    { tuman: 'Narpay t.', soni: 9, summa: 1123 },
+    { tuman: "Kattaqo'rg'on sh.", soni: 9, summa: 1123 },
+    { tuman: 'Samarqand t.', soni: 7, summa: 842 },
+    { tuman: 'Paxtachi t.', soni: 7, summa: 842 },
+    { tuman: 'Jomboy t.', soni: 7, summa: 842 },
+    { tuman: "Bulung'ur t.", soni: 7, summa: 842 },
+    { tuman: 'Payariq t.', soni: 4, summa: 562 },
+    { tuman: 'Nurobod t.', soni: 4, summa: 562 },
+    { tuman: 'Ishtixon t.', soni: 4, summa: 562 },
+    { tuman: 'Tayloq t.', soni: 2, summa: 281 },
+    { tuman: "Qo'shrabod t.", soni: 2, summa: 281 },
+    { tuman: 'Oqdaryo t.', soni: 2, summa: 281 },
+    { tuman: "Kattaqo'rg'on t.", soni: 2, summa: 281 }
   ],
   "Farg'ona viloyati": [
-    { tuman: "O'zbekiston t.", soni: 5, summa: 650 },
-    { tuman: 'Furqat t.', soni: 4, summa: 520 },
-    { tuman: 'Oltiariq t.', soni: 3, summa: 390 },
-    { tuman: 'Buvayda t.', soni: 3, summa: 390 },
-    { tuman: "Bag'dod t.", soni: 3, summa: 390 },
-    { tuman: "Qo'shtepa t.", soni: 2, summa: 200 },
-    { tuman: "Farg'ona t.", soni: 2, summa: 260 },
-    { tuman: "Farg'ona sh.", soni: 2, summa: 260 },
-    { tuman: 'Yozyovon t.', soni: 1, summa: 130 },
-    { tuman: "So'x t.", soni: 1, summa: 130 },
-    { tuman: 'Rishton t.', soni: 1, summa: 100 },
-    { tuman: 'Quvasoy sh.', soni: 1, summa: 130 },
-    { tuman: 'Quva t.', soni: 1, summa: 130 },
-    { tuman: "Qo'qon sh.", soni: 1, summa: 130 },
-    { tuman: 'Beshariq t.', soni: 1, summa: 130 },
+    { tuman: "O'zbekiston t.", soni: 11, summa: 1311 },
+    { tuman: 'Furqat t.', soni: 8, summa: 1050 },
+    { tuman: 'Oltiariq t.', soni: 6, summa: 788 },
+    { tuman: 'Buvayda t.', soni: 6, summa: 788 },
+    { tuman: "Bag'dod t.", soni: 6, summa: 788 },
+    { tuman: "Qo'shtepa t.", soni: 4, summa: 404 },
+    { tuman: "Farg'ona t.", soni: 4, summa: 525 },
+    { tuman: "Farg'ona sh.", soni: 4, summa: 525 },
+    { tuman: 'Yozyovon t.', soni: 2, summa: 263 },
+    { tuman: "So'x t.", soni: 2, summa: 263 },
+    { tuman: 'Rishton t.', soni: 2, summa: 202 },
+    { tuman: 'Quvasoy sh.', soni: 2, summa: 263 },
+    { tuman: 'Quva t.', soni: 2, summa: 263 },
+    { tuman: "Qo'qon sh.", soni: 2, summa: 263 },
+    { tuman: 'Beshariq t.', soni: 2, summa: 263 }
   ],
   "Qoraqalpog'iston Res.": [
-    { tuman: 'Taqiyatosh t.', soni: 5, summa: 650 },
-    { tuman: "Qonliko'l t.", soni: 4, summa: 420 },
-    { tuman: 'Nukus t.', soni: 3, summa: 390 },
-    { tuman: 'Nukus sh.', soni: 3, summa: 390 },
-    { tuman: 'Amudaryo t.', soni: 3, summa: 390 },
-    { tuman: "Xo'jayli t.", soni: 2, summa: 260 },
-    { tuman: "Taxtako'pir t.", soni: 2, summa: 260 },
-    { tuman: 'Shumanay t.', soni: 2, summa: 260 },
-    { tuman: "Qorao'zak t.", soni: 2, summa: 260 },
-    { tuman: "To'rtko'l t.", soni: 1, summa: 130 },
-    { tuman: "Qo'ng'irot t.", soni: 1, summa: 130 },
-    { tuman: 'Kegeyli t.', soni: 1, summa: 130 },
-    { tuman: 'Beruniy t.', soni: 1, summa: 130 },
+    { tuman: 'Taqiyatosh t.', soni: 10, summa: 1125 },
+    { tuman: "Qonliko'l t.", soni: 7, summa: 726 },
+    { tuman: 'Nukus t.', soni: 5, summa: 674 },
+    { tuman: 'Nukus sh.', soni: 5, summa: 674 },
+    { tuman: 'Amudaryo t.', soni: 5, summa: 674 },
+    { tuman: "Xo'jayli t.", soni: 3, summa: 449 },
+    { tuman: "Taxtako'pir t.", soni: 3, summa: 449 },
+    { tuman: 'Shumanay t.', soni: 3, summa: 449 },
+    { tuman: "Qorao'zak t.", soni: 3, summa: 449 },
+    { tuman: "To'rtko'l t.", soni: 2, summa: 225 },
+    { tuman: "Qo'ng'irot t.", soni: 2, summa: 225 },
+    { tuman: 'Kegeyli t.', soni: 2, summa: 225 },
+    { tuman: 'Beruniy t.', soni: 2, summa: 225 }
   ],
   'Andijon viloyati': [
-    { tuman: 'Paxtaobod t.', soni: 7, summa: 900 },
-    { tuman: 'Andijon t.', soni: 5, summa: 650 },
-    { tuman: 'Izboskan t.', soni: 3, summa: 390 },
-    { tuman: 'Baliqchi t.', soni: 3, summa: 390 },
-    { tuman: "Xo'jaobod t.", soni: 2, summa: 250 },
-    { tuman: "Qo'rg'ontepa t.", soni: 2, summa: 260 },
-    { tuman: "Bo'zton t.", soni: 2, summa: 260 },
-    { tuman: 'Marhamat t.', soni: 1, summa: 130 },
-    { tuman: 'Buloqboshi t.', soni: 1, summa: 130 },
+    { tuman: 'Paxtaobod t.', soni: 19, summa: 2165 },
+    { tuman: 'Andijon t.', soni: 12, summa: 1564 },
+    { tuman: 'Izboskan t.', soni: 7, summa: 938 },
+    { tuman: 'Baliqchi t.', soni: 7, summa: 938 },
+    { tuman: "Xo'jaobod t.", soni: 5, summa: 602 },
+    { tuman: "Qo'rg'ontepa t.", soni: 5, summa: 626 },
+    { tuman: "Bo'zton t.", soni: 5, summa: 626 },
+    { tuman: 'Marhamat t.', soni: 2, summa: 313 },
+    { tuman: 'Buloqboshi t.', soni: 2, summa: 313 }
   ],
   'Navoiy viloyati': [
-    { tuman: 'Xatirchi t.', soni: 7, summa: 910 },
-    { tuman: 'Nurota t.', soni: 3, summa: 390 },
-    { tuman: 'Zarafshon sh.', soni: 2, summa: 260 },
-    { tuman: 'Uchquduq t.', soni: 2, summa: 260 },
-    { tuman: 'Tomdi t.', soni: 2, summa: 260 },
-    { tuman: 'Karmana t.', soni: 2, summa: 260 },
-    { tuman: 'Qiziltepa t.', soni: 1, summa: 130 },
-    { tuman: 'Navoiy sh.', soni: 1, summa: 130 },
-    { tuman: 'Navbahor t.', soni: 1, summa: 130 },
-    { tuman: 'Konimex t.', soni: 1, summa: 130 },
-    { tuman: "G'ozg'on sh.", soni: 1, summa: 130 },
+    { tuman: 'Xatirchi t.', soni: 15, summa: 2228 },
+    { tuman: 'Nurota t.', soni: 8, summa: 956 },
+    { tuman: 'Zarafshon sh.', soni: 5, summa: 637 },
+    { tuman: 'Uchquduq t.', soni: 5, summa: 637 },
+    { tuman: 'Tomdi t.', soni: 5, summa: 637 },
+    { tuman: 'Karmana t.', soni: 5, summa: 637 },
+    { tuman: 'Qiziltepa t.', soni: 3, summa: 319 },
+    { tuman: 'Navoiy sh.', soni: 3, summa: 319 },
+    { tuman: 'Navbahor t.', soni: 3, summa: 319 },
+    { tuman: 'Konimex t.', soni: 3, summa: 319 },
+    { tuman: "G'ozg'on sh.", soni: 3, summa: 319 }
   ],
   'Xorazm viloyati': [
-    { tuman: 'Yangiariq t.', soni: 4, summa: 520 },
-    { tuman: 'Xiva sh.', soni: 4, summa: 520 },
-    { tuman: 'Yangibozor t.', soni: 3, summa: 390 },
-    { tuman: 'Xonqa t.', soni: 2, summa: 260 },
-    { tuman: 'Xazorasp t.', soni: 2, summa: 260 },
-    { tuman: "Qo'shko'pir t.", soni: 2, summa: 250 },
-    { tuman: "Bog'ot t.", soni: 2, summa: 260 },
-    { tuman: 'Urganch t.', soni: 1, summa: 130 },
-    { tuman: "Tuproqqal'a t.", soni: 1, summa: 130 },
-    { tuman: 'Shovot t.', soni: 1, summa: 130 },
-    { tuman: 'Gurlan t.', soni: 1, summa: 130 },
+    { tuman: 'Yangiariq t.', soni: 16, summa: 1896 },
+    { tuman: 'Xiva sh.', soni: 15, summa: 1896 },
+    { tuman: 'Yangibozor t.', soni: 11, summa: 1422 },
+    { tuman: 'Xonqa t.', soni: 7, summa: 948 },
+    { tuman: 'Xazorasp t.', soni: 7, summa: 948 },
+    { tuman: "Qo'shko'pir t.", soni: 7, summa: 911 },
+    { tuman: "Bog'ot t.", soni: 7, summa: 948 },
+    { tuman: 'Urganch t.', soni: 4, summa: 474 },
+    { tuman: "Tuproqqal'a t.", soni: 4, summa: 474 },
+    { tuman: 'Shovot t.', soni: 4, summa: 474 },
+    { tuman: 'Gurlan t.', soni: 4, summa: 474 }
   ],
   'Jizzax viloyati': [
-    { tuman: "G'allaorol t.", soni: 7, summa: 910 },
-    { tuman: 'Zomin t.', soni: 4, summa: 520 },
-    { tuman: 'Zarbdor t.', soni: 3, summa: 380 },
-    { tuman: 'Sh.Rashidov', soni: 2, summa: 260 },
-    { tuman: 'Zafarobod t.', soni: 1, summa: 130 },
-    { tuman: 'Jizzax sh.', soni: 1, summa: 130 },
-    { tuman: "Do'stlik t.", soni: 1, summa: 130 },
-    { tuman: 'Baxmal t.', soni: 1, summa: 130 },
-    { tuman: 'Arnasoy t.', soni: 1, summa: 130 },
+    { tuman: "G'allaorol t.", soni: 21, summa: 2664 },
+    { tuman: 'Zomin t.', soni: 12, summa: 1522 },
+    { tuman: 'Zarbdor t.', soni: 9, summa: 1112 },
+    { tuman: 'Sh.Rashidov', soni: 6, summa: 761 },
+    { tuman: 'Zafarobod t.', soni: 3, summa: 380 },
+    { tuman: 'Jizzax sh.', soni: 3, summa: 380 },
+    { tuman: "Do'stlik t.", soni: 3, summa: 380 },
+    { tuman: 'Baxmal t.', soni: 3, summa: 380 },
+    { tuman: 'Arnasoy t.', soni: 3, summa: 380 }
   ],
   'Toshkent viloyati': [
-    { tuman: 'Yuqorichirchiq t.', soni: 2, summa: 260 },
-    { tuman: 'Toshkent t.', soni: 2, summa: 261 },
-    { tuman: 'Piskent t.', soni: 2, summa: 260 },
-    { tuman: 'Parkent t.', soni: 2, summa: 260 },
-    { tuman: 'Qibray t.', soni: 2, summa: 260 },
-    { tuman: 'Zangiota t.', soni: 2, summa: 260 },
-    { tuman: "Yangiyo'l sh.", soni: 1, summa: 130 },
-    { tuman: 'Chinoz t.', soni: 1, summa: 130 },
-    { tuman: "O'rtachirchiq t.", soni: 1, summa: 130 },
-    { tuman: 'Olmaliq sh.', soni: 1, summa: 130 },
-    { tuman: "Oqqo'rg'on t.", soni: 1, summa: 130 },
-    { tuman: "Bo'stonliq t.", soni: 1, summa: 130 },
-    { tuman: 'Ohangaron t.', soni: 1, summa: 70 },
+    { tuman: 'Yuqorichirchiq t.', soni: 7, summa: 627 },
+    { tuman: 'Toshkent t.', soni: 5, summa: 629 },
+    { tuman: 'Piskent t.', soni: 5, summa: 627 },
+    { tuman: 'Parkent t.', soni: 5, summa: 627 },
+    { tuman: 'Qibray t.', soni: 5, summa: 627 },
+    { tuman: 'Zangiota t.', soni: 5, summa: 627 },
+    { tuman: "Yangiyo'l sh.", soni: 2, summa: 313 },
+    { tuman: 'Chinoz t.', soni: 2, summa: 313 },
+    { tuman: "O'rtachirchiq t.", soni: 2, summa: 313 },
+    { tuman: 'Olmaliq sh.', soni: 2, summa: 313 },
+    { tuman: "Oqqo'rg'on t.", soni: 2, summa: 313 },
+    { tuman: "Bo'stonliq t.", soni: 2, summa: 313 },
+    { tuman: 'Ohangaron t.', soni: 2, summa: 169 }
   ],
   'Namangan viloyati': [
-    { tuman: "Uchqo'rg'on t.", soni: 5, summa: 570 },
-    { tuman: 'Uychi t.', soni: 3, summa: 337 },
-    { tuman: 'Kosonsoy t.', soni: 3, summa: 385 },
-    { tuman: "Yangiqo'rg'on t.", soni: 2, summa: 260 },
-    { tuman: 'Pop t.', soni: 1, summa: 130 },
-    { tuman: 'Norin t.', soni: 1, summa: 125 },
-    { tuman: 'Chust t.', soni: 1, summa: 130 },
-    { tuman: "To'raqo'rg'on t.", soni: 1, summa: 130 },
+    { tuman: "Uchqo'rg'on t.", soni: 19, summa: 2019 },
+    { tuman: 'Uychi t.', soni: 10, summa: 1195 },
+    { tuman: 'Kosonsoy t.', soni: 10, summa: 1365 },
+    { tuman: "Yangiqo'rg'on t.", soni: 7, summa: 922 },
+    { tuman: 'Pop t.', soni: 3, summa: 461 },
+    { tuman: 'Norin t.', soni: 3, summa: 443 },
+    { tuman: 'Chust t.', soni: 3, summa: 461 },
+    { tuman: "To'raqo'rg'on t.", soni: 3, summa: 461 }
   ],
   'Sirdaryo viloyati': [
-    { tuman: 'Sirdaryo t.', soni: 1, summa: 130 },
-    { tuman: 'Sardoba t.', soni: 1, summa: 130 },
-    { tuman: 'Oqoltin t.', soni: 1, summa: 130 },
-    { tuman: 'Mirzaobod t.', soni: 1, summa: 130 },
-    { tuman: 'Guliston t.', soni: 1, summa: 130 },
-  ],
+    { tuman: 'Sirdaryo t.', soni: 3, summa: 480 },
+    { tuman: 'Sardoba t.', soni: 4, summa: 481 },
+    { tuman: 'Oqoltin t.', soni: 4, summa: 481 },
+    { tuman: 'Mirzaobod t.', soni: 4, summa: 481 },
+    { tuman: 'Guliston t.', soni: 4, summa: 481 }
+  ]
 };
 
 const GEO_NAME_TO_REGION: Record<string, string> = {
@@ -762,12 +759,12 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
   // Build unified display rows: viloyat overview OR tuman drill-down
   const isTumanView = activeViloyat !== 'Hammasi';
 
-  // Global totals (new dashboard data: 07.05.2026)
-  let globalMarkazlar = 385;
-  let globalSumma = 49298; // mln so'm
-  let globalErkak = 223;
-  let globalAyol = 162;
-  let globalUmumiyLoyihalar = 712; // total applications across all statuses
+  // Global totals (new dashboard data: 15.07.2026)
+  let globalMarkazlar = 910;
+  let globalSumma = 114965; // mln so'm
+  let globalErkak = 523;
+  let globalAyol = 375;
+  let globalUmumiyLoyihalar = 910; // total applications across all statuses
 
   const statsMap = new Map(stats?.map(s => [s.key, s.value]) || []);
   let scaleFactorMarkazlar = 1;
@@ -778,14 +775,14 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
     const dbLoan = statsMap.get('total_loan_uzs');
     if (dbFunded) {
       globalMarkazlar = Math.round(Number(dbFunded));
-      scaleFactorMarkazlar = globalMarkazlar / 385;
-      globalErkak = Math.round((223 / 385) * globalMarkazlar);
+      scaleFactorMarkazlar = globalMarkazlar / 910;
+      globalErkak = Math.round((523 / 910) * globalMarkazlar);
       globalAyol = globalMarkazlar - globalErkak;
-      globalUmumiyLoyihalar = Math.round((712 / 385) * globalMarkazlar);
+      globalUmumiyLoyihalar = globalMarkazlar;
     }
     if (dbLoan) {
       globalSumma = Math.round(Number(dbLoan) * 1000); // converting billions to millions
-      scaleFactorSumma = globalSumma / 49298;
+      scaleFactorSumma = globalSumma / 114965;
     }
   }
 
@@ -958,7 +955,7 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
             className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3"
           >
             {[
-              { label: "So'nggi yangilanish", value: '07.05.2026' },
+              { label: "So'nggi yangilanish", value: '15.07.2026' },
               { label: "Ma'lumotlar manbasi", value: 'Yoshlar Fondi' },
               { label: 'Hisobot davri', value: '2025–2026' },
             ].map((item) => (
@@ -1412,7 +1409,7 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
                   })}
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-headline text-lg font-extrabold text-on-surface">712</span>
+                  <span className="font-headline text-lg font-extrabold text-on-surface">{globalUmumiyLoyihalar}</span>
                 </div>
               </div>
               {/* Legend */}
@@ -1450,36 +1447,66 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUp}
-            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden"
+            className="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 sm:p-7 relative overflow-hidden flex flex-col justify-between"
           >
-             <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">Xulosa tasnifi</h3>
-             <div className="grid grid-cols-2 gap-3 relative z-10">
-                {/* Mavjud card */}
-                <div className="bg-primary/5 rounded-xl p-4 transition-transform hover:scale-[1.02]">
-                   <div className="text-[10px] font-bold text-primary uppercase tracking-widest mb-3">Mavjud (93)</div>
-                   <div className="space-y-2.5">
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Maqsadli</span> <span className="font-bold text-sm text-on-surface">78</span></div>
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Jarayonda</span> <span className="font-bold text-sm text-on-surface">11</span></div>
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Qisman</span> <span className="font-bold text-sm text-on-surface">4</span></div>
-                      <div className="flex justify-between items-center opacity-50"><span className="text-xs text-on-surface-variant font-medium">Maqsadsiz</span> <span className="font-bold text-sm text-on-surface">0</span></div>
+             <h3 className="font-body text-lg font-bold text-on-surface mb-6 relative z-10">O&apos;quv markazlarining bugungi holati</h3>
+             <div className="space-y-4 relative z-10">
+                {/* Faoliyat ko'rsatmoqda */}
+                <div className="bg-primary/5 rounded-xl p-3.5 flex justify-between items-center transition-all hover:scale-[1.01] hover:bg-primary/10">
+                   <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center text-primary">
+                         <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                      </div>
+                      <div>
+                         <p className="text-xs font-bold text-on-surface">O&apos;z faoliyatini davom ettirmoqda</p>
+                         <p className="text-[10px] text-on-surface-variant">Faol va barqaror ishlamoqda</p>
+                      </div>
+                   </div>
+                   <div className="text-right">
+                      <span className="block font-headline font-extrabold text-base text-primary">380 ta</span>
+                      <span className="block text-[9px] font-semibold text-on-surface-variant">72.5%</span>
                    </div>
                 </div>
-                {/* Mavjud emas card */}
-                <div className="bg-surface-container/50 rounded-xl p-4 transition-transform hover:scale-[1.02]">
-                   <div className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-3">Yo&apos;q (179)</div>
-                   <div className="space-y-2.5">
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Maqsadli</span> <span className="font-bold text-sm text-on-surface">112</span></div>
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Jarayonda</span> <span className="font-bold text-sm text-on-surface">34</span></div>
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Maqsadsiz</span> <span className="font-bold text-sm text-on-surface">32</span></div>
-                      <div className="flex justify-between items-center"><span className="text-xs text-on-surface-variant font-medium">Qisman</span> <span className="font-bold text-sm text-on-surface">1</span></div>
+
+                {/* Jarayonda */}
+                <div className="bg-secondary/5 rounded-xl p-3.5 flex justify-between items-center transition-all hover:scale-[1.01] hover:bg-secondary/10">
+                   <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
+                         <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>autorenew</span>
+                      </div>
+                      <div>
+                         <p className="text-xs font-bold text-on-surface">Jarayonda</p>
+                         <p className="text-[10px] text-on-surface-variant">Tashkiliy ishlar yakunlanmoqda</p>
+                      </div>
+                   </div>
+                   <div className="text-right">
+                      <span className="block font-headline font-extrabold text-base text-secondary">84 ta</span>
+                      <span className="block text-[9px] font-semibold text-on-surface-variant">16.0%</span>
+                   </div>
+                </div>
+
+                {/* Avgustdan boshlamoqda */}
+                <div className="bg-tertiary/5 rounded-xl p-3.5 flex justify-between items-center transition-all hover:scale-[1.01] hover:bg-tertiary/10">
+                   <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary">
+                         <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>calendar_today</span>
+                      </div>
+                      <div>
+                         <p className="text-xs font-bold text-on-surface">Avgust oyidan ish boshlamoqda</p>
+                         <p className="text-[10px] text-on-surface-variant">Yaqin orada ochilish kutilmoqda</p>
+                      </div>
+                   </div>
+                   <div className="text-right">
+                      <span className="block font-headline font-extrabold text-base text-tertiary">60 ta</span>
+                      <span className="block text-[9px] font-semibold text-on-surface-variant">11.5%</span>
                    </div>
                 </div>
              </div>
              
              {/* Total bottom bar */}
              <div className="mt-4 bg-surface-container-low rounded-xl p-3 flex justify-between items-center relative z-10">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest pl-1">Umumiy xulosalar</span>
-                <span className="font-headline font-extrabold text-xl text-on-surface pr-1">272</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest pl-1">Jamg&apos;armadan moliyalashtirilgan</span>
+                <span className="font-headline font-extrabold text-xl text-on-surface pr-1">524</span>
              </div>
           </motion.div>
 

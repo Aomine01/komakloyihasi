@@ -98,7 +98,7 @@ export default function ImageUpload({
         if (!res.ok) {
           console.error('Failed to delete photo on server:', res.statusText);
         }
-      } catch (err) {
+      } catch (err) {  
         console.error('Failed to delete photo:', err);
       }
     }

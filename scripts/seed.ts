@@ -266,10 +266,10 @@ async function seed() {
 
   console.log('🌱 Seeding stats...');
   const statsData = [
-    { key: 'total_funded', value: '47', labelUz: 'Moliyalashtirilgan loyihalar', icon: 'briefcase' },
-    { key: 'total_regions', value: '12', labelUz: 'Qamrab olingan viloyatlar', icon: 'map-pin' },
-    { key: 'total_students', value: '3200', labelUz: "Foydalanuvchi o'quvchilar", icon: 'users' },
-    { key: 'total_loan_uzs', value: '8.4', labelUz: "Ajratilgan ssuda (mlrd so'm)", icon: 'banknote' },
+    { key: 'total_funded', value: '910', labelUz: 'Moliyalashtirilgan loyihalar', icon: 'briefcase' },
+    { key: 'total_regions', value: '13', labelUz: 'Qamrab olingan viloyatlar', icon: 'map-pin' },
+    { key: 'total_students', value: '20000', labelUz: "Foydalanuvchi o'quvchilar", icon: 'users' },
+    { key: 'total_loan_uzs', value: '114.965', labelUz: "Ajratilgan ssuda (mlrd so'm)", icon: 'banknote' },
   ];
   for (const s of statsData) {
     await db.insert(stats).values(s).onDuplicateKeyUpdate({ set: { value: s.value, labelUz: s.labelUz } });
