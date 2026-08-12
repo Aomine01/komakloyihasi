@@ -73,9 +73,8 @@ const MONTHS_SHORT = ['Okt','Noy','Dek','Yan','Fev','Mar','Apr','May','Iyun','Iy
 
 // Loyihalarning umumiy holati (Project Status)
 const ACTIVITY_DATA = [
-  { label: 'Jamg\'armadan moliyalashtirilgan', count: 524, pct: 58, color: '#00685f' },
-  { label: 'Moliyalashtirish jarayonida', count: 81, pct: 9, color: '#3b82f6' },
-  { label: 'Kengashdan ruxsat berilgan (boshqa)', count: 305, pct: 33, color: '#64748b' },
+  { label: 'Jamg\'armadan moliyalashtirilgan', count: 541, pct: 87, color: '#00685f' },
+  { label: 'Qarz ajratish jarayonida', count: 82, pct: 13, color: '#3b82f6' },
 ];
 
 // Xulosa matritsasi
@@ -115,19 +114,19 @@ const PIE_DATA = [
 ];
 
 const REGION_ROWS = [
-  { viloyat: 'Surxondaryo viloyati', markazlar: 117, summa: 14781, erkak: 68, ayol: 49 },
-  { viloyat: 'Buxoro viloyati', markazlar: 108, summa: 13644, erkak: 63, ayol: 45 },
-  { viloyat: 'Qashqadaryo viloyati', markazlar: 97, summa: 12254, erkak: 56, ayol: 40 },
-  { viloyat: 'Xorazm viloyati', markazlar: 86, summa: 10865, erkak: 49, ayol: 35 },
-  { viloyat: 'Samarqand viloyati', markazlar: 79, summa: 9980, erkak: 45, ayol: 32 },
-  { viloyat: 'Andijon viloyati', markazlar: 64, summa: 8085, erkak: 37, ayol: 26 },
-  { viloyat: "Farg'ona viloyati", markazlar: 63, summa: 7959, erkak: 36, ayol: 26 },
-  { viloyat: 'Jizzax viloyati', markazlar: 63, summa: 7959, erkak: 36, ayol: 26 },
-  { viloyat: 'Navoiy viloyati', markazlar: 58, summa: 7327, erkak: 33, ayol: 24 },
-  { viloyat: 'Namangan viloyati', markazlar: 58, summa: 7327, erkak: 33, ayol: 24 },
-  { viloyat: "Qoraqalpog'iston Res.", markazlar: 52, summa: 6569, erkak: 30, ayol: 21 },
-  { viloyat: 'Toshkent viloyati', markazlar: 46, summa: 5811, erkak: 26, ayol: 19 },
-  { viloyat: 'Sirdaryo viloyati', markazlar: 19, summa: 2404, erkak: 11, ayol: 8 },
+  { viloyat: 'Surxondaryo viloyati', markazlar: 82, summa: 10512, erkak: 48, ayol: 34 },
+  { viloyat: 'Buxoro viloyati', markazlar: 76, summa: 9790, erkak: 44, ayol: 32 },
+  { viloyat: 'Qashqadaryo viloyati', markazlar: 56, summa: 7150, erkak: 33, ayol: 23 },
+  { viloyat: 'Samarqand viloyati', markazlar: 50, summa: 6360, erkak: 29, ayol: 21 },
+  { viloyat: "Farg'ona viloyati", markazlar: 41, summa: 5240, erkak: 24, ayol: 17 },
+  { viloyat: 'Andijon viloyati', markazlar: 39, summa: 4980, erkak: 23, ayol: 16 },
+  { viloyat: 'Jizzax viloyati', markazlar: 35, summa: 4546, erkak: 20, ayol: 15 },
+  { viloyat: "Qoraqalpog'iston Res.", markazlar: 35, summa: 4420, erkak: 20, ayol: 15 },
+  { viloyat: 'Xorazm viloyati', markazlar: 34, summa: 4410, erkak: 20, ayol: 14 },
+  { viloyat: 'Navoiy viloyati', markazlar: 29, summa: 3770, erkak: 17, ayol: 12 },
+  { viloyat: 'Toshkent viloyati', markazlar: 24, summa: 3031, erkak: 14, ayol: 10 },
+  { viloyat: 'Namangan viloyati', markazlar: 23, summa: 2827, erkak: 13, ayol: 10 },
+  { viloyat: 'Sirdaryo viloyati', markazlar: 17, summa: 2120, erkak: 10, ayol: 7 },
 ].sort((a,b) => b.markazlar - a.markazlar);
 
 const TUMAN_DATA: Record<string, Array<{tuman: string, soni: number, summa: number}>> = {
@@ -759,12 +758,12 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
   // Build unified display rows: viloyat overview OR tuman drill-down
   const isTumanView = activeViloyat !== 'Hammasi';
 
-  // Global totals (new dashboard data: 15.07.2026)
-  let globalMarkazlar = 910;
-  let globalSumma = 114965; // mln so'm
-  let globalErkak = 523;
-  let globalAyol = 375;
-  let globalUmumiyLoyihalar = 910; // total applications across all statuses
+  // Global totals (new dashboard data: 12.08.2026)
+  let globalMarkazlar = 541;
+  let globalSumma = 69156; // mln so'm
+  let globalErkak = 318;
+  let globalAyol = 223;
+  let globalUmumiyLoyihalar = 541; // total funded applications
 
   const statsMap = new Map(stats?.map(s => [s.key, s.value]) || []);
   let scaleFactorMarkazlar = 1;
@@ -775,14 +774,14 @@ export default function StatisticsPage({ stats, hideMoneyInfo = false }: { stats
     const dbLoan = statsMap.get('total_loan_uzs');
     if (dbFunded) {
       globalMarkazlar = Math.round(Number(dbFunded));
-      scaleFactorMarkazlar = globalMarkazlar / 910;
-      globalErkak = Math.round((523 / 910) * globalMarkazlar);
+      scaleFactorMarkazlar = globalMarkazlar / 541;
+      globalErkak = Math.round((318 / 541) * globalMarkazlar);
       globalAyol = globalMarkazlar - globalErkak;
       globalUmumiyLoyihalar = globalMarkazlar;
     }
     if (dbLoan) {
       globalSumma = Math.round(Number(dbLoan) * 1000); // converting billions to millions
-      scaleFactorSumma = globalSumma / 114965;
+      scaleFactorSumma = globalSumma / 69156;
     }
   }
 
